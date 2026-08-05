@@ -1,0 +1,442 @@
+{
+  "meta": {
+    "title": "FARM127 Charlotte Young Adult Resource Navigator",
+    "verifiedDate": "2026-08-05",
+    "resourceCount": 90,
+    "description": "A working directory of reputable Charlotte/Mecklenburg, North Carolina and national resources that can serve young adults."
+  },
+  "triage": [
+    {
+      "situation": "Immediate danger, overdose, violence or serious injury",
+      "firstAction": "Call 911",
+      "phone": "911",
+      "backup": "Use Safe Alliance, trafficking or crisis resources after immediate safety is addressed.",
+      "limit": "Do not use a routine referral process for an active emergency."
+    },
+    {
+      "situation": "Suicidal thoughts or acute mental-health crisis",
+      "firstAction": "Call/text 988",
+      "phone": "988",
+      "backup": "Mecklenburg Mobile Crisis: 704-566-3410 option 1.",
+      "limit": "Call 911 when there is immediate danger or a medical emergency."
+    },
+    {
+      "situation": "Homeless tonight or unsafe place to sleep",
+      "firstAction": "Call Coordinated Entry",
+      "phone": "704-284-9665",
+      "backup": "Ages 16–24: The Relatives On Ramp; men: Roof Above; women/children: Center of Hope.",
+      "limit": "Beds and housing are limited; assessment does not guarantee placement."
+    },
+    {
+      "situation": "Former foster youth under 21",
+      "firstAction": "Call Mecklenburg LINKS / Phoenix",
+      "phone": "704-336-KIDS / 704-336-3290",
+      "backup": "Ask about VPA, GEAR Up, Medicaid and foster-specific education funds.",
+      "limit": "Many benefits end at 21; act quickly."
+    },
+    {
+      "situation": "Ages 16–24 with several practical needs",
+      "firstAction": "The Relatives On Ramp",
+      "phone": "704-344-1111",
+      "backup": "Use NC 211 and Mecklenburg Community Resource Centers for additional benefits.",
+      "limit": "Call before traveling; hours and capacity change."
+    },
+    {
+      "situation": "Domestic violence or sexual assault",
+      "firstAction": "Safe Alliance Hope Line",
+      "phone": "980-771-4673",
+      "backup": "Call 911 for immediate danger; Legal Aid/Charlotte Legal Advocacy for civil legal help.",
+      "limit": "Protect confidential location and contact information."
+    },
+    {
+      "situation": "No food or basic household items",
+      "firstAction": "Apply for SNAP and contact Nourish Up",
+      "phone": "704-336-3000",
+      "backup": "Crisis Assistance Free Store; Second Harvest food locator.",
+      "limit": "Emergency food should be paired with a longer-term benefits plan."
+    },
+    {
+      "situation": "LGBTQ+ young adult needs affirming housing/support",
+      "firstAction": "Time Out Youth",
+      "phone": "",
+      "backup": "The Relatives housing and Coordinated Entry.",
+      "limit": "Program age ranges and housing openings vary."
+    }
+  ],
+  "fosterPrograms": [
+    {
+      "program": "Mecklenburg LINKS",
+      "ageWindow": "Usually 13–21",
+      "eligibilityTrigger": "Current/former foster care; county-specific rules",
+      "primaryValue": "Independent-living planning, funds, education and housing support",
+      "farm127Action": "Refer immediately and document the young adult's custody/discharge history",
+      "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS"
+    },
+    {
+      "program": "Phoenix Project",
+      "ageWindow": "Under 21",
+      "eligibilityTrigger": "Former foster youth no longer in county custody; confirm eligibility",
+      "primaryValue": "Post-custody transition support and eligible funding",
+      "farm127Action": "Call 704-336-3290 before the 21st birthday",
+      "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS"
+    },
+    {
+      "program": "Foster Care 18 to 21 / VPA",
+      "ageWindow": "18–21",
+      "eligibilityTrigger": "Must meet state criteria and complete a voluntary agreement",
+      "primaryValue": "Continued placement, case management and financial support",
+      "farm127Action": "Ask before discharge from care; do not wait until after the 18th birthday",
+      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
+    },
+    {
+      "program": "GEAR Up pilot",
+      "ageWindow": "18–21",
+      "eligibilityTrigger": "Mecklenburg youth aging out; pilot criteria",
+      "primaryValue": "Flexible monthly supplemental income",
+      "farm127Action": "Call LINKS and verify active enrollment/funding",
+      "sourceUrl": "https://news.mecknc.gov/gear-supplemental-income-pilot-program-young-adults-aging-out-foster-care"
+    },
+    {
+      "program": "Medicaid for Former Foster Care Youth",
+      "ageWindow": "Under 26",
+      "eligibilityTrigger": "Former foster-care and Medicaid history rules apply",
+      "primaryValue": "Medical and behavioral-health coverage",
+      "farm127Action": "State former-foster status explicitly on application",
+      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
+    },
+    {
+      "program": "Children and Families Specialty Plan",
+      "ageWindow": "Often under 26 for eligible former foster youth",
+      "eligibilityTrigger": "Medicaid and child-welfare eligibility",
+      "primaryValue": "Trauma-informed plan and care management",
+      "farm127Action": "Confirm plan assignment and current contact information",
+      "sourceUrl": "https://medicaid.ncdhhs.gov/beneficiaries/children-and-families-specialty-plan"
+    },
+    {
+      "program": "NC Reach",
+      "ageWindow": "Postsecondary; age rules per program",
+      "eligibilityTrigger": "Aged out at 18 or adopted after 12; NC public school; at least half time",
+      "primaryValue": "Last-dollar scholarship and support",
+      "farm127Action": "FAFSA + NC Reach application before enrollment",
+      "sourceUrl": "https://www.cfnc.org/pay-for-college/scholarship-search/nc-reach/"
+    },
+    {
+      "program": "Education and Training Voucher",
+      "ageWindow": "Age/status rules apply",
+      "eligibilityTrigger": "Current/former foster youth and some adopted/guardianship youth",
+      "primaryValue": "Up to program limit for approved education costs",
+      "farm127Action": "Coordinate ETV, financial aid and LINKS",
+      "sourceUrl": "https://www.fc2sprograms.org/"
+    },
+    {
+      "program": "Youth Villages LifeSet",
+      "ageWindow": "Generally 17.5–23",
+      "eligibilityTrigger": "Leaving foster care; local program criteria",
+      "primaryValue": "Intensive community-based transition support",
+      "farm127Action": "Request Charlotte-area referral and verify openings",
+      "sourceUrl": "https://youthvillages.org/services/lifeset/"
+    },
+    {
+      "program": "The Relatives On Ramp",
+      "ageWindow": "16–24",
+      "eligibilityTrigger": "Mecklenburg young people; foster history not required",
+      "primaryValue": "Youth-centered case management and broad resource access",
+      "farm127Action": "Use as a central warm-handoff hub",
+      "sourceUrl": "https://therelatives.org/our-programs/on-ramp-resource-center/"
+    },
+    {
+      "program": "The Relatives Housing",
+      "ageWindow": "18–24",
+      "eligibilityTrigger": "Homeless, at risk or fleeing violence; screening applies",
+      "primaryValue": "Scattered-site housing and case management",
+      "farm127Action": "Screen early; placement is capacity-limited",
+      "sourceUrl": "https://therelatives.org/our-programs/housing/"
+    },
+    {
+      "program": "Charlotte Angels Dare to Dream",
+      "ageWindow": "Generally 11–22",
+      "eligibilityTrigger": "Youth/young adults in foster care",
+      "primaryValue": "Long-term volunteer mentorship",
+      "farm127Action": "Coordinate to avoid duplicate or conflicting mentor roles",
+      "sourceUrl": "https://www.charlotteangels.org/mentor"
+    },
+    {
+      "program": "SaySo",
+      "ageWindow": "Teens through mid-20s depending activity",
+      "eligibilityTrigger": "Current/former out-of-home-care experience",
+      "primaryValue": "Peer network, advocacy and leadership",
+      "farm127Action": "Invite young adults who want peer voice and connection",
+      "sourceUrl": "https://chsnc.org/programs-services/sayso/"
+    },
+    {
+      "program": "HUD FYI voucher",
+      "ageWindow": "18–24",
+      "eligibilityTrigger": "Federal foster-youth and homelessness criteria; local partnership required",
+      "primaryValue": "Time-limited housing voucher and supportive services",
+      "farm127Action": "Treat as a lead until LINKS/INLIVIAN confirms local pathway",
+      "sourceUrl": "https://www.hud.gov/hud-partners/public-indian-housing-fyi"
+    },
+    {
+      "program": "I Am Here legal hotline",
+      "ageWindow": "Young people experiencing homelessness",
+      "eligibilityTrigger": "Document-related legal need",
+      "primaryValue": "Help obtaining IDs and vital documents",
+      "farm127Action": "Call/text 1-888-870-DOCS; confirm current hours",
+      "sourceUrl": "https://nn4youth.org/programs/vital-document-legal-hotline-for-youth/"
+    }
+  ],
+  "needsMap": [
+    {
+      "domain": "Housing stability",
+      "primaryOptions": "Coordinated Entry; The Relatives Housing; Crisis Assistance Ministry",
+      "backupOptions": "Roof Above; INLIVIAN; Community Link",
+      "strategy": "Use Coordinated Entry for homelessness, but pursue prevention funds before eviction whenever possible."
+    },
+    {
+      "domain": "Food and basic needs",
+      "primaryOptions": "SNAP/FNS; Nourish Up; Crisis Assistance Free Store",
+      "backupOptions": "Second Harvest; Roof Above Day Services",
+      "strategy": "Pair emergency food with a benefits application so the plan is not pantry-dependent."
+    },
+    {
+      "domain": "Employment",
+      "primaryOptions": "NCWorks NextGen; Goodwill Career Center; Urban League",
+      "backupOptions": "Road to Hire; Year Up; Vocational Rehabilitation",
+      "strategy": "Choose one primary workforce coach to reduce duplicated plans and missed appointments."
+    },
+    {
+      "domain": "Education",
+      "primaryOptions": "Central Piedmont GED/CCR; NC Reach; ETV",
+      "backupOptions": "Library College & Career Prep; UNC Charlotte Niner Needs",
+      "strategy": "Foster-specific education funds have strict age/status requirements; verify before registration."
+    },
+    {
+      "domain": "Transportation",
+      "primaryOptions": "CATS fares/passes; MTS for eligible trips",
+      "backupOptions": "CATS reduced fare ID",
+      "strategy": "Build a route and monthly transit budget before accepting a job or school schedule."
+    },
+    {
+      "domain": "Primary health care",
+      "primaryOptions": "Teen Health Connection; Care Ring; Charlotte Community Health Clinic",
+      "backupOptions": "C.W. Williams; Camino; county clinic directory",
+      "strategy": "Establish a medical home rather than relying on emergency departments."
+    },
+    {
+      "domain": "Mental health",
+      "primaryOptions": "Teen Health Connection; Alliance Health; Santé Mobile Crisis",
+      "backupOptions": "NAMI Charlotte; Time Out Youth",
+      "strategy": "Use 988/911 for crisis; routine therapy access often requires insurance and waitlist planning."
+    },
+    {
+      "domain": "Substance-use recovery",
+      "primaryOptions": "Anuvia; McLeod Centers",
+      "backupOptions": "Alliance Health; Roof Above wellness services",
+      "strategy": "Match the level of care to a clinical assessment; do not treat a peer mentor as treatment."
+    },
+    {
+      "domain": "Benefits",
+      "primaryOptions": "Mecklenburg DCR; Community Resource Centers; NC 211",
+      "backupOptions": "Charlotte Center for Legal Advocacy",
+      "strategy": "Track application date, case number, documents requested and appeal deadlines."
+    },
+    {
+      "domain": "Budgeting / credit",
+      "primaryOptions": "Common Wealth Charlotte; Crisis Assistance coaching",
+      "backupOptions": "Community Link",
+      "strategy": "Use counseling before high-cost loans or debt-consolidation products."
+    },
+    {
+      "domain": "Documents / ID",
+      "primaryOptions": "Mecklenburg Vital Records; I Am Here hotline",
+      "backupOptions": "Charlotte Center for Legal Advocacy",
+      "strategy": "Start early; missing identity documents can block work, housing, benefits and school."
+    },
+    {
+      "domain": "Legal",
+      "primaryOptions": "Charlotte Center for Legal Advocacy; Legal Aid NC",
+      "backupOptions": "Safe Alliance; Re-Entry Services",
+      "strategy": "Legal deadlines are unforgiving; make the referral as soon as notice or court papers appear."
+    },
+    {
+      "domain": "Parenting / child care",
+      "primaryOptions": "Child Care Resources; WIC; Nurse-Family Partnership",
+      "backupOptions": "Smart Start; Crittenton; Charlotte Family Housing",
+      "strategy": "Child care subsidy and actual provider placement are separate steps."
+    },
+    {
+      "domain": "Safety / domestic violence / trafficking",
+      "primaryOptions": "Safe Alliance; National Human Trafficking Hotline",
+      "backupOptions": "Hope for Justice; 911",
+      "strategy": "Use survivor-led safety planning and protect confidential location/contact information."
+    },
+    {
+      "domain": "Mentorship / community",
+      "primaryOptions": "FARM127 mentor; Charlotte Angels; SaySo",
+      "backupOptions": "Time Out Youth; faith/community partners",
+      "strategy": "Define roles clearly so the young adult has a consistent relational through-line rather than many competing helpers."
+    }
+  ],
+  "partnerships": [
+    {
+      "organization": "The Relatives",
+      "whyStrategic": "Highest-leverage youth hub for ages 16–24; housing and broad case management",
+      "suggestedFirstAsk": "Create a named referral contact and two-way warm-handoff process",
+      "referralPathway": "Referral form, consent, response-time expectation, status updates",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Mecklenburg LINKS / Phoenix Project",
+      "whyStrategic": "Gateway to foster-specific benefits with hard age cutoffs",
+      "suggestedFirstAsk": "Quarterly eligibility case review for FARM127 young adults under 21",
+      "referralPathway": "Release, eligibility checklist, age-out deadline alerts",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Youth Villages LifeSet",
+      "whyStrategic": "Evidence-informed intensive transition support for eligible foster youth",
+      "suggestedFirstAsk": "Clarify referral criteria and how LifeSet and FARM127 mentorship can coexist",
+      "referralPathway": "Referral source, duplication boundaries, case communication",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Mecklenburg Coordinated Entry",
+      "whyStrategic": "Required gateway for much of the homelessness system",
+      "suggestedFirstAsk": "Learn the assessment process and escalation path for youth",
+      "referralPathway": "Call workflow, documents, consent, callback tracking",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Crisis Assistance Ministry",
+      "whyStrategic": "Core eviction-prevention and essential-goods resource",
+      "suggestedFirstAsk": "Establish document checklist and a referral contact",
+      "referralPathway": "Landlord/utility documents, appointment process, outcome feedback",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Teen Health Connection",
+      "whyStrategic": "Age-aligned integrated medical and behavioral care through 25",
+      "suggestedFirstAsk": "Create a direct appointment/referral workflow",
+      "referralPathway": "Consent, insurance, no-show rescheduling, crisis boundary",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Care Ring",
+      "whyStrategic": "Safety-net primary care and first-time-parent home visiting",
+      "suggestedFirstAsk": "Clarify uninsured referral and fee documentation",
+      "referralPathway": "Eligibility documents, appointment lead times, follow-up",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Charlotte Center for Legal Advocacy",
+      "whyStrategic": "Benefits, housing, health and civil legal issues commonly block stability",
+      "suggestedFirstAsk": "Request staff training on issue spotting and urgent deadlines",
+      "referralPathway": "Intake categories, emergency escalation, document transfer",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "NCWorks NextGen / Charlotte Works",
+      "whyStrategic": "Age-specific workforce services and supportive funding",
+      "suggestedFirstAsk": "Create a shared employment referral checklist",
+      "referralPathway": "Eligibility documents, assigned coach, attendance expectations",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Common Wealth Charlotte",
+      "whyStrategic": "Budgeting, credit and safe financial products fit FARM127's independence goals",
+      "suggestedFirstAsk": "Arrange recurring financial-counseling slots or workshops",
+      "referralPathway": "Consent, attendance, coaching scope, loan boundaries",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Anuvia",
+      "whyStrategic": "Local continuum for substance-use assessment and treatment",
+      "suggestedFirstAsk": "Define assessment and urgent detox referral steps",
+      "referralPathway": "Clinical confidentiality, transportation, payment, discharge coordination",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Child Care Resources Inc.",
+      "whyStrategic": "Child care is a frequent barrier to work and school for young parents",
+      "suggestedFirstAsk": "Create subsidy plus provider-search referral workflow",
+      "referralPathway": "Documents, waitlist, approved activity, provider placement",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Time Out Youth",
+      "whyStrategic": "Affirming housing, counseling and community for LGBTQ+ young adults",
+      "suggestedFirstAsk": "Establish a confidential specialist referral relationship",
+      "referralPathway": "Consent, privacy, housing/therapy waitlists, role boundaries",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Safe Alliance",
+      "whyStrategic": "Critical safety partner for domestic violence and sexual assault",
+      "suggestedFirstAsk": "Request trauma-informed referral and safety-planning training",
+      "referralPathway": "Confidential contact method, emergency versus non-emergency, releases",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Disability Rights & Resources / EIPD",
+      "whyStrategic": "Disability can affect work, transit, benefits and independent living",
+      "suggestedFirstAsk": "Clarify when to refer to CIL versus vocational rehabilitation",
+      "referralPathway": "Disability documentation, goals, benefits counseling, employment plan",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Central Piedmont",
+      "whyStrategic": "Primary local path for GED, adult education and affordable credentials",
+      "suggestedFirstAsk": "Identify a navigator for former foster youth and FARM127 referrals",
+      "referralPathway": "Placement testing, FAFSA, NC Reach/ETV, attendance support",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    }
+  ]
+}
