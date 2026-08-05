@@ -8,6 +8,8 @@
     view: 'directory',
     query: '',
     category: 'all',
+    area: 'all',
+    focus: 'all',
     foster: 'all',
     priority: 'all',
     savedOnly: false,
@@ -33,6 +35,8 @@
       if (!response.ok) throw new Error(`Resource data returned ${response.status}`);
       state.data = await response.json();
       populateCategoryFilter();
+      populateAreaFilter();
+      populateFocusFilter();
       renderAllStaticViews();
       renderStats();
       setView(state.view, false);
@@ -48,6 +52,8 @@
   function cacheElements() {
     els.search = document.getElementById('search-input');
     els.category = document.getElementById('category-filter');
+    els.area = document.getElementById('area-filter');
+    els.focus = document.getElementById('focus-filter');
     els.foster = document.getElementById('foster-filter');
     els.priority = document.getElementById('priority-filter');
     els.savedOnly = document.getElementById('saved-filter');
@@ -81,6 +87,8 @@
     }, 130));
 
     els.category.addEventListener('change', () => updateFilter('category', els.category.value));
+    els.area.addEventListener('change', () => updateFilter('area', els.area.value));
+    els.focus.addEventListener('change', () => updateFilter('focus', els.focus.value));
     els.foster.addEventListener('change', () => updateFilter('foster', els.foster.value));
     els.priority.addEventListener('change', () => updateFilter('priority', els.priority.value));
     els.savedOnly.addEventListener('change', () => updateFilter('savedOnly', els.savedOnly.checked));
@@ -121,6 +129,8 @@
     state.view = validViews().includes(requestedView) ? requestedView : 'directory';
     state.query = params.get('q') || '';
     state.category = params.get('category') || 'all';
+    state.area = params.get('area') || 'all';
+    state.focus = params.get('focus') || 'all';
     state.foster = params.get('foster') || 'all';
     state.priority = params.get('priority') || 'all';
     state.savedOnly = params.get('saved') === '1';
@@ -133,6 +143,8 @@
     if (!els.search) return;
     els.search.value = state.query;
     els.category.value = state.category;
+    els.area.value = state.area;
+    els.focus.value = state.focus;
     els.foster.value = state.foster;
     els.priority.value = state.priority;
     els.savedOnly.checked = state.savedOnly;
@@ -174,6 +186,8 @@
   function clearFilters() {
     state.query = '';
     state.category = 'all';
+    state.area = 'all';
+    state.focus = 'all';
     state.foster = 'all';
     state.priority = 'all';
     state.savedOnly = false;
@@ -198,11 +212,40 @@
     syncControls();
   }
 
+  function populateAreaFilter() {
+    const preferredOrder = ['Charlotte / Mecklenburg', 'Surrounding communities', 'Statewide / national'];
+    const areas = [...new Set(state.data.resources.map((resource) => resource.areaGroup))]
+      .filter(Boolean)
+      .sort((a, b) => preferredOrder.indexOf(a) - preferredOrder.indexOf(b));
+    for (const area of areas) {
+      const option = document.createElement('option');
+      option.value = area;
+      option.textContent = area === 'Surrounding communities' ? 'Surrounding communities (~30 miles)' : area;
+      els.area.appendChild(option);
+    }
+    syncControls();
+  }
+
+  function populateFocusFilter() {
+    const focuses = [...new Set(state.data.resources.flatMap((resource) => tagList(resource.focusTags)))]
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
+    for (const focus of focuses) {
+      const option = document.createElement('option');
+      option.value = focus;
+      option.textContent = focus;
+      els.focus.appendChild(option);
+    }
+    syncControls();
+  }
+
   function renderStats() {
     const resources = state.data.resources;
     setText('stat-total', resources.length);
+    setText('stat-local', resources.filter((item) => item.areaGroup !== 'Statewide / national').length);
     setText('stat-foster', resources.filter((item) => item.fosterSpecific === 'Yes').length);
-    setText('stat-core', resources.filter((item) => item.priority === 'Core').length);
+    setText('stat-mentor', resources.filter((item) => tagList(item.focusTags).includes('Mentorship')).length);
+    setText('stat-soft', resources.filter((item) => tagList(item.focusTags).includes('Soft skills / life skills')).length);
     setText('stat-verify', resources.filter((item) => item.priority === 'Verify').length);
   }
 
@@ -238,6 +281,8 @@
 
     const filtered = state.data.resources.filter((resource) => {
       if (state.category !== 'all' && resource.category !== state.category) return false;
+      if (state.area !== 'all' && resource.areaGroup !== state.area) return false;
+      if (state.focus !== 'all' && !tagList(resource.focusTags).includes(state.focus)) return false;
       if (state.priority !== 'all' && resource.priority !== state.priority) return false;
       if (state.savedOnly && !state.saved.has(String(resource.id))) return false;
 
@@ -252,7 +297,8 @@
         const haystack = normalize([
           resource.name, resource.category, resource.referralTrigger, resource.eligibility,
           resource.provides, resource.access, resource.location, resource.phone,
-          resource.caveat, resource.fosterSpecific, resource.priority
+          resource.caveat, resource.fosterSpecific, resource.priority, resource.area,
+          resource.areaGroup, resource.focusTags, resource.radiusNote
         ].join(' '));
         if (!haystack.includes(query)) return false;
       }
@@ -286,10 +332,13 @@
         <div class="tag-row">
           ${priorityTag(resource.priority)}
           ${fosterTag(resource.fosterSpecific)}
+          ${localTag(resource.areaGroup)}
         </div>
+        ${focusTagsHtml(resource.focusTags, 3)}
         <h2>${escapeHtml(resource.name)}</h2>
         <p class="trigger">${escapeHtml(resource.referralTrigger)}</p>
         <div class="meta-list">
+          ${resource.area ? `<div class="meta-line"><span aria-hidden="true">◎</span><span>${escapeHtml(resource.area)}</span></div>` : ''}
           ${resource.location ? `<div class="meta-line"><span aria-hidden="true">⌂</span><span>${escapeHtml(resource.location)}</span></div>` : ''}
           ${resource.phone ? `<div class="meta-line"><span aria-hidden="true">☎</span><span><strong>${escapeHtml(resource.phone)}</strong></span></div>` : ''}
           <div class="meta-line"><span aria-hidden="true">✓</span><span>Verified ${escapeHtml(formatDate(resource.lastVerified))}</span></div>
@@ -312,6 +361,24 @@
     if (!value || value === 'No') return '';
     const label = value === 'Yes' ? 'Foster-care specific' : 'Youth / foster relevant';
     return `<span class="tag tag-foster">${label}</span>`;
+  }
+
+  function localTag(areaGroup) {
+    if (!areaGroup || areaGroup === 'Statewide / national') return '';
+    const label = areaGroup === 'Surrounding communities' ? 'Nearby community' : 'Charlotte / Mecklenburg';
+    return `<span class="tag tag-local">${escapeHtml(label)}</span>`;
+  }
+
+  function tagList(value) {
+    return String(value || '').split(';').map((tag) => tag.trim()).filter(Boolean);
+  }
+
+  function focusTagsHtml(value, limit = 3) {
+    const tags = tagList(value);
+    if (!tags.length) return '';
+    const visible = tags.slice(0, limit);
+    const remainder = tags.length - visible.length;
+    return `<div class="focus-tag-row">${visible.map((tag) => `<span class="focus-tag">${escapeHtml(tag)}</span>`).join('')}${remainder > 0 ? `<span class="focus-tag focus-tag-more">+${remainder}</span>` : ''}</div>`;
   }
 
   function emptyStateHtml() {
@@ -357,7 +424,8 @@
       <div class="dialog-title">
         <p class="eyebrow">${escapeHtml(resource.category)}</p>
         <h2>${escapeHtml(resource.name)}</h2>
-        <div class="tag-row">${priorityTag(resource.priority)}${fosterTag(resource.fosterSpecific)}</div>
+        <div class="tag-row">${priorityTag(resource.priority)}${fosterTag(resource.fosterSpecific)}${localTag(resource.areaGroup)}</div>
+        ${focusTagsHtml(resource.focusTags, 8)}
       </div>
       <div class="detail-grid">
         ${detailBlock('Best for', resource.referralTrigger, true)}
@@ -365,7 +433,10 @@
         ${detailBlock('What it provides', resource.provides, true)}
         ${detailBlock('How to access', resource.access, true)}
         ${detailBlock('Phone', resource.phone)}
+        ${detailBlock('Area', resource.area)}
         ${detailBlock('Location / service area', resource.location)}
+        ${detailBlock('Support focus', tagList(resource.focusTags).join(' · '), true)}
+        ${detailBlock('Local-area note', resource.radiusNote, true)}
         ${detailBlock('Capacity / verification caveat', resource.caveat, true)}
         ${detailBlock('Last verified', formatDate(resource.lastVerified))}
       </div>
@@ -407,7 +478,9 @@
       `Provides: ${resource.provides}`,
       `Access: ${resource.access}`,
       resource.phone ? `Phone: ${resource.phone}` : '',
+      resource.area ? `Area: ${resource.area}` : '',
       resource.location ? `Location: ${resource.location}` : '',
+      resource.focusTags ? `Support focus: ${tagList(resource.focusTags).join(', ')}` : '',
       `Important: ${resource.caveat}`,
       resource.sourceUrl ? `Official source: ${resource.sourceUrl}` : '',
       `Last verified: ${formatDate(resource.lastVerified)}`
@@ -418,6 +491,8 @@
     const chips = [];
     if (state.query) chips.push(['query', `Search: ${state.query}`]);
     if (state.category !== 'all') chips.push(['category', state.category]);
+    if (state.area !== 'all') chips.push(['area', state.area === 'Surrounding communities' ? 'Nearby communities (~30 miles)' : state.area]);
+    if (state.focus !== 'all') chips.push(['focus', state.focus]);
     if (state.foster !== 'all') chips.push(['foster', fosterFilterLabel(state.foster)]);
     if (state.priority !== 'all') chips.push(['priority', state.priority]);
     if (state.savedOnly) chips.push(['savedOnly', 'Saved only']);
@@ -568,6 +643,8 @@
     const params = new URLSearchParams();
     if (state.query) params.set('q', state.query);
     if (state.category !== 'all') params.set('category', state.category);
+    if (state.area !== 'all') params.set('area', state.area);
+    if (state.focus !== 'all') params.set('focus', state.focus);
     if (state.foster !== 'all') params.set('foster', state.foster);
     if (state.priority !== 'all') params.set('priority', state.priority);
     if (state.savedOnly) params.set('saved', '1');

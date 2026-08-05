@@ -43,6 +43,10 @@ RESOURCE_KEYS = {
     "Last verified": "lastVerified",
     "FARM127 referral status": "referralStatus",
     "FARM127 notes": "notes",
+    "Area": "area",
+    "Area group": "areaGroup",
+    "Support focus tags": "focusTags",
+    "Radius / service-area note": "radiusNote",
 }
 
 
@@ -217,10 +221,11 @@ def main() -> None:
 
     payload = {
         "meta": {
-            "title": "FARM127 Charlotte Young Adult Resource Navigator",
+            "title": "FARM127 Charlotte-Area Young Adult Resource Navigator",
             "verifiedDate": verified_date,
             "resourceCount": len(resources),
-            "description": "A working directory of reputable Charlotte/Mecklenburg, North Carolina and national resources that can serve young adults.",
+            "description": "A researched working directory of reputable resources in Charlotte, surrounding communities within roughly 30 miles, and essential statewide or national fallback programs.",
+            "radiusDefinition": "Local results are grouped by service location within roughly 30 road miles of Uptown Charlotte. This is a practical service-area screen, not a precise geospatial guarantee.",
         },
         "resources": resources,
         "triage": triage,

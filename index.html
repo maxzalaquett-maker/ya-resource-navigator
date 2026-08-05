@@ -53,7 +53,7 @@
           <div>
             <p class="eyebrow">A safe place to start</p>
             <h1>Find the next practical resource.</h1>
-            <p class="hero-copy">Search verified Charlotte-area, North Carolina and national programs that may help with housing, food, work, education, health, transportation, legal needs and foster-care transitions.</p>
+            <p class="hero-copy">Search verified programs in Charlotte and surrounding communities within roughly 30 miles, plus essential statewide and national options. The expanded directory now includes mentorship, leadership and soft-skills development alongside housing, food, work, education, health, transportation, legal needs and foster-care transitions.</p>
           </div>
           <aside class="hero-note" aria-label="Important referral guidance">
             <strong>A referral is not a guarantee.</strong>
@@ -71,13 +71,27 @@
 
           <label class="field">
             <span>Search</span>
-            <input id="search-input" type="search" placeholder="Housing, GED, Medicaid…" autocomplete="off">
+            <input id="search-input" type="search" placeholder="Mentor, life skills, housing, GED…" autocomplete="off">
           </label>
 
           <label class="field">
             <span>Category</span>
             <select id="category-filter">
               <option value="all">All categories</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Local area</span>
+            <select id="area-filter">
+              <option value="all">All service areas</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Support focus</span>
+            <select id="focus-filter">
+              <option value="all">All support focuses</option>
             </select>
           </label>
 
@@ -116,8 +130,10 @@
         <div class="directory-main">
           <section class="stats-grid" aria-label="Directory summary">
             <article class="stat-card"><span id="stat-total">—</span><small>resources</small></article>
+            <article class="stat-card"><span id="stat-local">—</span><small>local / nearby</small></article>
             <article class="stat-card"><span id="stat-foster">—</span><small>foster-specific</small></article>
-            <article class="stat-card"><span id="stat-core">—</span><small>core referrals</small></article>
+            <article class="stat-card"><span id="stat-mentor">—</span><small>mentorship</small></article>
+            <article class="stat-card"><span id="stat-soft">—</span><small>soft / life skills</small></article>
             <article class="stat-card"><span id="stat-verify">—</span><small>need verification</small></article>
           </section>
 
@@ -195,7 +211,7 @@
     <section class="view" id="view-about" data-view-panel="about" hidden>
       <div class="page-heading shell narrow">
         <p class="eyebrow">About this directory</p>
-        <h1>A reliable operating baseline—not a promise of availability</h1>
+        <h1>An expanded operating baseline—not a promise of availability</h1>
       </div>
       <div class="shell narrow about-grid">
         <article class="content-card">
@@ -209,6 +225,14 @@
         <article class="content-card">
           <h2>Update rule</h2>
           <p>Recheck housing waitlists, shelter beds, emergency funding, workforce cohorts, treatment capacity and pilot programs before every referral.</p>
+        </article>
+        <article class="content-card">
+          <h2>30-mile search area</h2>
+          <p>“Local / nearby” means the organization is located in or clearly serves a community within roughly 30 road miles of Uptown Charlotte. It is a practical service-area screen, not a precise mileage guarantee. Always confirm county, ZIP-code and residency rules.</p>
+        </article>
+        <article class="content-card">
+          <h2>Mentorship and soft skills</h2>
+          <p>Use the Support focus filter to find mentoring, leadership, communication, workplace readiness, financial capability and independent-living development. Some youth programs require enrollment before age 18, which is stated in the resource caveat.</p>
         </article>
         <article class="content-card">
           <h2>Source file</h2>

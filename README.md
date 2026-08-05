@@ -4,7 +4,9 @@ A searchable, mobile-friendly resource directory built from the FARM127 Charlott
 
 ## Included
 
-- 90 researched resources with search, filters and pagination
+- 139 researched resources with search, filters and pagination
+- Mentorship and soft-skills filters, including leadership, workplace readiness, financial capability and independent-living development
+- Local-area filter for Charlotte/Mecklenburg, surrounding communities within roughly 30 miles, and statewide/national fallbacks
 - Urgent triage guide
 - Foster-care-specific program guide
 - Support-plan needs map
@@ -106,3 +108,15 @@ The planner uses `localStorage`; its edits are not shared between users or devic
 ## Important limitation
 
 This app is a referral directory, not a real-time availability system. Shelter beds, funding, waitlists, eligibility and intake processes must be confirmed directly with each provider.
+
+
+## About the 30-mile expansion
+
+“Local / nearby” is a practical service-area classification. It includes Charlotte/Mecklenburg and organizations in nearby communities such as Matthews, Indian Trail, Monroe, Concord, Huntersville, Davidson, Gastonia, Belmont and Rock Hill when they are plausibly within roughly 30 road miles of Uptown Charlotte. County, ZIP-code and residency restrictions still control eligibility.
+
+
+## FARM127 Resource Database 2024 review
+
+Reviewed August 5, 2026. Twelve relevant organizations or distinct programs were added; duplicates were merged or enriched. See `DOCUMENT_REVIEW.md` for every disposition.
+
+Source: https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing

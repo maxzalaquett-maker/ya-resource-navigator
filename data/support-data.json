@@ -1,9 +1,16 @@
 {
   "meta": {
-    "title": "FARM127 Charlotte Young Adult Resource Navigator",
+    "title": "FARM127 Charlotte-Area Young Adult Resource Navigator",
     "verifiedDate": "2026-08-05",
-    "resourceCount": 90,
-    "description": "A working directory of reputable Charlotte/Mecklenburg, North Carolina and national resources that can serve young adults."
+    "resourceCount": 139,
+    "description": "A researched working directory of reputable resources in Charlotte, surrounding communities within roughly 30 miles, and essential statewide or national fallback programs.",
+    "radiusDefinition": "Local results are grouped by service location within roughly 30 road miles of Uptown Charlotte. This is a practical service-area screen, not a precise geospatial guarantee.",
+    "documentReview": {
+      "title": "FARM127 Resource Database 2024",
+      "url": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
+      "reviewedDate": "2026-08-05",
+      "newResourcesAdded": 12
+    }
   },
   "triage": [
     {
@@ -183,6 +190,38 @@
       "primaryValue": "Help obtaining IDs and vital documents",
       "farm127Action": "Call/text 1-888-870-DOCS; confirm current hours",
       "sourceUrl": "https://nn4youth.org/programs/vital-document-legal-hotline-for-youth/"
+    },
+    {
+      "program": "Home4Me — LEG Up on LIFE",
+      "ageWindow": "Youth, young adults and 20+ tracks",
+      "eligibilityTrigger": "Transitioning from foster care or adolescence; confirm current enrollment",
+      "primaryValue": "Mentoring, coaching, leadership, financial literacy and independent-living skills",
+      "farm127Action": "Ask about the current weekly virtual group and age-appropriate coaching track",
+      "sourceUrl": "https://home4me.org/leg-up-on-life-2-2/"
+    },
+    {
+      "program": "Machiah's House",
+      "ageWindow": "Generally 18–24",
+      "eligibilityTrigger": "Young women aging out of foster care; current program screening required",
+      "primaryValue": "Workshops, supportive relationships and transition-to-adulthood connection",
+      "farm127Action": "Verify current programming and do not promise residential housing",
+      "sourceUrl": "https://machiahshouse.org/programs/"
+    },
+    {
+      "program": "Congregations for Kids — Mentor Match",
+      "ageWindow": "11–18",
+      "eligibilityTrigger": "Currently in foster care through Mecklenburg or Union County",
+      "primaryValue": "Committed adult mentor before the transition out of care",
+      "farm127Action": "Use for pre-age-out planning and coordinate clearly with any FARM127 mentor",
+      "sourceUrl": "https://www.cfknc.org/mentor"
+    },
+    {
+      "program": "Livingstone College H.O.P.E. Emancipation Project",
+      "ageWindow": "Transition to college",
+      "eligibilityTrigger": "Foster-care or emancipated student interested in Livingstone College",
+      "primaryValue": "Foster-specific college recruitment and support pathway developed with Home4Me",
+      "farm127Action": "Contact the project before application and confirm current financial, housing and retention supports",
+      "sourceUrl": "https://livingstone.edu/h-o-p-e/"
     }
   ],
   "needsMap": [
@@ -194,14 +233,14 @@
     },
     {
       "domain": "Food and basic needs",
-      "primaryOptions": "SNAP/FNS; Nourish Up; Crisis Assistance Free Store",
-      "backupOptions": "Second Harvest; Roof Above Day Services",
+      "primaryOptions": "SNAP/FNS; Nourish Up; Hearts & Hands; Hope Street; Crisis Assistance Free Store",
+      "backupOptions": "Second Harvest locator; Kingdom Kitchen; Hickory Grove Clothes Closet; Roof Above Day Services",
       "strategy": "Pair emergency food with a benefits application so the plan is not pantry-dependent."
     },
     {
       "domain": "Employment",
-      "primaryOptions": "NCWorks NextGen; Goodwill Career Center; Urban League",
-      "backupOptions": "Road to Hire; Year Up; Vocational Rehabilitation",
+      "primaryOptions": "NCWorks NextGen; Goodwill Career Center; Urban League; OMITT Trade School",
+      "backupOptions": "BuildStrong Academy; She Built This City; Road to Hire; Year Up; Vocational Rehabilitation",
       "strategy": "Choose one primary workforce coach to reduce duplicated plans and missed appointments."
     },
     {
@@ -224,8 +263,8 @@
     },
     {
       "domain": "Mental health",
-      "primaryOptions": "Teen Health Connection; Alliance Health; Santé Mobile Crisis",
-      "backupOptions": "NAMI Charlotte; Time Out Youth",
+      "primaryOptions": "Teen Health Connection; Mental Health America counseling; Alliance Health; Santé Mobile Crisis",
+      "backupOptions": "Barnabas Center; NAMI Charlotte; Time Out Youth; C.W. Williams",
       "strategy": "Use 988/911 for crisis; routine therapy access often requires insurance and waitlist planning."
     },
     {
@@ -271,10 +310,16 @@
       "strategy": "Use survivor-led safety planning and protect confidential location/contact information."
     },
     {
-      "domain": "Mentorship / community",
-      "primaryOptions": "FARM127 mentor; Charlotte Angels; SaySo",
-      "backupOptions": "Time Out Youth; faith/community partners",
-      "strategy": "Define roles clearly so the young adult has a consistent relational through-line rather than many competing helpers."
+      "domain": "Mentorship / community / belonging",
+      "primaryOptions": "FARM127 mentor; Home4Me LEG Up on LIFE; Charlotte Angels; SaySo",
+      "backupOptions": "CFK Mentor Match for youth under 18; Time Out Youth; Step Up to Leadership; faith/community partners",
+      "strategy": "Define roles clearly. One consistent relational through-line is more valuable than several helpers giving competing direction."
+    },
+    {
+      "domain": "Soft skills / life skills",
+      "primaryOptions": "Mecklenburg LINKS; Home4Me LEG Up on LIFE; City JCRT; The Relatives On Ramp",
+      "backupOptions": "Community Culinary School; Per Scholas; Common Heart; Charlotte Area Fund; Goodwill/NCWorks",
+      "strategy": "Choose the program that lets the young adult practice the skill in a real setting. Avoid sending someone to several overlapping classroom-style programs at once."
     }
   ],
   "partnerships": [
@@ -434,6 +479,116 @@
       "suggestedFirstAsk": "Identify a navigator for former foster youth and FARM127 referrals",
       "referralPathway": "Placement testing, FAFSA, NC Reach/ETV, attendance support",
       "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Home4Me",
+      "whyStrategic": "Local foster-specific mentoring and life-skills support that complements FARM127 relationships",
+      "suggestedFirstAsk": "Clarify enrollment, age tracks and how individual coaching can complement a FARM127 mentor",
+      "referralPathway": "Eligibility, consent, meeting schedule, staff contact and progress communication",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "City Office of Youth Opportunities",
+      "whyStrategic": "Career-readiness and soft-skills cohorts have served young adults through age 24",
+      "suggestedFirstAsk": "Request a standing notification when JCRT or equivalent 16–24 cohorts open",
+      "referralPathway": "Age/residency criteria, application dates, attendance and completion follow-up",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Community Culinary School of Charlotte",
+      "whyStrategic": "Combines employable skills, mentoring, life skills and placement in one structured pathway",
+      "suggestedFirstAsk": "Learn admissions criteria, cohort dates and scholarship/funding process",
+      "referralPathway": "Application, interview, schedule, transportation, attendance and placement follow-up",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Per Scholas North Carolina",
+      "whyStrategic": "No-cost technical training includes professional development and learner support",
+      "suggestedFirstAsk": "Identify a recruitment contact and realistic readiness screen for FARM127 referrals",
+      "referralPathway": "Course prerequisites, deadline, intensity, technology needs and support plan",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Common Heart",
+      "whyStrategic": "Union County food access plus economic-empowerment and success-coaching programs",
+      "suggestedFirstAsk": "Create a warm handoff for Union County young adults needing both crisis and growth support",
+      "referralPathway": "Residency, pantry access, class enrollment and coach communication",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Mental Health America of Central Carolinas",
+      "whyStrategic": "Free counseling and navigation for uninsured or underinsured young adults in Mecklenburg and Cabarrus counties",
+      "suggestedFirstAsk": "Create a warm-handoff process and confirm seasonal counseling-center capacity",
+      "referralPathway": "Eligibility, release, appointment timing, telehealth options and escalation when capacity is full",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Livingstone College H.O.P.E. Emancipation Project",
+      "whyStrategic": "Foster-specific college pathway that may complement NC Reach, ETV and Home4Me support",
+      "suggestedFirstAsk": "Clarify the current student support package and referral timeline",
+      "referralPathway": "Admission, financial aid, housing, mentoring, campus contact and ongoing student-status updates",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "OMITT Trade School",
+      "whyStrategic": "Local hands-on trades training with career services and a welcoming entry model",
+      "suggestedFirstAsk": "Identify current courses, tuition assistance and a realistic readiness screen",
+      "referralPathway": "Information session, funding, prerequisites, attendance, certification and job-placement support",
+      "priority": "High",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "BuildStrong Academy of Charlotte",
+      "whyStrategic": "Potential tuition-free construction training with mentoring and professional development",
+      "suggestedFirstAsk": "Confirm whether the Charlotte academy is actively enrolling and when the next cohort begins",
+      "referralPathway": "Eligibility, enrollment contact, location, class schedule, credentials and employer connection",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Agape Acres",
+      "whyStrategic": "Equine-assisted mentoring and life-skills work aligns strongly with FARM127's relational farm vision",
+      "suggestedFirstAsk": "Confirm whether participants age 18 or older can be served and explore a pilot partnership",
+      "referralPathway": "Age fit, goals, consent, mentor boundaries, scheduling, cost and progress communication",
+      "priority": "Medium",
+      "status": "Not started",
+      "owner": "",
+      "notes": ""
+    },
+    {
+      "organization": "Hearts & Hands Food Pantry",
+      "whyStrategic": "Low-barrier food, hygiene, baby and pet assistance with pickup and limited delivery",
+      "suggestedFirstAsk": "Clarify referral scheduling and whether FARM127 can assist with appointment coordination",
+      "referralPathway": "Appointment, ID/residence documents, delivery criteria, no-show rules and frequency",
+      "priority": "Medium",
       "status": "Not started",
       "owner": "",
       "notes": ""
