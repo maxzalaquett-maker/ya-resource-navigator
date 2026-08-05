@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4A3428">
+  <meta name="description" content="A searchable directory of Charlotte-area resources for young adults, including foster-care-specific programs.">
+  <title>FARM127 Resource Navigator</title>
+  <link rel="icon" href="/assets/icon-192.png" type="image/png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/config.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="#directory" aria-label="FARM127 resource navigator home">
+        <img src="/assets/farm127-logo.png" alt="FARM127" width="88" height="71">
+        <span>
+          <strong>Resource Navigator</strong>
+          <small>Charlotte young adult support directory</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <button class="button button-quiet" id="share-button" type="button" title="Copy a link to the current view">
+          <span aria-hidden="true">↗</span> Share
+        </button>
+        <button class="button button-quiet" id="print-button" type="button">
+          <span aria-hidden="true">⎙</span> Print
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="view-nav" aria-label="Resource navigator sections">
+    <div class="shell nav-scroll">
+      <button class="nav-tab is-active" data-view="directory" type="button">Directory</button>
+      <button class="nav-tab" data-view="urgent" type="button">Urgent help</button>
+      <button class="nav-tab" data-view="foster" type="button">Foster care guide</button>
+      <button class="nav-tab" data-view="needs" type="button">Needs map</button>
+      <button class="nav-tab" data-view="partners" type="button" id="partners-nav" hidden>Partner planner</button>
+      <button class="nav-tab" data-view="about" type="button">About</button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="view is-active" id="view-directory" data-view-panel="directory">
+      <div class="hero hero-directory">
+        <div class="shell hero-grid">
+          <div>
+            <p class="eyebrow">A safe place to start</p>
+            <h1>Find the next practical resource.</h1>
+            <p class="hero-copy">Search verified Charlotte-area, North Carolina and national programs that may help with housing, food, work, education, health, transportation, legal needs and foster-care transitions.</p>
+          </div>
+          <aside class="hero-note" aria-label="Important referral guidance">
+            <strong>A referral is not a guarantee.</strong>
+            <p>Confirm eligibility, capacity, documents and the next intake step directly with the provider.</p>
+          </aside>
+        </div>
+      </div>
+
+      <div class="shell directory-layout">
+        <aside class="filter-panel" aria-label="Directory filters">
+          <div class="filter-heading">
+            <h2>Filter resources</h2>
+            <button class="text-button" id="clear-filters" type="button">Clear</button>
+          </div>
+
+          <label class="field">
+            <span>Search</span>
+            <input id="search-input" type="search" placeholder="Housing, GED, Medicaid…" autocomplete="off">
+          </label>
+
+          <label class="field">
+            <span>Category</span>
+            <select id="category-filter">
+              <option value="all">All categories</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Foster-care relevance</span>
+            <select id="foster-filter">
+              <option value="all">All resources</option>
+              <option value="yes">Foster-care specific</option>
+              <option value="partial">Youth-focused / partially specific</option>
+              <option value="no">General community resource</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Referral priority</span>
+            <select id="priority-filter">
+              <option value="all">All priorities</option>
+              <option value="Core">Core</option>
+              <option value="Specialized">Specialized</option>
+              <option value="Backup">Backup</option>
+              <option value="Verify">Needs verification</option>
+            </select>
+          </label>
+
+          <label class="check-field">
+            <input id="saved-filter" type="checkbox">
+            <span>Show saved resources only</span>
+          </label>
+
+          <div class="filter-tip">
+            <strong>Warm handoff</strong>
+            <p>Call with the young adult when possible and record the staff member, required documents and next deadline.</p>
+          </div>
+        </aside>
+
+        <div class="directory-main">
+          <section class="stats-grid" aria-label="Directory summary">
+            <article class="stat-card"><span id="stat-total">—</span><small>resources</small></article>
+            <article class="stat-card"><span id="stat-foster">—</span><small>foster-specific</small></article>
+            <article class="stat-card"><span id="stat-core">—</span><small>core referrals</small></article>
+            <article class="stat-card"><span id="stat-verify">—</span><small>need verification</small></article>
+          </section>
+
+          <div class="results-toolbar">
+            <div>
+              <p id="result-count" class="result-count" aria-live="polite">Loading resources…</p>
+              <div id="active-filters" class="active-filters" aria-label="Active filters"></div>
+            </div>
+            <label class="sort-field">
+              <span>Sort</span>
+              <select id="sort-select">
+                <option value="recommended">Recommended</option>
+                <option value="name">Name A–Z</option>
+                <option value="category">Category</option>
+                <option value="verified">Recently verified</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="resource-grid" class="resource-grid" aria-live="polite"></div>
+          <div class="pagination" id="pagination" aria-label="Directory pages"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-urgent" data-view-panel="urgent" hidden>
+      <div class="page-heading shell narrow">
+        <p class="eyebrow">Urgent triage</p>
+        <h1>Where to start when the need cannot wait</h1>
+        <p>Use the most urgent safe action first. Routine referral processes should not replace 911 during immediate danger.</p>
+      </div>
+      <div class="shell narrow">
+        <div class="emergency-banner">
+          <strong>Immediate danger, overdose, violence or serious injury?</strong>
+          <a class="button button-danger" href="tel:911">Call 911</a>
+        </div>
+        <div id="triage-grid" class="triage-grid"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-foster" data-view-panel="foster" hidden>
+      <div class="page-heading shell narrow">
+        <p class="eyebrow">Time-sensitive eligibility</p>
+        <h1>Foster-care-specific programs</h1>
+        <p>Screen these programs early. Several benefits have hard age, custody-status or enrollment deadlines.</p>
+      </div>
+      <div class="shell wide-table-wrap">
+        <div id="foster-table" class="responsive-table"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-needs" data-view-panel="needs" hidden>
+      <div class="page-heading shell narrow">
+        <p class="eyebrow">Support-plan guide</p>
+        <h1>Match the need to a referral path</h1>
+        <p>Start with one primary provider, choose a backup and define the next concrete step.</p>
+      </div>
+      <div class="shell">
+        <div id="needs-grid" class="needs-grid"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-partners" data-view-panel="partners" hidden>
+      <div class="page-heading shell narrow">
+        <p class="eyebrow">FARM127 team workspace</p>
+        <h1>Build dependable referral partnerships</h1>
+        <p>This optional planner saves status, owner and notes in the current browser only. It is not a shared database.</p>
+      </div>
+      <div class="shell wide-table-wrap">
+        <div class="local-data-warning">Changes are stored only on this device and browser.</div>
+        <div id="partners-table" class="responsive-table"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-about" data-view-panel="about" hidden>
+      <div class="page-heading shell narrow">
+        <p class="eyebrow">About this directory</p>
+        <h1>A reliable operating baseline—not a promise of availability</h1>
+      </div>
+      <div class="shell narrow about-grid">
+        <article class="content-card">
+          <h2>What is included</h2>
+          <p>Government agencies, public institutions, established health systems and established nonprofit providers with a defined service or intake process.</p>
+        </article>
+        <article class="content-card">
+          <h2>What is excluded</h2>
+          <p>Unverified informal aid, crowd-sourced listings without a primary source and organizations without a clear way to request service.</p>
+        </article>
+        <article class="content-card">
+          <h2>Update rule</h2>
+          <p>Recheck housing waitlists, shelter beds, emergency funding, workforce cohorts, treatment capacity and pilot programs before every referral.</p>
+        </article>
+        <article class="content-card">
+          <h2>Source file</h2>
+          <p>Download the researched workbook for the complete operating notes and editable referral-tracking columns.</p>
+          <a class="button button-primary" href="/source/FARM127_Charlotte_Young_Adult_Resource_Directory.xlsx" download>Download spreadsheet</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell error-panel" id="load-error" hidden>
+      <h1>The resource data could not be loaded.</h1>
+      <p>Confirm that <code>data/app-data.json</code> is present, then refresh the page.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>FARM127 Resource Navigator</strong>
+        <p>Bridging the gap between foster care and independent adulthood.</p>
+      </div>
+      <div>
+        <p id="verified-footer">Resource information should be verified before referral.</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="resource-dialog" class="resource-dialog">
+    <div class="dialog-shell">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close resource details">×</button>
+      <div id="dialog-content"></div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
