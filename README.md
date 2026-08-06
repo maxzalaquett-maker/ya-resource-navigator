@@ -120,3 +120,7 @@ This app is a referral directory, not a real-time availability system. Shelter b
 Reviewed August 5, 2026. Twelve relevant organizations or distinct programs were added; duplicates were merged or enriched. See `DOCUMENT_REVIEW.md` for every disposition.
 
 Source: https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing
+
+## Consolidated support areas
+
+The app and workbook now use one semicolon-separated **Support areas** field. It replaces the former **Primary category** and **Support focus tags** fields, reducing duplicate classifications and keeping the app and spreadsheet aligned.

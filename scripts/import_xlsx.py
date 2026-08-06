@@ -28,7 +28,7 @@ NS_PACKAGE_REL = "http://schemas.openxmlformats.org/package/2006/relationships"
 
 RESOURCE_KEYS = {
     "ID": "id",
-    "Primary category": "category",
+    "Support areas": "supportAreas",
     "Resource / program": "name",
     "Foster-care specific?": "fosterSpecific",
     "Priority": "priority",
@@ -45,7 +45,6 @@ RESOURCE_KEYS = {
     "FARM127 notes": "notes",
     "Area": "area",
     "Area group": "areaGroup",
-    "Support focus tags": "focusTags",
     "Radius / service-area note": "radiusNote",
 }
 
@@ -224,7 +223,7 @@ def main() -> None:
             "title": "FARM127 Charlotte-Area Young Adult Resource Navigator",
             "verifiedDate": verified_date,
             "resourceCount": len(resources),
-            "description": "A researched working directory of reputable resources in Charlotte, surrounding communities within roughly 30 miles, and essential statewide or national fallback programs.",
+            "description": "A researched working directory using one consolidated Support areas field for Charlotte, nearby communities, and statewide or national fallback programs.",
             "radiusDefinition": "Local results are grouped by service location within roughly 30 road miles of Uptown Charlotte. This is a practical service-area screen, not a precise geospatial guarantee.",
         },
         "resources": resources,

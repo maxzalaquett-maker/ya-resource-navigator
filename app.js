@@ -7,9 +7,8 @@
     data: null,
     view: 'directory',
     query: '',
-    category: 'all',
+    support: 'all',
     area: 'all',
-    focus: 'all',
     foster: 'all',
     priority: 'all',
     savedOnly: false,
@@ -34,9 +33,8 @@
       const response = await fetch('data/app-data.json', { cache: 'no-cache' });
       if (!response.ok) throw new Error(`Resource data returned ${response.status}`);
       state.data = await response.json();
-      populateCategoryFilter();
+      populateSupportFilter();
       populateAreaFilter();
-      populateFocusFilter();
       renderAllStaticViews();
       renderStats();
       setView(state.view, false);
@@ -51,9 +49,8 @@
 
   function cacheElements() {
     els.search = document.getElementById('search-input');
-    els.category = document.getElementById('category-filter');
+    els.support = document.getElementById('support-filter');
     els.area = document.getElementById('area-filter');
-    els.focus = document.getElementById('focus-filter');
     els.foster = document.getElementById('foster-filter');
     els.priority = document.getElementById('priority-filter');
     els.savedOnly = document.getElementById('saved-filter');
@@ -86,9 +83,8 @@
       renderDirectory();
     }, 130));
 
-    els.category.addEventListener('change', () => updateFilter('category', els.category.value));
+    els.support.addEventListener('change', () => updateFilter('support', els.support.value));
     els.area.addEventListener('change', () => updateFilter('area', els.area.value));
-    els.focus.addEventListener('change', () => updateFilter('focus', els.focus.value));
     els.foster.addEventListener('change', () => updateFilter('foster', els.foster.value));
     els.priority.addEventListener('change', () => updateFilter('priority', els.priority.value));
     els.savedOnly.addEventListener('change', () => updateFilter('savedOnly', els.savedOnly.checked));
@@ -128,9 +124,8 @@
     const requestedView = window.location.hash.replace('#', '');
     state.view = validViews().includes(requestedView) ? requestedView : 'directory';
     state.query = params.get('q') || '';
-    state.category = params.get('category') || 'all';
+    state.support = params.get('support') || params.get('focus') || params.get('category') || 'all';
     state.area = params.get('area') || 'all';
-    state.focus = params.get('focus') || 'all';
     state.foster = params.get('foster') || 'all';
     state.priority = params.get('priority') || 'all';
     state.savedOnly = params.get('saved') === '1';
@@ -142,9 +137,8 @@
   function syncControls() {
     if (!els.search) return;
     els.search.value = state.query;
-    els.category.value = state.category;
+    els.support.value = state.support;
     els.area.value = state.area;
-    els.focus.value = state.focus;
     els.foster.value = state.foster;
     els.priority.value = state.priority;
     els.savedOnly.checked = state.savedOnly;
@@ -185,9 +179,8 @@
 
   function clearFilters() {
     state.query = '';
-    state.category = 'all';
+    state.support = 'all';
     state.area = 'all';
-    state.focus = 'all';
     state.foster = 'all';
     state.priority = 'all';
     state.savedOnly = false;
@@ -198,16 +191,16 @@
     els.search.focus();
   }
 
-  function populateCategoryFilter() {
-    const categories = [...new Set(state.data.resources.map((resource) => resource.category))]
+  function populateSupportFilter() {
+    const supportAreas = [...new Set(state.data.resources.flatMap((resource) => tagList(resource.supportAreas)))]
       .filter(Boolean)
       .sort((a, b) => a.localeCompare(b));
 
-    for (const category of categories) {
+    for (const supportArea of supportAreas) {
       const option = document.createElement('option');
-      option.value = category;
-      option.textContent = category;
-      els.category.appendChild(option);
+      option.value = supportArea;
+      option.textContent = supportArea;
+      els.support.appendChild(option);
     }
     syncControls();
   }
@@ -226,26 +219,13 @@
     syncControls();
   }
 
-  function populateFocusFilter() {
-    const focuses = [...new Set(state.data.resources.flatMap((resource) => tagList(resource.focusTags)))]
-      .filter(Boolean)
-      .sort((a, b) => a.localeCompare(b));
-    for (const focus of focuses) {
-      const option = document.createElement('option');
-      option.value = focus;
-      option.textContent = focus;
-      els.focus.appendChild(option);
-    }
-    syncControls();
-  }
-
   function renderStats() {
     const resources = state.data.resources;
     setText('stat-total', resources.length);
     setText('stat-local', resources.filter((item) => item.areaGroup !== 'Statewide / national').length);
     setText('stat-foster', resources.filter((item) => item.fosterSpecific === 'Yes').length);
-    setText('stat-mentor', resources.filter((item) => tagList(item.focusTags).includes('Mentorship')).length);
-    setText('stat-soft', resources.filter((item) => tagList(item.focusTags).includes('Soft skills / life skills')).length);
+    setText('stat-mentor', resources.filter((item) => tagList(item.supportAreas).includes('Mentorship')).length);
+    setText('stat-soft', resources.filter((item) => tagList(item.supportAreas).includes('Soft skills / life skills')).length);
     setText('stat-verify', resources.filter((item) => item.priority === 'Verify').length);
   }
 
@@ -280,9 +260,8 @@
     const priorityRank = { Core: 1, Specialized: 2, Backup: 3, Verify: 4 };
 
     const filtered = state.data.resources.filter((resource) => {
-      if (state.category !== 'all' && resource.category !== state.category) return false;
+      if (state.support !== 'all' && !tagList(resource.supportAreas).includes(state.support)) return false;
       if (state.area !== 'all' && resource.areaGroup !== state.area) return false;
-      if (state.focus !== 'all' && !tagList(resource.focusTags).includes(state.focus)) return false;
       if (state.priority !== 'all' && resource.priority !== state.priority) return false;
       if (state.savedOnly && !state.saved.has(String(resource.id))) return false;
 
@@ -295,10 +274,10 @@
 
       if (query) {
         const haystack = normalize([
-          resource.name, resource.category, resource.referralTrigger, resource.eligibility,
+          resource.name, resource.supportAreas, resource.referralTrigger, resource.eligibility,
           resource.provides, resource.access, resource.location, resource.phone,
           resource.caveat, resource.fosterSpecific, resource.priority, resource.area,
-          resource.areaGroup, resource.focusTags, resource.radiusNote
+          resource.areaGroup, resource.radiusNote
         ].join(' '));
         if (!haystack.includes(query)) return false;
       }
@@ -308,7 +287,7 @@
 
     return filtered.sort((a, b) => {
       if (state.sort === 'name') return a.name.localeCompare(b.name);
-      if (state.sort === 'category') return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+      if (state.sort === 'support') return firstSupportArea(a).localeCompare(firstSupportArea(b)) || a.name.localeCompare(b.name);
       if (state.sort === 'verified') return String(b.lastVerified).localeCompare(String(a.lastVerified)) || a.name.localeCompare(b.name);
 
       const priorityDiff = (priorityRank[a.priority] || 9) - (priorityRank[b.priority] || 9);
@@ -323,10 +302,13 @@
     const phone = firstPhone(resource.phone);
     const source = safeUrl(resource.sourceUrl);
 
+    const areas = tagList(resource.supportAreas);
+    const primaryArea = areas[0] || 'Community resource';
+
     return `
       <article class="resource-card" data-resource-id="${escapeHtml(resource.id)}">
         <div class="card-topline">
-          <span class="category-label">${escapeHtml(resource.category)}</span>
+          <span class="category-label">${escapeHtml(primaryArea)}</span>
           <button class="icon-button ${saved ? 'is-saved' : ''}" type="button" data-action="save" aria-label="${saved ? 'Remove from saved resources' : 'Save resource'}" title="${saved ? 'Remove saved resource' : 'Save resource'}">${saved ? '★' : '☆'}</button>
         </div>
         <div class="tag-row">
@@ -334,7 +316,7 @@
           ${fosterTag(resource.fosterSpecific)}
           ${localTag(resource.areaGroup)}
         </div>
-        ${focusTagsHtml(resource.focusTags, 3)}
+        ${supportAreasHtml(resource.supportAreas, 4, true)}
         <h2>${escapeHtml(resource.name)}</h2>
         <p class="trigger">${escapeHtml(resource.referralTrigger)}</p>
         <div class="meta-list">
@@ -373,12 +355,17 @@
     return String(value || '').split(';').map((tag) => tag.trim()).filter(Boolean);
   }
 
-  function focusTagsHtml(value, limit = 3) {
-    const tags = tagList(value);
-    if (!tags.length) return '';
-    const visible = tags.slice(0, limit);
-    const remainder = tags.length - visible.length;
-    return `<div class="focus-tag-row">${visible.map((tag) => `<span class="focus-tag">${escapeHtml(tag)}</span>`).join('')}${remainder > 0 ? `<span class="focus-tag focus-tag-more">+${remainder}</span>` : ''}</div>`;
+  function supportAreasHtml(value, limit = 4, skipFirst = false) {
+    const areas = tagList(value);
+    const displayAreas = skipFirst ? areas.slice(1) : areas;
+    if (!displayAreas.length) return '';
+    const visible = displayAreas.slice(0, limit);
+    const remainder = displayAreas.length - visible.length;
+    return `<div class="focus-tag-row">${visible.map((area) => `<span class="focus-tag">${escapeHtml(area)}</span>`).join('')}${remainder > 0 ? `<span class="focus-tag focus-tag-more">+${remainder}</span>` : ''}</div>`;
+  }
+
+  function firstSupportArea(resource) {
+    return tagList(resource.supportAreas)[0] || '';
   }
 
   function emptyStateHtml() {
@@ -422,10 +409,10 @@
 
     els.dialogContent.innerHTML = `
       <div class="dialog-title">
-        <p class="eyebrow">${escapeHtml(resource.category)}</p>
+        <p class="eyebrow">${escapeHtml(firstSupportArea(resource) || 'Community resource')}</p>
         <h2>${escapeHtml(resource.name)}</h2>
         <div class="tag-row">${priorityTag(resource.priority)}${fosterTag(resource.fosterSpecific)}${localTag(resource.areaGroup)}</div>
-        ${focusTagsHtml(resource.focusTags, 8)}
+        ${supportAreasHtml(resource.supportAreas, 8)}
       </div>
       <div class="detail-grid">
         ${detailBlock('Best for', resource.referralTrigger, true)}
@@ -435,7 +422,7 @@
         ${detailBlock('Phone', resource.phone)}
         ${detailBlock('Area', resource.area)}
         ${detailBlock('Location / service area', resource.location)}
-        ${detailBlock('Support focus', tagList(resource.focusTags).join(' · '), true)}
+        ${detailBlock('Support areas', tagList(resource.supportAreas).join(' · '), true)}
         ${detailBlock('Local-area note', resource.radiusNote, true)}
         ${detailBlock('Capacity / verification caveat', resource.caveat, true)}
         ${detailBlock('Last verified', formatDate(resource.lastVerified))}
@@ -480,7 +467,7 @@
       resource.phone ? `Phone: ${resource.phone}` : '',
       resource.area ? `Area: ${resource.area}` : '',
       resource.location ? `Location: ${resource.location}` : '',
-      resource.focusTags ? `Support focus: ${tagList(resource.focusTags).join(', ')}` : '',
+      resource.supportAreas ? `Support areas: ${tagList(resource.supportAreas).join(', ')}` : '',
       `Important: ${resource.caveat}`,
       resource.sourceUrl ? `Official source: ${resource.sourceUrl}` : '',
       `Last verified: ${formatDate(resource.lastVerified)}`
@@ -490,9 +477,8 @@
   function renderActiveFilters() {
     const chips = [];
     if (state.query) chips.push(['query', `Search: ${state.query}`]);
-    if (state.category !== 'all') chips.push(['category', state.category]);
+    if (state.support !== 'all') chips.push(['support', state.support]);
     if (state.area !== 'all') chips.push(['area', state.area === 'Surrounding communities' ? 'Nearby communities (~30 miles)' : state.area]);
-    if (state.focus !== 'all') chips.push(['focus', state.focus]);
     if (state.foster !== 'all') chips.push(['foster', fosterFilterLabel(state.foster)]);
     if (state.priority !== 'all') chips.push(['priority', state.priority]);
     if (state.savedOnly) chips.push(['savedOnly', 'Saved only']);
@@ -642,9 +628,8 @@
   function updateUrlState() {
     const params = new URLSearchParams();
     if (state.query) params.set('q', state.query);
-    if (state.category !== 'all') params.set('category', state.category);
+    if (state.support !== 'all') params.set('support', state.support);
     if (state.area !== 'all') params.set('area', state.area);
-    if (state.focus !== 'all') params.set('focus', state.focus);
     if (state.foster !== 'all') params.set('foster', state.foster);
     if (state.priority !== 'all') params.set('priority', state.priority);
     if (state.savedOnly) params.set('saved', '1');

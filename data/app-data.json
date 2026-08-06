@@ -596,8 +596,8 @@
   ],
   "resources": [
     {
-      "id": "1",
-      "category": "First call / navigation",
+      "id": 1,
+      "supportAreas": "Navigation / case management; Housing / homelessness; Food / essentials; Health care; Transportation; Legal / identity / safety; Community / belonging",
       "name": "NC 211",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -614,12 +614,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Food / essentials; Health care; Legal / safety; Community / belonging; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "2",
-      "category": "First call / navigation",
+      "id": 2,
+      "supportAreas": "Navigation / case management; Financial capability; Community / belonging",
       "name": "Mecklenburg County Community Resource Centers",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -636,12 +635,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "3",
-      "category": "First call / navigation",
+      "id": 3,
+      "supportAreas": "Navigation / case management; Community / belonging",
       "name": "City of Charlotte Community Resources Directory",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -658,12 +656,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "4",
-      "category": "First call / navigation",
+      "id": 4,
+      "supportAreas": "Navigation / case management; Housing / homelessness; Community / belonging",
       "name": "Mecklenburg Coordinated Entry",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -680,12 +677,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "5",
-      "category": "First call / navigation",
+      "id": 5,
+      "supportAreas": "Navigation / case management; Health care; Mental health / recovery",
       "name": "988 Suicide & Crisis Lifeline",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -702,12 +698,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Health care; Mental health / recovery",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "6",
-      "category": "First call / navigation",
+      "id": 6,
+      "supportAreas": "Navigation / case management; Health care; Mental health / recovery; Education; Legal / identity / safety; Community / belonging",
       "name": "Mecklenburg Mobile Crisis (Santé Group)",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -724,12 +719,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Health care; Mental health / recovery; Legal / safety; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "7",
-      "category": "First call / navigation",
+      "id": 7,
+      "supportAreas": "Navigation / case management; Health care; Mental health / recovery; Disability support",
       "name": "Alliance Health Access and Information Line",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -746,12 +740,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Mental health / recovery; Disability support",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "8",
-      "category": "First call / navigation",
+      "id": 8,
+      "supportAreas": "Navigation / case management; Health care; Mental health / recovery; Legal / identity / safety",
       "name": "911 Emergency Services",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -768,12 +761,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Mental health / recovery; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "9",
-      "category": "Foster care-specific",
+      "id": 9,
+      "supportAreas": "Foster care; Housing / homelessness; Education; Mentorship; Soft skills / life skills; Financial capability; Transportation; Community / belonging",
       "name": "Mecklenburg County LINKS",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -790,12 +782,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Education; Housing; Financial capability; Community / belonging; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "10",
-      "category": "Foster care-specific",
+      "id": 10,
+      "supportAreas": "Foster care; Soft skills / life skills; Transportation; Community / belonging",
       "name": "Mecklenburg Phoenix Project",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -812,12 +803,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Community / belonging; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "11",
-      "category": "Foster care-specific",
+      "id": 11,
+      "supportAreas": "Foster care; Financial capability; Community / belonging",
       "name": "NC Foster Care 18 to 21 / Voluntary Placement Agreement",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -834,12 +824,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Financial capability; Community / belonging",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "12",
-      "category": "Foster care-specific",
+      "id": 12,
+      "supportAreas": "Foster care; Housing / homelessness; Food / essentials; Health care; Financial capability; Transportation; Community / belonging",
       "name": "Mecklenburg GEAR Up Supplemental Income Pilot",
       "fosterSpecific": "Yes",
       "priority": "Verify",
@@ -856,12 +845,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Food / essentials; Health care; Financial capability; Community / belonging; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "13",
-      "category": "Foster care-specific",
+      "id": 13,
+      "supportAreas": "Foster care; Health care; Education; Community / belonging",
       "name": "NC Medicaid for Former Foster Care Youth",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -878,12 +866,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Education; Health care; Community / belonging",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "14",
-      "category": "Foster care-specific",
+      "id": 14,
+      "supportAreas": "Foster care; Housing / homelessness; Health care; Financial capability; Community / belonging",
       "name": "NC Medicaid Children and Families Specialty Plan",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -900,12 +887,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Housing; Health care; Financial capability; Community / belonging",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "15",
-      "category": "Foster care-specific",
+      "id": 15,
+      "supportAreas": "Foster care; Health care; Education; Community / belonging",
       "name": "NC Reach",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -922,12 +908,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Education; Health care; Community / belonging",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "16",
-      "category": "Foster care-specific",
+      "id": 16,
+      "supportAreas": "Foster care; Housing / homelessness; Education; Financial capability; Community / belonging",
       "name": "Education and Training Voucher (ETV)",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -944,12 +929,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Education; Housing; Financial capability; Community / belonging",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "17",
-      "category": "Foster care-specific",
+      "id": 17,
+      "supportAreas": "Foster care; Housing / homelessness; Health care; Employment / workforce; Education; Mentorship; Soft skills / life skills; Community / belonging",
       "name": "Youth Villages LifeSet",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -966,12 +950,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Housing; Health care; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "18",
-      "category": "Foster care-specific",
+      "id": 18,
+      "supportAreas": "Foster care; Housing / homelessness; Employment / workforce; Education; Mentorship; Soft skills / life skills; Community / belonging",
       "name": "The Relatives — On Ramp Resource Center",
       "fosterSpecific": "Partial",
       "priority": "Core",
@@ -988,12 +971,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Housing; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "19",
-      "category": "Foster care-specific",
+      "id": 19,
+      "supportAreas": "Foster care; Housing / homelessness; Health care; Soft skills / life skills; Legal / identity / safety; Community / belonging",
       "name": "The Relatives — Young Adult Housing",
       "fosterSpecific": "Partial",
       "priority": "Core",
@@ -1010,12 +992,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Housing; Health care; Legal / safety; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "20",
-      "category": "Foster care-specific",
+      "id": 20,
+      "supportAreas": "Foster care; Mentorship; Soft skills / life skills; Legal / identity / safety; Community / belonging",
       "name": "Charlotte Angels — Dare to Dream",
       "fosterSpecific": "Yes",
       "priority": "Specialized",
@@ -1032,12 +1013,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Legal / safety; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "21",
-      "category": "Foster care-specific",
+      "id": 21,
+      "supportAreas": "Foster care; Housing / homelessness; Mentorship; Soft skills / life skills; Transportation; Community / belonging",
       "name": "SaySo / Strong Able Youth Speaking Out",
       "fosterSpecific": "Yes",
       "priority": "Specialized",
@@ -1054,12 +1034,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Mentorship; Soft skills / life skills; Housing; Community / belonging; Transportation",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "22",
-      "category": "Foster care-specific",
+      "id": 22,
+      "supportAreas": "Foster care; Housing / homelessness; Financial capability; Community / belonging",
       "name": "HUD Foster Youth to Independence (FYI) Voucher",
       "fosterSpecific": "Yes",
       "priority": "Verify",
@@ -1076,12 +1055,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "23",
-      "category": "Foster care-specific",
+      "id": 23,
+      "supportAreas": "Foster care; Housing / homelessness; Legal / identity / safety; Community / belonging",
       "name": "I Am Here Vital Document Legal Hotline",
       "fosterSpecific": "Partial",
       "priority": "Specialized",
@@ -1098,12 +1076,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Housing; Legal / safety; Community / belonging",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "24",
-      "category": "Foster care-specific",
+      "id": 24,
+      "supportAreas": "Foster care; Housing / homelessness; Mental health / recovery; Transportation; Community / belonging",
       "name": "National Runaway Safeline",
       "fosterSpecific": "Partial",
       "priority": "Specialized",
@@ -1120,12 +1097,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Housing; Mental health / recovery; Community / belonging; Transportation",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "25",
-      "category": "Housing / homelessness",
+      "id": 25,
+      "supportAreas": "Housing / homelessness; Food / essentials; Health care; Financial capability; Transportation",
       "name": "Roof Above — Day Services Center",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1142,12 +1118,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Food / essentials; Health care; Financial capability; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "26",
-      "category": "Housing / homelessness",
+      "id": 26,
+      "supportAreas": "Housing / homelessness; Food / essentials; Employment / workforce",
       "name": "Roof Above — Men's Emergency Shelter",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1164,12 +1139,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Employment / workforce; Housing; Food / essentials",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "27",
-      "category": "Housing / homelessness",
+      "id": 27,
+      "supportAreas": "Housing / homelessness; Food / essentials; Legal / identity / safety",
       "name": "The Salvation Army Center of Hope",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1186,12 +1160,11 @@
       "notes": "Reviewed against FARM127 Resource Database 2024 and current official provider information.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Food / essentials; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "28",
-      "category": "Housing / homelessness",
+      "id": 28,
+      "supportAreas": "Housing / homelessness; Mental health / recovery; Soft skills / life skills; Financial capability",
       "name": "Crisis Assistance Ministry — Emergency Financial Assistance",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1208,12 +1181,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Housing; Mental health / recovery; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "29",
-      "category": "Food / essentials",
+      "id": 29,
+      "supportAreas": "Food / essentials; Housing / homelessness; Mental health / recovery; Financial capability",
       "name": "Crisis Assistance Ministry — Free Store",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1230,12 +1202,11 @@
       "notes": "Reviewed against FARM127 Resource Database 2024 and current official provider information.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Food / essentials; Mental health / recovery; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "30",
-      "category": "Housing / homelessness",
+      "id": 30,
+      "supportAreas": "Housing / homelessness; Financial capability",
       "name": "INLIVIAN — Housing Choice Voucher and Public Housing",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1252,12 +1223,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "31",
-      "category": "Housing / homelessness",
+      "id": 31,
+      "supportAreas": "Housing / homelessness; Employment / workforce; Soft skills / life skills; Financial capability; Transportation",
       "name": "Charlotte Family Housing",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1274,12 +1244,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Financial capability; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "32",
-      "category": "Housing / homelessness",
+      "id": 32,
+      "supportAreas": "Housing / homelessness; Soft skills / life skills; Transportation",
       "name": "YWCA Central Carolinas — Transitional Housing",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1296,12 +1265,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Housing; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "33",
-      "category": "Housing / homelessness",
+      "id": 33,
+      "supportAreas": "Housing / homelessness; Food / essentials; Employment / workforce; Education; Financial capability",
       "name": "Time Out Youth — Housing & Supportive Services",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1318,12 +1286,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Employment / workforce; Education; Housing; Food / essentials; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "34",
-      "category": "Housing / homelessness",
+      "id": 34,
+      "supportAreas": "Housing / homelessness; Health care; Mental health / recovery; Legal / identity / safety",
       "name": "Safe Alliance — Domestic Violence Shelter",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1340,12 +1307,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Health care; Mental health / recovery; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "35",
-      "category": "Housing / homelessness",
+      "id": 35,
+      "supportAreas": "Housing / homelessness; Financial capability; Transportation",
       "name": "Gracious Hands Transitional Housing",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1362,12 +1328,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Financial capability; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "36",
-      "category": "Housing / homelessness",
+      "id": 36,
+      "supportAreas": "Housing / homelessness; Health care; Education; Soft skills / life skills; Legal / identity / safety; Parenting / family; Community / belonging",
       "name": "Crittenton of North Carolina",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1384,12 +1349,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Education; Housing; Health care; Legal / safety; Parenting / family; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "37",
-      "category": "Housing / homelessness",
+      "id": 37,
+      "supportAreas": "Housing / homelessness; Food / essentials; Education; Soft skills / life skills; Parenting / family; Community / belonging",
       "name": "MiraVia College Residence",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1406,12 +1370,11 @@
       "notes": "",
       "area": "Belmont / Gaston",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Education; Housing; Food / essentials; Parenting / family; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "38",
-      "category": "Housing / homelessness",
+      "id": 38,
+      "supportAreas": "Housing / homelessness; Mental health / recovery; Education; Soft skills / life skills; Financial capability; Community / belonging",
       "name": "Community Link",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -1428,12 +1391,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Education; Housing; Mental health / recovery; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "39",
-      "category": "Housing / homelessness",
+      "id": 39,
+      "supportAreas": "Housing / homelessness; Financial capability",
       "name": "Roof Above — Rapid Rehousing & Permanent Supportive Housing",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1450,12 +1412,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "40",
-      "category": "Housing / homelessness",
+      "id": 40,
+      "supportAreas": "Housing / homelessness; Soft skills / life skills; Financial capability",
       "name": "Mecklenburg Targeted Housing Assistance Program (THAP-IN)",
       "fosterSpecific": "No",
       "priority": "Verify",
@@ -1472,12 +1433,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Housing; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "41",
-      "category": "Food / essentials",
+      "id": 41,
+      "supportAreas": "Food / essentials; Financial capability; Community / belonging",
       "name": "Mecklenburg Food and Nutrition Services (SNAP/FNS)",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1494,12 +1454,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Food / essentials; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "42",
-      "category": "Food / essentials",
+      "id": 42,
+      "supportAreas": "Food / essentials",
       "name": "Nourish Up — Food Share and Meals",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1516,12 +1475,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Food / essentials",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "43",
-      "category": "Food / essentials",
+      "id": 43,
+      "supportAreas": "Food / essentials; Financial capability",
       "name": "Second Harvest Food Bank of Metrolina",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1538,12 +1496,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Food / essentials; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "44",
-      "category": "Food / essentials",
+      "id": 44,
+      "supportAreas": "Food / essentials; Housing / homelessness; Health care; Education; Financial capability; Parenting / family",
       "name": "Mecklenburg WIC",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1560,12 +1517,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Housing; Food / essentials; Health care; Financial capability; Parenting / family",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "45",
-      "category": "Benefits / financial",
+      "id": 45,
+      "supportAreas": "Benefits / financial assistance; Health care; Financial capability; Community / belonging",
       "name": "Mecklenburg Department of Community Resources — Apply for Benefits",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1582,12 +1538,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "46",
-      "category": "Benefits / financial",
+      "id": 46,
+      "supportAreas": "Benefits / financial assistance; Mental health / recovery; Financial capability",
       "name": "Mecklenburg Energy Assistance (LIEAP/CIP)",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1604,12 +1559,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mental health / recovery; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "47",
-      "category": "Benefits / financial",
+      "id": 47,
+      "supportAreas": "Benefits / financial assistance; Employment / workforce; Financial capability; Community / belonging",
       "name": "Work First Family Assistance (TANF)",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1626,12 +1580,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Employment / workforce; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "48",
-      "category": "Benefits / financial",
+      "id": 48,
+      "supportAreas": "Benefits / financial assistance; Mental health / recovery; Mentorship; Soft skills / life skills; Financial capability",
       "name": "Common Wealth Charlotte",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1648,12 +1601,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Mental health / recovery; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "49",
-      "category": "Parenting / family",
+      "id": 49,
+      "supportAreas": "Parenting / family; Housing / homelessness; Education; Financial capability",
       "name": "Child Care Resources Inc. — Child Care Subsidy Support",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1670,12 +1622,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Housing; Financial capability; Parenting / family",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "50",
-      "category": "Benefits / financial",
+      "id": 50,
+      "supportAreas": "Benefits / financial assistance; Health care; Financial capability; Legal / identity / safety; Disability support",
       "name": "Social Security — SSI / SSDI",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1692,12 +1643,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Health care; Financial capability; Legal / safety; Disability support",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "51",
-      "category": "Health care",
+      "id": 51,
+      "supportAreas": "Health care; Food / essentials; Education",
       "name": "Teen Health Connection",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1714,12 +1664,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Food / essentials; Health care",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "52",
-      "category": "Health care",
+      "id": 52,
+      "supportAreas": "Health care; Financial capability",
       "name": "Care Ring Low-Cost Clinic",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1736,12 +1685,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "53",
-      "category": "Health care",
+      "id": 53,
+      "supportAreas": "Health care; Financial capability; Community / belonging",
       "name": "Charlotte Community Health Clinic",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1758,12 +1706,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "54",
-      "category": "Health care",
+      "id": 54,
+      "supportAreas": "Health care; Mental health / recovery; Financial capability; Community / belonging",
       "name": "C.W. Williams Community Health Center",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1780,12 +1727,11 @@
       "notes": "Reviewed against FARM127 Resource Database 2024 and current official provider information.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Mental health / recovery; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "55",
-      "category": "Health care",
+      "id": 55,
+      "supportAreas": "Health care; Food / essentials; Mental health / recovery; Education; Community / belonging",
       "name": "Camino Health Center",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1802,12 +1748,11 @@
       "notes": "Reviewed against FARM127 Resource Database 2024 and current official provider information.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Food / essentials; Health care; Mental health / recovery; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "56",
-      "category": "Health care",
+      "id": 56,
+      "supportAreas": "Health care; Legal / identity / safety",
       "name": "Mecklenburg Free and Low-Cost Clinic Directory",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -1824,12 +1769,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "57",
-      "category": "Health care",
+      "id": 57,
+      "supportAreas": "Health care; Housing / homelessness; Mental health / recovery; Education; Community / belonging",
       "name": "Mecklenburg Public Health — HIV/STI Testing and Treatment",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1846,12 +1790,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Housing; Health care; Mental health / recovery; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "58",
-      "category": "Health care",
+      "id": 58,
+      "supportAreas": "Health care; Community / belonging",
       "name": "RAO Community Health — HIV/STI Services",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1868,12 +1811,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "59",
-      "category": "Health care",
+      "id": 59,
+      "supportAreas": "Health care; Housing / homelessness; Parenting / family",
       "name": "Planned Parenthood — Charlotte Health Center",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1890,12 +1832,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Health care; Parenting / family",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "60",
-      "category": "Parenting / family",
+      "id": 60,
+      "supportAreas": "Parenting / family; Housing / homelessness; Health care; Education; Financial capability",
       "name": "Care Ring Nurse-Family Partnership",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -1912,12 +1853,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Housing; Health care; Financial capability; Parenting / family",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "61",
-      "category": "Mental health / substance use",
+      "id": 61,
+      "supportAreas": "Mental health / recovery; Housing / homelessness; Health care; Education; Community / belonging",
       "name": "NAMI Charlotte",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -1934,12 +1874,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Housing; Health care; Mental health / recovery; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "62",
-      "category": "Mental health / substance use",
+      "id": 62,
+      "supportAreas": "Mental health / recovery; Health care",
       "name": "Anuvia Prevention & Recovery Center",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1956,12 +1895,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Mental health / recovery",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "63",
-      "category": "Mental health / substance use",
+      "id": 63,
+      "supportAreas": "Mental health / recovery; Health care; Financial capability",
       "name": "McLeod Centers for Wellbeing",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -1978,12 +1916,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Mental health / recovery; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "64",
-      "category": "Specialized / inclusion",
+      "id": 64,
+      "supportAreas": "Housing / homelessness; Mental health / recovery; Mentorship; Community / belonging",
       "name": "Time Out Youth — Counseling and Support",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2000,12 +1937,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Housing; Mental health / recovery; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "65",
-      "category": "Education / employment",
+      "id": 65,
+      "supportAreas": "Employment / workforce; Education; Mentorship; Soft skills / life skills",
       "name": "NCWorks NextGen — Charlotte Works",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2022,12 +1958,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "66",
-      "category": "Education / employment",
+      "id": 66,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills",
       "name": "NCWorks Career Centers — Charlotte Works",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2044,12 +1979,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "67",
-      "category": "Education / employment",
+      "id": 67,
+      "supportAreas": "Health care; Employment / workforce; Education; Soft skills / life skills",
       "name": "Central Piedmont — Finish High School (GED/HiSET)",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2066,12 +2000,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Health care",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "68",
-      "category": "Education / employment",
+      "id": 68,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills; Transportation",
       "name": "Central Piedmont — College and Career Readiness",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2088,12 +2021,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "69",
-      "category": "Education / employment",
+      "id": 69,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills; Financial capability",
       "name": "Goodwill Industries of the Southern Piedmont — Charlotte Career Center",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2110,12 +2042,11 @@
       "notes": "Reviewed against FARM127 Resource Database 2024 and current official provider information.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "70",
-      "category": "Education / employment",
+      "id": 70,
+      "supportAreas": "Housing / homelessness; Health care; Employment / workforce; Education; Soft skills / life skills; Financial capability",
       "name": "Urban League of Central Carolinas",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2132,12 +2063,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Housing; Health care; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "71",
-      "category": "Education / employment",
+      "id": 71,
+      "supportAreas": "Housing / homelessness; Employment / workforce; Education; Mentorship; Soft skills / life skills; Financial capability",
       "name": "Road to Hire",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2154,12 +2084,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Housing; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "72",
-      "category": "Education / employment",
+      "id": 72,
+      "supportAreas": "Housing / homelessness; Employment / workforce; Education; Mentorship; Soft skills / life skills; Financial capability",
       "name": "Year Up United — Charlotte",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2176,12 +2105,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Housing; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "73",
-      "category": "Education / employment",
+      "id": 73,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills; Financial capability",
       "name": "Mecklenburg County — More Than a Job NC",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -2198,12 +2126,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "74",
-      "category": "Education / employment",
+      "id": 74,
+      "supportAreas": "Health care; Mental health / recovery; Employment / workforce; Education; Financial capability; Disability support",
       "name": "NC Employment and Independence for People with Disabilities (Vocational Rehabilitation)",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2220,12 +2147,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Employment / workforce; Education; Health care; Mental health / recovery; Financial capability; Disability support",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "75",
-      "category": "Education / employment",
+      "id": 75,
+      "supportAreas": "Employment / workforce; Education",
       "name": "Charlotte Mecklenburg Library — College & Career Prep",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -2242,12 +2168,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Employment / workforce; Education",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "76",
-      "category": "Education / employment",
+      "id": 76,
+      "supportAreas": "Housing / homelessness; Employment / workforce; Education; Soft skills / life skills; Financial capability",
       "name": "Dress for Success Charlotte",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2264,12 +2189,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Housing; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "77",
-      "category": "Education / employment",
+      "id": 77,
+      "supportAreas": "Housing / homelessness; Food / essentials; Employment / workforce; Education; Transportation; Legal / identity / safety",
       "name": "UNC Charlotte Niner Needs",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2286,12 +2210,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Employment / workforce; Education; Housing; Food / essentials; Legal / safety; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "78",
-      "category": "Transportation",
+      "id": 78,
+      "supportAreas": "Transportation; Housing / homelessness; Soft skills / life skills",
       "name": "CATS Fares and Passes",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2308,12 +2231,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Housing; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "79",
-      "category": "Transportation",
+      "id": 79,
+      "supportAreas": "Transportation; Housing / homelessness; Financial capability; Disability support",
       "name": "CATS Reduced Fare Transit IDs",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2330,12 +2252,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Financial capability; Disability support; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "80",
-      "category": "Transportation",
+      "id": 80,
+      "supportAreas": "Transportation; Health care; Disability support",
       "name": "Mecklenburg Transportation System (MTS)",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2352,12 +2273,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Disability support; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "81",
-      "category": "Legal / identity / safety",
+      "id": 81,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Health care; Financial capability",
       "name": "Charlotte Center for Legal Advocacy",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2374,12 +2294,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Health care; Financial capability; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "82",
-      "category": "Legal / identity / safety",
+      "id": 82,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Health care; Financial capability",
       "name": "Legal Aid of North Carolina",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2396,12 +2315,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Health care; Financial capability; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "83",
-      "category": "Legal / identity / safety",
+      "id": 83,
+      "supportAreas": "Legal / identity / safety; Employment / workforce; Education; Financial capability",
       "name": "Mecklenburg County Office of Vital Records",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2418,12 +2336,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Employment / workforce; Education; Financial capability; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "84",
-      "category": "Legal / identity / safety",
+      "id": 84,
+      "supportAreas": "Legal / identity / safety; Health care; Mental health / recovery; Financial capability",
       "name": "Safe Alliance — Victim Assistance and Sexual Assault Services",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2440,12 +2357,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Mental health / recovery; Financial capability; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "85",
-      "category": "Legal / identity / safety",
+      "id": 85,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Health care; Employment / workforce; Education; Soft skills / life skills; Community / belonging",
       "name": "Mecklenburg County Re-Entry Services",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2462,12 +2378,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Housing; Health care; Legal / safety; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "86",
-      "category": "Legal / identity / safety",
+      "id": 86,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Health care; Employment / workforce; Soft skills / life skills; Transportation; Community / belonging",
       "name": "Center for Community Transitions",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2484,12 +2399,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Health care; Legal / safety; Community / belonging; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "87",
-      "category": "Legal / identity / safety",
+      "id": 87,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Mental health / recovery",
       "name": "National Human Trafficking Hotline",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2506,12 +2420,11 @@
       "notes": "",
       "area": "Statewide / national",
       "areaGroup": "Statewide / national",
-      "focusTags": "Housing; Mental health / recovery; Legal / safety",
       "radiusNote": "Statewide or national fallback resource accessible from the Charlotte area."
     },
     {
-      "id": "88",
-      "category": "Legal / identity / safety",
+      "id": 88,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Health care",
       "name": "Hope for Justice — North Carolina Regional Center",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2528,12 +2441,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Housing; Health care; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "89",
-      "category": "Parenting / family",
+      "id": 89,
+      "supportAreas": "Parenting / family; Housing / homelessness; Education",
       "name": "Smart Start of Mecklenburg County",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -2550,12 +2462,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Education; Housing; Parenting / family",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "90",
-      "category": "Specialized / inclusion",
+      "id": 90,
+      "supportAreas": "Employment / workforce; Soft skills / life skills; Financial capability; Transportation; Disability support; Community / belonging",
       "name": "Disability Rights & Resources",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2572,12 +2483,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Financial capability; Disability support; Community / belonging; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "91",
-      "category": "Mentorship / life skills",
+      "id": 91,
+      "supportAreas": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Financial capability; Community / belonging",
       "name": "Home4Me — LEG Up on LIFE",
       "fosterSpecific": "Yes",
       "priority": "Core",
@@ -2594,12 +2504,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "92",
-      "category": "Mentorship / life skills",
+      "id": 92,
+      "supportAreas": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Community / belonging",
       "name": "Machiah's House",
       "fosterSpecific": "Yes",
       "priority": "Specialized",
@@ -2616,12 +2525,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "93",
-      "category": "Mentorship / life skills",
+      "id": 93,
+      "supportAreas": "Mentorship; Soft skills / life skills; Community / belonging",
       "name": "Congregations for Kids — Mentor Match",
       "fosterSpecific": "Yes",
       "priority": "Specialized",
@@ -2638,12 +2546,11 @@
       "notes": "",
       "area": "Matthews / Mecklenburg-Union",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Mentorship; Soft skills / life skills; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "94",
-      "category": "Education / employment",
+      "id": 94,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills; Financial capability",
       "name": "City of Charlotte — Job & Career Readiness Training",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2660,12 +2567,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "95",
-      "category": "Mentorship / life skills",
+      "id": 95,
+      "supportAreas": "Mentorship; Soft skills / life skills; Education; Community / belonging",
       "name": "Step Up to Leadership",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2682,12 +2588,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Education; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "96",
-      "category": "Education / employment",
+      "id": 96,
+      "supportAreas": "Mentorship; Soft skills / life skills; Financial capability; Entrepreneurship",
       "name": "SCORE Charlotte",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2704,12 +2609,11 @@
       "notes": "",
       "area": "Greater Charlotte region",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Financial capability; Entrepreneurship",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "97",
-      "category": "Education / employment",
+      "id": 97,
+      "supportAreas": "Employment / workforce; Education; Mentorship; Soft skills / life skills; Financial capability",
       "name": "Per Scholas North Carolina",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2726,12 +2630,11 @@
       "notes": "",
       "area": "Charlotte / North Carolina",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "98",
-      "category": "Education / employment",
+      "id": 98,
+      "supportAreas": "Employment / workforce; Education; Mentorship; Soft skills / life skills",
       "name": "Community Culinary School of Charlotte",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2748,12 +2651,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "99",
-      "category": "Education / employment",
+      "id": 99,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills",
       "name": "She Built This City — Adult Workforce Development",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2770,12 +2672,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "100",
-      "category": "Education / employment",
+      "id": 100,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills; Financial capability",
       "name": "Charlotte Area Fund — Workforce Development",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2792,12 +2693,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Financial capability",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "101",
-      "category": "Education / employment",
+      "id": 101,
+      "supportAreas": "Mentorship; Soft skills / life skills; Financial capability; Entrepreneurship",
       "name": "ASPIRE Community Capital",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2814,12 +2714,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Financial capability; Entrepreneurship",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "102",
-      "category": "Education / employment",
+      "id": 102,
+      "supportAreas": "Employment / workforce; Mentorship; Soft skills / life skills; Disability support",
       "name": "Cakeable — Vocational Training",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2836,12 +2735,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Disability support",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "103",
-      "category": "Education / employment",
+      "id": 103,
+      "supportAreas": "Employment / workforce; Mentorship; Soft skills / life skills; Disability support",
       "name": "ZABS Place — Talent-in-Training",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2858,12 +2756,11 @@
       "notes": "",
       "area": "Matthews / Mecklenburg-Union",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Disability support",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "104",
-      "category": "Education / employment",
+      "id": 104,
+      "supportAreas": "Health care; Employment / workforce; Education; Soft skills / life skills; Community / belonging",
       "name": "Project 658",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2880,12 +2777,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Health care; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "105",
-      "category": "Housing / homelessness",
+      "id": 105,
+      "supportAreas": "Housing / homelessness; Employment / workforce; Mentorship; Soft skills / life skills; Financial capability; Community / belonging",
       "name": "The Harvest Center — CLT Passport",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2902,12 +2798,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Housing; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "106",
-      "category": "Mentorship / life skills",
+      "id": 106,
+      "supportAreas": "Mentorship; Soft skills / life skills; Employment / workforce; Community / belonging",
       "name": "BraveWorks",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2924,12 +2819,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "107",
-      "category": "Legal / identity / safety",
+      "id": 107,
+      "supportAreas": "Legal / identity / safety; Employment / workforce; Mentorship; Soft skills / life skills; Community / belonging",
       "name": "Changed Choices",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -2946,12 +2840,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Legal / safety; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "108",
-      "category": "Mental health / substance use",
+      "id": 108,
+      "supportAreas": "Mental health / recovery; Housing / homelessness; Employment / workforce; Soft skills / life skills; Financial capability; Community / belonging",
       "name": "Charlotte Rescue Mission — Recovery & Life Skills",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2968,12 +2861,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Mental health / recovery; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "109",
-      "category": "Mental health / substance use",
+      "id": 109,
+      "supportAreas": "Mental health / recovery; Housing / homelessness; Employment / workforce; Soft skills / life skills; Community / belonging",
       "name": "Hope Haven",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -2990,12 +2882,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Mental health / recovery; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "110",
-      "category": "First call / navigation",
+      "id": 110,
+      "supportAreas": "Navigation / case management; Food / essentials; Soft skills / life skills; Financial capability; Community / belonging",
       "name": "Ada Jenkins Center",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -3012,12 +2903,11 @@
       "notes": "",
       "area": "Davidson / North Mecklenburg",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Food / essentials; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "111",
-      "category": "First call / navigation",
+      "id": 111,
+      "supportAreas": "Navigation / case management; Housing / homelessness; Food / essentials; Soft skills / life skills; Financial capability; Transportation; Parenting / family",
       "name": "Matthews HELP Center",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3034,12 +2924,11 @@
       "notes": "",
       "area": "Matthews / Mecklenburg-Union",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Housing; Food / essentials; Financial capability; Parenting / family; Transportation",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "112",
-      "category": "First call / navigation",
+      "id": 112,
+      "supportAreas": "Navigation / case management; Food / essentials; Mentorship; Soft skills / life skills; Financial capability; Community / belonging",
       "name": "Common Heart",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3056,12 +2945,11 @@
       "notes": "",
       "area": "Indian Trail / Union County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Mentorship; Soft skills / life skills; Food / essentials; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "113",
-      "category": "Housing / homelessness",
+      "id": 113,
+      "supportAreas": "Housing / homelessness; Employment / workforce; Soft skills / life skills; Financial capability; Parenting / family; Community / belonging",
       "name": "Cooperative Christian Ministry — Housing Program",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3078,12 +2966,11 @@
       "notes": "",
       "area": "Concord / Cabarrus County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Financial capability; Parenting / family; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "114",
-      "category": "Housing / homelessness",
+      "id": 114,
+      "supportAreas": "Housing / homelessness; Employment / workforce; Soft skills / life skills; Community / belonging",
       "name": "Hope House Foundation",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3100,12 +2987,11 @@
       "notes": "",
       "area": "Huntersville / North Mecklenburg",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "115",
-      "category": "Housing / homelessness",
+      "id": 115,
+      "supportAreas": "Housing / homelessness; Food / essentials; Employment / workforce; Education; Soft skills / life skills",
       "name": "Community Shelter of Union County",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3122,12 +3008,11 @@
       "notes": "",
       "area": "Monroe / Union County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Housing; Food / essentials",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "116",
-      "category": "Legal / identity / safety",
+      "id": 116,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Mental health / recovery; Soft skills / life skills; Parenting / family",
       "name": "Turning Point — Union County",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3144,12 +3029,11 @@
       "notes": "",
       "area": "Monroe / Union County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Housing; Mental health / recovery; Legal / safety; Parenting / family",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "117",
-      "category": "Health care",
+      "id": 117,
+      "supportAreas": "Health care; Food / essentials; Soft skills / life skills",
       "name": "The Community Free Clinic — Cabarrus County",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3166,12 +3050,11 @@
       "notes": "",
       "area": "Concord / Cabarrus County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Food / essentials; Health care",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "118",
-      "category": "Legal / identity / safety",
+      "id": 118,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Mental health / recovery",
       "name": "CVAN — Cabarrus Victims Assistance Network",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3188,12 +3071,11 @@
       "notes": "",
       "area": "Concord / Cabarrus County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Housing; Mental health / recovery; Legal / safety",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "119",
-      "category": "Legal / identity / safety",
+      "id": 119,
+      "supportAreas": "Legal / identity / safety; Housing / homelessness; Mental health / recovery; Community / belonging",
       "name": "Hope United Survivor Network",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3210,12 +3092,11 @@
       "notes": "",
       "area": "Gastonia / Gaston County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Housing; Mental health / recovery; Legal / safety; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "120",
-      "category": "Housing / homelessness",
+      "id": 120,
+      "supportAreas": "Housing / homelessness; Soft skills / life skills; Parenting / family; Community / belonging",
       "name": "The Pilgrims' Inn",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3232,12 +3113,11 @@
       "notes": "",
       "area": "Rock Hill / York County",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Housing; Parenting / family; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "121",
-      "category": "Benefits / financial",
+      "id": 121,
+      "supportAreas": "Benefits / financial assistance; Housing / homelessness; Employment / workforce; Soft skills / life skills; Financial capability; Parenting / family; Community / belonging",
       "name": "Freedom Communities",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3254,12 +3134,11 @@
       "notes": "",
       "area": "West Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Financial capability; Parenting / family; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "122",
-      "category": "Mentorship / life skills",
+      "id": 122,
+      "supportAreas": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Community / belonging",
       "name": "GenOne",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3276,12 +3155,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "123",
-      "category": "Mentorship / life skills",
+      "id": 123,
+      "supportAreas": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Financial capability; Community / belonging",
       "name": "Carolina Youth Coalition",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3298,12 +3176,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Financial capability; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "124",
-      "category": "Mentorship / life skills",
+      "id": 124,
+      "supportAreas": "Mentorship; Soft skills / life skills; Education; Community / belonging",
       "name": "Right Moves for Youth",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3320,12 +3197,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Education; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "125",
-      "category": "Mentorship / life skills",
+      "id": 125,
+      "supportAreas": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Entrepreneurship; Community / belonging",
       "name": "Do Greater Charlotte — Sparkhouse",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3342,12 +3218,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education; Entrepreneurship; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "126",
-      "category": "Education / employment",
+      "id": 126,
+      "supportAreas": "Employment / workforce; Soft skills / life skills; Legal / identity / safety; Community / belonging",
       "name": "Latin American Coalition",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3364,12 +3239,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Legal / safety; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "127",
-      "category": "Education / employment",
+      "id": 127,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills; Community / belonging",
       "name": "International House",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3386,12 +3260,11 @@
       "notes": "",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education; Community / belonging",
       "radiusNote": "Located in or serving the requested roughly 30-mile Charlotte search area."
     },
     {
-      "id": "128",
-      "category": "Mental health / substance use",
+      "id": 128,
+      "supportAreas": "Mental health / recovery; Housing / homelessness; Employment / workforce; Soft skills / life skills; Faith / spiritual support",
       "name": "The Salvation Army — Charlotte Adult Rehabilitation Center",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3408,12 +3281,11 @@
       "notes": "Added from FARM127 Resource Database 2024; current official program information verified.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Housing; Mental health / recovery; Faith / spiritual support",
       "radiusNote": "Located in Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "129",
-      "category": "Food / essentials",
+      "id": 129,
+      "supportAreas": "Food / essentials; Parenting / family; Community / belonging",
       "name": "Hearts & Hands Food Pantry",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3430,12 +3302,11 @@
       "notes": "Added from FARM127 Resource Database 2024; current official service and contact information verified.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Food / essentials; Parenting support; Community / belonging",
       "radiusNote": "Located in Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "130",
-      "category": "Food / essentials",
+      "id": 130,
+      "supportAreas": "Food / essentials; Community / belonging",
       "name": "Hope Street Food Pantry",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -3452,12 +3323,11 @@
       "notes": "Added from FARM127 Resource Database 2024; current official distribution information verified.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Food / essentials; Community / belonging",
       "radiusNote": "Located in Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "131",
-      "category": "Food / essentials",
+      "id": 131,
+      "supportAreas": "Food / essentials; Faith / spiritual support; Community / belonging",
       "name": "The Final Harvest Ministries — Kingdom Kitchen",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -3474,12 +3344,11 @@
       "notes": "Added from FARM127 Resource Database 2024; replaced a third-party listing with the ministry's official page.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Food / essentials; Faith / spiritual support; Community / belonging",
       "radiusNote": "Located in Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "132",
-      "category": "Foster care-specific",
+      "id": 132,
+      "supportAreas": "Foster care; Education; Mentorship; Soft skills / life skills; Community / belonging",
       "name": "Livingstone College — H.O.P.E. Emancipation Project",
       "fosterSpecific": "Yes",
       "priority": "Specialized",
@@ -3496,12 +3365,11 @@
       "notes": "Current name replaces the document's 'Livingstone Center for Aging Out.' Contact: nmcdowell@livingstone.edu.",
       "area": "Salisbury / Rowan County",
       "areaGroup": "Statewide / national",
-      "focusTags": "Mentorship; Soft skills / life skills; Education; Community / belonging",
       "radiusNote": "Outside the roughly 30-mile radius but retained because it is a directly relevant foster-care-specific college pathway."
     },
     {
-      "id": "133",
-      "category": "Education / employment",
+      "id": 133,
+      "supportAreas": "Employment / workforce; Education; Soft skills / life skills",
       "name": "OMITT Trade School",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3518,12 +3386,11 @@
       "notes": "Added from FARM127 Resource Database 2024; current official enrollment and career-service information verified.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Soft skills / life skills; Employment / workforce; Education",
       "radiusNote": "Located in Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "134",
-      "category": "Education / employment",
+      "id": 134,
+      "supportAreas": "Employment / workforce; Education; Mentorship; Soft skills / life skills",
       "name": "BuildStrong Academy of Charlotte",
       "fosterSpecific": "No",
       "priority": "Verify",
@@ -3540,12 +3407,11 @@
       "notes": "Added from FARM127 Resource Database 2024. The old address was not carried forward because current official location details were not published.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Employment / workforce; Education",
       "radiusNote": "Charlotte program, but current cohort location and schedule require confirmation."
     },
     {
-      "id": "135",
-      "category": "Mentorship / life skills",
+      "id": 135,
+      "supportAreas": "Mentorship; Soft skills / life skills; Mental health / recovery; Disability support; Faith / spiritual support; Community / belonging",
       "name": "Agape Acres",
       "fosterSpecific": "Partial",
       "priority": "Verify",
@@ -3562,12 +3428,11 @@
       "notes": "Added from FARM127 Resource Database 2024. Email: agapeacrescarolinas@gmail.com.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mentorship; Soft skills / life skills; Mental health / recovery; Disability support; Faith / spiritual support; Community / belonging",
       "radiusNote": "Located in southwest Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "136",
-      "category": "Mental health / substance use",
+      "id": 136,
+      "supportAreas": "Mental health / recovery; Health care; Community / belonging",
       "name": "Mental Health America of Central Carolinas — Counseling",
       "fosterSpecific": "No",
       "priority": "Core",
@@ -3584,12 +3449,11 @@
       "notes": "Added from FARM127 Resource Database 2024; current official programs and referral contact verified.",
       "area": "Charlotte / Mecklenburg-Cabarrus",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Health care; Mental health / recovery; Community / belonging",
       "radiusNote": "Charlotte-based and serves Mecklenburg and Cabarrus counties within the requested regional search area."
     },
     {
-      "id": "137",
-      "category": "Mental health / substance use",
+      "id": 137,
+      "supportAreas": "Mental health / recovery; Faith / spiritual support; Community / belonging",
       "name": "The Barnabas Center",
       "fosterSpecific": "No",
       "priority": "Specialized",
@@ -3606,12 +3470,11 @@
       "notes": "Added from FARM127 Resource Database 2024; current financial-assistance process verified.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Mental health / recovery; Faith / spiritual support; Community / belonging",
       "radiusNote": "Located in Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "138",
-      "category": "Food / essentials",
+      "id": 138,
+      "supportAreas": "Food / essentials; Faith / spiritual support; Community / belonging",
       "name": "Hickory Grove Baptist Church — Clothes Closet",
       "fosterSpecific": "No",
       "priority": "Backup",
@@ -3628,12 +3491,11 @@
       "notes": "Added from FARM127 Resource Database 2024; current official event model and phone verified.",
       "area": "Charlotte / Mecklenburg",
       "areaGroup": "Charlotte / Mecklenburg",
-      "focusTags": "Food / essentials; Faith / spiritual support; Community / belonging",
       "radiusNote": "Located in Charlotte within the requested roughly 30-mile service area."
     },
     {
-      "id": "139",
-      "category": "Mentorship / life skills",
+      "id": 139,
+      "supportAreas": "Mentorship; Soft skills / life skills; Mental health / recovery; Faith / spiritual support; Community / belonging",
       "name": "My Farm Camps Experience",
       "fosterSpecific": "No",
       "priority": "Verify",
@@ -3650,7 +3512,6 @@
       "notes": "Added from FARM127 Resource Database 2024 as a potential experiential or partnership resource, not a guaranteed clinical referral.",
       "area": "Pineville / Mecklenburg",
       "areaGroup": "Surrounding communities",
-      "focusTags": "Soft skills / life skills; Mental health / recovery; Faith / spiritual support; Community / belonging",
       "radiusNote": "Located in Pineville within the requested roughly 30-mile service area."
     }
   ]
