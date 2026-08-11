@@ -4,6 +4,11 @@ window.FARM127_CONFIG = {
   pageSize: 18
 };
 
+// Slightly tighter heading line-height for the brand type system.
+const headingStyle = document.createElement('style');
+headingStyle.textContent = 'h1, h2, h3 { line-height: 1.05; }';
+document.head.appendChild(headingStyle);
+
 // Official / primary-source pages for the Urgent Help cards.
 // These are added here so the triage content can keep its current data structure.
 const FARM127_TRIAGE_LINKS = {
