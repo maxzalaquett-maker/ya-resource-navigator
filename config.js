@@ -4,6 +4,22 @@ window.FARM127_CONFIG = {
   pageSize: 18
 };
 
+// Correct a legacy description that accidentally implied a FARM127 relationship with
+// My Farm Camps Experience. The organizations are not affiliated; keep the directory
+// language neutral until the source data is rebuilt.
+const originalResponseJson = Response.prototype.json;
+Response.prototype.json = async function (...args) {
+  const data = await originalResponseJson.apply(this, args);
+  if (Array.isArray(data?.resources)) {
+    const myFarmCamps = data.resources.find((resource) => resource.name === 'My Farm Camps Experience');
+    if (myFarmCamps) {
+      myFarmCamps.referralTrigger = 'A young adult wants to explore a farm-based experiential opportunity involving animals, riding, gardening or animal-assisted activities.';
+      myFarmCamps.notes = 'Potential experiential or partnership resource; not a guaranteed clinical referral.';
+    }
+  }
+  return data;
+};
+
 // Load responsive enhancements separately so the core directory stays easy to maintain.
 const mobileStylesheet = document.createElement('link');
 mobileStylesheet.rel = 'stylesheet';
