@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://resources.farm127.org/sitemap.xml
