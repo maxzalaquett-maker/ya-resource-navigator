@@ -4,6 +4,10 @@ const PASSWORD_HASH = '5729409e8dc3b9146ca1ce8a33748ae998c06ed8a5a460bfad57b0e45
 const COOKIE_NAME = 'farm127_resource_access';
 const SESSION_VALUE = 'allowed';
 const SESSION_MAX_AGE = 60 * 60 * 24 * 7;
+const PUBLIC_ASSETS = new Set([
+  '/assets/farm127-logo.png',
+  '/assets/icon-192.png',
+]);
 
 export const config = {
   matcher: '/(.*)',
@@ -11,6 +15,9 @@ export const config = {
 
 export default async function middleware(request) {
   const url = new URL(request.url);
+
+  if (PUBLIC_ASSETS.has(url.pathname)) return next();
+
   const cookie = request.headers.get('cookie') || '';
   const hasAccess = cookie
     .split(';')
@@ -60,6 +67,7 @@ function loginPage(showError) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="/assets/icon-192.png" type="image/png">
   <title>FARM127 Resource Navigator</title>
   <style>
     * { box-sizing: border-box; }
@@ -75,11 +83,19 @@ function loginPage(showError) {
     }
     main {
       width: min(100%, 430px);
-      padding: 36px;
-      border: 1px solid rgba(74, 52, 40, .18);
-      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(74, 52, 40, .16);
+      border-radius: 16px;
       background: #fff;
-      box-shadow: 0 18px 45px rgba(47, 41, 36, .10);
+      box-shadow: 0 16px 40px rgba(47, 41, 36, .08);
+    }
+    .accent { height: 5px; background: #E9A928; }
+    .content { padding: 34px 36px 32px; }
+    .brand-logo {
+      display: block;
+      width: 112px;
+      height: auto;
+      margin: 0 0 24px;
     }
     .eyebrow {
       margin: 0 0 8px;
@@ -90,16 +106,21 @@ function loginPage(showError) {
       text-transform: uppercase;
     }
     h1 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: #4A3428;
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 30px;
-      line-height: 1.05;
+      line-height: 1.08;
     }
-    p { margin: 0 0 22px; line-height: 1.5; }
+    .intro {
+      margin: 0 0 24px;
+      color: #5f5750;
+      line-height: 1.5;
+    }
     label {
       display: block;
       margin-bottom: 7px;
+      color: #4A3428;
       font-size: 14px;
       font-weight: 700;
     }
@@ -110,7 +131,14 @@ function loginPage(showError) {
       padding: 10px 12px;
       border: 1px solid #8A8178;
       border-radius: 9px;
+      background: #fff;
+      color: #2F2924;
       font: inherit;
+      outline: none;
+    }
+    input:focus {
+      border-color: #4A3428;
+      box-shadow: 0 0 0 3px rgba(233, 169, 40, .22);
     }
     button {
       width: 100%;
@@ -123,32 +151,45 @@ function loginPage(showError) {
       font-weight: 800;
       cursor: pointer;
     }
-    button:hover { opacity: .92; }
+    button:hover { background: #2F2924; }
     .error {
-      margin: -8px 0 16px;
+      margin: -6px 0 16px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #fff4f0;
       color: #8a2f24;
       font-size: 14px;
       font-weight: 700;
     }
     .note {
       margin: 18px 0 0;
-      color: #6a625b;
+      color: #8A8178;
       font-size: 13px;
+      line-height: 1.4;
+    }
+    @media (max-width: 520px) {
+      body { padding: 16px; }
+      .content { padding: 28px 24px 26px; }
+      .brand-logo { width: 100px; margin-bottom: 20px; }
     }
   </style>
 </head>
 <body>
   <main>
-    <p class="eyebrow">FARM127</p>
-    <h1>Resource Navigator</h1>
-    <p>This resource is for FARM127 mentors, staff, and approved partners.</p>
-    ${error}
-    <form method="post" action="/__farm127_auth">
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
-      <button type="submit">Continue</button>
-    </form>
-    <p class="note">Access stays active on this device for 7 days.</p>
+    <div class="accent" aria-hidden="true"></div>
+    <div class="content">
+      <img class="brand-logo" src="/assets/farm127-logo.png" alt="FARM127">
+      <p class="eyebrow">Private resource</p>
+      <h1>Resource Navigator</h1>
+      <p class="intro">For FARM127 mentors, staff, and approved partners. Enter the shared password to continue.</p>
+      ${error}
+      <form method="post" action="/__farm127_auth">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
+        <button type="submit">Continue</button>
+      </form>
+      <p class="note">Access stays active on this device for 7 days.</p>
+    </div>
   </main>
 </body>
 </html>`;
