@@ -159,12 +159,14 @@
       if (event.target.closest('#clear-filters')) window.setTimeout(syncBadge, 0);
     });
 
+    window.addEventListener('popstate', () => window.setTimeout(syncBadge, 0));
     window.addEventListener('resize', () => {
       if (window.innerWidth > MOBILE_BREAKPOINT) setOpen(false);
     });
 
     setOpen(false);
     syncBadge();
+    window.setTimeout(syncBadge, 0);
   }
 
   onReady(init);
