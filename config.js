@@ -9,8 +9,17 @@ window.FARM127_CONFIG = {
 const headingStyle = document.createElement('style');
 headingStyle.textContent = `
   h1, h2, h3 { line-height: 1.05; }
-  .triage-action .eyebrow { display: block; margin: 0 0 .2rem; }
-  .triage-action strong { display: block; }
+  .triage-action > div:first-child:not(.card-actions) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: .18rem;
+  }
+  .triage-action .eyebrow {
+    display: block !important;
+    margin: 0 !important;
+  }
+  .triage-action strong { display: block !important; }
 `;
 document.head.appendChild(headingStyle);
 
@@ -33,11 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const addTriageLinks = () => {
     triageGrid.querySelectorAll('.triage-card').forEach((card) => {
-      if (card.querySelector('[data-triage-learn-more]')) return;
-
       const heading = card.querySelector('h2');
       const action = card.querySelector('.triage-action');
       if (!heading || !action) return;
+
+      // The rendered markup uses an inline <span> followed by an inline <strong>.
+      // Force the text block itself to stack so the label and action can never sit side by side.
+      const textBlock = action.querySelector(':scope > div:first-child:not(.card-actions)');
+      if (textBlock) {
+        textBlock.style.display = 'flex';
+        textBlock.style.flexDirection = 'column';
+        textBlock.style.alignItems = 'flex-start';
+      }
+
+      if (card.querySelector('[data-triage-learn-more]')) return;
 
       const url = FARM127_TRIAGE_LINKS[heading.textContent.trim()];
       if (!url) return;
