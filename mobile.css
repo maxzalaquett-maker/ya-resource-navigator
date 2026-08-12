@@ -144,19 +144,66 @@
     margin: 0;
   }
 
-  /* Collapse directory filters behind a small funnel button. */
+  /* Move listing totals into the directory hero and reduce them to compact inline metrics. */
+  .hero-directory .stats-grid.mobile-stats-in-hero {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .35rem .7rem;
+    margin-top: .8rem;
+    padding-top: .65rem;
+    border-top: 1px solid rgba(74, 52, 40, .16);
+  }
+
+  .hero-directory .mobile-stats-in-hero .stat-card {
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: .3rem;
+  }
+
+  .hero-directory .mobile-stats-in-hero .stat-card span {
+    flex: 0 0 auto;
+    font-size: 1.08rem;
+    line-height: 1;
+  }
+
+  .hero-directory .mobile-stats-in-hero .stat-card small {
+    font-size: .67rem;
+    line-height: 1.05;
+  }
+
+  /* Collapse directory filters and keep the control beside Sort. */
   .directory-layout {
     position: relative;
-    gap: .65rem;
-    padding-block: .75rem 3rem;
+    gap: .5rem;
+    padding-block: .65rem 3rem;
+  }
+
+  .results-toolbar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: end;
+    gap: .55rem .7rem;
+    margin: .55rem 0 1rem;
+  }
+
+  .results-toolbar > div:first-child {
+    grid-column: 1 / -1;
   }
 
   .mobile-filter-toggle {
     position: relative;
-    justify-self: end;
-    width: 42px;
+    grid-column: 1;
+    grid-row: 2;
+    width: auto;
+    min-width: 0;
     height: 42px;
-    padding: 0;
+    padding: 0 .85rem;
     border: 1px solid var(--brown);
     border-radius: 999px;
     background: var(--brown);
@@ -164,17 +211,26 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: .45rem;
     cursor: pointer;
     box-shadow: 0 5px 14px rgba(47, 41, 36, .14);
+    white-space: nowrap;
   }
 
   .mobile-filter-toggle svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
     fill: none;
     stroke: currentColor;
     stroke-width: 1.8;
     stroke-linejoin: round;
+  }
+
+  .mobile-filter-label {
+    font-size: .86rem;
+    font-weight: 800;
+    line-height: 1;
   }
 
   .mobile-filter-badge {
@@ -194,12 +250,24 @@
     text-align: center;
   }
 
+  .sort-field {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sort-field > span {
+    font-size: .72rem;
+  }
+
   .filter-panel {
     display: none !important;
     position: static;
     top: auto;
     grid-template-columns: 1fr;
     gap: 0;
+    margin: -.25rem 0 1rem;
     padding: .95rem;
     border-radius: var(--radius-md);
     box-shadow: 0 8px 22px rgba(47, 41, 36, .08);
@@ -248,29 +316,6 @@
   .filter-tip {
     font-size: .82rem;
   }
-
-  /* Trim a little more non-result vertical space without changing content. */
-  .stats-grid {
-    gap: .55rem;
-  }
-
-  .stat-card {
-    min-height: 78px;
-    padding: .6rem .75rem;
-  }
-
-  .stat-card span {
-    font-size: 1.55rem;
-  }
-
-  .stat-card small {
-    font-size: .76rem;
-    line-height: 1.15;
-  }
-
-  .results-toolbar {
-    margin-top: 1rem;
-  }
 }
 
 @media (max-width: 470px) {
@@ -285,5 +330,25 @@
   .hero h1,
   .page-heading h1 {
     font-size: 1.7rem;
+  }
+
+  .hero-directory .stats-grid.mobile-stats-in-hero {
+    gap: .35rem .45rem;
+  }
+
+  .hero-directory .mobile-stats-in-hero .stat-card span {
+    font-size: 1rem;
+  }
+
+  .hero-directory .mobile-stats-in-hero .stat-card small {
+    font-size: .63rem;
+  }
+
+  .mobile-filter-toggle {
+    padding-inline: .72rem;
+  }
+
+  .mobile-filter-label {
+    font-size: .82rem;
   }
 }
