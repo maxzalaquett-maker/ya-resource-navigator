@@ -21,19 +21,16 @@ headingStyle.textContent = `
   }
   .triage-action strong { display: block !important; }
 
-  /* Keep the confirmation toast completely off-screen until it is actually shown. */
-  .toast {
-    transform: translate(-50%, calc(100% + 2.5rem)) !important;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: transform .2s ease, opacity .2s ease, visibility 0s linear .2s;
+  /* The base toast is a fixed rounded pill. Hiding it with transforms left a small arc visible, so remove it from layout entirely until active. */
+  .toast:not(.is-visible) {
+    display: none !important;
   }
   .toast.is-visible {
+    display: block !important;
     transform: translate(-50%, 0) !important;
     opacity: 1;
     visibility: visible;
-    transition-delay: 0s;
+    pointer-events: auto;
   }
 `;
 document.head.appendChild(headingStyle);
