@@ -4,11 +4,11 @@ window.FARM127_CONFIG = {
   pageSize: 18
 };
 
-// Slightly tighter heading line-height for the brand type system,
-// plus stacked labels/values in Urgent Help action cards.
+// Small presentation fixes that layer on top of the base stylesheet.
 const headingStyle = document.createElement('style');
 headingStyle.textContent = `
   h1, h2, h3 { line-height: 1.05; }
+
   .triage-action > div:first-child:not(.card-actions) {
     display: flex !important;
     flex-direction: column !important;
@@ -20,6 +20,21 @@ headingStyle.textContent = `
     margin: 0 !important;
   }
   .triage-action strong { display: block !important; }
+
+  /* Keep the confirmation toast completely off-screen until it is actually shown. */
+  .toast {
+    transform: translate(-50%, calc(100% + 2.5rem)) !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .2s ease, opacity .2s ease, visibility 0s linear .2s;
+  }
+  .toast.is-visible {
+    transform: translate(-50%, 0) !important;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
 `;
 document.head.appendChild(headingStyle);
 
