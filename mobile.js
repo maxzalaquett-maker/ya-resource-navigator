@@ -10,7 +10,7 @@
 
   function init() {
     initMobileNavigation();
-    initMobileStats();
+    initDirectoryStats();
     initMobileFilters();
   }
 
@@ -81,31 +81,14 @@
     setOpen(false);
   }
 
-  function initMobileStats() {
+  function initDirectoryStats() {
     const directory = document.getElementById('view-directory');
     const stats = directory?.querySelector('.stats-grid');
     const heroCopy = directory?.querySelector('.hero-directory .hero-copy');
-    if (!directory || !stats || !heroCopy) return;
+    if (!directory || !stats || !heroCopy || stats.classList.contains('stats-in-hero')) return;
 
-    const marker = document.createComment('directory-stats-original-position');
-    stats.parentNode.insertBefore(marker, stats);
-
-    const syncPlacement = () => {
-      const mobile = window.innerWidth <= MOBILE_BREAKPOINT;
-
-      if (mobile) {
-        if (!stats.classList.contains('mobile-stats-in-hero')) {
-          heroCopy.insertAdjacentElement('afterend', stats);
-          stats.classList.add('mobile-stats-in-hero');
-        }
-      } else if (stats.classList.contains('mobile-stats-in-hero')) {
-        marker.parentNode.insertBefore(stats, marker.nextSibling);
-        stats.classList.remove('mobile-stats-in-hero');
-      }
-    };
-
-    window.addEventListener('resize', syncPlacement);
-    syncPlacement();
+    heroCopy.insertAdjacentElement('afterend', stats);
+    stats.classList.add('stats-in-hero');
   }
 
   function initMobileFilters() {
