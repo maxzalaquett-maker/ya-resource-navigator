@@ -4,9 +4,14 @@ window.FARM127_CONFIG = {
   pageSize: 18
 };
 
-// Slightly tighter heading line-height for the brand type system.
+// Slightly tighter heading line-height for the brand type system,
+// plus stacked labels/values in Urgent Help action cards.
 const headingStyle = document.createElement('style');
-headingStyle.textContent = 'h1, h2, h3 { line-height: 1.05; }';
+headingStyle.textContent = `
+  h1, h2, h3 { line-height: 1.05; }
+  .triage-action .eyebrow { display: block; margin: 0 0 .2rem; }
+  .triage-action strong { display: block; }
+`;
 document.head.appendChild(headingStyle);
 
 // Official / primary-source pages for the Urgent Help cards.
