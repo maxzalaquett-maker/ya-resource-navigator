@@ -21,16 +21,11 @@ headingStyle.textContent = `
   }
   .triage-action strong { display: block !important; }
 
-  /* The base toast is a fixed rounded pill. Hiding it with transforms left a small arc visible, so remove it from layout entirely until active. */
-  .toast:not(.is-visible) {
-    display: none !important;
-  }
+  /* Never render the old confirmation toast. */
+  #toast,
+  .toast,
   .toast.is-visible {
-    display: block !important;
-    transform: translate(-50%, 0) !important;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    display: none !important;
   }
 `;
 document.head.appendChild(headingStyle);
@@ -49,6 +44,12 @@ const FARM127_TRIAGE_LINKS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Remove the toast node after app.js has cached its references. This keeps existing
+  // copy/save code from throwing while ensuring the toast can never appear onscreen.
+  setTimeout(() => {
+    document.getElementById('toast')?.remove();
+  }, 0);
+
   const triageGrid = document.getElementById('triage-grid');
   if (!triageGrid) return;
 
