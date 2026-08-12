@@ -10,6 +10,7 @@
 
   function init() {
     initMobileNavigation();
+    initMobileStats();
     initMobileFilters();
   }
 
@@ -80,13 +81,46 @@
     setOpen(false);
   }
 
+  function initMobileStats() {
+    const directory = document.getElementById('view-directory');
+    const stats = directory?.querySelector('.stats-grid');
+    const heroCopy = directory?.querySelector('.hero-directory .hero-copy');
+    if (!directory || !stats || !heroCopy) return;
+
+    const marker = document.createComment('directory-stats-original-position');
+    stats.parentNode.insertBefore(marker, stats);
+
+    const syncPlacement = () => {
+      const mobile = window.innerWidth <= MOBILE_BREAKPOINT;
+
+      if (mobile) {
+        if (!stats.classList.contains('mobile-stats-in-hero')) {
+          heroCopy.insertAdjacentElement('afterend', stats);
+          stats.classList.add('mobile-stats-in-hero');
+        }
+      } else if (stats.classList.contains('mobile-stats-in-hero')) {
+        marker.parentNode.insertBefore(stats, marker.nextSibling);
+        stats.classList.remove('mobile-stats-in-hero');
+      }
+    };
+
+    window.addEventListener('resize', syncPlacement);
+    syncPlacement();
+  }
+
   function initMobileFilters() {
     const directory = document.getElementById('view-directory');
     const layout = directory?.querySelector('.directory-layout');
     const panel = directory?.querySelector('.filter-panel');
-    if (!directory || !layout || !panel || document.getElementById('mobile-filter-toggle')) return;
+    const directoryMain = directory?.querySelector('.directory-main');
+    const toolbar = directory?.querySelector('.results-toolbar');
+    const sortField = toolbar?.querySelector('.sort-field');
+    if (!directory || !layout || !panel || !directoryMain || !toolbar || !sortField || document.getElementById('mobile-filter-toggle')) return;
 
     panel.id = panel.id || 'directory-filters';
+
+    const panelMarker = document.createComment('directory-filters-original-position');
+    panel.parentNode.insertBefore(panelMarker, panel);
 
     const toggle = document.createElement('button');
     toggle.type = 'button';
@@ -98,10 +132,10 @@
       <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         <path d="M4 5h16l-6.2 7.1v5.2l-3.6 1.8v-7L4 5z"></path>
       </svg>
-      <span class="sr-only">Filters</span>
+      <span class="mobile-filter-label">Filter resources</span>
       <span class="mobile-filter-badge" aria-hidden="true" hidden></span>`;
 
-    layout.insertBefore(toggle, panel);
+    toolbar.insertBefore(toggle, sortField);
 
     const heading = panel.querySelector('.filter-heading');
     let closeButton;
@@ -118,6 +152,18 @@
       panel.classList.toggle('mobile-filter-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Hide directory filters' : 'Show directory filters');
+    };
+
+    const syncPanelPlacement = () => {
+      const mobile = window.innerWidth <= MOBILE_BREAKPOINT;
+
+      if (mobile) {
+        if (panel.parentNode !== directoryMain || panel.previousElementSibling !== toolbar) {
+          toolbar.insertAdjacentElement('afterend', panel);
+        }
+      } else if (panel.parentNode !== panelMarker.parentNode || panel.previousSibling !== panelMarker) {
+        panelMarker.parentNode.insertBefore(panel, panelMarker.nextSibling);
+      }
     };
 
     const activeFilterCount = () => {
@@ -162,8 +208,10 @@
     window.addEventListener('popstate', () => window.setTimeout(syncBadge, 0));
     window.addEventListener('resize', () => {
       if (window.innerWidth > MOBILE_BREAKPOINT) setOpen(false);
+      syncPanelPlacement();
     });
 
+    syncPanelPlacement();
     setOpen(false);
     syncBadge();
     window.setTimeout(syncBadge, 0);
