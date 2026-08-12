@@ -7,16 +7,55 @@ window.FARM127_CONFIG = {
 // Correct a legacy description that accidentally implied a FARM127 relationship with
 // My Farm Camps Experience. The organizations are not affiliated; keep the directory
 // language neutral until the source data is rebuilt.
+//
+// FARM127 does not list Time Out Youth as a referral partner. Young adults who want
+// counseling or emotional support related to sexuality, relationships, or identity should
+// still be welcomed and routed through the general professional counseling resources in
+// the navigator.
 const originalResponseJson = Response.prototype.json;
 Response.prototype.json = async function (...args) {
   const data = await originalResponseJson.apply(this, args);
+
   if (Array.isArray(data?.resources)) {
+    data.resources = data.resources.filter((resource) => !String(resource.name || '').includes('Time Out Youth'));
+
     const myFarmCamps = data.resources.find((resource) => resource.name === 'My Farm Camps Experience');
     if (myFarmCamps) {
       myFarmCamps.referralTrigger = 'A young adult wants to explore a farm-based experiential opportunity involving animals, riding, gardening or animal-assisted activities.';
       myFarmCamps.notes = 'Potential experiential or partnership resource; not a guaranteed clinical referral.';
     }
   }
+
+  if (Array.isArray(data?.triage)) {
+    data.triage = data.triage.map((item) => {
+      if (item.firstAction !== 'Time Out Youth') return item;
+      return {
+        situation: 'Young adult wants counseling or emotional support related to sexuality, relationships, or identity',
+        firstAction: 'Mental Health America of Central Carolinas — Counseling',
+        phone: '704-565-3315',
+        backup: 'The Barnabas Center offers faith-informed professional counseling. Use 988 or 911 when there is an immediate safety or mental-health crisis.',
+        limit: 'Counseling should protect the young adult’s dignity, safety, privacy, and voluntary goals. Confirm provider fit and current availability before referral.'
+      };
+    });
+  }
+
+  if (Array.isArray(data?.needsMap)) {
+    const removeTimeOutYouthOption = (value) => String(value || '')
+      .split(';')
+      .map((option) => option.trim())
+      .filter((option) => option && !option.includes('Time Out Youth'))
+      .join('; ');
+
+    data.needsMap.forEach((item) => {
+      item.primaryOptions = removeTimeOutYouthOption(item.primaryOptions);
+      item.backupOptions = removeTimeOutYouthOption(item.backupOptions);
+    });
+  }
+
+  if (Array.isArray(data?.partnerships)) {
+    data.partnerships = data.partnerships.filter((item) => !String(item.organization || '').includes('Time Out Youth'));
+  }
+
   return data;
 };
 
@@ -66,7 +105,7 @@ const FARM127_TRIAGE_LINKS = {
   'Ages 16–24 with several practical needs': 'https://therelatives.org/our-programs/on-ramp-resource-center/',
   'Domestic violence or sexual assault': 'https://www.safealliance.org/programs/greater-charlotte-hope-line/',
   'No food or basic household items': 'https://nourishup.org/findfood/',
-  'LGBTQ+ young adult needs affirming housing/support': 'https://timeoutyouth.org/housing-supportive-services/'
+  'Young adult wants counseling or emotional support related to sexuality, relationships, or identity': 'https://mhaofcc.org/program/counseling'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
