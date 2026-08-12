@@ -1,0 +1,370 @@
+/* Mobile-specific UX improvements for the FARM127 Resource Navigator. */
+
+.mobile-nav-toggle,
+.mobile-filter-toggle,
+.mobile-filter-close {
+  display: none;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Keep directory listing totals inside the hero on every screen size. */
+.hero-directory .stats-grid.stats-in-hero {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: .55rem;
+  margin-top: 1.1rem;
+  padding-top: .8rem;
+  border-top: 1px solid rgba(74, 52, 40, .16);
+}
+
+.hero-directory .stats-in-hero .stat-card {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: .3rem;
+}
+
+.hero-directory .stats-in-hero .stat-card span {
+  flex: 0 0 auto;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.hero-directory .stats-in-hero .stat-card small {
+  font-size: .72rem;
+  line-height: 1.08;
+}
+
+@media (max-width: 760px) {
+  /* Replace the horizontally scrolling section tabs with a compact menu. */
+  .view-nav {
+    top: 0;
+  }
+
+  .mobile-nav-toggle {
+    width: min(calc(100% - 1.25rem), var(--shell));
+    min-height: 48px;
+    margin-inline: auto;
+    padding: .55rem .15rem;
+    border: 0;
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .mobile-nav-current {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-nav-icon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .view-nav .nav-scroll {
+    display: none;
+    overflow: visible;
+    padding: 0 0 .7rem;
+    scrollbar-width: none;
+  }
+
+  .view-nav.mobile-nav-open .nav-scroll {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .25rem;
+  }
+
+  .view-nav .nav-tab {
+    width: 100%;
+    padding: .6rem .7rem;
+    border: 0;
+    border-radius: .5rem;
+    text-align: left;
+    white-space: normal;
+    font-size: .9rem;
+    line-height: 1.2;
+  }
+
+  .view-nav .nav-tab.is-active {
+    background: rgba(255,255,255,.11);
+    box-shadow: inset 3px 0 0 var(--gold);
+  }
+
+  /* Make page introductions much more compact so useful content appears sooner. */
+  .hero-grid {
+    gap: .8rem;
+    padding-block: 1.05rem 1.15rem;
+  }
+
+  .hero .eyebrow,
+  .page-heading .eyebrow {
+    margin-bottom: .3rem;
+    font-size: .66rem;
+    letter-spacing: .09em;
+  }
+
+  .hero h1,
+  .page-heading h1 {
+    margin-bottom: .5rem;
+    font-size: clamp(1.72rem, 8vw, 2rem);
+    line-height: 1.02;
+  }
+
+  .hero-copy,
+  .page-heading p:last-child {
+    font-size: .94rem;
+    line-height: 1.42;
+  }
+
+  .hero-note {
+    padding: .75rem .85rem;
+    border-radius: var(--radius-md);
+    box-shadow: none;
+  }
+
+  .hero-note strong {
+    font-size: .96rem;
+  }
+
+  .hero-note p {
+    margin-top: .2rem;
+    font-size: .83rem;
+    line-height: 1.35;
+  }
+
+  .page-heading {
+    padding-block: 1.15rem .85rem;
+    text-align: left;
+  }
+
+  .page-heading p:last-child {
+    margin: 0;
+  }
+
+  .hero-directory .stats-grid.stats-in-hero {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .35rem .7rem;
+    margin-top: .8rem;
+    padding-top: .65rem;
+  }
+
+  .hero-directory .stats-in-hero .stat-card span {
+    font-size: 1.08rem;
+  }
+
+  .hero-directory .stats-in-hero .stat-card small {
+    font-size: .67rem;
+    line-height: 1.05;
+  }
+
+  /* Collapse directory filters and keep the control beside Sort. */
+  .directory-layout {
+    position: relative;
+    gap: .5rem;
+    padding-block: .65rem 3rem;
+  }
+
+  .results-toolbar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: end;
+    gap: .55rem .7rem;
+    margin: .55rem 0 1rem;
+  }
+
+  .results-toolbar > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .mobile-filter-toggle {
+    position: relative;
+    grid-column: 1;
+    grid-row: 2;
+    width: auto;
+    min-width: 0;
+    height: 42px;
+    padding: 0 .85rem;
+    border: 1px solid var(--brown);
+    border-radius: 999px;
+    background: var(--brown);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(47, 41, 36, .14);
+    white-space: nowrap;
+  }
+
+  .mobile-filter-toggle svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linejoin: round;
+  }
+
+  .mobile-filter-label {
+    font-size: .86rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .mobile-filter-badge {
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+    border: 2px solid var(--cream);
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--charcoal);
+    font-size: .68rem;
+    font-weight: 800;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  .sort-field {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sort-field > span {
+    font-size: .72rem;
+  }
+
+  .filter-panel {
+    display: none !important;
+    position: static;
+    top: auto;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: -.25rem 0 1rem;
+    padding: .95rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 22px rgba(47, 41, 36, .08);
+  }
+
+  .filter-panel.mobile-filter-open {
+    display: grid !important;
+  }
+
+  .filter-heading {
+    grid-column: auto;
+  }
+
+  .filter-heading h2 {
+    margin: .1rem auto .75rem 0;
+  }
+
+  .mobile-filter-close {
+    width: 36px;
+    height: 36px;
+    margin-left: .25rem;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: white;
+    color: var(--brown);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .filter-panel.mobile-filter-open .mobile-filter-close {
+    display: inline-flex;
+  }
+
+  .filter-panel .field {
+    margin-bottom: .7rem;
+  }
+
+  .filter-panel .check-field {
+    padding-bottom: .7rem;
+  }
+
+  .filter-tip {
+    font-size: .82rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .view-nav.mobile-nav-open .nav-scroll {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    padding-block: .9rem 1rem;
+  }
+
+  .hero h1,
+  .page-heading h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-directory .stats-grid.stats-in-hero {
+    gap: .35rem .45rem;
+  }
+
+  .hero-directory .stats-in-hero .stat-card span {
+    font-size: 1rem;
+  }
+
+  .hero-directory .stats-in-hero .stat-card small {
+    font-size: .63rem;
+  }
+
+  .mobile-filter-toggle {
+    padding-inline: .72rem;
+  }
+
+  .mobile-filter-label {
+    font-size: .82rem;
+  }
+}
