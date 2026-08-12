@@ -4,6 +4,16 @@ window.FARM127_CONFIG = {
   pageSize: 18
 };
 
+// Load responsive enhancements separately so the core directory stays easy to maintain.
+const mobileStylesheet = document.createElement('link');
+mobileStylesheet.rel = 'stylesheet';
+mobileStylesheet.href = '/mobile.css';
+document.head.appendChild(mobileStylesheet);
+
+const mobileEnhancements = document.createElement('script');
+mobileEnhancements.src = '/mobile.js';
+document.head.appendChild(mobileEnhancements);
+
 // Small presentation fixes that layer on top of the base stylesheet.
 const headingStyle = document.createElement('style');
 headingStyle.textContent = `
