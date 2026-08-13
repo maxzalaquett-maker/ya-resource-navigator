@@ -109,7 +109,7 @@ function loginPage(showError) {
           <div class="auth-feature-row" aria-label="Resource Navigator features">
             <span class="auth-feature">Local resource directory</span>
             <span class="auth-feature">Foster care guide</span>
-            <span class="auth-feature">Needs map</span>
+            <span class="auth-feature">Support by need</span>
           </div>
         </div>
 
