@@ -1,0 +1,112 @@
+.field-label-row,
+.sort-label-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  min-height: 1.25rem;
+}
+
+.field-label-row > label,
+.sort-label-row > label {
+  color: var(--gray);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.info-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.info-tooltip-button {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid #bcae9f;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--brown);
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: help;
+}
+
+.info-tooltip-button:hover,
+.info-tooltip-button:focus-visible,
+.info-tooltip.is-open .info-tooltip-button {
+  border-color: var(--brown);
+  background: var(--gold-soft);
+  outline: none;
+}
+
+.info-tooltip-button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(233, 169, 40, .32);
+}
+
+.info-tooltip-content {
+  position: absolute;
+  z-index: 80;
+  top: calc(100% + .5rem);
+  left: -.35rem;
+  width: min(290px, calc(100vw - 2.5rem));
+  padding: .72rem .8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--charcoal);
+  color: white;
+  box-shadow: 0 14px 34px rgba(47, 41, 36, .22);
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.42;
+  text-transform: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity .14s ease, transform .14s ease, visibility .14s ease;
+}
+
+.info-tooltip-content::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: .65rem;
+  border: 6px solid transparent;
+  border-bottom-color: var(--charcoal);
+}
+
+.info-tooltip:hover .info-tooltip-content,
+.info-tooltip:focus-within .info-tooltip-content,
+.info-tooltip.is-open .info-tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+  .info-tooltip-content {
+    position: fixed;
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: auto;
+    max-width: none;
+    border-radius: var(--radius-md);
+  }
+
+  .info-tooltip-content::before {
+    display: none;
+  }
+}
+
+@media print {
+  .info-tooltip { display: none !important; }
+}
