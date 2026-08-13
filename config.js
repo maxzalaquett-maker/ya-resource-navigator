@@ -69,6 +69,16 @@ const mobileEnhancements = document.createElement('script');
 mobileEnhancements.src = '/mobile.js';
 document.head.appendChild(mobileEnhancements);
 
+// Load accessible classification help for the directory filters.
+const filterTooltipStylesheet = document.createElement('link');
+filterTooltipStylesheet.rel = 'stylesheet';
+filterTooltipStylesheet.href = '/filter-tooltips.css';
+document.head.appendChild(filterTooltipStylesheet);
+
+const filterTooltipEnhancements = document.createElement('script');
+filterTooltipEnhancements.src = '/filter-tooltips.js';
+document.head.appendChild(filterTooltipEnhancements);
+
 // Small presentation fixes that layer on top of the base stylesheet.
 const headingStyle = document.createElement('style');
 headingStyle.textContent = `
