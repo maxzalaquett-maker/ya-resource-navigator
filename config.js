@@ -109,6 +109,23 @@ const FARM127_TRIAGE_LINKS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Use a clearer name for the section that groups organizations by the needs they serve.
+  const needsTab = document.querySelector('.nav-tab[data-view="needs"]');
+  if (needsTab) needsTab.textContent = 'Support by need';
+
+  const needsHeading = document.querySelector('#view-needs .page-heading');
+  if (needsHeading) {
+    const eyebrow = needsHeading.querySelector('.eyebrow');
+    const title = needsHeading.querySelector('h1');
+    const description = needsHeading.querySelector('p:last-child');
+
+    if (eyebrow) eyebrow.textContent = 'Organizations grouped by need';
+    if (title) title.textContent = 'Support by need';
+    if (description) {
+      description.textContent = 'Browse organizations grouped by the practical needs they serve, including housing, food, work, education, transportation, healthcare, mental health, benefits, legal help, documents, budgeting and more.';
+    }
+  }
+
   // Remove the toast node after app.js has cached its references. This keeps existing
   // copy/save code from throwing while ensuring the toast can never appear onscreen.
   setTimeout(() => {
