@@ -24,6 +24,34 @@ Response.prototype.json = async function (...args) {
       myFarmCamps.referralTrigger = 'A young adult wants to explore a farm-based experiential opportunity involving animals, riding, gardening or animal-assisted activities.';
       myFarmCamps.notes = 'Potential experiential or partnership resource; not a guaranteed clinical referral.';
     }
+
+    const womenInTransition = data.resources.find((resource) =>
+      resource.name === 'YWCA Central Carolinas — Transitional Housing' ||
+      resource.name === 'YWCA Central Carolinas — Women in Transition'
+    );
+
+    if (womenInTransition) {
+      Object.assign(womenInTransition, {
+        supportAreas: 'Housing / homelessness; Employment / workforce; Soft skills / life skills; Financial capability; Community / belonging',
+        name: 'YWCA Central Carolinas — Women in Transition',
+        fosterSpecific: 'No',
+        priority: 'Specialized',
+        referralTrigger: 'An unaccompanied adult woman experiencing or at risk of homelessness needs affordable transitional housing and structured support.',
+        eligibility: 'Adults age 18 or older identifying as female who are single and unaccompanied with no dependent children; minimum $700 monthly net income and income no more than 60% AMI; able to live in a minimally supervised group setting. Additional screening applies.',
+        provides: 'Month-to-month transitional housing for up to 18 months, below-market rent and utilities, case management, career counseling, financial planning, educational workshops, computer and internet access, social activities and fitness-center membership.',
+        access: 'Referral only through a partner agency or Coordinated Assessment. The referring worker submits the program application, case summary, release of information, income documentation and homelessness verification when applicable.',
+        phone: '980-283-2334',
+        location: 'YWCA Central Carolinas, Charlotte / Mecklenburg County.',
+        caveat: 'Not emergency or immediate housing. Intake orientations depend on upcoming vacancies. Applicants in recovery from substance use disorder must have six months of clean time before referral.',
+        sourceUrl: 'https://ywcacentralcarolinas.org/programs/housing/women-in-transition/',
+        lastVerified: '2026-08-14',
+        referralStatus: 'Not contacted',
+        notes: 'Program is referral-only; incomplete referrals are not placed on the waitlist.',
+        area: 'Charlotte / Mecklenburg',
+        areaGroup: 'Charlotte / Mecklenburg',
+        radiusNote: 'Located in or serving the requested roughly 30-mile Charlotte search area.'
+      });
+    }
   }
 
   if (Array.isArray(data?.triage)) {
