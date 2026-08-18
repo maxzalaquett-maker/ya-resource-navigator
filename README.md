@@ -1,6 +1,6 @@
 # Charlotte Young Adult Resource Navigator
 
-A searchable, mobile-friendly resource directory built from the the program Charlotte Young Adult Resource Directory workbook.
+A searchable, mobile-friendly resource directory built from the Charlotte Young Adult Resource Directory workbook.
 
 ## Included
 
@@ -56,7 +56,7 @@ Then open `http://localhost:8080`.
 
 ## Update the directory from Excel
 
-1. Replace `source/the program_Charlotte_Young_Adult_Resource_Directory.xlsx` with the updated workbook.
+1. Replace `source/Charlotte_Young_Adult_Resource_Directory.xlsx` with the updated workbook.
 2. Keep these worksheet names and header labels unchanged:
    - `Resource Directory`
    - `Start Here`

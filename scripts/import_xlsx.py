@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the app's JSON/CSV data from the the program workbook using only Python stdlib.
+"""Rebuild the app's JSON/CSV data from the program workbook using only Python stdlib.
 
 Usage:
   python3 scripts/import_xlsx.py

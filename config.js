@@ -4,11 +4,11 @@ window.RESOURCE_NAVIGATOR_CONFIG = {
   pageSize: 18
 };
 
-// Correct a legacy description that accidentally implied a the program relationship with
+// Correct a legacy description that accidentally implied a directory relationship with
 // My Farm Camps Experience. The organizations are not affiliated; keep the directory
 // language neutral until the source data is rebuilt.
 //
-// the program does not list Time Out Youth as a referral partner. Young adults who want
+// The directory does not list Time Out Youth as a referral partner. Young adults who want
 // counseling or emotional support related to sexuality, relationships, or identity should
 // still be welcomed and routed through the general professional counseling resources in
 // the navigator.
@@ -135,7 +135,7 @@ document.head.appendChild(headingStyle);
 
 // Official / primary-source pages for the Urgent Help cards.
 // These are added here so the triage content can keep its current data structure.
-const the program_TRIAGE_LINKS = {
+const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
   'Immediate danger, overdose, violence or serious injury': 'https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare',
   'Suicidal thoughts or acute mental-health crisis': 'https://988lifeline.org/get-help/',
   'Homeless tonight or unsafe place to sleep': 'https://housingdata.mecknc.gov/coc/services/coordinated-entry',
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (card.querySelector('[data-triage-learn-more]')) return;
 
-      const url = the program_TRIAGE_LINKS[heading.textContent.trim()];
+      const url = RESOURCE_NAVIGATOR_TRIAGE_LINKS[heading.textContent.trim()];
       if (!url) return;
 
       let actions = action.querySelector('.card-actions');
