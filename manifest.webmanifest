@@ -1,22 +1,16 @@
 {
-  "name": "FARM127 Resource Navigator",
-  "short_name": "FARM127 Resources",
+  "name": "Charlotte Young Adult Resource Navigator",
+  "short_name": "Young Adult Resources",
   "description": "Charlotte-area resource directory for young adults.",
   "start_url": "/#directory",
   "display": "standalone",
-  "background_color": "#F7F1E6",
-  "theme_color": "#4A3428",
+  "background_color": "#F8FAFC",
+  "theme_color": "#1F2937",
   "icons": [
     {
-      "src": "/assets/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/assets/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "/assets/resource-navigator-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any"
     }
   ]

@@ -4,7 +4,7 @@
     ['area-filter', 'Local area', 'Charlotte / Mecklenburg means located in or clearly serving Mecklenburg County. Surrounding communities are generally within about 30 road miles of Uptown Charlotte. Statewide / national options serve a broader area.'],
     ['foster-filter', 'Foster-care relevance', 'Foster-care specific programs explicitly serve current or former foster youth. Partially specific programs serve young people and may include foster youth but are not exclusive to them. General resources have no foster-care-specific focus.'],
     ['priority-filter', 'Referral priority', 'Core is a strong first place to look. Specialized is useful for a narrower situation. Backup is a secondary option. Needs verification may be useful, but important details should be confirmed before referral.'],
-    ['sort-select', 'Sort', 'Recommended orders Core, Specialized, Backup and Needs verification, then foster-care relevance, then name. Recently verified uses the date FARM127 last reviewed the listing.']
+    ['sort-select', 'Sort', 'Recommended orders Core, Specialized, Backup and Needs verification, then foster-care relevance, then name. Recently verified uses the date the program last reviewed the listing.']
   ];
 
   function init() {

@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const config = Object.assign({ showPartnershipPlanner: false, pageSize: 18 }, window.FARM127_CONFIG || {});
+  const config = Object.assign({ showPartnershipPlanner: false, pageSize: 18 }, window.RESOURCE_NAVIGATOR_CONFIG || {});
 
   const state = {
     data: null,
@@ -556,13 +556,13 @@
   }
 
   function renderFosterPrograms() {
-    const headers = ['Program', 'Age window', 'Eligibility trigger', 'Primary value', 'FARM127 action', 'Source'];
+    const headers = ['Program', 'Age window', 'Eligibility trigger', 'Primary value', 'Recommended next step', 'Source'];
     const rows = state.data.fosterPrograms.map((item) => [
       `<strong>${escapeHtml(item.program)}</strong>`,
       escapeHtml(item.ageWindow),
       escapeHtml(item.eligibilityTrigger),
       escapeHtml(item.primaryValue),
-      escapeHtml(item.farm127Action),
+      escapeHtml(item.recommendedAction),
       safeUrl(item.sourceUrl) ? `<a href="${escapeAttribute(safeUrl(item.sourceUrl))}" target="_blank" rel="noopener noreferrer">Official page</a>` : ''
     ]);
     document.getElementById('foster-table').innerHTML = tableHtml(headers, rows);

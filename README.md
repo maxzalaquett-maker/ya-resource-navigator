@@ -1,6 +1,6 @@
-# FARM127 Resource Navigator
+# Charlotte Young Adult Resource Navigator
 
-A searchable, mobile-friendly resource directory built from the FARM127 Charlotte Young Adult Resource Directory workbook.
+A searchable, mobile-friendly resource directory built from the the program Charlotte Young Adult Resource Directory workbook.
 
 ## Included
 
@@ -56,7 +56,7 @@ Then open `http://localhost:8080`.
 
 ## Update the directory from Excel
 
-1. Replace `source/FARM127_Charlotte_Young_Adult_Resource_Directory.xlsx` with the updated workbook.
+1. Replace `source/the program_Charlotte_Young_Adult_Resource_Directory.xlsx` with the updated workbook.
 2. Keep these worksheet names and header labels unchanged:
    - `Resource Directory`
    - `Start Here`
@@ -94,10 +94,10 @@ This keeps the triage, foster guide, needs map and partnership data from `data/s
 
 ## Public versus internal deployment
 
-The partnership planner is hidden by default because it is intended for FARM127 staff. To enable it for a private deployment, edit `config.js`:
+The partnership planner is hidden by default because it is intended for the program staff. To enable it for a private deployment, edit `config.js`:
 
 ```js
-window.FARM127_CONFIG = {
+window.RESOURCE_NAVIGATOR_CONFIG = {
   showPartnershipPlanner: true,
   pageSize: 18
 };
@@ -115,7 +115,7 @@ This app is a referral directory, not a real-time availability system. Shelter b
 “Local / nearby” is a practical service-area classification. It includes Charlotte/Mecklenburg and organizations in nearby communities such as Matthews, Indian Trail, Monroe, Concord, Huntersville, Davidson, Gastonia, Belmont and Rock Hill when they are plausibly within roughly 30 road miles of Uptown Charlotte. County, ZIP-code and residency restrictions still control eligibility.
 
 
-## FARM127 Resource Database 2024 review
+## Charlotte Young Adult Resource Database review
 
 Reviewed August 5, 2026. Twelve relevant organizations or distinct programs were added; duplicates were merged or enriched. See `DOCUMENT_REVIEW.md` for every disposition.
 

@@ -16,7 +16,7 @@ with (DATA / "resources.csv").open(newline="", encoding="utf-8") as handle:
         except (ValueError, TypeError):
             pass
 
-        # Keep this listing neutral: My Farm Camps Experience is not affiliated with FARM127.
+        # Keep this listing neutral: My Farm Camps Experience is not affiliated with the program.
         if resource.get("name") == "My Farm Camps Experience":
             resource["referralTrigger"] = (
                 "A young adult wants to explore a farm-based experiential opportunity involving "

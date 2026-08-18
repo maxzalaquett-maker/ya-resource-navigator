@@ -76,15 +76,15 @@ function loginPage(showError) {
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/brand-fonts.css">
   <link rel="stylesheet" href="/login.css">
-  <title>FARM127 Resource Navigator — Private Access</title>
+  <title>Charlotte Young Adult Resource Navigator — Private Access</title>
 </head>
 <body class="auth-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
     <div class="header-inner shell">
-      <div class="brand" aria-label="FARM127 Resource Navigator">
-        <img src="/assets/farm127-logo.png" alt="FARM127" width="88" height="71">
+      <div class="brand" aria-label="Charlotte Young Adult Resource Navigator">
+        <img src="/assets/farm127-logo.png" alt="the program" width="88" height="71">
         <span>
           <strong>Resource Navigator</strong>
           <small>Charlotte young adult support directory</small>
@@ -103,9 +103,9 @@ function loginPage(showError) {
     <section class="auth-hero" aria-labelledby="auth-title">
       <div class="auth-grid">
         <div class="auth-copy">
-          <p class="eyebrow">FARM127 mentor resource</p>
+          <p class="eyebrow">program mentor resource</p>
           <h1 id="auth-title">Find the right support, faster.</h1>
-          <p class="auth-lede">The Resource Navigator brings practical young-adult resources into one place so FARM127 mentors, staff, and approved partners can quickly find a strong next step.</p>
+          <p class="auth-lede">The Resource Navigator brings practical young-adult resources into one place so program mentors, staff, and approved partners can quickly find a strong next step.</p>
           <div class="auth-feature-row" aria-label="Resource Navigator features">
             <span class="auth-feature">Local resource directory</span>
             <span class="auth-feature">Foster care guide</span>
@@ -118,7 +118,7 @@ function loginPage(showError) {
           <div class="auth-card-inner">
             <p class="eyebrow">Protected resource</p>
             <h2 id="login-heading">Welcome back</h2>
-            <p class="auth-card-copy">Enter the shared FARM127 password to continue to the Resource Navigator.</p>
+            <p class="auth-card-copy">Enter the shared the program password to continue to the Resource Navigator.</p>
             ${error}
             <form method="post" action="/__farm127_auth">
               <div class="auth-field">
@@ -137,7 +137,7 @@ function loginPage(showError) {
   <footer class="site-footer">
     <div class="footer-grid shell">
       <div>
-        <strong>FARM127</strong>
+        <strong>the program</strong>
         <p>Practical support rooted in relationship.</p>
       </div>
       <div class="auth-footer-meta">

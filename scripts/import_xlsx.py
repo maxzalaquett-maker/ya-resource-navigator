@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the app's JSON/CSV data from the FARM127 workbook using only Python stdlib.
+"""Rebuild the app's JSON/CSV data from the the program workbook using only Python stdlib.
 
 Usage:
   python3 scripts/import_xlsx.py
@@ -18,7 +18,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_XLSX = ROOT / "source" / "FARM127_Charlotte_Young_Adult_Resource_Directory.xlsx"
+DEFAULT_XLSX = ROOT / "source" / "the program_Charlotte_Young_Adult_Resource_Directory.xlsx"
 OUTPUT_JSON = ROOT / "data" / "app-data.json"
 OUTPUT_CSV = ROOT / "data" / "resources.csv"
 
@@ -41,8 +41,8 @@ RESOURCE_KEYS = {
     "Capacity / verification caveat": "caveat",
     "Official source URL": "sourceUrl",
     "Last verified": "lastVerified",
-    "FARM127 referral status": "referralStatus",
-    "FARM127 notes": "notes",
+    "the program referral status": "referralStatus",
+    "the program notes": "notes",
     "Area": "area",
     "Area group": "areaGroup",
     "Radius / service-area note": "radiusNote",
@@ -200,7 +200,7 @@ def main() -> None:
             resources.append(record)
 
     foster_rows = rows_after_header(reader.read_sheet("Foster Programs"), "Program", 6)
-    foster_keys = ["program", "ageWindow", "eligibilityTrigger", "primaryValue", "farm127Action", "sourceUrl"]
+    foster_keys = ["program", "ageWindow", "eligibilityTrigger", "primaryValue", "recommendedAction", "sourceUrl"]
     foster_programs = [{key: clean(value) for key, value in zip(foster_keys, row)} for row in foster_rows]
 
     needs_rows = rows_after_header(reader.read_sheet("Needs Map"), "Support-plan domain", 4)
@@ -220,7 +220,7 @@ def main() -> None:
 
     payload = {
         "meta": {
-            "title": "FARM127 Charlotte-Area Young Adult Resource Navigator",
+            "title": "Charlotte-Area Young Adult Resource Navigator",
             "verifiedDate": verified_date,
             "resourceCount": len(resources),
             "description": "A researched working directory using one consolidated Support areas field for Charlotte, nearby communities, and statewide or national fallback programs.",

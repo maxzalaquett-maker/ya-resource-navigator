@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "FARM127 Charlotte-Area Young Adult Resource Navigator",
+    "title": "Charlotte-Area Young Adult Resource Navigator",
     "verifiedDate": "2026-08-05",
     "resourceCount": 139,
     "description": "A researched working directory of reputable resources in Charlotte, surrounding communities within roughly 30 miles, and essential statewide or national fallback programs.",
     "radiusDefinition": "Local results are grouped by service location within roughly 30 road miles of Uptown Charlotte. This is a practical service-area screen, not a precise geospatial guarantee.",
     "documentReview": {
-      "title": "FARM127 Resource Database 2024",
+      "title": "Charlotte Young Adult Resource Database",
       "url": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
       "reviewedDate": "2026-08-05",
       "newResourcesAdded": 12
@@ -76,7 +76,7 @@
       "ageWindow": "Usually 13–21",
       "eligibilityTrigger": "Current/former foster care; county-specific rules",
       "primaryValue": "Independent-living planning, funds, education and housing support",
-      "farm127Action": "Refer immediately and document the young adult's custody/discharge history",
+      "recommendedAction": "Refer immediately and document the young adult's custody/discharge history",
       "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS"
     },
     {
@@ -84,7 +84,7 @@
       "ageWindow": "Under 21",
       "eligibilityTrigger": "Former foster youth no longer in county custody; confirm eligibility",
       "primaryValue": "Post-custody transition support and eligible funding",
-      "farm127Action": "Call 704-336-3290 before the 21st birthday",
+      "recommendedAction": "Call 704-336-3290 before the 21st birthday",
       "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS"
     },
     {
@@ -92,7 +92,7 @@
       "ageWindow": "18–21",
       "eligibilityTrigger": "Must meet state criteria and complete a voluntary agreement",
       "primaryValue": "Continued placement, case management and financial support",
-      "farm127Action": "Ask before discharge from care; do not wait until after the 18th birthday",
+      "recommendedAction": "Ask before discharge from care; do not wait until after the 18th birthday",
       "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
     },
     {
@@ -100,7 +100,7 @@
       "ageWindow": "18–21",
       "eligibilityTrigger": "Mecklenburg youth aging out; pilot criteria",
       "primaryValue": "Flexible monthly supplemental income",
-      "farm127Action": "Call LINKS and verify active enrollment/funding",
+      "recommendedAction": "Call LINKS and verify active enrollment/funding",
       "sourceUrl": "https://news.mecknc.gov/gear-supplemental-income-pilot-program-young-adults-aging-out-foster-care"
     },
     {
@@ -108,7 +108,7 @@
       "ageWindow": "Under 26",
       "eligibilityTrigger": "Former foster-care and Medicaid history rules apply",
       "primaryValue": "Medical and behavioral-health coverage",
-      "farm127Action": "State former-foster status explicitly on application",
+      "recommendedAction": "State former-foster status explicitly on application",
       "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
     },
     {
@@ -116,7 +116,7 @@
       "ageWindow": "Often under 26 for eligible former foster youth",
       "eligibilityTrigger": "Medicaid and child-welfare eligibility",
       "primaryValue": "Trauma-informed plan and care management",
-      "farm127Action": "Confirm plan assignment and current contact information",
+      "recommendedAction": "Confirm plan assignment and current contact information",
       "sourceUrl": "https://medicaid.ncdhhs.gov/beneficiaries/children-and-families-specialty-plan"
     },
     {
@@ -124,7 +124,7 @@
       "ageWindow": "Postsecondary; age rules per program",
       "eligibilityTrigger": "Aged out at 18 or adopted after 12; NC public school; at least half time",
       "primaryValue": "Last-dollar scholarship and support",
-      "farm127Action": "FAFSA + NC Reach application before enrollment",
+      "recommendedAction": "FAFSA + NC Reach application before enrollment",
       "sourceUrl": "https://www.cfnc.org/pay-for-college/scholarship-search/nc-reach/"
     },
     {
@@ -132,7 +132,7 @@
       "ageWindow": "Age/status rules apply",
       "eligibilityTrigger": "Current/former foster youth and some adopted/guardianship youth",
       "primaryValue": "Up to program limit for approved education costs",
-      "farm127Action": "Coordinate ETV, financial aid and LINKS",
+      "recommendedAction": "Coordinate ETV, financial aid and LINKS",
       "sourceUrl": "https://www.fc2sprograms.org/"
     },
     {
@@ -140,7 +140,7 @@
       "ageWindow": "Generally 17.5–23",
       "eligibilityTrigger": "Leaving foster care; local program criteria",
       "primaryValue": "Intensive community-based transition support",
-      "farm127Action": "Request Charlotte-area referral and verify openings",
+      "recommendedAction": "Request Charlotte-area referral and verify openings",
       "sourceUrl": "https://youthvillages.org/services/lifeset/"
     },
     {
@@ -148,7 +148,7 @@
       "ageWindow": "16–24",
       "eligibilityTrigger": "Mecklenburg young people; foster history not required",
       "primaryValue": "Youth-centered case management and broad resource access",
-      "farm127Action": "Use as a central warm-handoff hub",
+      "recommendedAction": "Use as a central warm-handoff hub",
       "sourceUrl": "https://therelatives.org/our-programs/on-ramp-resource-center/"
     },
     {
@@ -156,7 +156,7 @@
       "ageWindow": "18–24",
       "eligibilityTrigger": "Homeless, at risk or fleeing violence; screening applies",
       "primaryValue": "Scattered-site housing and case management",
-      "farm127Action": "Screen early; placement is capacity-limited",
+      "recommendedAction": "Screen early; placement is capacity-limited",
       "sourceUrl": "https://therelatives.org/our-programs/housing/"
     },
     {
@@ -164,7 +164,7 @@
       "ageWindow": "Generally 11–22",
       "eligibilityTrigger": "Youth/young adults in foster care",
       "primaryValue": "Long-term volunteer mentorship",
-      "farm127Action": "Coordinate to avoid duplicate or conflicting mentor roles",
+      "recommendedAction": "Coordinate to avoid duplicate or conflicting mentor roles",
       "sourceUrl": "https://www.charlotteangels.org/mentor"
     },
     {
@@ -172,7 +172,7 @@
       "ageWindow": "Teens through mid-20s depending activity",
       "eligibilityTrigger": "Current/former out-of-home-care experience",
       "primaryValue": "Peer network, advocacy and leadership",
-      "farm127Action": "Invite young adults who want peer voice and connection",
+      "recommendedAction": "Invite young adults who want peer voice and connection",
       "sourceUrl": "https://chsnc.org/programs-services/sayso/"
     },
     {
@@ -180,7 +180,7 @@
       "ageWindow": "18–24",
       "eligibilityTrigger": "Federal foster-youth and homelessness criteria; local partnership required",
       "primaryValue": "Time-limited housing voucher and supportive services",
-      "farm127Action": "Treat as a lead until LINKS/INLIVIAN confirms local pathway",
+      "recommendedAction": "Treat as a lead until LINKS/INLIVIAN confirms local pathway",
       "sourceUrl": "https://www.hud.gov/hud-partners/public-indian-housing-fyi"
     },
     {
@@ -188,7 +188,7 @@
       "ageWindow": "Young people experiencing homelessness",
       "eligibilityTrigger": "Document-related legal need",
       "primaryValue": "Help obtaining IDs and vital documents",
-      "farm127Action": "Call/text 1-888-870-DOCS; confirm current hours",
+      "recommendedAction": "Call/text 1-888-870-DOCS; confirm current hours",
       "sourceUrl": "https://nn4youth.org/programs/vital-document-legal-hotline-for-youth/"
     },
     {
@@ -196,7 +196,7 @@
       "ageWindow": "Youth, young adults and 20+ tracks",
       "eligibilityTrigger": "Transitioning from foster care or adolescence; confirm current enrollment",
       "primaryValue": "Mentoring, coaching, leadership, financial literacy and independent-living skills",
-      "farm127Action": "Ask about the current weekly virtual group and age-appropriate coaching track",
+      "recommendedAction": "Ask about the current weekly virtual group and age-appropriate coaching track",
       "sourceUrl": "https://home4me.org/leg-up-on-life-2-2/"
     },
     {
@@ -204,7 +204,7 @@
       "ageWindow": "Generally 18–24",
       "eligibilityTrigger": "Young women aging out of foster care; current program screening required",
       "primaryValue": "Workshops, supportive relationships and transition-to-adulthood connection",
-      "farm127Action": "Verify current programming and do not promise residential housing",
+      "recommendedAction": "Verify current programming and do not promise residential housing",
       "sourceUrl": "https://machiahshouse.org/programs/"
     },
     {
@@ -212,7 +212,7 @@
       "ageWindow": "11–18",
       "eligibilityTrigger": "Currently in foster care through Mecklenburg or Union County",
       "primaryValue": "Committed adult mentor before the transition out of care",
-      "farm127Action": "Use for pre-age-out planning and coordinate clearly with any FARM127 mentor",
+      "recommendedAction": "Use for pre-age-out planning and coordinate clearly with any program mentor",
       "sourceUrl": "https://www.cfknc.org/mentor"
     },
     {
@@ -220,7 +220,7 @@
       "ageWindow": "Transition to college",
       "eligibilityTrigger": "Foster-care or emancipated student interested in Livingstone College",
       "primaryValue": "Foster-specific college recruitment and support pathway developed with Home4Me",
-      "farm127Action": "Contact the project before application and confirm current financial, housing and retention supports",
+      "recommendedAction": "Contact the project before application and confirm current financial, housing and retention supports",
       "sourceUrl": "https://livingstone.edu/h-o-p-e/"
     }
   ],
@@ -311,7 +311,7 @@
     },
     {
       "domain": "Mentorship / community / belonging",
-      "primaryOptions": "FARM127 mentor; Home4Me LEG Up on LIFE; Charlotte Angels; SaySo",
+      "primaryOptions": "program mentor; Home4Me LEG Up on LIFE; Charlotte Angels; SaySo",
       "backupOptions": "CFK Mentor Match for youth under 18; Time Out Youth; Step Up to Leadership; faith/community partners",
       "strategy": "Define roles clearly. One consistent relational through-line is more valuable than several helpers giving competing direction."
     },
@@ -336,7 +336,7 @@
     {
       "organization": "Mecklenburg LINKS / Phoenix Project",
       "whyStrategic": "Gateway to foster-specific benefits with hard age cutoffs",
-      "suggestedFirstAsk": "Quarterly eligibility case review for FARM127 young adults under 21",
+      "suggestedFirstAsk": "Quarterly eligibility case review for young adults under 21",
       "referralPathway": "Release, eligibility checklist, age-out deadline alerts",
       "priority": "High",
       "status": "Not started",
@@ -346,7 +346,7 @@
     {
       "organization": "Youth Villages LifeSet",
       "whyStrategic": "Evidence-informed intensive transition support for eligible foster youth",
-      "suggestedFirstAsk": "Clarify referral criteria and how LifeSet and FARM127 mentorship can coexist",
+      "suggestedFirstAsk": "Clarify referral criteria and how LifeSet and program mentorship can coexist",
       "referralPathway": "Referral source, duplication boundaries, case communication",
       "priority": "High",
       "status": "Not started",
@@ -415,7 +415,7 @@
     },
     {
       "organization": "Common Wealth Charlotte",
-      "whyStrategic": "Budgeting, credit and safe financial products fit FARM127's independence goals",
+      "whyStrategic": "Budgeting, credit and safe financial products fit the program's independence goals",
       "suggestedFirstAsk": "Arrange recurring financial-counseling slots or workshops",
       "referralPathway": "Consent, attendance, coaching scope, loan boundaries",
       "priority": "High",
@@ -476,7 +476,7 @@
     {
       "organization": "Central Piedmont",
       "whyStrategic": "Primary local path for GED, adult education and affordable credentials",
-      "suggestedFirstAsk": "Identify a navigator for former foster youth and FARM127 referrals",
+      "suggestedFirstAsk": "Identify a navigator for former foster youth and directory referrals",
       "referralPathway": "Placement testing, FAFSA, NC Reach/ETV, attendance support",
       "priority": "High",
       "status": "Not started",
@@ -485,8 +485,8 @@
     },
     {
       "organization": "Home4Me",
-      "whyStrategic": "Local foster-specific mentoring and life-skills support that complements FARM127 relationships",
-      "suggestedFirstAsk": "Clarify enrollment, age tracks and how individual coaching can complement a FARM127 mentor",
+      "whyStrategic": "Local foster-specific mentoring and life-skills support that complements the program relationships",
+      "suggestedFirstAsk": "Clarify enrollment, age tracks and how individual coaching can complement a program mentor",
       "referralPathway": "Eligibility, consent, meeting schedule, staff contact and progress communication",
       "priority": "High",
       "status": "Not started",
@@ -516,7 +516,7 @@
     {
       "organization": "Per Scholas North Carolina",
       "whyStrategic": "No-cost technical training includes professional development and learner support",
-      "suggestedFirstAsk": "Identify a recruitment contact and realistic readiness screen for FARM127 referrals",
+      "suggestedFirstAsk": "Identify a recruitment contact and realistic readiness screen for directory referrals",
       "referralPathway": "Course prerequisites, deadline, intensity, technology needs and support plan",
       "priority": "Medium",
       "status": "Not started",
@@ -575,7 +575,7 @@
     },
     {
       "organization": "Agape Acres",
-      "whyStrategic": "Equine-assisted mentoring and life-skills work aligns strongly with FARM127's relational farm vision",
+      "whyStrategic": "Equine-assisted mentoring and life-skills work aligns strongly with the program's relational farm vision",
       "suggestedFirstAsk": "Confirm whether participants age 18 or older can be served and explore a pilot partnership",
       "referralPathway": "Age fit, goals, consent, mentor boundaries, scheduling, cost and progress communication",
       "priority": "Medium",
@@ -586,7 +586,7 @@
     {
       "organization": "Hearts & Hands Food Pantry",
       "whyStrategic": "Low-barrier food, hygiene, baby and pet assistance with pickup and limited delivery",
-      "suggestedFirstAsk": "Clarify referral scheduling and whether FARM127 can assist with appointment coordination",
+      "suggestedFirstAsk": "Clarify referral scheduling and whether the program can assist with appointment coordination",
       "referralPathway": "Appointment, ID/residence documents, delivery criteria, no-show rules and frequency",
       "priority": "Medium",
       "status": "Not started",
