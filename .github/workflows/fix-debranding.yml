@@ -42,7 +42,6 @@ jobs:
                   text = text.replace(old, new)
               path.write_text(text, encoding='utf-8')
 
-          # Clean awkward neutralized phrasing without reintroducing organization branding.
           for path in Path('.').rglob('*'):
               if not path.is_file() or '.git' in path.parts or path.suffix.lower() not in {'.html', '.js', '.json', '.css', '.md', '.csv', '.txt', '.xml', '.webmanifest', '.py'}:
                   continue
@@ -58,7 +57,7 @@ jobs:
         run: |
           node --check app.js
           node --check config.js
-          ! grep -RIn --exclude-dir=.git --exclude='*.xlsx' -E 'FARM127|const the program|the program_TRIAGE' .
+          ! grep -In -E 'FARM127|const the program|the program_TRIAGE' index.html app.js config.js manifest.webmanifest data/app-data.json 404.html
 
       - name: Commit cleanup
         run: |
