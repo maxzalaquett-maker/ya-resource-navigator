@@ -7,10 +7,8 @@ const SESSION_MAX_AGE = 60 * 60 * 24 * 7;
 
 const PUBLIC_LOGIN_ASSETS = new Set([
   '/styles.css',
-  '/brand-fonts.css',
   '/login.css',
-  '/assets/farm127-logo.png',
-  '/assets/icon-192.png'
+  '/assets/resource-navigator-icon.svg'
 ]);
 
 export const config = {
@@ -70,11 +68,10 @@ function loginPage(showError) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#4A3428">
+  <meta name="theme-color" content="#1F2937">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <link rel="icon" href="/assets/icon-192.png" type="image/png">
+  <link rel="icon" href="/assets/resource-navigator-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/brand-fonts.css">
   <link rel="stylesheet" href="/login.css">
   <title>Charlotte Young Adult Resource Navigator — Private Access</title>
 </head>
@@ -84,7 +81,7 @@ function loginPage(showError) {
   <header class="site-header">
     <div class="header-inner shell">
       <div class="brand" aria-label="Charlotte Young Adult Resource Navigator">
-        <img src="/assets/farm127-logo.png" alt="the program" width="88" height="71">
+        <img src="/assets/resource-navigator-icon.svg" alt="" width="52" height="52">
         <span>
           <strong>Resource Navigator</strong>
           <small>Charlotte young adult support directory</small>
@@ -103,9 +100,9 @@ function loginPage(showError) {
     <section class="auth-hero" aria-labelledby="auth-title">
       <div class="auth-grid">
         <div class="auth-copy">
-          <p class="eyebrow">program mentor resource</p>
+          <p class="eyebrow">Mentor resource</p>
           <h1 id="auth-title">Find the right support, faster.</h1>
-          <p class="auth-lede">The Resource Navigator brings practical young-adult resources into one place so program mentors, staff, and approved partners can quickly find a strong next step.</p>
+          <p class="auth-lede">The Resource Navigator brings practical young-adult resources into one place so mentors, staff, and approved partners can quickly find a strong next step.</p>
           <div class="auth-feature-row" aria-label="Resource Navigator features">
             <span class="auth-feature">Local resource directory</span>
             <span class="auth-feature">Foster care guide</span>
@@ -118,7 +115,7 @@ function loginPage(showError) {
           <div class="auth-card-inner">
             <p class="eyebrow">Protected resource</p>
             <h2 id="login-heading">Welcome back</h2>
-            <p class="auth-card-copy">Enter the shared the program password to continue to the Resource Navigator.</p>
+            <p class="auth-card-copy">Enter the shared password to continue to the Resource Navigator.</p>
             ${error}
             <form method="post" action="/__farm127_auth">
               <div class="auth-field">
@@ -137,8 +134,8 @@ function loginPage(showError) {
   <footer class="site-footer">
     <div class="footer-grid shell">
       <div>
-        <strong>the program</strong>
-        <p>Practical support rooted in relationship.</p>
+        <strong>Charlotte Young Adult Resource Navigator</strong>
+        <p>Connecting young adults with practical local support.</p>
       </div>
       <div class="auth-footer-meta">
         <p>Private resource for mentors, staff, and approved partners.</p>
