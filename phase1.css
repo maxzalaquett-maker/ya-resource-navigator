@@ -1,0 +1,455 @@
+.phase1-guided,
+.phase1-plan {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.phase1-guided {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.phase1-guided-heading,
+.phase1-plan-heading,
+.phase1-pathway-resource-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.phase1-guided-heading h2,
+.phase1-plan-heading h2 {
+  margin: .2rem 0 .45rem;
+}
+
+.phase1-guided-heading p:last-child,
+.phase1-plan-heading p:last-child {
+  margin: 0;
+}
+
+.phase1-audience {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.phase1-choice,
+.phase1-radio-card {
+  border: 1px solid var(--border, #d8dde5);
+  border-radius: 16px;
+  background: #fff;
+  color: inherit;
+  text-align: left;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.phase1-choice {
+  padding: 1.1rem 1.2rem;
+  cursor: pointer;
+}
+
+.phase1-choice strong,
+.phase1-choice span,
+.phase1-radio-card strong,
+.phase1-radio-card small {
+  display: block;
+}
+
+.phase1-choice span,
+.phase1-radio-card small {
+  margin-top: .25rem;
+  color: var(--muted, #5f6875);
+  line-height: 1.45;
+}
+
+.phase1-choice:hover,
+.phase1-radio-card:hover,
+.phase1-choice.is-selected,
+.phase1-radio-card:has(input:checked) {
+  border-color: #9b5d00;
+  box-shadow: 0 0 0 3px rgba(183, 109, 0, .12);
+}
+
+.phase1-choice.is-selected,
+.phase1-radio-card:has(input:checked) {
+  background: #fffaf2;
+}
+
+.phase1-form {
+  border: 1px solid var(--border, #d8dde5);
+  border-radius: 20px;
+  background: #f8fafc;
+  padding: 1.25rem;
+}
+
+.phase1-form fieldset,
+.phase1-report-dialog fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.phase1-form legend,
+.phase1-report-dialog legend {
+  font-weight: 750;
+  margin-bottom: .8rem;
+}
+
+.phase1-option-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+}
+
+.phase1-option-grid-compact {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.phase1-radio-card {
+  display: block;
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.phase1-radio-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.phase1-field-grid,
+.phase1-prep-grid,
+.phase1-readiness-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.phase1-form-actions,
+.phase1-plan-fields {
+  display: flex;
+  align-items: end;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.phase1-form-error {
+  color: #9b1c1c;
+  font-weight: 700;
+  margin: .8rem 0 0;
+}
+
+.phase1-results {
+  scroll-margin-top: 1rem;
+}
+
+.phase1-result-card,
+.phase1-plan,
+.phase1-verification-summary {
+  border: 1px solid var(--border, #d8dde5);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 26px rgba(31, 41, 55, .06);
+}
+
+.phase1-result-card {
+  margin-top: 1.5rem;
+  padding: 1.35rem;
+}
+
+.phase1-result-card h3 {
+  margin: .2rem 0 .55rem;
+}
+
+.phase1-result-urgent {
+  border-color: #dc8a8a;
+  background: #fff7f7;
+}
+
+.phase1-context-note,
+.phase1-limit,
+.phase1-privacy-note {
+  border-left: 4px solid #b76d00;
+  background: #fff8ec;
+  padding: .85rem 1rem;
+  margin: 1rem 0;
+}
+
+.phase1-pathway-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.phase1-pathway-steps > section > h4,
+.phase1-prep-grid h4 {
+  margin: 0 0 .75rem;
+}
+
+.phase1-pathway-resource {
+  border: 1px solid var(--border, #d8dde5);
+  border-radius: 16px;
+  padding: 1rem;
+  background: #fff;
+  margin-bottom: .85rem;
+}
+
+.phase1-pathway-resource h5 {
+  margin: .3rem 0 .45rem;
+  font-size: 1.05rem;
+}
+
+.phase1-pathway-resource dl {
+  margin: .8rem 0 0;
+}
+
+.phase1-pathway-resource dl > div {
+  display: grid;
+  grid-template-columns: minmax(7rem, .35fr) 1fr;
+  gap: .6rem;
+  padding: .55rem 0;
+  border-top: 1px solid #eceff3;
+}
+
+.phase1-pathway-resource dt {
+  font-weight: 700;
+}
+
+.phase1-pathway-resource dd {
+  margin: 0;
+}
+
+.phase1-role-badge,
+.phase1-verification {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: .3rem .6rem;
+  font-size: .78rem;
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+.phase1-role-badge {
+  background: #eef2f7;
+  color: #374151;
+}
+
+.phase1-verification.is-recent {
+  background: #e8f6ed;
+  color: #166534;
+}
+
+.phase1-verification.is-current {
+  background: #edf5ff;
+  color: #1d4f91;
+}
+
+.phase1-verification.is-aging {
+  background: #fff4d8;
+  color: #7a4b00;
+}
+
+.phase1-verification.is-stale {
+  background: #fdecec;
+  color: #9b1c1c;
+}
+
+.phase1-prep-grid {
+  margin-top: 1rem;
+}
+
+.phase1-prep-grid > section {
+  border: 1px solid var(--border, #d8dde5);
+  border-radius: 14px;
+  padding: 1rem;
+  background: #f8fafc;
+}
+
+.phase1-prep-grid ul {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+.phase1-plan {
+  padding: 1.35rem;
+  scroll-margin-top: 1rem;
+}
+
+.phase1-plan-count {
+  display: inline-flex;
+  min-width: 1.45rem;
+  min-height: 1.45rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #1f2937;
+  color: #fff;
+  font-size: .75rem;
+  padding: 0 .35rem;
+}
+
+.phase1-plan-empty {
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px dashed #bcc5d0;
+  border-radius: 14px;
+  margin-top: 1rem;
+}
+
+.phase1-plan-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(15rem, .8fr);
+  gap: 1rem;
+  border-top: 1px solid #e5e7eb;
+  padding: 1.2rem 0;
+}
+
+.phase1-plan-item:first-child {
+  margin-top: 1rem;
+}
+
+.phase1-plan-item h3 {
+  margin: .35rem 0 .45rem;
+}
+
+.phase1-plan-fields {
+  align-items: stretch;
+}
+
+.phase1-plan-fields .field {
+  flex: 1 1 11rem;
+}
+
+.phase1-plan-item .card-actions {
+  grid-column: 1 / -1;
+}
+
+.phase1-plan-action {
+  margin-bottom: 0;
+}
+
+.phase1-verification-summary {
+  display: flex;
+  gap: .5rem 1rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: .85rem 1rem;
+  margin-bottom: 1rem;
+  background: #f8fafc;
+}
+
+.phase1-verification-summary span {
+  color: var(--muted, #5f6875);
+}
+
+.phase1-readiness {
+  border: 1px solid var(--border, #d8dde5);
+  border-radius: 16px;
+  background: #f8fafc;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.phase1-readiness h3 {
+  margin-top: 0;
+}
+
+.phase1-readiness-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: .7rem;
+}
+
+.phase1-readiness-grid .full {
+  grid-column: 1 / -1;
+}
+
+.phase1-readiness-grid span:not(.phase1-verification) {
+  color: #4b5563;
+  line-height: 1.45;
+}
+
+.phase1-needs-actions {
+  margin-top: 1rem;
+}
+
+.phase1-report-dialog {
+  width: min(42rem, calc(100vw - 2rem));
+}
+
+.phase1-inline-choice {
+  display: block;
+  padding: .45rem 0;
+}
+
+.phase1-report-dialog textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+@media (max-width: 860px) {
+  .phase1-option-grid,
+  .phase1-option-grid-compact,
+  .phase1-pathway-steps,
+  .phase1-field-grid,
+  .phase1-prep-grid,
+  .phase1-readiness-grid,
+  .phase1-plan-item {
+    grid-template-columns: 1fr;
+  }
+
+  .phase1-readiness-grid .full,
+  .phase1-plan-item .card-actions {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .phase1-audience,
+  .phase1-guided-heading,
+  .phase1-plan-heading,
+  .phase1-pathway-resource-heading {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .phase1-form,
+  .phase1-result-card,
+  .phase1-plan {
+    padding: 1rem;
+  }
+
+  .phase1-pathway-resource dl > div {
+    grid-template-columns: 1fr;
+    gap: .2rem;
+  }
+}
+
+@media print {
+  #phase1-guided,
+  .site-header,
+  .view-nav,
+  .filter-panel,
+  .results-toolbar,
+  #resource-grid,
+  .pagination,
+  .phase1-plan-heading .card-actions,
+  .phase1-plan-item .card-actions {
+    display: none !important;
+  }
+
+  #phase1-plan {
+    display: block !important;
+    box-shadow: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
