@@ -1,17 +1,15 @@
 window.RESOURCE_NAVIGATOR_CONFIG = {
   // Set this to true only for a private/internal deployment.
   showPartnershipPlanner: false,
-  pageSize: 18
+  pageSize: 18,
+  phase1Enabled: true,
+  feedbackUrl: 'https://github.com/maxzalaquett-maker/ya-resource-navigator/issues/new',
+  verificationFreshDays: 30,
+  verificationCurrentDays: 90,
+  verificationAgingDays: 180
 };
 
-// Correct a legacy description that accidentally implied a directory relationship with
-// My Farm Camps Experience. The organizations are not affiliated; keep the directory
-// language neutral until the source data is rebuilt.
-//
-// The directory does not list Time Out Youth as a referral partner. Young adults who want
-// counseling or emotional support related to sexuality, relationships, or identity should
-// still be welcomed and routed through the general professional counseling resources in
-// the navigator.
+// Apply a few source-data corrections until the workbook is rebuilt.
 const originalResponseJson = Response.prototype.json;
 Response.prototype.json = async function (...args) {
   const data = await originalResponseJson.apply(this, args);
@@ -87,27 +85,28 @@ Response.prototype.json = async function (...args) {
   return data;
 };
 
-// Load responsive enhancements separately so the core directory stays easy to maintain.
-const mobileStylesheet = document.createElement('link');
-mobileStylesheet.rel = 'stylesheet';
-mobileStylesheet.href = '/mobile.css';
-document.head.appendChild(mobileStylesheet);
+function loadStyle(href) {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = href;
+  document.head.appendChild(link);
+}
 
-const mobileEnhancements = document.createElement('script');
-mobileEnhancements.src = '/mobile.js';
-document.head.appendChild(mobileEnhancements);
+function loadScript(src) {
+  const script = document.createElement('script');
+  script.src = src;
+  script.async = false;
+  document.head.appendChild(script);
+}
 
-// Load accessible classification help for the directory filters.
-const filterTooltipStylesheet = document.createElement('link');
-filterTooltipStylesheet.rel = 'stylesheet';
-filterTooltipStylesheet.href = '/filter-tooltips.css';
-document.head.appendChild(filterTooltipStylesheet);
+// Keep enhancements modular so the core static directory remains maintainable.
+loadStyle('/mobile.css');
+loadScript('/mobile.js');
+loadStyle('/filter-tooltips.css');
+loadScript('/filter-tooltips.js');
+loadStyle('/phase1.css');
+loadScript('/phase1.js');
 
-const filterTooltipEnhancements = document.createElement('script');
-filterTooltipEnhancements.src = '/filter-tooltips.js';
-document.head.appendChild(filterTooltipEnhancements);
-
-// Small presentation fixes that layer on top of the base stylesheet.
 const headingStyle = document.createElement('style');
 headingStyle.textContent = `
   h1, h2, h3 { line-height: 1.05; }
@@ -124,7 +123,6 @@ headingStyle.textContent = `
   }
   .triage-action strong { display: block !important; }
 
-  /* Never render the old confirmation toast. */
   #toast,
   .toast,
   .toast.is-visible {
@@ -133,8 +131,6 @@ headingStyle.textContent = `
 `;
 document.head.appendChild(headingStyle);
 
-// Official / primary-source pages for the Urgent Help cards.
-// These are added here so the triage content can keep its current data structure.
 const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
   'Immediate danger, overdose, violence or serious injury': 'https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare',
   'Suicidal thoughts or acute mental-health crisis': 'https://988lifeline.org/get-help/',
@@ -147,7 +143,6 @@ const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Use a clearer name for the section that groups organizations by the needs they serve.
   const needsTab = document.querySelector('.nav-tab[data-view="needs"]');
   if (needsTab) needsTab.textContent = 'Support by need';
 
@@ -156,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const eyebrow = needsHeading.querySelector('.eyebrow');
     const title = needsHeading.querySelector('h1');
     const description = needsHeading.querySelector('p:last-child');
-
     if (eyebrow) eyebrow.textContent = 'Organizations grouped by need';
     if (title) title.textContent = 'Support by need';
     if (description) {
@@ -164,11 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Remove the toast node after app.js has cached its references. This keeps existing
-  // copy/save code from throwing while ensuring the toast can never appear onscreen.
-  setTimeout(() => {
-    document.getElementById('toast')?.remove();
-  }, 0);
+  // app.js keeps the element reference after this removal, preventing the legacy toast from displaying.
+  setTimeout(() => document.getElementById('toast')?.remove(), 0);
 
   const triageGrid = document.getElementById('triage-grid');
   if (!triageGrid) return;
@@ -179,8 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const action = card.querySelector('.triage-action');
       if (!heading || !action) return;
 
-      // The rendered markup uses an inline <span> followed by an inline <strong>.
-      // Force the text block itself to stack so the label and action can never sit side by side.
       const textBlock = action.querySelector(':scope > div:first-child:not(.card-actions)');
       if (textBlock) {
         textBlock.style.display = 'flex';
@@ -189,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (card.querySelector('[data-triage-learn-more]')) return;
-
       const url = RESOURCE_NAVIGATOR_TRIAGE_LINKS[heading.textContent.trim()];
       if (!url) return;
 
