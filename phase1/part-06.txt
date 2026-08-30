@@ -1,0 +1,136 @@
+.some((option) => option.value === supportArea)) {
+      select.value = supportArea;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    document.getElementById('directory-browser')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function showResourceInDirectory(id) {
+    const resource = findResource(id);
+    if (!resource) return;
+    document.querySelector('[data-view="directory"]')?.click();
+    const search = document.getElementById('search-input');
+    if (search) {
+      search.value = resource.name;
+      search.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+    setTimeout(() => document.getElementById('directory-browser')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 180);
+  }
+
+  function verificationFor(resource) {
+    if (resource.priority === 'Verify' || !resource.lastVerified) {
+      return { key: 'unverified', label: 'Confirm before relying', detail: 'Information needs direct confirmation', cssClass: 'is-stale' };
+    }
+    const checked = new Date(`${String(resource.lastVerified).slice(0, 10)}T12:00:00`);
+    const days = Number.isNaN(checked.getTime()) ? Infinity : Math.max(0, Math.floor((Date.now() - checked.getTime()) / 86400000));
+    const date = formatDate(resource.lastVerified);
+    if (days <= CONFIG.verificationFreshDays) return { key: 'recent', label: 'Recently confirmed', detail: `Checked ${date}`, cssClass: 'is-recent' };
+    if (days <= CONFIG.verificationCurrentDays) return { key: 'current', label: 'Verified', detail: `Checked ${date}`, cssClass: 'is-current' };
+    if (days <= CONFIG.verificationAgingDays) return { key: 'aging', label: 'Confirm availability', detail: `Last checked ${date}`, cssClass: 'is-aging' };
+    return { key: 'stale', label: 'Confirm before relying', detail: `Last checked ${date}`, cssClass: 'is-stale' };
+  }
+
+  function inferIntakeStatus(resource) {
+    const text = normalize(`${resource.caveat} ${resource.access}`);
+    if (/closed|not accepting|no longer accepting/.test(text)) return 'Reported closed or not accepting — verify';
+    if (/waitlist|waiting list/.test(text)) return 'Waitlist or vacancy dependent — verify';
+    if (/funding.*exhausted|funds.*unavailable/.test(text)) return 'Funding may be unavailable — verify';
+    if (/24\/7|24 hours/.test(text)) return 'Continuous intake or crisis access';
+    return 'Not published — confirm directly';
+  }
+
+  function inferApplicationMethod(resource) {
+    const text = normalize(resource.access);
+    const methods = [];
+    if (/call|phone/.test(text) || resource.phone) methods.push('Call');
+    if (/online|website|application|apply/.test(text) && resource.sourceUrl) methods.push('Online');
+    if (/walk.?in|visit|in person/.test(text)) methods.push('In person');
+    if (/referral/.test(text)) methods.push('Professional referral');
+    return methods.length ? [...new Set(methods)].join(' or ') : 'Confirm with provider';
+  }
+
+  function inferReferralRequirement(resource) {
+    const text = normalize(`${resource.access} ${resource.eligibility} ${resource.notes}`);
+    if (/referral only|must be referred|referring worker/.test(text)) return 'A professional or partner referral is required';
+    if (/self.?referral|call directly|apply directly/.test(text)) return 'Self-referral appears available';
+    return 'Not clearly stated — ask before applying';
+  }
+
+  function inferDocuments(resource) {
+    const text = normalize(`${resource.access} ${resource.eligibility} ${resource.notes}`);
+    const documents = [];
+    if (/\bid\b|identification|driver.?s license|birth certificate/.test(text)) documents.push('Identification, if available');
+    if (/income|pay stub|benefit letter/.test(text)) documents.push('Income or benefit information');
+    if (/eviction|lease|homelessness verification|housing notice/.test(text)) documents.push('Housing notice or proof of current situation');
+    if (/insurance|medicaid/.test(text)) documents.push('Insurance or Medicaid information');
+    if (/application/.test(text)) documents.push('Completed application');
+    if (!documents.length) documents.push('Ask what information is required before the appointment');
+    return documents;
+  }
+
+  function inferExpectedResponse(resource) {
+    const text = `${resource.caveat || ''} ${resource.access || ''}`;
+    const match = text.match(/(?:within|up to|approximately|about)\s+([^.]*?(?:business )?(?:hour|hours|day|days|week|weeks))/i);
+    return match ? match[0].replace(/^./, (char) => char.toUpperCase()) : 'Not published — ask when to follow up';
+  }
+
+  function actionInstruction(resource) {
+    const method = inferApplicationMethod(resource);
+    if (method.includes('Professional referral')) return 'Ask the referring worker or partner to confirm eligibility and submit the required referral.';
+    if (method.includes('Call')) return `Call ${resource.phone || 'the provider'} and confirm eligibility, availability, required documents and the next deadline.`;
+    if (method.includes('Online')) return 'Open the official page, confirm current eligibility and complete the application steps.';
+    if (method.includes('In person')) return 'Confirm walk-in hours and required documents before traveling to the location.';
+    return 'Contact the provider to confirm the correct intake process and current availability.';
+  }
+
+  function actionLabel(resource) {
+    const method = inferApplicationMethod(resource);
+    if (method.includes('Professional referral')) return 'Call about referral';
+    if (method.includes('Call')) return 'Call to confirm';
+    return 'Call';
+  }
+
+  function supportAreaFor(text) {
+    const match = NEED_SUPPORT_MAP.find(([pattern]) => pattern.test(text));
+    return match ? match[1] : '';
+  }
+
+  function resourceList(ids) {
+    return (ids || []).map(findResource).filter(Boolean);
+  }
+
+  function findResource(id) {
+    return state.data?.resources?.find((resource) => String(resource.id) === String(id));
+  }
+
+  function firstPhone(value) {
+    if (!value) return '';
+    const digits = String(value).split(/[\/|]/)[0].replace(/[^0-9]/g, '');
+    if (digits.length === 3) return digits;
+    if (digits.startsWith('1') && digits.length >= 11) return digits.slice(0, 11);
+    return digits.length >= 10 ? digits.slice(0, 10) : '';
+  }
+
+  function safeUrl(value) {
+    if (!value) return '';
+    try {
+      const url = new URL(value, window.location.origin);
+      return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function formatDate(value) {
+    if (!value) return 'date unavailable';
+    const date = new Date(`${String(value).slice(0, 10)}T12:00:00`);
+    if (Number.isNaN(date.getTime())) return String(value);
+    return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+  }
+
+
+  function setText(element, value) {
+    if (element && element.textContent !== String(value)) element.textContent = String(value);
+  }
+
+  function nor

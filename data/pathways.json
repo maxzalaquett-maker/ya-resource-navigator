@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Structured Phase 1 pathways that connect common young-adult situations to a small set of resource records."
+  },
+  "pathways": [
+    {
+      "id": "unsafe-tonight",
+      "title": "A safe place is needed tonight",
+      "summary": "Start with the community entry point that assesses homelessness and immediate housing instability, then use a statewide navigator if the local pathway cannot be reached or does not fit.",
+      "primaryResourceIds": [4],
+      "backupResourceIds": [1],
+      "documents": [
+        "Photo identification, if available",
+        "Current location and a safe callback number",
+        "Any eviction, discharge or termination notice",
+        "Names and ages of anyone who must stay together"
+      ],
+      "successCriteria": [
+        "A screening or assessment is completed",
+        "The next contact, location or deadline is clear",
+        "The referral outcome is known rather than left open-ended",
+        "A backup is identified when no immediate placement is available"
+      ],
+      "limit": "Emergency and shelter capacity is limited. A completed assessment does not guarantee a bed or housing placement. Call 911 when there is immediate danger."
+    },
+    {
+      "id": "housing-risk",
+      "title": "Housing may end within days or weeks",
+      "summary": "Confirm the correct prevention or coordinated-entry pathway before the deadline, prepare the documents that establish the housing risk and follow up until eligibility or availability is known.",
+      "primaryResourceIds": [4],
+      "backupResourceIds": [2, 1],
+      "documents": [
+        "Lease, occupancy agreement or written housing arrangement",
+        "Eviction, termination, discharge or move-out notice",
+        "Photo identification, if available",
+        "Income, benefit and household information",
+        "A short timeline of the housing deadline"
+      ],
+      "successCriteria": [
+        "Eligibility is confirmed or ruled out",
+        "Required documents and the application method are known",
+        "A follow-up date is scheduled",
+        "An alternative is identified if funding or capacity is unavailable"
+      ],
+      "limit": "Many housing programs cannot respond immediately and may require a formal notice, county residency or a specific homelessness definition. Confirm the actual deadline and do not rely on a submitted referral alone."
+    },
+    {
+      "id": "multiple-needs",
+      "title": "Several needs are competing at the same time",
+      "summary": "Use a navigation or benefits-access entry point to prioritize the most urgent threat, identify which programs are responsible and avoid sending the young adult through a long undifferentiated list.",
+      "primaryResourceIds": [2],
+      "backupResourceIds": [1],
+      "documents": [
+        "A short list of the two or three most urgent needs",
+        "Photo identification and proof of address, if available",
+        "Income and benefit information",
+        "Existing applications, denial notices or caseworker contacts",
+        "The deadline connected to each urgent need"
+      ],
+      "successCriteria": [
+        "The most urgent need is identified first",
+        "One responsible program or next action is assigned to each need",
+        "Application barriers and required documents are identified",
+        "A follow-up date is set for unresolved referrals"
+      ],
+      "limit": "Navigation can reduce confusion and administrative burden, but it cannot create service capacity. Document when the correct resource exists but is unavailable so the gap is not mistaken for a search failure."
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+(() => {
+  'use strict';
+
+  const CONFIG = Object.assign({
+    phase1Enabled: true,
+    feedbackUrl: 'https://github.com/maxzalaquett-maker/ya-resource-navigator/issues/new',
+    verificationFreshDays: 30,
+    verificationCurrentDays: 90,
+    verificationAgingDays: 180
+  }, window.RESOURCE_NAVIGATOR_CONFIG || {});
+
+  if (!CONFIG.phase1Enabled) return;
+
+  const PLAN_KEY = 'resource-navigator-support-plan-v1';
+  const SAVED_KEY = 'farm127-saved-resources';
+  const PLAN_META_KEY = 'resource-navigator-support-plan-meta-v1';
+  const state = {
+    data: null,
+    pathways: [],
+    planIds: new Set(),
+    planMeta: {},
+    audience: 'self',
+    selectedNeed: '',
+    selectedUrgency: '',
+    county: 'Mecklenburg',
+    fosterHistory: 'prefer-not'
+  };
+
+  const PATHWAY_ROLE_LABELS = {
+    Core: 'Best place to start',
+    Specialized: 'For specific situations',
+    Backup: 'Try this next',
+    Verify: 'Try this next'
+  };
+
+  const STATUS_OPTIONS = [
+    'Planning to contact',
+    'Contacted',
+    'Application started',
+    'Waiting for response',
+    'Connected to service',
+    'Not eligible',
+    'No availability',
+    'Need another option'
+  ];
+
+  const NEED_SUPPORT_MAP = [
+    [/housing|homeless|shelter|rent/i, 'Housing / homelessness'],
+    [/food|essential|clothing|household/i, 'Food / essentials'],
+    [/job|work|employment|career/i, 'Employment / workforce'],
+    [/school|education|college|ged|training/i, 'Education'],
+    [/transport|car|bus|ride/i, 'Transportation'],
+    [/mental|recovery|substance|therapy|counsel/i, 'Mental health / recovery'],
+    [/health|medical|dental|insurance/i, 'Health care'],
+    [/legal|identity|document|id|safety/i, 'Legal / identity / safety'],
+    [/money|budget|benefit|financial/i, 'Financial capability'],
+    [/mentor|relationship|community|belong/i, 'Community / belonging']
+  ];
+
+  function ready(callback) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', callback, { once: true });
+    else callback();
+  }
+
+  ready(init);
+
+  async function init() {
+    migratePlanStorage();
+    enhanceLabels();
+    installGlobalHandlers();
+    installObservers();
+
+    try {
+      const [dataResponse, pathwayResponse] = await Promise.all([
+        fetch('/data/app-data.json', { cache: 'no-cache' }),
+        fetch('/data/pathways.json', { cache: 'no-cache' })
+      ]);
+      if (!dataResponse.ok) throw new Error(`Resource data returned ${dataResponse.status}`);
+      state.data = await dataResponse.json();
+      state.pathways = pathwayResponse.ok ? (await pathwayResponse.json()).pathways || [] : [];
+      decorateResourceData();
+      injectGuidedExperience();
+      injectPlanPanel();
+      injectReportDialog();
+      updateVerificationSummary();
+      enhanceRenderedContent();
+    } catch (error) {
+      console.error('Phase 1 enhancements could not load:', error);
+    }
+  }
+
+  function migratePlanStorage() {
+    const existingPlan = readJson(PLAN_KEY, null);
+    const legacySaved = readJson(SAVED_KEY, []);
+    const ids = Array.isArray(existingPlan) ? existingPlan : Array.isArray(legacySaved) ? legacySaved : [];
+    state.planIds = new Set(ids.map(String));
+    state.planMeta = readJson(PLAN_META_KEY, {});
+    persistPlan();
+  }
+
+  function decorateResourceData() {
+    if (!Array.isArray(state.data?.resources)) return;
+    state.data.resources.forEach((resource) => {
+      resource.pathwayRole = PATHWAY_ROLE_LABELS[resource.priority] || 'Additional option';
+      resource.verification = verificationFor(resource);
+      resource.intakeStatus = inferIntakeStatus(resource);
+      resource.applicationMethod = inferApplicationMethod(resource);
+      resource.referralRequirement = inferReferralRequirement(resource);
+      resource.requiredDocuments = inferDocuments(resource);
+      resource.expectedResponse = inferExpectedResponse(resource);
+    });
+  }
+
+  function enhanceLabels() {
+    const sortOption = document.querySelector('#sort-select option[value="recommended"]');
+    if (sortOption) sortOption.textContent = 'Directory priority';
+
+    const prioritySelect = document.getElementById('priority-filter');
+    if (prioritySelect) {
+      const label = prioritySelect.closest('label')?.querySelector('span');
+      if (label) label.textContent = 'Pathway role';
+      const labels = {
+        all: 'All pathway roles',
+        Core: 'Best place to start',
+        Specialized: 'For specific situations',
+        Backup: 'Try this next',
+        Verify: 'Needs review'
+      };
+      [...prioritySelect.options].forEach((option) => {
+        if (labels[option.value]) option.textContent = labels[option.value];
+      });
+    }
+
+    const savedLabel = document.querySelector('label.check-field span');
+    if (savedLabel) savedLabel.textContent = 'Show resources in my plan';
+
+    const heroTitle = document.querySelector('#view-directory .hero h1');
+    const heroCopy = document.querySelector('#view-directory .hero-copy');
+    if (heroTitle) heroTitle.textContent = 'Find a clear next step';
+    if (heroCopy) {
+      heroCopy.textContent = 'Answer a few non-identifying questions to get a small set of likely starting points, or browse the full Charlotte-area directory. The navigator explains what to do next, what to prepare and what to try when a resource cannot help.';
+    }
+
+    const heroNote = document.querySelector('#view-directory .hero-note');
+    if (heroNote) {
+      heroNote.innerHTML = '<strong>A listing is not a guarantee.</strong><p>Programs can change eligibility, funding, waitlists and intake processes. Each listing shows when its information was checked and what still needs direct confirmation.</p>';
+    }
+  }
+
+  function injectGuidedExperience() {
+    const hero = document.querySelector('#view-directory .hero');
+    if (!hero || document.getElementById('phase1-guided')) return;
+
+    const section = document.createElement('section');
+    section.id = 'phase1-guided';
+    section.className = 'phase1-guided shell';
+    section.innerHTML = `
+      <div class="phase1-guided-heading">
+        <div>
+          <p class="eyebrow">Guided resource pathway</p>
+          <h2>Get a smaller, more useful set of options</h2>
+          <p>No name, birth date, address or case history is requested or stored.</p>
+        </div>
+        <a class="button button-quiet" href="#directory-browser" data-phase1-browse>Browse all resources</a>
+      </div>
+
+      <div class="phase1-audience" role="group" aria-label="Choose how you are using the navigator">
+        <button type="button" class="phase1-choice is-selected" data-audience="self">
+          <strong>I need help</strong><span>Use plain-language questions and next steps.</span>
+        </button>
+        <button type="button" class="phase1-choice" data-audience="helper">
+          <strong>I’m helping someone</strong><span>See warm-handoff and preparation guidance.</span>
+        </button>
+      </div>
+
+      <form id="phase1-pathway-form" class="phase1-form">
+        <fieldset>
+          <le

@@ -1,0 +1,148 @@
+gend>1. What is the main situation?</legend>
+          <div class="phase1-option-grid">
+            ${radioCard('need', 'housing', 'Housing or a safe place', 'Housing is unsafe, ending soon or unavailable.')}
+            ${radioCard('need', 'multiple', 'Several needs at once', 'It is hard to know which program to contact first.')}
+            ${radioCard('need', 'other', 'Another practical need', 'Food, health, work, school, transportation, documents or support.')}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. How quickly is help needed?</legend>
+          <div class="phase1-option-grid phase1-option-grid-compact">
+            ${radioCard('urgency', 'immediate', 'Immediate danger', 'Call 911 for immediate danger or a medical emergency.')}
+            ${radioCard('urgency', 'tonight', 'Tonight', 'A safe option is needed now.')}
+            ${radioCard('urgency', 'days', 'Within a few days', 'A deadline or loss of stability is approaching.')}
+            ${radioCard('urgency', 'planning', 'Planning ahead', 'The need is important but not immediate.')}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. A few eligibility clues</legend>
+          <div class="phase1-field-grid">
+            <label class="field"><span>County or service area</span>
+              <select name="county">
+                <option value="Mecklenburg">Mecklenburg County</option>
+                <option value="Nearby">Nearby Charlotte-area county</option>
+                <option value="OtherNC">Elsewhere in North Carolina</option>
+              </select>
+            </label>
+            <label class="field"><span>Foster-care history</span>
+              <select name="fosterHistory">
+                <option value="prefer-not">Prefer not to answer</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="phase1-form-actions">
+          <button class="button button-primary" type="submit">Show likely next steps</button>
+          <button class="button button-quiet" type="reset">Start over</button>
+        </div>
+        <p class="phase1-form-error" id="phase1-form-error" role="alert" hidden></p>
+      </form>
+      <div id="phase1-results" class="phase1-results" aria-live="polite"></div>`;
+
+    hero.insertAdjacentElement('afterend', section);
+
+    const directoryLayout = document.querySelector('#view-directory .directory-layout');
+    if (directoryLayout) directoryLayout.id = 'directory-browser';
+
+    section.querySelectorAll('[data-audience]').forEach((button) => {
+      button.addEventListener('click', () => {
+        state.audience = button.dataset.audience;
+        section.querySelectorAll('[data-audience]').forEach((item) => item.classList.toggle('is-selected', item === button));
+      });
+    });
+
+    section.querySelector('[data-phase1-browse]')?.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.getElementById('directory-browser')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    const form = document.getElementById('phase1-pathway-form');
+    form.addEventListener('submit', handlePathwaySubmit);
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        state.selectedNeed = '';
+        state.selectedUrgency = '';
+        document.getElementById('phase1-results').innerHTML = '';
+        document.getElementById('phase1-form-error').hidden = true;
+      }, 0);
+    });
+  }
+
+  function radioCard(name, value, title, description) {
+    return `<label class="phase1-radio-card"><input type="radio" name="${name}" value="${value}"><span><strong>${escapeHtml(title)}</strong><small>${escapeHtml(description)}</small></span></label>`;
+  }
+
+  function handlePathwaySubmit(event) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    state.selectedNeed = String(form.get('need') || '');
+    state.selectedUrgency = String(form.get('urgency') || '');
+    state.county = String(form.get('county') || 'Mecklenburg');
+    state.fosterHistory = String(form.get('fosterHistory') || 'prefer-not');
+
+    const error = document.getElementById('phase1-form-error');
+    if (!state.selectedNeed || !state.selectedUrgency) {
+      error.textContent = 'Choose the main situation and how quickly help is needed.';
+      error.hidden = false;
+      return;
+    }
+    error.hidden = true;
+
+    if (state.selectedUrgency === 'immediate') {
+      renderImmediateResult();
+      return;
+    }
+
+    const pathwayId = state.selectedNeed === 'housing'
+      ? (state.selectedUrgency === 'tonight' ? 'unsafe-tonight' : 'housing-risk')
+      : 'multiple-needs';
+    renderPathway(pathwayId);
+  }
+
+  function renderImmediateResult() {
+    const container = document.getElementById('phase1-results');
+    container.innerHTML = `
+      <section class="phase1-result-card phase1-result-urgent">
+        <p class="eyebrow">Immediate safety</p>
+        <h3>Use emergency or crisis support now</h3>
+        <p>Call 911 for immediate danger, overdose, serious injury or a medical emergency. For a mental-health or suicide crisis, call or text 988.</p>
+        <div class="card-actions">
+          <a class="button button-danger" href="tel:911">Call 911</a>
+          <a class="button button-primary" href="tel:988">Call or text 988</a>
+          <button class="button button-secondary" type="button" data-open-view="urgent">See urgent-help guide</button>
+        </div>
+      </section>`;
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderPathway(pathwayId) {
+    const pathway = state.pathways.find((item) => item.id === pathwayId);
+    const container = document.getElementById('phase1-results');
+    if (!pathway) {
+      container.innerHTML = '<p class="phase1-empty">The guided pathway is unavailable. Browse the full directory below.</p>';
+      return;
+    }
+
+    const primary = resourceList(pathway.primaryResourceIds);
+    const backups = resourceList(pathway.backupResourceIds);
+    const outsideMecklenburg = state.county !== 'Mecklenburg';
+    const fosterNote = state.fosterHistory === 'yes'
+      ? '<div class="phase1-context-note"><strong>Foster-care history may open additional options.</strong> Review the Foster care guide for age- and custody-specific benefits before using charitable funds.</div>'
+      : '';
+    const locationNote = outsideMecklenburg
+      ? '<div class="phase1-context-note"><strong>Confirm the service area first.</strong> Several primary listings are Mecklenburg-specific. NC 211 can identify the equivalent entry point in another county.</div>'
+      : '';
+
+    container.innerHTML = `
+      <section class="phase1-result-card">
+        <p class="eyebrow">Recommended pathway</p>
+        <h3>${escapeHtml(pathway.title)}</h3>
+        <p>${escapeHtml(pathway.summary)}</p>
+        ${locationNote}${fosterNote}
+
+    
