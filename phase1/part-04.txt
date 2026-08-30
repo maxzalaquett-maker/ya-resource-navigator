@@ -98,8 +98,24 @@ ${cssEscape(key)}"]`).forEach((button) => {
   }
 
   function installObservers() {
-    const observer = new MutationObserver(() => enhanceRenderedContent());
-    observer.observe(document.body, { childList: true, subtree: true });
+    const targets = [
+      document.getElementById('resource-grid'),
+      document.getElementById('dialog-content'),
+      document.getElementById('needs-grid')
+    ].filter(Boolean);
+    if (!targets.length) return;
+
+    let enhancementQueued = false;
+    const observer = new MutationObserver(() => {
+      if (enhancementQueued) return;
+      enhancementQueued = true;
+      requestAnimationFrame(() => {
+        enhancementQueued = false;
+        enhanceRenderedContent();
+      });
+    });
+
+    targets.forEach((target) => observer.observe(target, { childList: true, subtree: true }));
   }
 
   function enhanceRenderedContent() {
