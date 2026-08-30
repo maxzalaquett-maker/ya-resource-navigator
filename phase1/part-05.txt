@@ -40,7 +40,7 @@ if (actions && !actions.querySelector('[data-phase1-report]')) {
     if (footer) setText(footer, 'Each listing has its own verification date. Confirm current eligibility, capacity and intake directly with the provider.');
 
     const stats = document.querySelector('.stats-grid');
-    if (!stats || stats.querySelector('[data-verification-summary]')) return;
+    if (!stats || document.querySelector('[data-verification-summary]')) return;
     const counts = state.data.resources.reduce((output, resource) => {
       const key = verificationFor(resource).key;
       output[key] = (output[key] || 0) + 1;
