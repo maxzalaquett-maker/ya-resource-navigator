@@ -94,6 +94,26 @@
   padding: 0 0 1rem;
 }
 
+/* The accordion wrapper replaces the original grid container, so restore its row spacing. */
+.filter-toggle-group .filter-accordion-content {
+  display: grid;
+  gap: .85rem;
+}
+
+.filter-toggle-group .filter-check-option {
+  align-items: flex-start;
+  min-height: 1.5rem;
+  line-height: 1.35;
+}
+
+.filter-toggle-group .filter-check-option > span {
+  min-width: 0;
+}
+
+.filter-toggle-group .filter-toggle-note {
+  margin: .3rem 0 0;
+}
+
 .filter-accordion-content[hidden] {
   display: none;
 }
@@ -139,6 +159,18 @@
 
   .filter-accordion-content {
     padding-bottom: 1rem;
+  }
+
+  .filter-toggle-group .filter-accordion-content {
+    gap: .95rem;
+  }
+
+  .filter-toggle-group .filter-check-option {
+    gap: .75rem;
+  }
+
+  .filter-toggle-group .filter-toggle-note {
+    margin-top: .4rem;
   }
 
   /* Keep sticky dialog actions clear of the sheet edge and mobile safe area. */
