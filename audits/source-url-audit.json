@@ -1,0 +1,2285 @@
+{
+  "generatedAt": "2026-08-31T15:31:47.882322+00:00",
+  "results": [
+    {
+      "url": "https://www.adajenkins.org/",
+      "labels": [
+        "Ada Jenkins Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://adajenkins.org/",
+      "finalHost": "adajenkins.org",
+      "title": "Ada Jenkins Center -",
+      "error": ""
+    },
+    {
+      "url": "https://www.anuvia.org/",
+      "labels": [
+        "Anuvia Prevention & Recovery Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.anuvia.org/",
+      "finalHost": "anuvia.org",
+      "title": "Anuvia: Charlotte NC Alcohol &amp; Drug Rehabilitation Center",
+      "error": ""
+    },
+    {
+      "url": "https://www.braveworks.org/",
+      "labels": [
+        "BraveWorks"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.braveworks.org/",
+      "finalHost": "braveworks.org",
+      "title": "BraveWorks | Transformative Programs for Women &amp; Shop | Charlotte NC",
+      "error": ""
+    },
+    {
+      "url": "https://cwwilliams.org/services/",
+      "labels": [
+        "C.W. Williams Community Health Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "http-error"
+      ],
+      "status": 403,
+      "finalUrl": "https://cwwilliams.org/services/",
+      "finalHost": "cwwilliams.org",
+      "title": "Just a moment...",
+      "error": ""
+    },
+    {
+      "url": "https://camino.org/",
+      "labels": [
+        "Camino Health Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://camino.org/",
+      "finalHost": "camino.org",
+      "title": "Home - Camino",
+      "error": ""
+    },
+    {
+      "url": "https://www.carolinayouth.org/programs",
+      "labels": [
+        "Carolina Youth Coalition"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://carolinayouth.org/the-cyc-experience/programs-pathways/",
+      "finalHost": "carolinayouth.org",
+      "title": "Programs &#038; Pathways &#8211; Carolina Youth Coalition",
+      "error": ""
+    },
+    {
+      "url": "https://centerforcommunitytransitions.org/",
+      "labels": [
+        "Center for Community Transitions"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://centerforcommunitytransitions.org/",
+      "finalHost": "centerforcommunitytransitions.org",
+      "title": "Center for Community Transitions - Reentry Support &amp; Family Support",
+      "error": ""
+    },
+    {
+      "url": "https://www.cpcc.edu/admissions/enroll/college-and-career-readiness",
+      "labels": [
+        "Central Piedmont — College and Career Readiness"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.cpcc.edu/admissions/enroll/college-and-career-readiness",
+      "finalHost": "cpcc.edu",
+      "title": "College and Career Readiness | Central Piedmont",
+      "error": ""
+    },
+    {
+      "url": "https://www.cpcc.edu/programs/finish-high-school",
+      "labels": [
+        "Central Piedmont — Finish High School (GED/HiSET)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.cpcc.edu/programs/finish-high-school",
+      "finalHost": "cpcc.edu",
+      "title": "Finish High School | Central Piedmont",
+      "error": ""
+    },
+    {
+      "url": "https://changedchoices.org/",
+      "labels": [
+        "Changed Choices"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.changedchoices.org/",
+      "finalHost": "changedchoices.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlotteareafund.org/",
+      "labels": [
+        "Charlotte Area Fund — Workforce Development"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.charlotteareafund.org/",
+      "finalHost": "charlotteareafund.org",
+      "title": "CAF",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlottefamilyhousing.org/",
+      "labels": [
+        "Charlotte Family Housing"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.charlottefamilyhousing.org/",
+      "finalHost": "charlottefamilyhousing.org",
+      "title": "Charlotte Family Housing",
+      "error": ""
+    },
+    {
+      "url": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
+      "labels": [
+        "Charlotte Young Adult Resource Database"
+      ],
+      "sourceTypes": [
+        "metadata"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "third-party-platform"
+      ],
+      "status": 200,
+      "finalUrl": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
+      "finalHost": "docs.google.com",
+      "title": "FARM127 Resource Database 2024 - Google Docs",
+      "error": ""
+    },
+    {
+      "url": "https://commonheart.org/",
+      "labels": [
+        "Common Heart"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://commonheart.org/",
+      "finalHost": "commonheart.org",
+      "title": "Home - Common Heart",
+      "error": ""
+    },
+    {
+      "url": "https://www.commonwealthcharlotte.org/",
+      "labels": [
+        "Common Wealth Charlotte"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.commonwealthcharlotte.org/",
+      "finalHost": "commonwealthcharlotte.org",
+      "title": "Common Wealth Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://communityculinary.org/",
+      "labels": [
+        "Community Culinary School of Charlotte"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://communityculinary.org/",
+      "finalHost": "communityculinary.org",
+      "title": "Home Page &#8226; Community Culinary School of Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://www.communitylinknc.org/who",
+      "labels": [
+        "Community Link"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "http-error"
+      ],
+      "status": 404,
+      "finalUrl": "https://www.communitylinknc.org/who",
+      "finalHost": "communitylinknc.org",
+      "title": "404 Not Found",
+      "error": ""
+    },
+    {
+      "url": "https://www.cfknc.org/mentor",
+      "labels": [
+        "Congregations for Kids — Mentor Match"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.cfknc.org/mentor",
+      "finalHost": "cfknc.org",
+      "title": "Foster Care | Mentor | Congregations for Kids |",
+      "error": ""
+    },
+    {
+      "url": "https://www.crittentonofnc.org/",
+      "labels": [
+        "Crittenton of North Carolina"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.crittentonofnc.org/",
+      "finalHost": "crittentonofnc.org",
+      "title": "Crittenton of NC | Residential Programs &amp; Support for Women in North Carolina",
+      "error": ""
+    },
+    {
+      "url": "https://cvan.org/",
+      "labels": [
+        "CVAN — Cabarrus Victims Assistance Network"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://cvan.org/Default.aspx?AspxAutoDetectCookieSupport=1",
+      "finalHost": "cvan.org",
+      "title": "CVAN - Safety, Shelter &amp; Support for Battered Women &amp; Children of Cabarrus County NC",
+      "error": ""
+    },
+    {
+      "url": "https://disability-rights.org/",
+      "labels": [
+        "Disability Rights & Resources"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 202,
+      "finalUrl": "https://disability-rights.org/",
+      "finalHost": "disability-rights.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://dogreater.org/",
+      "labels": [
+        "Do Greater Charlotte — Sparkhouse"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://dogreater.org/",
+      "finalHost": "dogreater.org",
+      "title": "Do Greater | we power potential",
+      "error": ""
+    },
+    {
+      "url": "https://www.gracioushandshousing.org/",
+      "labels": [
+        "Gracious Hands Transitional Housing"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.gracioushandshousing.org/",
+      "finalHost": "gracioushandshousing.org",
+      "title": "Gracious Hands Housing",
+      "error": ""
+    },
+    {
+      "url": "https://hopehaveninc.org/",
+      "labels": [
+        "Hope Haven"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 202,
+      "finalUrl": "https://hopehaveninc.org/",
+      "finalHost": "hopehaveninc.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://hopehousefoundation.org/",
+      "labels": [
+        "Hope House Foundation"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://hopehousefoundation.org/",
+      "finalHost": "hopehousefoundation.org",
+      "title": "Housing &amp; Support for Women in Need | Hope House Foundation",
+      "error": ""
+    },
+    {
+      "url": "https://www.gastongov.com/1180/Hope-United-Survivor-Network",
+      "labels": [
+        "Hope United Survivor Network"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched",
+        "http-error"
+      ],
+      "status": 404,
+      "finalUrl": "https://www.gastongov.com/1180/Hope-United-Survivor-Network",
+      "finalHost": "gastongov.com",
+      "title": "Custom404 • Gaston County, NC • CivicEngage",
+      "error": ""
+    },
+    {
+      "url": "https://nn4youth.org/programs/vital-document-legal-hotline-for-youth/",
+      "labels": [
+        "I Am Here Vital Document Legal Hotline",
+        "I Am Here legal hotline"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched",
+        "request-failed"
+      ],
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='nn4youth.org', port=443): Max retries exceeded with url: /programs/vital-document-legal-hotline-for-youth/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='nn4youth.org', port=443) at 0x7f6fda406c60>, 'Connection to nn4youth.org timed out. (connect time"
+    },
+    {
+      "url": "https://github.com/maxzalaquett-maker/ya-resource-navigator/issues/new",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fmaxzalaquett-maker%2Fya-resource-navigator%2Fissues%2Fnew",
+      "finalHost": "github.com",
+      "title": "Sign in to GitHub · GitHub",
+      "error": ""
+    },
+    {
+      "url": "https://nourishup.org/findfood/",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://nourishup.org/findfood/",
+      "finalHost": "nourishup.org",
+      "title": "Find Food - Nourish Up",
+      "error": ""
+    },
+    {
+      "url": "https://www.safealliance.org/programs/greater-charlotte-hope-line/",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched",
+        "request-failed"
+      ],
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f6fda39fec0>, 'Connection to www.safealliance.org timed out. "
+    },
+    {
+      "url": "https://www.ihclt.org/adult-education",
+      "labels": [
+        "International House"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.ihclt.org/adult-education",
+      "finalHost": "ihclt.org",
+      "title": "Adult Education | International House | Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://latinamericancoalition.org/",
+      "labels": [
+        "Latin American Coalition"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage",
+        "redirected-to-different-host"
+      ],
+      "status": 200,
+      "finalUrl": "https://mylac.org/",
+      "finalHost": "mylac.org",
+      "title": "Latin American Coalition &#8211; Latin American Coalition",
+      "error": ""
+    },
+    {
+      "url": "https://www.mcleodcenters.org/",
+      "labels": [
+        "McLeod Centers for Wellbeing"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.mcleodcenters.org/",
+      "finalHost": "mcleodcenters.org",
+      "title": "McLeod Centers For Wellbeing - Addiction Treatment - North Carolina %",
+      "error": ""
+    },
+    {
+      "url": "https://health.mecknc.gov/",
+      "labels": [
+        "Mecklenburg WIC"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://health.mecknc.gov/",
+      "finalHost": "health.mecknc.gov",
+      "title": "Public Health | Public Health",
+      "error": ""
+    },
+    {
+      "url": "https://mhaofcc.org/program/counseling",
+      "labels": [
+        "Mental Health America of Central Carolinas — Counseling",
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "resource",
+        "interface"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://mhaofcc.org/program/counseling",
+      "finalHost": "mhaofcc.org",
+      "title": "Counseling | Mental Health America of Central Carolinas",
+      "error": ""
+    },
+    {
+      "url": "https://miravia.org/",
+      "labels": [
+        "MiraVia College Residence"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://miravia.org/",
+      "finalHost": "miravia.org",
+      "title": "Home - MiraVia",
+      "error": ""
+    },
+    {
+      "url": "https://namicharlotte.org/crisis-info/",
+      "labels": [
+        "NAMI Charlotte"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "http-error"
+      ],
+      "status": 403,
+      "finalUrl": "https://namicharlotte.org/crisis-info/",
+      "finalHost": "namicharlotte.org",
+      "title": "Access denied | namicharlotte.org used Cloudflare to restrict access | namicharlotte.org | Cloudflare",
+      "error": ""
+    },
+    {
+      "url": "https://www.1800runaway.org/",
+      "labels": [
+        "National Runaway Safeline"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.1800runaway.org/",
+      "finalHost": "1800runaway.org",
+      "title": "1-800-RUNAWAY | 24/7 Youth Support and Resources",
+      "error": ""
+    },
+    {
+      "url": "https://www.omitttradeschool.com/",
+      "labels": [
+        "OMITT Trade School"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.omitttradeschool.com/",
+      "finalHost": "omitttradeschool.com",
+      "title": "Omitt Trade School |",
+      "error": ""
+    },
+    {
+      "url": "https://project658.com/",
+      "labels": [
+        "Project 658"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "generic-homepage",
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://project658.com/",
+      "finalHost": "project658.com",
+      "title": "Main Home - Project 658",
+      "error": ""
+    },
+    {
+      "url": "https://raoassist.org/clinical-services/",
+      "labels": [
+        "RAO Community Health — HIV/STI Services"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://raoassist.org/clinical-services/",
+      "finalHost": "raoassist.org",
+      "title": "Clinical Services &#8211; RAO Community Health",
+      "error": ""
+    },
+    {
+      "url": "https://rightmovesforyouth.org/",
+      "labels": [
+        "Right Moves for Youth"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.rightmovesforyouth.org/",
+      "finalHost": "rightmovesforyouth.org",
+      "title": "Transform Lives: Youth Mentoring in Charlotte Supporting Future Leaders",
+      "error": ""
+    },
+    {
+      "url": "https://www.safealliance.org/programs/domestic-violence-shelter/",
+      "labels": [
+        "Safe Alliance — Domestic Violence Shelter"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "request-failed"
+      ],
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f6fda3f4710>, 'Connection to www.safealliance.org timed out. (c"
+    },
+    {
+      "url": "https://www.safealliance.org/",
+      "labels": [
+        "Safe Alliance — Victim Assistance and Sexual Assault Services"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage",
+        "request-failed"
+      ],
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f6fda3d1a90>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
+    },
+    {
+      "url": "https://chsnc.org/programs-services/sayso/",
+      "labels": [
+        "SaySo / Strong Able Youth Speaking Out",
+        "SaySo"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://chsnc.org/programs-services/sayso/",
+      "finalHost": "chsnc.org",
+      "title": "SaySo &ndash; Children&#039;s Home Society of North Carolina",
+      "error": ""
+    },
+    {
+      "url": "https://www.score.org/nc/charlotte/",
+      "labels": [
+        "SCORE Charlotte"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "http-error"
+      ],
+      "status": 403,
+      "finalUrl": "https://www.score.org/nc/charlotte/",
+      "finalHost": "score.org",
+      "title": "Just a moment...",
+      "error": ""
+    },
+    {
+      "url": "https://www.smartstartofmeck.org/families-caregivers/",
+      "labels": [
+        "Smart Start of Mecklenburg County"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "request-failed"
+      ],
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7f6fda3d09e0>, 'Connection to www.smartstartofmeck.org timed out. (conn"
+    },
+    {
+      "url": "https://www.ssa.gov/benefits/disability/",
+      "labels": [
+        "Social Security — SSI / SSDI"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [
+        "http-error"
+      ],
+      "status": 403,
+      "finalUrl": "https://www.ssa.gov/benefits/disability/",
+      "finalHost": "ssa.gov",
+      "title": "Access Denied",
+      "error": ""
+    },
+    {
+      "url": "https://www.sutlnc.org/academics",
+      "labels": [
+        "Step Up to Leadership"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.sutlnc.org/academics",
+      "finalHost": "sutlnc.org",
+      "title": "PROGRAMS | Step UP TO LEADERSHIP",
+      "error": ""
+    },
+    {
+      "url": "https://teenhealthconnection.org/",
+      "labels": [
+        "Teen Health Connection"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://teenhealthconnection.org/",
+      "finalHost": "teenhealthconnection.org",
+      "title": "Teen Health Connection",
+      "error": ""
+    },
+    {
+      "url": "https://www.pilgrimsinn.org/",
+      "labels": [
+        "The Pilgrims' Inn"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 202,
+      "finalUrl": "https://www.pilgrimsinn.org/",
+      "finalHost": "pilgrimsinn.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://salvationarmycharlotte.org/greater-charlotte/shelter-1/",
+      "labels": [
+        "The Salvation Army Center of Hope"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "redirected-to-different-host"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.salvationarmyusa.org/usa-southern-territory/north-and-south-carolina/charlotte-area-command/",
+      "finalHost": "salvationarmyusa.org",
+      "title": "The Salvation Army of Greater Charlotte | Salvation Army Area Commands",
+      "error": ""
+    },
+    {
+      "url": "https://ninerneeds.charlotte.edu/",
+      "labels": [
+        "UNC Charlotte Niner Needs"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "manual-review",
+      "flags": [
+        "generic-homepage",
+        "host-not-clearly-matched"
+      ],
+      "status": 200,
+      "finalUrl": "https://basicneeds.charlotte.edu",
+      "finalHost": "basicneeds.charlotte.edu",
+      "title": "Basic Needs Services",
+      "error": ""
+    },
+    {
+      "url": "https://www.urbanleaguecc.org/",
+      "labels": [
+        "Urban League of Central Carolinas"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "generic-homepage"
+      ],
+      "status": 200,
+      "finalUrl": "https://www.urbanleaguecc.org/",
+      "finalHost": "urbanleaguecc.org",
+      "title": "Urban League of Central Carolinas",
+      "error": ""
+    },
+    {
+      "url": "https://cit.mecknc.gov/emergency-contacts",
+      "labels": [
+        "911 Emergency Services"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://cit.mecknc.gov/emergency-contacts",
+      "finalHost": "cit.mecknc.gov",
+      "title": "Hotlines | Crisis Intervention Team",
+      "error": ""
+    },
+    {
+      "url": "https://www.ncdhhs.gov/divisions/mental-health-developmental-disabilities-and-substance-use-services/crisis-services/find-mobile-crisis-team",
+      "labels": [
+        "988 Suicide & Crisis Lifeline"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.ncdhhs.gov/divisions/mental-health-developmental-disabilities-and-substance-use-services/crisis-services/find-mobile-crisis-team",
+      "finalHost": "ncdhhs.gov",
+      "title": "Find a North Carolina Mobile Crisis Team | NCDHHS",
+      "error": ""
+    },
+    {
+      "url": "https://www.alliancehealthplan.org/news/new-provider-chosen-for-mecklenburg-county-behavioral-health-crisis-services/",
+      "labels": [
+        "Alliance Health Access and Information Line"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.alliancehealthplan.org/news/new-provider-chosen-for-mecklenburg-county-behavioral-health-crisis-services/",
+      "finalHost": "alliancehealthplan.org",
+      "title": "New Provider Chosen for Mecklenburg County Behavioral Health Crisis Services - Alliance Health",
+      "error": ""
+    },
+    {
+      "url": "https://www.aspirecommunitycapital.org/microloan",
+      "labels": [
+        "ASPIRE Community Capital"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.aspirecommunitycapital.org/microloan",
+      "finalHost": "aspirecommunitycapital.org",
+      "title": "Access to Capital &mdash; Aspire Community Capital",
+      "error": ""
+    },
+    {
+      "url": "https://wearecakeable.org/employment/",
+      "labels": [
+        "Cakeable — Vocational Training"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://wearecakeable.org/employment/",
+      "finalHost": "wearecakeable.org",
+      "title": "Inclusive Employment Opportunities | Cakeable Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://careringnc.org/low-cost-clinic/",
+      "labels": [
+        "Care Ring Low-Cost Clinic"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://careringnc.org/low-cost-clinic/",
+      "finalHost": "careringnc.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://careringnc.org/nurse-family-partnership/",
+      "labels": [
+        "Care Ring Nurse-Family Partnership"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://careringnc.org/nurse-family-partnership/",
+      "finalHost": "careringnc.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlottenc.gov/CATS/Fares-Passes",
+      "labels": [
+        "CATS Fares and Passes"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlottenc.gov/CATS/Fares-Passes",
+      "finalHost": "charlottenc.gov",
+      "title": "Fares & Passes - Charlotte Area Transit System",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlottenc.gov/CATS/Fares-Passes/Transit-IDs",
+      "labels": [
+        "CATS Reduced Fare Transit IDs"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlottenc.gov/CATS/Fares-Passes/Transit-IDs",
+      "finalHost": "charlottenc.gov",
+      "title": "Transit IDs - Charlotte Area Transit System",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlotteangels.org/mentor",
+      "labels": [
+        "Charlotte Angels — Dare to Dream",
+        "Charlotte Angels Dare to Dream"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlotteangels.org/mentor",
+      "finalHost": "charlotteangels.org",
+      "title": "Become A Mentor | Charlotte Angels",
+      "error": ""
+    },
+    {
+      "url": "https://charlottelegaladvocacy.org/get-help/",
+      "labels": [
+        "Charlotte Center for Legal Advocacy"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://charlottelegaladvocacy.org/get-help/",
+      "finalHost": "charlottelegaladvocacy.org",
+      "title": "Get help &#8211; Charlotte Center for Legal Advocacy",
+      "error": ""
+    },
+    {
+      "url": "https://charlottecommunityhealth.org/en/",
+      "labels": [
+        "Charlotte Community Health Clinic"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://charlottecommunityhealth.org/en/",
+      "finalHost": "charlottecommunityhealth.org",
+      "title": "Home &#8226; Charlotte Community Health Clinic",
+      "error": ""
+    },
+    {
+      "url": "https://digitalbranch.cmlibrary.org/college-career-prep/",
+      "labels": [
+        "Charlotte Mecklenburg Library — College & Career Prep"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://digitalbranch.cmlibrary.org/college-career-prep/",
+      "finalHost": "digitalbranch.cmlibrary.org",
+      "title": "College &amp; Career Connections - Charlotte Mecklenburg Library Digital Branch",
+      "error": ""
+    },
+    {
+      "url": "https://charlotterescuemission.org/our-work/lifeskills/",
+      "labels": [
+        "Charlotte Rescue Mission — Recovery & Life Skills"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://charlotterescuemission.org/our-work/lifeskills/",
+      "finalHost": "charlotterescuemission.org",
+      "title": "Lifeskills - Charlotte Rescue Mission",
+      "error": ""
+    },
+    {
+      "url": "https://www.childcareresourcesinc.org/child-care-subsidy",
+      "labels": [
+        "Child Care Resources Inc. — Child Care Subsidy Support"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.childcareresourcesinc.org/child-care-subsidy",
+      "finalHost": "childcareresourcesinc.org",
+      "title": "Child Care Subsidy - Child Care Resources Inc.",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlottenc.gov/Streets-and-Neighborhoods/Get-Involved/Community-Engagement/Community-Resources-Directory",
+      "labels": [
+        "City of Charlotte Community Resources Directory"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlottenc.gov/Streets-and-Neighborhoods/Get-Involved/Community-Engagement/Community-Resources-Directory",
+      "finalHost": "charlottenc.gov",
+      "title": "Community Resource Directory - City of Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlottenc.gov/City-Government/Initiatives-and-Involvement/Office-of-Youth-Opportunities/Youth-Development",
+      "labels": [
+        "City of Charlotte — Job & Career Readiness Training"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlottenc.gov/City-Government/Initiatives-and-Involvement/Office-of-Youth-Opportunities/Youth-Development",
+      "finalHost": "charlottenc.gov",
+      "title": "Youth Development - City of Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://unionshelter.org/how-we-help/overview.html",
+      "labels": [
+        "Community Shelter of Union County"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://unionshelter.org/how-we-help/overview.html",
+      "finalHost": "unionshelter.org",
+      "title": "How We Help : How We Help : Community Shelter of Union County",
+      "error": ""
+    },
+    {
+      "url": "https://cooperativeministry.com/need-assistance/housing/",
+      "labels": [
+        "Cooperative Christian Ministry — Housing Program"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://cooperativeministry.com/need-assistance/housing/",
+      "finalHost": "cooperativeministry.com",
+      "title": "Housing &#8211; Cooperative Christian Ministry",
+      "error": ""
+    },
+    {
+      "url": "https://crisisassistance.org/programs/get-help/",
+      "labels": [
+        "Crisis Assistance Ministry — Emergency Financial Assistance",
+        "Crisis Assistance Ministry — Free Store"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://crisisassistance.org/programs/get-help/",
+      "finalHost": "crisisassistance.org",
+      "title": "Get Help - Crisis Assistance Ministry",
+      "error": ""
+    },
+    {
+      "url": "https://charlotte.dressforsuccess.org/about-us/what-we-do/",
+      "labels": [
+        "Dress for Success Charlotte"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://charlotte.dressforsuccess.org/about-us/what-we-do/",
+      "finalHost": "charlotte.dressforsuccess.org",
+      "title": "What We Do | Dress for Success Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://www.freedomcommunities.com/what-we-do",
+      "labels": [
+        "Freedom Communities"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.freedomcommunities.com/what-we-do",
+      "finalHost": "freedomcommunities.com",
+      "title": "What We Do &mdash; Freedom Communities",
+      "error": ""
+    },
+    {
+      "url": "https://www.genoneclt.org/mission-vision",
+      "labels": [
+        "GenOne"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.genoneclt.org/mission-vision",
+      "finalHost": "genoneclt.org",
+      "title": "Team &mdash; GEN-ONE",
+      "error": ""
+    },
+    {
+      "url": "https://goodwillsp.org/job-career-services/",
+      "labels": [
+        "Goodwill Industries of the Southern Piedmont — Charlotte Career Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://goodwillsp.org/job-career-services/",
+      "finalHost": "goodwillsp.org",
+      "title": "Community Services | Goodwill Industries of the Southern Piedmont",
+      "error": ""
+    },
+    {
+      "url": "https://www.heartsandhandsfoodpantry.com/get-help",
+      "labels": [
+        "Hearts & Hands Food Pantry"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.heartsandhandsfoodpantry.com/get-help",
+      "finalHost": "heartsandhandsfoodpantry.com",
+      "title": "Get Help | Hearts &amp; Hands Food Pantry",
+      "error": ""
+    },
+    {
+      "url": "https://www.hickorygrove.org/article/clothes-closet/",
+      "labels": [
+        "Hickory Grove Baptist Church — Clothes Closet"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.hickorygrove.org/article/clothes-closet/",
+      "finalHost": "hickorygrove.org",
+      "title": "Hickory Grove Baptist Church - Charlotte, NC",
+      "error": ""
+    },
+    {
+      "url": "https://home4me.org/leg-up-on-life-2-2/",
+      "labels": [
+        "Home4Me — LEG Up on LIFE"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://home4me.org/leg-up-on-life-2-2/",
+      "finalHost": "home4me.org",
+      "title": "LEG up on LIFE &#8211; Home4Me",
+      "error": ""
+    },
+    {
+      "url": "https://hopeforjustice.org/news/hope-for-justice-north-carolina-regional-center-formerly-lily-pad-haven/",
+      "labels": [
+        "Hope for Justice — North Carolina Regional Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://hopeforjustice.org/news/hope-for-justice-north-carolina-regional-center-formerly-lily-pad-haven/",
+      "finalHost": "hopeforjustice.org",
+      "title": "Hope for Justice | North Carolina Regional Center",
+      "error": ""
+    },
+    {
+      "url": "https://hopestreetfoodpantry.com/get-help/",
+      "labels": [
+        "Hope Street Food Pantry"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://hopestreetfoodpantry.com/get-help/",
+      "finalHost": "hopestreetfoodpantry.com",
+      "title": "Get Help | Hope Street Food Pantry",
+      "error": ""
+    },
+    {
+      "url": "https://www.inlivian.com/housing-choice-voucher/",
+      "labels": [
+        "INLIVIAN — Housing Choice Voucher and Public Housing"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.inlivian.com/housing-choice-voucher/",
+      "finalHost": "inlivian.com",
+      "title": "Housing Choice Voucher &#8211; Inlivian",
+      "error": ""
+    },
+    {
+      "url": "https://988lifeline.org/get-help/",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://988lifeline.org/get-help/",
+      "finalHost": "988lifeline.org",
+      "title": "Get Help - 988 Lifeline",
+      "error": ""
+    },
+    {
+      "url": "https://housingdata.mecknc.gov/coc/services/coordinated-entry",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://housingdata.mecknc.gov/coc/services/coordinated-entry",
+      "finalHost": "housingdata.mecknc.gov",
+      "title": "Coordinated Entry | Charlotte-Mecklenburg Housing &amp; Homelessness",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare",
+      "finalHost": "charlottenc.gov",
+      "title": "Prepare - City of Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://legalaidnc.org/apply/",
+      "labels": [
+        "Legal Aid of North Carolina"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://legalaidnc.org/apply/",
+      "finalHost": "legalaidnc.org",
+      "title": "Apply - Legal Aid of North Carolina",
+      "error": ""
+    },
+    {
+      "url": "https://livingstone.edu/h-o-p-e/",
+      "labels": [
+        "Livingstone College — H.O.P.E. Emancipation Project",
+        "Livingstone College H.O.P.E. Emancipation Project"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://livingstone.edu/h-o-p-e/",
+      "finalHost": "livingstone.edu",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://machiahshouse.org/programs/",
+      "labels": [
+        "Machiah's House"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://machiahshouse.org/programs/",
+      "finalHost": "machiahshouse.org",
+      "title": "PROGRAMS &#8211; Machiah&#039;s House, Inc.",
+      "error": ""
+    },
+    {
+      "url": "https://matthewshelpcenter.org/services/",
+      "labels": [
+        "Matthews HELP Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://matthewshelpcenter.org/services/",
+      "finalHost": "matthewshelpcenter.org",
+      "title": "Services - Matthews Help Center",
+      "error": ""
+    },
+    {
+      "url": "https://css.mecknc.gov/Housing-Stabilization/coordinated-entry",
+      "labels": [
+        "Mecklenburg Coordinated Entry"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://css.mecknc.gov/Housing-Stabilization/coordinated-entry",
+      "finalHost": "css.mecknc.gov",
+      "title": "Coordinated Entry | Community Support Services",
+      "error": ""
+    },
+    {
+      "url": "https://dcr.mecknc.gov/crc",
+      "labels": [
+        "Mecklenburg County Community Resource Centers"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://dcr.mecknc.gov/crc",
+      "finalHost": "dcr.mecknc.gov",
+      "title": "Community Resource Centers | Department of Community Resources",
+      "error": ""
+    },
+    {
+      "url": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS",
+      "labels": [
+        "Mecklenburg County LINKS",
+        "Mecklenburg Phoenix Project",
+        "Mecklenburg LINKS",
+        "Phoenix Project",
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide",
+        "interface"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS",
+      "finalHost": "cfas.mecknc.gov",
+      "title": "LINKS Services for Aging Out Youth | Child, Family and Adult Services",
+      "error": ""
+    },
+    {
+      "url": "https://health.mecknc.gov/services/office-vital-records",
+      "labels": [
+        "Mecklenburg County Office of Vital Records"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://health.mecknc.gov/services/office-vital-records",
+      "finalHost": "health.mecknc.gov",
+      "title": "Office of Vital Records | Public Health",
+      "error": ""
+    },
+    {
+      "url": "https://cjs.mecknc.gov/Services/Re-Entry",
+      "labels": [
+        "Mecklenburg County Re-Entry Services"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://cjs.mecknc.gov/Services/Re-Entry",
+      "finalHost": "cjs.mecknc.gov",
+      "title": "Re-Entry Services | Criminal Justice Services",
+      "error": ""
+    },
+    {
+      "url": "https://dcr.mecknc.gov/employment/more-than-a-job",
+      "labels": [
+        "Mecklenburg County — More Than a Job NC"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://dcr.mecknc.gov/employment/more-than-a-job",
+      "finalHost": "dcr.mecknc.gov",
+      "title": "More Than A Job NC | Department of Community Resources",
+      "error": ""
+    },
+    {
+      "url": "https://dcr.mecknc.gov/Apply-for-Benefits",
+      "labels": [
+        "Mecklenburg Department of Community Resources — Apply for Benefits",
+        "Work First Family Assistance (TANF)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://dcr.mecknc.gov/Apply-for-Benefits",
+      "finalHost": "dcr.mecknc.gov",
+      "title": "Apply for Benefits | Department of Community Resources",
+      "error": ""
+    },
+    {
+      "url": "https://dcr.mecknc.gov/energy",
+      "labels": [
+        "Mecklenburg Energy Assistance (LIEAP/CIP)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://dcr.mecknc.gov/energy",
+      "finalHost": "dcr.mecknc.gov",
+      "title": "Energy Assistance | Department of Community Resources",
+      "error": ""
+    },
+    {
+      "url": "https://dcr.mecknc.gov/services/food-and-nutrition-services",
+      "labels": [
+        "Mecklenburg Food and Nutrition Services (SNAP/FNS)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://dcr.mecknc.gov/services/food-and-nutrition-services",
+      "finalHost": "dcr.mecknc.gov",
+      "title": "Food and Nutrition Services | Department of Community Resources",
+      "error": ""
+    },
+    {
+      "url": "https://health.mecknc.gov/FreeLowCostClinics",
+      "labels": [
+        "Mecklenburg Free and Low-Cost Clinic Directory"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://health.mecknc.gov/FreeLowCostClinics",
+      "finalHost": "health.mecknc.gov",
+      "title": "Free and Low-Cost Health Clinics and Other Community Resources | Public Health",
+      "error": ""
+    },
+    {
+      "url": "https://thesantegroup.org/where-we-work/mecklenburg-county-nc/",
+      "labels": [
+        "Mecklenburg Mobile Crisis (Santé Group)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://thesantegroup.org/where-we-work/mecklenburg-county-nc/",
+      "finalHost": "thesantegroup.org",
+      "title": "Mecklenburg County, NC - Santé",
+      "error": ""
+    },
+    {
+      "url": "https://health.mecknc.gov/clinical-services/STI-testing-treatment",
+      "labels": [
+        "Mecklenburg Public Health — HIV/STI Testing and Treatment"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://health.mecknc.gov/clinical-services/STI-testing-treatment",
+      "finalHost": "health.mecknc.gov",
+      "title": "HIV/STI Testing and Treatment at MCPH Clinics | Public Health",
+      "error": ""
+    },
+    {
+      "url": "https://cfas.mecknc.gov/services/mecklenburg-transportation-system",
+      "labels": [
+        "Mecklenburg Transportation System (MTS)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://cfas.mecknc.gov/services/mts",
+      "finalHost": "cfas.mecknc.gov",
+      "title": "Mecklenburg Transportation System | Child, Family and Adult Services",
+      "error": ""
+    },
+    {
+      "url": "https://www.nccourts.gov/commissions/human-trafficking-commission/human-trafficking-charlotte-psa-campaign",
+      "labels": [
+        "National Human Trafficking Hotline"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.nccourts.gov/commissions/human-trafficking-commission/human-trafficking-charlotte-psa-campaign",
+      "finalHost": "nccourts.gov",
+      "title": "Human Trafficking Charlotte PSA Campaign | North Carolina Judicial Branch",
+      "error": ""
+    },
+    {
+      "url": "https://nc211.org/about/",
+      "labels": [
+        "NC 211"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://nc211.org/about/",
+      "finalHost": "nc211.org",
+      "title": "About - NC 211",
+      "error": ""
+    },
+    {
+      "url": "https://www.ncdhhs.gov/eipd",
+      "labels": [
+        "NC Employment and Independence for People with Disabilities (Vocational Rehabilitation)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.ncdhhs.gov/divisions/employment-and-independence-people-disabilities",
+      "finalHost": "ncdhhs.gov",
+      "title": "NC DHHS: Employment and Independence for People with Disabilities",
+      "error": ""
+    },
+    {
+      "url": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth",
+      "labels": [
+        "NC Foster Care 18 to 21 / Voluntary Placement Agreement",
+        "NC Medicaid for Former Foster Care Youth",
+        "Education and Training Voucher (ETV)",
+        "Foster Care 18 to 21 / VPA",
+        "Medicaid for Former Foster Care Youth",
+        "Education and Training Voucher"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth",
+      "finalHost": "ncdhhs.gov",
+      "title": "NC DHHS: Independent Living Services for Foster Children",
+      "error": ""
+    },
+    {
+      "url": "https://medicaid.ncdhhs.gov/beneficiaries/children-and-families-specialty-plan",
+      "labels": [
+        "NC Medicaid Children and Families Specialty Plan",
+        "Children and Families Specialty Plan"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://medicaid.ncdhhs.gov/beneficiaries/children-and-families-specialty-plan",
+      "finalHost": "medicaid.ncdhhs.gov",
+      "title": "Children and Families Specialty Plan | NC Medicaid",
+      "error": ""
+    },
+    {
+      "url": "https://www.cfnc.org/pay-for-college/scholarship-search/nc-reach/",
+      "labels": [
+        "NC Reach"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.cfnc.org/pay-for-college/scholarship-search/nc-reach/",
+      "finalHost": "cfnc.org",
+      "title": "NC Reach",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlotteworks.com/services/career-services/",
+      "labels": [
+        "NCWorks Career Centers — Charlotte Works"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlotteworks.com/services/career-services/",
+      "finalHost": "charlotteworks.com",
+      "title": "Career Services | NCWorks Career Centers | Charlotte Works",
+      "error": ""
+    },
+    {
+      "url": "https://www.charlotteworks.com/services/youth-young-adults/",
+      "labels": [
+        "NCWorks NextGen — Charlotte Works"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlotteworks.com/services/youth-young-adults/",
+      "finalHost": "charlotteworks.com",
+      "title": "Learning Opportunities for Youth &amp; Young Adults | Charlotte Works",
+      "error": ""
+    },
+    {
+      "url": "https://nourishup.org/foodshare/",
+      "labels": [
+        "Nourish Up — Food Share and Meals"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://nourishup.org/foodshare/",
+      "finalHost": "nourishup.org",
+      "title": "Pop Up Food Shares - Nourish Up",
+      "error": ""
+    },
+    {
+      "url": "https://perscholas.org/locations/northcarolina/",
+      "labels": [
+        "Per Scholas North Carolina"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://perscholas.org/locations/northcarolina/",
+      "finalHost": "perscholas.org",
+      "title": "Technology Schools in North Carolina - Per Scholas",
+      "error": ""
+    },
+    {
+      "url": "https://www.plannedparenthood.org/health-center/north-carolina/charlotte/28204/charlotte-health-center-2703-90860/std-testing-treatment",
+      "labels": [
+        "Planned Parenthood — Charlotte Health Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.plannedparenthood.org/health-center/north-carolina/charlotte/28204/charlotte-health-center-2703-90860/std-testing-treatment",
+      "finalHost": "plannedparenthood.org",
+      "title": "STD Testing in Charlotte, NC - Herpes, Chlamydia, Gonorrhea Tests",
+      "error": ""
+    },
+    {
+      "url": "https://www.roadtohire.org/our-programs",
+      "labels": [
+        "Road to Hire"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.roadtohire.org/our-programs",
+      "finalHost": "roadtohire.org",
+      "title": "Our Programs &mdash; Road to Hire",
+      "error": ""
+    },
+    {
+      "url": "https://www.roofabove.org/get-help/",
+      "labels": [
+        "Roof Above — Day Services Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://www.roofabove.org/get-help/",
+      "finalHost": "roofabove.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://www.roofabove.org/emergency-shelter/",
+      "labels": [
+        "Roof Above — Men's Emergency Shelter"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://www.roofabove.org/emergency-shelter/",
+      "finalHost": "roofabove.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://www.roofabove.org/short-term-and-transitional-housing/",
+      "labels": [
+        "Roof Above — Rapid Rehousing & Permanent Supportive Housing"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://www.roofabove.org/short-term-and-transitional-housing/",
+      "finalHost": "roofabove.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://www.secondharvestmetrolina.org/need-food",
+      "labels": [
+        "Second Harvest Food Bank of Metrolina"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.secondharvestmetrolina.org/need-food/welcome",
+      "finalHost": "secondharvestmetrolina.org",
+      "title": "Welcome, We’re Here to Help | Second Harvest Food Bank of Metrolina",
+      "error": ""
+    },
+    {
+      "url": "https://www.shebuiltthiscity.org/adult-workforce-development-1",
+      "labels": [
+        "She Built This City — Adult Workforce Development"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.shebuiltthiscity.org/adult-workforce-development-1",
+      "finalHost": "shebuiltthiscity.org",
+      "title": "Adult Workforce Development | Empower Women Today! &mdash; She Built This City",
+      "error": ""
+    },
+    {
+      "url": "https://thebarnabascenter.org/what-we-do/counseling/",
+      "labels": [
+        "The Barnabas Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://thebarnabascenter.org/what-we-do/counseling/",
+      "finalHost": "thebarnabascenter.org",
+      "title": "Counseling &#8211; The Barnabas Center",
+      "error": ""
+    },
+    {
+      "url": "https://www.communityfreeclinic.org/services",
+      "labels": [
+        "The Community Free Clinic — Cabarrus County"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.communityfreeclinic.org/services",
+      "finalHost": "communityfreeclinic.org",
+      "title": "Services | The Community Free Clinic",
+      "error": ""
+    },
+    {
+      "url": "https://thefinalharvest.net/kingdom-kitchen",
+      "labels": [
+        "The Final Harvest Ministries — Kingdom Kitchen"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://thefinalharvest.net/kingdom-kitchen",
+      "finalHost": "thefinalharvest.net",
+      "title": "The Final Harvest Ministries - Kingdom Kitchen",
+      "error": ""
+    },
+    {
+      "url": "https://theharvestcenter.org/how-we-work/",
+      "labels": [
+        "The Harvest Center — CLT Passport"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://theharvestcenter.org/how-we-work/",
+      "finalHost": "theharvestcenter.org",
+      "title": "How We Work | The Harvest Center",
+      "error": ""
+    },
+    {
+      "url": "https://therelatives.org/our-programs/on-ramp-resource-center/",
+      "labels": [
+        "The Relatives — On Ramp Resource Center",
+        "The Relatives On Ramp",
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide",
+        "interface"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://therelatives.org/our-programs/on-ramp-resource-center/",
+      "finalHost": "therelatives.org",
+      "title": "On Ramp Resource Center at The Relatives",
+      "error": ""
+    },
+    {
+      "url": "https://therelatives.org/our-programs/housing/",
+      "labels": [
+        "The Relatives — Young Adult Housing",
+        "The Relatives Housing"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://therelatives.org/our-programs/housing/",
+      "finalHost": "therelatives.org",
+      "title": "Housing Program at The Relatives",
+      "error": ""
+    },
+    {
+      "url": "https://southernusa.salvationarmy.org/arc-south/charlotte",
+      "labels": [
+        "The Salvation Army — Charlotte Adult Rehabilitation Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://southernusa.salvationarmy.org/arc-south/charlotte",
+      "finalHost": "southernusa.salvationarmy.org",
+      "title": "Charlotte Adult Rehabilitation Center - ARC Command",
+      "error": ""
+    },
+    {
+      "url": "https://turningpointnc.org/our-services/",
+      "labels": [
+        "Turning Point — Union County"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://turningpointnc.org/our-services/",
+      "finalHost": "turningpointnc.org",
+      "title": "Our Services &#8211; Turning Point",
+      "error": ""
+    },
+    {
+      "url": "https://www.yearup.org/locations/charlotte-nc",
+      "labels": [
+        "Year Up United — Charlotte"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.yearup.org/locations/charlotte-nc",
+      "finalHost": "yearup.org",
+      "title": "Job Training in Charlotte, NC | Year Up United",
+      "error": ""
+    },
+    {
+      "url": "https://youthvillages.org/services/lifeset/",
+      "labels": [
+        "Youth Villages LifeSet"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://youthvillages.org/services/lifeset/",
+      "finalHost": "youthvillages.org",
+      "title": "LifeSet: The Gift of a Good Start | Youth Villages",
+      "error": ""
+    },
+    {
+      "url": "https://ywcacentralcarolinas.org/programs/housing/women-in-transition/",
+      "labels": [
+        "YWCA Central Carolinas — Women in Transition"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://ywcacentralcarolinas.org/programs/housing/women-in-transition/",
+      "finalHost": "ywcacentralcarolinas.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://zabsplace.org/training-application/",
+      "labels": [
+        "ZABS Place — Talent-in-Training"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://zabsplace.org/sam-ebersman-training-program/",
+      "finalHost": "zabsplace.org",
+      "title": "Sam Ebersman Training Program - ZABS Place",
+      "error": ""
+    }
+  ]
+}
