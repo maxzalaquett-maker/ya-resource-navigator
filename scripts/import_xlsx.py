@@ -18,7 +18,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_XLSX = ROOT / "source" / "the program_Charlotte_Young_Adult_Resource_Directory.xlsx"
+DEFAULT_XLSX = ROOT / "source" / "Charlotte_Young_Adult_Resource_Directory.xlsx"
 OUTPUT_JSON = ROOT / "data" / "app-data.json"
 OUTPUT_CSV = ROOT / "data" / "resources.csv"
 
@@ -196,7 +196,7 @@ def main() -> None:
             if not key:
                 continue
             record[key] = excel_date(value) if key == "lastVerified" else clean(value)
-        if record.get("id"):
+        if record.get("id") and str(record.get("priority", "")).strip() != "Verify":
             resources.append(record)
 
     foster_rows = rows_after_header(reader.read_sheet("Foster Programs"), "Program", 6)
