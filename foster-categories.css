@@ -1,0 +1,130 @@
+.foster-category-filter {
+  margin: 0 0 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line, #dbe3ef);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.foster-category-heading {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.foster-category-help {
+  margin: .35rem 0 1rem;
+  color: var(--gray, #64748b);
+  font-size: .95rem;
+}
+
+.foster-category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+
+.foster-category-chip {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem .85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+  color: #334155;
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease;
+}
+
+.foster-category-chip:hover {
+  border-color: var(--brand-strong, #4338ca);
+  color: var(--brand-strong, #4338ca);
+}
+
+.foster-category-chip:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, .28);
+  outline-offset: 2px;
+}
+
+.foster-category-chip.is-active,
+.foster-category-chip[aria-pressed="true"] {
+  border-color: #4338ca;
+  background: #4338ca;
+  color: #fff;
+  box-shadow: 0 5px 14px rgba(67, 56, 202, .18);
+}
+
+.foster-category-chip svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.foster-category-count {
+  min-width: 1.45rem;
+  height: 1.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .35rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.foster-category-chip.is-active .foster-category-count,
+.foster-category-chip[aria-pressed="true"] .foster-category-count {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+.foster-category-summary {
+  margin: 1rem 0 0;
+  color: var(--gray, #64748b);
+  font-size: .92rem;
+}
+
+#foster-table tr[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .foster-category-filter {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .foster-category-help {
+    margin-bottom: .85rem;
+  }
+
+  .foster-category-chips {
+    gap: .55rem;
+  }
+
+  .foster-category-chip {
+    min-height: 42px;
+    padding: .6rem .75rem;
+    font-size: .88rem;
+  }
+
+  .foster-category-chip svg {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
+  }
+}
