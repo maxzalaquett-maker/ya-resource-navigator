@@ -1,0 +1,13 @@
+{
+  "resources": {
+    "Education and Training Voucher (ETV)": {
+      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth",
+      "access": "Use the NCDHHS ETV application and coordinate with LINKS and the school's financial-aid office."
+    }
+  },
+  "fosterPrograms": {
+    "Education and Training Voucher": {
+      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
+    }
+  }
+}
