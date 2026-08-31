@@ -1,9 +1,5 @@
 (() => {
   const items = [
-    ['support-filter', 'What do you need help with?', 'Choose the type of help you are looking for. Some programs appear under more than one type.'],
-    ['area-filter', 'Where can you get help?', 'Charlotte / Mecklenburg programs serve Mecklenburg County. Nearby programs are usually within about 30 miles of Uptown Charlotte. Statewide / national programs cover a larger area.'],
-    ['foster-filter', 'Foster care experience', 'Choose “Made for people with foster care experience” to see programs created for people who are or were in foster care. Choose “May help after foster care” to see broader programs that may also fit.'],
-    ['priority-filter', 'Where to start', '“Best place to start” means the program may be a strong first option. “For a specific need” fits a narrower situation. “Try this next” is another option when the first one cannot help.'],
     ['sort-select', 'Sort by', '“Where to start” puts likely first options at the top. “Recently checked” sorts by the date the program information was last reviewed.']
   ];
 
