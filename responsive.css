@@ -149,6 +149,7 @@ select:disabled {
   }
 
   [data-plan-jump] .phase1-plan-count {
+    position: static;
     min-width: 1.25rem;
     min-height: 1.25rem;
     font-size: .68rem;
@@ -628,9 +629,9 @@ select:disabled {
   }
 
   [data-plan-jump] {
-    width: 40px;
-    min-width: 40px;
-    padding: 0;
+    width: auto;
+    min-width: 64px;
+    padding: 0 .55rem;
     font-size: 0;
   }
 
@@ -640,13 +641,18 @@ select:disabled {
   }
 
   [data-plan-jump] .phase1-plan-count {
-    position: absolute;
-    top: -4px;
-    right: -4px;
+    position: static;
+    top: auto;
+    right: auto;
+    margin-left: .28rem;
   }
 }
 
 @media (max-width: 390px) {
+  .brand strong {
+    max-width: 5.5rem;
+  }
+
   .results-toolbar {
     grid-template-columns: 1fr;
   }
