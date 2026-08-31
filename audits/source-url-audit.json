@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T15:31:47.882322+00:00",
+  "generatedAt": "2026-08-31T15:34:43.485348+00:00",
   "results": [
     {
       "url": "https://www.adajenkins.org/",
@@ -65,7 +65,7 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "http-error"
+        "automated-access-blocked"
       ],
       "status": 403,
       "finalUrl": "https://cwwilliams.org/services/",
@@ -89,6 +89,42 @@
       "finalUrl": "https://camino.org/",
       "finalHost": "camino.org",
       "title": "Home - Camino",
+      "error": ""
+    },
+    {
+      "url": "https://careringnc.org/low-cost-clinic/",
+      "labels": [
+        "Care Ring Low-Cost Clinic"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "automated-access-blocked"
+      ],
+      "status": 403,
+      "finalUrl": "https://careringnc.org/low-cost-clinic/",
+      "finalHost": "careringnc.org",
+      "title": "403 - Forbidden",
+      "error": ""
+    },
+    {
+      "url": "https://careringnc.org/nurse-family-partnership/",
+      "labels": [
+        "Care Ring Nurse-Family Partnership"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "automated-access-blocked"
+      ],
+      "status": 403,
+      "finalUrl": "https://careringnc.org/nurse-family-partnership/",
+      "finalHost": "careringnc.org",
+      "title": "403 - Forbidden",
       "error": ""
     },
     {
@@ -125,42 +161,6 @@
       "finalUrl": "https://centerforcommunitytransitions.org/",
       "finalHost": "centerforcommunitytransitions.org",
       "title": "Center for Community Transitions - Reentry Support &amp; Family Support",
-      "error": ""
-    },
-    {
-      "url": "https://www.cpcc.edu/admissions/enroll/college-and-career-readiness",
-      "labels": [
-        "Central Piedmont — College and Career Readiness"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://www.cpcc.edu/admissions/enroll/college-and-career-readiness",
-      "finalHost": "cpcc.edu",
-      "title": "College and Career Readiness | Central Piedmont",
-      "error": ""
-    },
-    {
-      "url": "https://www.cpcc.edu/programs/finish-high-school",
-      "labels": [
-        "Central Piedmont — Finish High School (GED/HiSET)"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://www.cpcc.edu/programs/finish-high-school",
-      "finalHost": "cpcc.edu",
-      "title": "Finish High School | Central Piedmont",
       "error": ""
     },
     {
@@ -218,24 +218,6 @@
       "error": ""
     },
     {
-      "url": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
-      "labels": [
-        "Charlotte Young Adult Resource Database"
-      ],
-      "sourceTypes": [
-        "metadata"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "third-party-platform"
-      ],
-      "status": 200,
-      "finalUrl": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
-      "finalHost": "docs.google.com",
-      "title": "FARM127 Resource Database 2024 - Google Docs",
-      "error": ""
-    },
-    {
       "url": "https://commonheart.org/",
       "labels": [
         "Common Heart"
@@ -290,43 +272,6 @@
       "error": ""
     },
     {
-      "url": "https://www.communitylinknc.org/who",
-      "labels": [
-        "Community Link"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [
-        "http-error"
-      ],
-      "status": 404,
-      "finalUrl": "https://www.communitylinknc.org/who",
-      "finalHost": "communitylinknc.org",
-      "title": "404 Not Found",
-      "error": ""
-    },
-    {
-      "url": "https://www.cfknc.org/mentor",
-      "labels": [
-        "Congregations for Kids — Mentor Match"
-      ],
-      "sourceTypes": [
-        "resource",
-        "foster-guide"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://www.cfknc.org/mentor",
-      "finalHost": "cfknc.org",
-      "title": "Foster Care | Mentor | Congregations for Kids |",
-      "error": ""
-    },
-    {
       "url": "https://www.crittentonofnc.org/",
       "labels": [
         "Crittenton of North Carolina"
@@ -372,12 +317,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
+        "automated-access-blocked",
         "generic-homepage"
       ],
-      "status": 202,
+      "status": 403,
       "finalUrl": "https://disability-rights.org/",
       "finalHost": "disability-rights.org",
-      "title": "",
+      "title": "403 - Forbidden",
       "error": ""
     },
     {
@@ -426,12 +372,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
+        "automated-access-blocked",
         "generic-homepage"
       ],
-      "status": 202,
+      "status": 403,
       "finalUrl": "https://hopehaveninc.org/",
       "finalHost": "hopehaveninc.org",
-      "title": "",
+      "title": "403 - Forbidden",
       "error": ""
     },
     {
@@ -453,26 +400,7 @@
       "error": ""
     },
     {
-      "url": "https://www.gastongov.com/1180/Hope-United-Survivor-Network",
-      "labels": [
-        "Hope United Survivor Network"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched",
-        "http-error"
-      ],
-      "status": 404,
-      "finalUrl": "https://www.gastongov.com/1180/Hope-United-Survivor-Network",
-      "finalHost": "gastongov.com",
-      "title": "Custom404 • Gaston County, NC • CivicEngage",
-      "error": ""
-    },
-    {
-      "url": "https://nn4youth.org/programs/vital-document-legal-hotline-for-youth/",
+      "url": "https://neglected-delinquent.ed.gov/node/1003",
       "labels": [
         "I Am Here Vital Document Legal Hotline",
         "I Am Here legal hotline"
@@ -481,51 +409,14 @@
         "resource",
         "foster-guide"
       ],
-      "classification": "manual-review",
+      "classification": "official-government",
       "flags": [
-        "host-not-clearly-matched",
-        "request-failed"
+        "automated-access-blocked"
       ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='nn4youth.org', port=443): Max retries exceeded with url: /programs/vital-document-legal-hotline-for-youth/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='nn4youth.org', port=443) at 0x7f6fda406c60>, 'Connection to nn4youth.org timed out. (connect time"
-    },
-    {
-      "url": "https://github.com/maxzalaquett-maker/ya-resource-navigator/issues/new",
-      "labels": [
-        "Interface link"
-      ],
-      "sourceTypes": [
-        "interface"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fmaxzalaquett-maker%2Fya-resource-navigator%2Fissues%2Fnew",
-      "finalHost": "github.com",
-      "title": "Sign in to GitHub · GitHub",
-      "error": ""
-    },
-    {
-      "url": "https://nourishup.org/findfood/",
-      "labels": [
-        "Interface link"
-      ],
-      "sourceTypes": [
-        "interface"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://nourishup.org/findfood/",
-      "finalHost": "nourishup.org",
-      "title": "Find Food - Nourish Up",
+      "status": 403,
+      "finalUrl": "https://neglected-delinquent.ed.gov/node/1003",
+      "finalHost": "neglected-delinquent.ed.gov",
+      "title": "403 Forbidden",
       "error": ""
     },
     {
@@ -536,34 +427,15 @@
       "sourceTypes": [
         "interface"
       ],
-      "classification": "manual-review",
+      "classification": "interface-link",
       "flags": [
-        "host-not-clearly-matched",
-        "request-failed"
+        "automated-check-failed"
       ],
       "status": null,
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f6fda39fec0>, 'Connection to www.safealliance.org timed out. "
-    },
-    {
-      "url": "https://www.ihclt.org/adult-education",
-      "labels": [
-        "International House"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://www.ihclt.org/adult-education",
-      "finalHost": "ihclt.org",
-      "title": "Adult Education | International House | Charlotte",
-      "error": ""
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f24cdd5fe00>, 'Connection to www.safealliance.org timed out. "
     },
     {
       "url": "https://latinamericancoalition.org/",
@@ -582,6 +454,26 @@
       "finalUrl": "https://mylac.org/",
       "finalHost": "mylac.org",
       "title": "Latin American Coalition &#8211; Latin American Coalition",
+      "error": ""
+    },
+    {
+      "url": "https://livingstone.edu/h-o-p-e/",
+      "labels": [
+        "Livingstone College — H.O.P.E. Emancipation Project",
+        "Livingstone College H.O.P.E. Emancipation Project"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "automated-access-blocked"
+      ],
+      "status": 403,
+      "finalUrl": "https://livingstone.edu/h-o-p-e/",
+      "finalHost": "livingstone.edu",
+      "title": "403 - Forbidden",
       "error": ""
     },
     {
@@ -621,26 +513,6 @@
       "error": ""
     },
     {
-      "url": "https://mhaofcc.org/program/counseling",
-      "labels": [
-        "Mental Health America of Central Carolinas — Counseling",
-        "Interface link"
-      ],
-      "sourceTypes": [
-        "resource",
-        "interface"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://mhaofcc.org/program/counseling",
-      "finalHost": "mhaofcc.org",
-      "title": "Counseling | Mental Health America of Central Carolinas",
-      "error": ""
-    },
-    {
       "url": "https://miravia.org/",
       "labels": [
         "MiraVia College Residence"
@@ -668,7 +540,7 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "http-error"
+        "automated-access-blocked"
       ],
       "status": 403,
       "finalUrl": "https://namicharlotte.org/crisis-info/",
@@ -720,33 +592,14 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "manual-review",
+      "classification": "official-first-party",
       "flags": [
-        "generic-homepage",
-        "host-not-clearly-matched"
+        "generic-homepage"
       ],
       "status": 200,
       "finalUrl": "https://project658.com/",
       "finalHost": "project658.com",
       "title": "Main Home - Project 658",
-      "error": ""
-    },
-    {
-      "url": "https://raoassist.org/clinical-services/",
-      "labels": [
-        "RAO Community Health — HIV/STI Services"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://raoassist.org/clinical-services/",
-      "finalHost": "raoassist.org",
-      "title": "Clinical Services &#8211; RAO Community Health",
       "error": ""
     },
     {
@@ -768,6 +621,60 @@
       "error": ""
     },
     {
+      "url": "https://www.roofabove.org/get-help/",
+      "labels": [
+        "Roof Above — Day Services Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "automated-access-blocked"
+      ],
+      "status": 403,
+      "finalUrl": "https://www.roofabove.org/get-help/",
+      "finalHost": "roofabove.org",
+      "title": "403 - Forbidden",
+      "error": ""
+    },
+    {
+      "url": "https://www.roofabove.org/emergency-shelter/",
+      "labels": [
+        "Roof Above — Men's Emergency Shelter"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "automated-access-blocked"
+      ],
+      "status": 403,
+      "finalUrl": "https://www.roofabove.org/emergency-shelter/",
+      "finalHost": "roofabove.org",
+      "title": "403 - Forbidden",
+      "error": ""
+    },
+    {
+      "url": "https://www.roofabove.org/short-term-and-transitional-housing/",
+      "labels": [
+        "Roof Above — Rapid Rehousing & Permanent Supportive Housing"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [
+        "automated-access-blocked"
+      ],
+      "status": 403,
+      "finalUrl": "https://www.roofabove.org/short-term-and-transitional-housing/",
+      "finalHost": "roofabove.org",
+      "title": "403 - Forbidden",
+      "error": ""
+    },
+    {
       "url": "https://www.safealliance.org/programs/domestic-violence-shelter/",
       "labels": [
         "Safe Alliance — Domestic Violence Shelter"
@@ -775,15 +682,15 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "likely-first-party",
+      "classification": "official-first-party",
       "flags": [
-        "request-failed"
+        "automated-check-failed"
       ],
       "status": null,
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f6fda3f4710>, 'Connection to www.safealliance.org timed out. (c"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f24cc4e4fb0>, 'Connection to www.safealliance.org timed out. (c"
     },
     {
       "url": "https://www.safealliance.org/",
@@ -793,36 +700,16 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "likely-first-party",
+      "classification": "official-first-party",
       "flags": [
-        "generic-homepage",
-        "request-failed"
+        "automated-check-failed",
+        "generic-homepage"
       ],
       "status": null,
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f6fda3d1a90>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
-    },
-    {
-      "url": "https://chsnc.org/programs-services/sayso/",
-      "labels": [
-        "SaySo / Strong Able Youth Speaking Out",
-        "SaySo"
-      ],
-      "sourceTypes": [
-        "resource",
-        "foster-guide"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://chsnc.org/programs-services/sayso/",
-      "finalHost": "chsnc.org",
-      "title": "SaySo &ndash; Children&#039;s Home Society of North Carolina",
-      "error": ""
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f24cc4e5f10>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://www.score.org/nc/charlotte/",
@@ -832,9 +719,9 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "likely-first-party",
+      "classification": "official-first-party",
       "flags": [
-        "http-error"
+        "automated-access-blocked"
       ],
       "status": 403,
       "finalUrl": "https://www.score.org/nc/charlotte/",
@@ -850,15 +737,15 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "likely-first-party",
+      "classification": "official-first-party",
       "flags": [
-        "request-failed"
+        "automated-check-failed"
       ],
       "status": null,
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7f6fda3d09e0>, 'Connection to www.smartstartofmeck.org timed out. (conn"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7f24cc53e900>, 'Connection to www.smartstartofmeck.org timed out. (conn"
     },
     {
       "url": "https://www.ssa.gov/benefits/disability/",
@@ -870,30 +757,12 @@
       ],
       "classification": "official-government",
       "flags": [
-        "http-error"
+        "automated-access-blocked"
       ],
       "status": 403,
       "finalUrl": "https://www.ssa.gov/benefits/disability/",
       "finalHost": "ssa.gov",
       "title": "Access Denied",
-      "error": ""
-    },
-    {
-      "url": "https://www.sutlnc.org/academics",
-      "labels": [
-        "Step Up to Leadership"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://www.sutlnc.org/academics",
-      "finalHost": "sutlnc.org",
-      "title": "PROGRAMS | Step UP TO LEADERSHIP",
       "error": ""
     },
     {
@@ -924,12 +793,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
+        "automated-access-blocked",
         "generic-homepage"
       ],
-      "status": 202,
+      "status": 403,
       "finalUrl": "https://www.pilgrimsinn.org/",
       "finalHost": "pilgrimsinn.org",
-      "title": "",
+      "title": "403 - Forbidden",
       "error": ""
     },
     {
@@ -958,10 +828,9 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "manual-review",
+      "classification": "official-first-party",
       "flags": [
-        "generic-homepage",
-        "host-not-clearly-matched"
+        "generic-homepage"
       ],
       "status": 200,
       "finalUrl": "https://basicneeds.charlotte.edu",
@@ -1068,38 +937,6 @@
       "error": ""
     },
     {
-      "url": "https://careringnc.org/low-cost-clinic/",
-      "labels": [
-        "Care Ring Low-Cost Clinic"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [],
-      "status": 202,
-      "finalUrl": "https://careringnc.org/low-cost-clinic/",
-      "finalHost": "careringnc.org",
-      "title": "",
-      "error": ""
-    },
-    {
-      "url": "https://careringnc.org/nurse-family-partnership/",
-      "labels": [
-        "Care Ring Nurse-Family Partnership"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [],
-      "status": 202,
-      "finalUrl": "https://careringnc.org/nurse-family-partnership/",
-      "finalHost": "careringnc.org",
-      "title": "",
-      "error": ""
-    },
-    {
       "url": "https://www.charlottenc.gov/CATS/Fares-Passes",
       "labels": [
         "CATS Fares and Passes"
@@ -1129,6 +966,38 @@
       "finalUrl": "https://www.charlottenc.gov/CATS/Fares-Passes/Transit-IDs",
       "finalHost": "charlottenc.gov",
       "title": "Transit IDs - Charlotte Area Transit System",
+      "error": ""
+    },
+    {
+      "url": "https://www.cpcc.edu/admissions/enroll/college-and-career-readiness",
+      "labels": [
+        "Central Piedmont — College and Career Readiness"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.cpcc.edu/admissions/enroll/college-and-career-readiness",
+      "finalHost": "cpcc.edu",
+      "title": "College and Career Readiness | Central Piedmont",
+      "error": ""
+    },
+    {
+      "url": "https://www.cpcc.edu/programs/finish-high-school",
+      "labels": [
+        "Central Piedmont — Finish High School (GED/HiSET)"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.cpcc.edu/programs/finish-high-school",
+      "finalHost": "cpcc.edu",
+      "title": "Finish High School | Central Piedmont",
       "error": ""
     },
     {
@@ -1214,6 +1083,22 @@
       "error": ""
     },
     {
+      "url": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
+      "labels": [
+        "Charlotte Young Adult Resource Database"
+      ],
+      "sourceTypes": [
+        "metadata"
+      ],
+      "classification": "internal-reference",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://docs.google.com/document/d/1dhb3z0FQSU4lBnmB14-WSQ-LKLhe9QBqxWcJZP9nmy0/edit?usp=sharing",
+      "finalHost": "docs.google.com",
+      "title": "FARM127 Resource Database 2024 - Google Docs",
+      "error": ""
+    },
+    {
       "url": "https://www.childcareresourcesinc.org/child-care-subsidy",
       "labels": [
         "Child Care Resources Inc. — Child Care Subsidy Support"
@@ -1262,6 +1147,22 @@
       "error": ""
     },
     {
+      "url": "https://www.charlottenc.gov/City-News/Charlotte-is-home-an-affordable-housing-resource-guide",
+      "labels": [
+        "Community Link"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-government",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.charlottenc.gov/City-News/Charlotte-is-home-an-affordable-housing-resource-guide",
+      "finalHost": "charlottenc.gov",
+      "title": "&nbsp;",
+      "error": ""
+    },
+    {
       "url": "https://unionshelter.org/how-we-help/overview.html",
       "labels": [
         "Community Shelter of Union County"
@@ -1275,6 +1176,23 @@
       "finalUrl": "https://unionshelter.org/how-we-help/overview.html",
       "finalHost": "unionshelter.org",
       "title": "How We Help : How We Help : Community Shelter of Union County",
+      "error": ""
+    },
+    {
+      "url": "https://www.cfknc.org/mentor",
+      "labels": [
+        "Congregations for Kids — Mentor Match"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.cfknc.org/mentor",
+      "finalHost": "cfknc.org",
+      "title": "Foster Care | Mentor | Congregations for Kids |",
       "error": ""
     },
     {
@@ -1456,6 +1374,22 @@
       "error": ""
     },
     {
+      "url": "https://hopeunitedgaston.com/about-us/",
+      "labels": [
+        "Hope United Survivor Network"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://hopeunitedgaston.com/about-us/",
+      "finalHost": "hopeunitedgaston.com",
+      "title": "About Us - Hope United Survivor Network",
+      "error": ""
+    },
+    {
       "url": "https://www.inlivian.com/housing-choice-voucher/",
       "labels": [
         "INLIVIAN — Housing Choice Voucher and Public Housing"
@@ -1479,12 +1413,28 @@
       "sourceTypes": [
         "interface"
       ],
-      "classification": "official-government",
+      "classification": "interface-link",
       "flags": [],
       "status": 200,
       "finalUrl": "https://988lifeline.org/get-help/",
       "finalHost": "988lifeline.org",
       "title": "Get Help - 988 Lifeline",
+      "error": ""
+    },
+    {
+      "url": "https://github.com/maxzalaquett-maker/ya-resource-navigator/issues/new",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "interface-link",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fmaxzalaquett-maker%2Fya-resource-navigator%2Fissues%2Fnew",
+      "finalHost": "github.com",
+      "title": "Sign in to GitHub · GitHub",
       "error": ""
     },
     {
@@ -1495,12 +1445,28 @@
       "sourceTypes": [
         "interface"
       ],
-      "classification": "official-government",
+      "classification": "interface-link",
       "flags": [],
       "status": 200,
       "finalUrl": "https://housingdata.mecknc.gov/coc/services/coordinated-entry",
       "finalHost": "housingdata.mecknc.gov",
       "title": "Coordinated Entry | Charlotte-Mecklenburg Housing &amp; Homelessness",
+      "error": ""
+    },
+    {
+      "url": "https://nourishup.org/findfood/",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "interface-link",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://nourishup.org/findfood/",
+      "finalHost": "nourishup.org",
+      "title": "Find Food - Nourish Up",
       "error": ""
     },
     {
@@ -1511,12 +1477,28 @@
       "sourceTypes": [
         "interface"
       ],
-      "classification": "official-government",
+      "classification": "interface-link",
       "flags": [],
       "status": 200,
       "finalUrl": "https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare",
       "finalHost": "charlottenc.gov",
       "title": "Prepare - City of Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://www.ihclt.org/adult-education",
+      "labels": [
+        "International House"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.ihclt.org/adult-education",
+      "finalHost": "ihclt.org",
+      "title": "Adult Education | International House | Charlotte",
       "error": ""
     },
     {
@@ -1533,24 +1515,6 @@
       "finalUrl": "https://legalaidnc.org/apply/",
       "finalHost": "legalaidnc.org",
       "title": "Apply - Legal Aid of North Carolina",
-      "error": ""
-    },
-    {
-      "url": "https://livingstone.edu/h-o-p-e/",
-      "labels": [
-        "Livingstone College — H.O.P.E. Emancipation Project",
-        "Livingstone College H.O.P.E. Emancipation Project"
-      ],
-      "sourceTypes": [
-        "resource",
-        "foster-guide"
-      ],
-      "classification": "likely-first-party",
-      "flags": [],
-      "status": 202,
-      "finalUrl": "https://livingstone.edu/h-o-p-e/",
-      "finalHost": "livingstone.edu",
-      "title": "",
       "error": ""
     },
     {
@@ -1802,6 +1766,24 @@
       "error": ""
     },
     {
+      "url": "https://mhaofcc.org/program/counseling",
+      "labels": [
+        "Mental Health America of Central Carolinas — Counseling",
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "resource",
+        "interface"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://mhaofcc.org/program/counseling",
+      "finalHost": "mhaofcc.org",
+      "title": "Counseling | Mental Health America of Central Carolinas",
+      "error": ""
+    },
+    {
       "url": "https://www.nccourts.gov/commissions/human-trafficking-commission/human-trafficking-charlotte-psa-campaign",
       "labels": [
         "National Human Trafficking Hotline"
@@ -1825,7 +1807,7 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "official-government",
+      "classification": "official-first-party",
       "flags": [],
       "status": 200,
       "finalUrl": "https://nc211.org/about/",
@@ -1898,7 +1880,7 @@
         "resource",
         "foster-guide"
       ],
-      "classification": "official-government",
+      "classification": "official-first-party",
       "flags": [],
       "status": 200,
       "finalUrl": "https://www.cfnc.org/pay-for-college/scholarship-search/nc-reach/",
@@ -1946,7 +1928,7 @@
       "sourceTypes": [
         "resource"
       ],
-      "classification": "likely-first-party",
+      "classification": "official-first-party",
       "flags": [],
       "status": 200,
       "finalUrl": "https://nourishup.org/foodshare/",
@@ -1987,6 +1969,22 @@
       "error": ""
     },
     {
+      "url": "https://raoassist.org/clinical-services/",
+      "labels": [
+        "RAO Community Health — HIV/STI Services"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://raoassist.org/clinical-services/",
+      "finalHost": "raoassist.org",
+      "title": "Clinical Services &#8211; RAO Community Health",
+      "error": ""
+    },
+    {
       "url": "https://www.roadtohire.org/our-programs",
       "labels": [
         "Road to Hire"
@@ -2003,51 +2001,21 @@
       "error": ""
     },
     {
-      "url": "https://www.roofabove.org/get-help/",
+      "url": "https://chsnc.org/programs-services/sayso/",
       "labels": [
-        "Roof Above — Day Services Center"
+        "SaySo / Strong Able Youth Speaking Out",
+        "SaySo"
       ],
       "sourceTypes": [
-        "resource"
+        "resource",
+        "foster-guide"
       ],
-      "classification": "likely-first-party",
+      "classification": "official-first-party",
       "flags": [],
-      "status": 202,
-      "finalUrl": "https://www.roofabove.org/get-help/",
-      "finalHost": "roofabove.org",
-      "title": "",
-      "error": ""
-    },
-    {
-      "url": "https://www.roofabove.org/emergency-shelter/",
-      "labels": [
-        "Roof Above — Men's Emergency Shelter"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [],
-      "status": 202,
-      "finalUrl": "https://www.roofabove.org/emergency-shelter/",
-      "finalHost": "roofabove.org",
-      "title": "",
-      "error": ""
-    },
-    {
-      "url": "https://www.roofabove.org/short-term-and-transitional-housing/",
-      "labels": [
-        "Roof Above — Rapid Rehousing & Permanent Supportive Housing"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [],
-      "status": 202,
-      "finalUrl": "https://www.roofabove.org/short-term-and-transitional-housing/",
-      "finalHost": "roofabove.org",
-      "title": "",
+      "status": 200,
+      "finalUrl": "https://chsnc.org/programs-services/sayso/",
+      "finalHost": "chsnc.org",
+      "title": "SaySo &ndash; Children&#039;s Home Society of North Carolina",
       "error": ""
     },
     {
@@ -2080,6 +2048,22 @@
       "finalUrl": "https://www.shebuiltthiscity.org/adult-workforce-development-1",
       "finalHost": "shebuiltthiscity.org",
       "title": "Adult Workforce Development | Empower Women Today! &mdash; She Built This City",
+      "error": ""
+    },
+    {
+      "url": "https://www.sutlnc.org/academics",
+      "labels": [
+        "Step Up to Leadership"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.sutlnc.org/academics",
+      "finalHost": "sutlnc.org",
+      "title": "PROGRAMS | Step UP TO LEADERSHIP",
       "error": ""
     },
     {
@@ -2262,7 +2246,7 @@
       "status": 200,
       "finalUrl": "https://ywcacentralcarolinas.org/programs/housing/women-in-transition/",
       "finalHost": "ywcacentralcarolinas.org",
-      "title": "",
+      "title": "Women in Transition",
       "error": ""
     },
     {
