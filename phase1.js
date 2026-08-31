@@ -23,12 +23,26 @@
   responsiveStyles.href = '/responsive.css';
   document.head.appendChild(responsiveStyles);
 
+  const loadContextualCardLanguage = () => {
+    if (document.querySelector('script[data-contextual-card-language]')) return;
+    const contextualScript = document.createElement('script');
+    contextualScript.src = '/contextual-card-language.js';
+    contextualScript.async = false;
+    contextualScript.dataset.contextualCardLanguage = 'true';
+    document.head.appendChild(contextualScript);
+  };
+
   const loadYoungAdultLanguage = () => {
-    if (document.querySelector('script[data-young-adult-language]')) return;
+    if (document.querySelector('script[data-young-adult-language]')) {
+      loadContextualCardLanguage();
+      return;
+    }
     const languageScript = document.createElement('script');
     languageScript.src = '/young-adult-language-v2.js';
     languageScript.async = false;
     languageScript.dataset.youngAdultLanguage = 'true';
+    languageScript.onload = loadContextualCardLanguage;
+    languageScript.onerror = loadContextualCardLanguage;
     document.head.appendChild(languageScript);
   };
 
