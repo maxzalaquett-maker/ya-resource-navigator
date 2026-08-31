@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Normalize displayed app-data copy before it is committed and deployed.
+"""Normalize and validate displayed app-data copy before deployment.
 
-This script edits the generated JSON file itself. It does not run in the browser.
+This script edits the generated JSON file itself. It never runs in the browser.
 """
 
 import json
@@ -10,6 +10,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_DATA = ROOT / "data" / "app-data.json"
+
+RESOURCE_FIELDS = (
+    "referralTrigger",
+    "eligibility",
+    "provides",
+    "access",
+    "caveat",
+    "notes",
+    "radiusNote",
+)
 
 REPLACEMENTS = (
     (r"\bindependent-living assessment, planning\b", "assessment and planning for living on their own"),
@@ -50,6 +60,8 @@ REPLACEMENTS = (
     (r"\bcohort\b", "class or program group"),
     (r"\btrauma-informed\b", "designed with an understanding of trauma"),
 )
+
+SECOND_PERSON = re.compile(r"\b(?:you|your|yours|yourself|yourselves)\b", re.IGNORECASE)
 
 
 def normalize_whitespace(value: str) -> str:
@@ -92,26 +104,45 @@ def plain_text(value: str) -> str:
 
 def normalize_fields(item: dict, fields: tuple[str, ...]) -> None:
     for field in fields:
-        if field in item and item[field]:
+        if item.get(field):
             item[field] = plain_text(item[field])
+
+
+def validate(data: dict) -> None:
+    errors: list[str] = []
+
+    for resource in data.get("resources", []):
+        name = resource.get("name", "Unnamed resource")
+        summary = str(resource.get("referralTrigger", ""))
+        if not summary.startswith("Provides "):
+            errors.append(f"{name}: card description must start with 'Provides '")
+
+        for field in RESOURCE_FIELDS:
+            value = str(resource.get(field, ""))
+            if SECOND_PERSON.search(value):
+                errors.append(f"{name}: second-person language remains in {field}: {value}")
+
+    for collection, fields in (
+        ("triage", ("situation", "firstAction", "backup", "limit")),
+        ("fosterPrograms", ("ageWindow", "eligibilityTrigger", "primaryValue", "recommendedAction")),
+        ("needsMap", ("strategy",)),
+    ):
+        for item in data.get(collection, []):
+            label = item.get("program") or item.get("domain") or item.get("situation") or collection
+            for field in fields:
+                value = str(item.get(field, ""))
+                if SECOND_PERSON.search(value):
+                    errors.append(f"{label}: second-person language remains in {field}: {value}")
+
+    if errors:
+        raise SystemExit("Static language validation failed:\n- " + "\n- ".join(errors))
 
 
 def main() -> None:
     data = json.loads(APP_DATA.read_text(encoding="utf-8"))
 
     for resource in data.get("resources", []):
-        normalize_fields(
-            resource,
-            (
-                "referralTrigger",
-                "eligibility",
-                "provides",
-                "access",
-                "caveat",
-                "notes",
-                "radiusNote",
-            ),
-        )
+        normalize_fields(resource, RESOURCE_FIELDS)
 
     for item in data.get("triage", []):
         normalize_fields(item, ("situation", "firstAction", "backup", "limit"))
@@ -125,11 +156,13 @@ def main() -> None:
     for item in data.get("needsMap", []):
         normalize_fields(item, ("strategy",))
 
+    validate(data)
+
     APP_DATA.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print("Normalized static app-data language")
+    print("Normalized and validated static app-data language")
 
 
 if __name__ == "__main__":
