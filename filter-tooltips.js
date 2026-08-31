@@ -1,9 +1,35 @@
 (() => {
+  'use strict';
+
+  // The advanced checklist rewrites labels after the core app renders filter chips.
+  // Avoid creating a new mutation when a label already has the requested text;
+  // otherwise the observer can trigger itself indefinitely.
+  function makeActiveFilterTextUpdatesIdempotent() {
+    if (window.__RN_ACTIVE_FILTER_TEXT_PATCH__) return;
+
+    const descriptor = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent');
+    if (!descriptor?.get || !descriptor?.set || descriptor.configurable === false) return;
+
+    window.__RN_ACTIVE_FILTER_TEXT_PATCH__ = true;
+    Object.defineProperty(Node.prototype, 'textContent', {
+      configurable: descriptor.configurable,
+      enumerable: descriptor.enumerable,
+      get: descriptor.get,
+      set(value) {
+        const nextValue = value == null ? '' : String(value);
+        const insideActiveFilters = this.nodeType === Node.ELEMENT_NODE
+          && typeof this.closest === 'function'
+          && Boolean(this.closest('#active-filters'));
+
+        if (insideActiveFilters && descriptor.get.call(this) === nextValue) return;
+        descriptor.set.call(this, value);
+      }
+    });
+  }
+
+  makeActiveFilterTextUpdatesIdempotent();
+
   const items = [
-    ['support-filter', 'What do you need help with?', 'Choose the type of help you are looking for. Some programs appear under more than one type.'],
-    ['area-filter', 'Where can you get help?', 'Charlotte / Mecklenburg programs serve Mecklenburg County. Nearby programs are usually within about 30 miles of Uptown Charlotte. Statewide / national programs cover a larger area.'],
-    ['foster-filter', 'Foster care experience', 'Choose “Made for people with foster care experience” to see programs created for people who are or were in foster care. Choose “May help after foster care” to see broader programs that may also fit.'],
-    ['priority-filter', 'Where to start', '“Best place to start” means the program may be a strong first option. “For a specific need” fits a narrower situation. “Try this next” is another option when the first one cannot help.'],
     ['sort-select', 'Sort by', '“Where to start” puts likely first options at the top. “Recently checked” sorts by the date the program information was last reviewed.']
   ];
 

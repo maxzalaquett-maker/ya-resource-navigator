@@ -1,0 +1,179 @@
+/* Simplified directory filters and balanced result toolbar. */
+
+/* The filter panel is intentionally part of the normal page flow. The checklist can
+   be taller than the viewport, so sticky positioning would make its lower options
+   unreachable until the listings column ended. */
+#view-directory .filter-panel {
+  position: static;
+  top: auto;
+}
+
+#view-directory .results-toolbar {
+  min-height: 8rem;
+  align-items: center;
+  margin-block: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+#view-directory .results-toolbar > div:first-child {
+  align-self: center;
+}
+
+#view-directory .result-count {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -.015em;
+}
+
+#view-directory .active-filters:not(:empty) {
+  margin-top: .7rem;
+}
+
+.advanced-filter-source {
+  display: none !important;
+}
+
+#search-input[hidden] {
+  display: none !important;
+}
+
+.filter-checklist,
+.filter-toggle-group {
+  margin: 0;
+  padding: 1.15rem 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  min-width: 0;
+}
+
+.filter-checklist legend,
+.filter-toggle-group legend {
+  float: left;
+  width: 100%;
+  margin: 0 0 .8rem;
+  padding: 0;
+  color: var(--charcoal);
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -.01em;
+}
+
+.filter-checklist legend + *,
+.filter-toggle-group legend + * {
+  clear: both;
+}
+
+.filter-checklist-options {
+  display: grid;
+  gap: .68rem;
+}
+
+.filter-check-option {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  margin: 0;
+  padding: 0;
+  color: var(--charcoal);
+  font-size: .96rem;
+  font-weight: 520;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.filter-check-option input[type="checkbox"] {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  margin: .02rem 0 0;
+  border: 1.5px solid #64748b;
+  border-radius: .3rem;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.filter-check-option input[type="checkbox"]::after {
+  content: "";
+  width: .6rem;
+  height: .32rem;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translate(.03rem, -.03rem) scale(0);
+  transform-origin: center;
+}
+
+.filter-check-option input[type="checkbox"]:checked {
+  border-color: #111827;
+  background: #111827;
+}
+
+.filter-check-option input[type="checkbox"]:checked::after {
+  transform: rotate(-45deg) translate(.03rem, -.03rem) scale(1);
+}
+
+.filter-check-option input[type="checkbox"]:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, .3);
+  outline-offset: 2px;
+}
+
+.filter-check-option.is-extra {
+  display: none;
+}
+
+.filter-checklist.is-expanded .filter-check-option.is-extra {
+  display: flex;
+}
+
+.filter-see-all {
+  margin-top: .85rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-indigo, #4f46e5);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-toggle-group {
+  display: grid;
+  gap: .75rem;
+}
+
+.filter-toggle-note {
+  margin: .2rem 0 0;
+  color: var(--gray);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.filter-saved-option {
+  padding: 0 !important;
+  font-weight: 520 !important;
+}
+
+.filter-saved-option input {
+  margin-top: .02rem !important;
+}
+
+@media (max-width: 760px) {
+  #view-directory .results-toolbar {
+    min-height: 0;
+    align-items: stretch;
+    padding-block: 1rem;
+  }
+
+  #view-directory .result-count {
+    font-size: 1.08rem;
+  }
+
+  .filter-checklist,
+  .filter-toggle-group {
+    padding-block: 1rem;
+  }
+}
