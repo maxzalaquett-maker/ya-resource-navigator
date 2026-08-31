@@ -8,7 +8,6 @@
   const originalStringIncludes = String.prototype.includes;
 
   loadFilterStyles();
-  installDirectoryDataScope();
   installFilterMatchers();
 
   function loadFilterStyles() {
@@ -17,23 +16,6 @@
     link.rel = 'stylesheet';
     link.href = '/directory-filters.css';
     document.head.appendChild(link);
-  }
-
-  function installDirectoryDataScope() {
-    if (window.__RN_CHARLOTTE_DATA_SCOPE__) return;
-    window.__RN_CHARLOTTE_DATA_SCOPE__ = true;
-
-    const previousJson = Response.prototype.json;
-    Response.prototype.json = async function (...args) {
-      const data = await previousJson.apply(this, args);
-      if (Array.isArray(data?.resources)) {
-        data.resources = data.resources.filter((resource) =>
-          resource.areaGroup !== 'Surrounding communities'
-        );
-        if (data.meta) data.meta.resourceCount = data.resources.length;
-      }
-      return data;
-    };
   }
 
   function installFilterMatchers() {
@@ -54,7 +36,8 @@
         const haystack = String(this);
         const textMatches = !parsed.text || originalStringIncludes.call(haystack, parsed.text);
         const urgentMatches = !parsed.urgent || matchesUrgentNeed(haystack);
-        return textMatches && urgentMatches;
+        const charlotteMatches = !parsed.charlotte || !originalStringIncludes.call(haystack, 'surrounding communities');
+        return textMatches && urgentMatches && charlotteMatches;
       }
       return originalStringIncludes.call(this, searchString, position);
     };
@@ -320,6 +303,16 @@
     const heading = panel.querySelector('.filter-heading h2');
     if (heading) heading.textContent = 'Narrow your results';
 
+    const supportFromUrl = new URLSearchParams(window.location.search).get('support');
+    if (supportFromUrl?.startsWith(SUPPORT_PREFIX) && ![...supportSelect.options].some((option) => option.value === supportFromUrl)) {
+      const option = document.createElement('option');
+      option.value = supportFromUrl;
+      option.textContent = 'Selected support areas';
+      option.hidden = true;
+      supportSelect.appendChild(option);
+      supportSelect.value = supportFromUrl;
+    }
+
     const visibleSearch = createVisibleSearch(searchInput);
     const supportChecklist = createSupportChecklist(supportSelect);
     const toggleGroup = createToggleGroup(fosterSelect, searchInput, visibleSearch);
@@ -359,9 +352,14 @@
       rewriteActiveFilterLabels();
     };
 
-    clearButton?.addEventListener('click', () => window.setTimeout(syncFromUnderlying, 0));
-    document.getElementById('active-filters')?.addEventListener('click', () => window.setTimeout(syncFromUnderlying, 0));
-    window.addEventListener('popstate', () => window.setTimeout(syncFromUnderlying, 0));
+    const restoreCharlotteScope = () => {
+      syncFromUnderlying();
+      syncUnderlyingQuery(searchInput, visibleSearch);
+    };
+
+    clearButton?.addEventListener('click', () => window.setTimeout(restoreCharlotteScope, 0));
+    document.getElementById('active-filters')?.addEventListener('click', () => window.setTimeout(restoreCharlotteScope, 0));
+    window.addEventListener('popstate', () => window.setTimeout(restoreCharlotteScope, 0));
 
     const activeFilters = document.getElementById('active-filters');
     if (activeFilters) {
@@ -372,6 +370,7 @@
     window.setTimeout(updateCharlotteCopy, 500);
     window.setTimeout(updateCharlotteCopy, 1500);
     syncFromUnderlying();
+    syncUnderlyingQuery(searchInput, visibleSearch);
   }
 
   function createVisibleSearch(original) {
@@ -501,7 +500,7 @@
   function syncUnderlyingQuery(original, visible) {
     const urgent = document.getElementById('urgent-filter-toggle')?.checked || false;
     const text = visible.value.trim();
-    original.value = urgent ? encodeQueryValue(text, true) : text;
+    original.value = encodeQueryValue(text, urgent);
     original.dispatchEvent(new Event('input', { bubbles: true }));
   }
 
@@ -524,7 +523,8 @@
       const parts = [];
       if (parsed.text) parts.push(`Search: ${parsed.text}`);
       if (parsed.urgent) parts.push('Meets urgent needs');
-      query.textContent = `${parts.join(' · ')} ×`;
+      if (parts.length) query.textContent = `${parts.join(' · ')} ×`;
+      else query.remove();
     }
   }
 
@@ -558,6 +558,7 @@
 
   function encodeQueryValue(text, urgent) {
     const params = new URLSearchParams();
+    params.set('scope', 'charlotte');
     params.set('urgent', urgent ? '1' : '0');
     if (text) params.set('text', text.toLowerCase());
     return `${QUERY_PREFIX}${params.toString()}`;
@@ -565,11 +566,12 @@
 
   function decodeQueryValue(value) {
     const input = String(value || '');
-    if (!input.startsWith(QUERY_PREFIX)) return { text: input, urgent: false };
+    if (!input.startsWith(QUERY_PREFIX)) return { text: input, urgent: false, charlotte: false };
     const params = new URLSearchParams(input.slice(QUERY_PREFIX.length));
     return {
       text: params.get('text') || '',
-      urgent: params.get('urgent') === '1'
+      urgent: params.get('urgent') === '1',
+      charlotte: params.get('scope') === 'charlotte'
     };
   }
 
