@@ -1,13 +1,13 @@
 # Source URL Audit
 
-Generated: 2026-08-31T15:34:43.485348+00:00
+Generated: 2026-08-31T15:36:15.847433+00:00
 
 - Unique URLs checked: **133**
 - Missing pages (404/410): **0**
 - Automated access blocked or inconclusive: **18**
 - Server errors: **0**
-- Manual official-source review: **1**
-- URLs with any flag: **47**
+- Manual official-source review: **0**
+- URLs with any flag: **46**
 
 A blocked or inconclusive automated request does not mean a public page is broken. Those links require a browser or manual search check. `manual-review` means the host ownership is not evident from the organization name alone.
 
@@ -22,7 +22,6 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Camino Health Center | 200 | likely-first-party | generic-homepage | https://camino.org/ | https://camino.org/ |
 | Care Ring Low-Cost Clinic | 403 | likely-first-party | automated-access-blocked | https://careringnc.org/low-cost-clinic/ | https://careringnc.org/low-cost-clinic/ |
 | Care Ring Nurse-Family Partnership | 403 | likely-first-party | automated-access-blocked | https://careringnc.org/nurse-family-partnership/ | https://careringnc.org/nurse-family-partnership/ |
-| Carolina Youth Coalition | 200 | manual-review | host-not-clearly-matched | https://www.carolinayouth.org/programs | https://carolinayouth.org/the-cyc-experience/programs-pathways/ |
 | Center for Community Transitions | 200 | likely-first-party | generic-homepage | https://centerforcommunitytransitions.org/ | https://centerforcommunitytransitions.org/ |
 | Changed Choices | 200 | likely-first-party | generic-homepage | https://changedchoices.org/ | https://www.changedchoices.org/ |
 | Charlotte Area Fund — Workforce Development | 200 | likely-first-party | generic-homepage | https://www.charlotteareafund.org/ | https://www.charlotteareafund.org/ |
@@ -74,7 +73,6 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Camino Health Center | 200 | likely-first-party | Home - Camino | https://camino.org/ |
 | Care Ring Low-Cost Clinic | 403 | likely-first-party | 403 - Forbidden | https://careringnc.org/low-cost-clinic/ |
 | Care Ring Nurse-Family Partnership | 403 | likely-first-party | 403 - Forbidden | https://careringnc.org/nurse-family-partnership/ |
-| Carolina Youth Coalition | 200 | manual-review | Programs &#038; Pathways &#8211; Carolina Youth Coalition | https://www.carolinayouth.org/programs |
 | Center for Community Transitions | 200 | likely-first-party | Center for Community Transitions - Reentry Support &amp; Family Support | https://centerforcommunitytransitions.org/ |
 | Changed Choices | 200 | likely-first-party |  | https://changedchoices.org/ |
 | Charlotte Area Fund — Workforce Development | 200 | likely-first-party | CAF | https://www.charlotteareafund.org/ |
@@ -119,6 +117,7 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Alliance Health Access and Information Line | 200 | likely-first-party | New Provider Chosen for Mecklenburg County Behavioral Health Crisis Services - Alliance Health | https://www.alliancehealthplan.org/news/new-provider-chosen-for-mecklenburg-county-behavioral-health-crisis-services/ |
 | ASPIRE Community Capital | 200 | likely-first-party | Access to Capital &mdash; Aspire Community Capital | https://www.aspirecommunitycapital.org/microloan |
 | Cakeable — Vocational Training | 200 | likely-first-party | Inclusive Employment Opportunities \| Cakeable Charlotte | https://wearecakeable.org/employment/ |
+| Carolina Youth Coalition | 200 | official-first-party | Programs &#038; Pathways &#8211; Carolina Youth Coalition | https://carolinayouth.org/the-cyc-experience/programs-pathways/ |
 | CATS Fares and Passes | 200 | official-government | Fares & Passes - Charlotte Area Transit System | https://www.charlottenc.gov/CATS/Fares-Passes |
 | CATS Reduced Fare Transit IDs | 200 | official-government | Transit IDs - Charlotte Area Transit System | https://www.charlottenc.gov/CATS/Fares-Passes/Transit-IDs |
 | Central Piedmont — College and Career Readiness | 200 | official-first-party | College and Career Readiness \| Central Piedmont | https://www.cpcc.edu/admissions/enroll/college-and-career-readiness |
@@ -198,5 +197,5 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Turning Point — Union County | 200 | likely-first-party | Our Services &#8211; Turning Point | https://turningpointnc.org/our-services/ |
 | Year Up United — Charlotte | 200 | likely-first-party | Job Training in Charlotte, NC \| Year Up United | https://www.yearup.org/locations/charlotte-nc |
 | Youth Villages LifeSet | 200 | likely-first-party | LifeSet: The Gift of a Good Start \| Youth Villages | https://youthvillages.org/services/lifeset/ |
-| YWCA Central Carolinas — Women in Transition | 200 | likely-first-party | Women in Transition | https://ywcacentralcarolinas.org/programs/housing/women-in-transition/ |
+| YWCA Central Carolinas — Women in Transition | 200 | likely-first-party |  | https://ywcacentralcarolinas.org/programs/housing/women-in-transition/ |
 | ZABS Place — Talent-in-Training | 200 | likely-first-party | Sam Ebersman Training Program - ZABS Place | https://zabsplace.org/training-application/ |

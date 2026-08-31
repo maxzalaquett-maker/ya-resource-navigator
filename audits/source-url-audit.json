@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T15:34:43.485348+00:00",
+  "generatedAt": "2026-08-31T15:36:15.847433+00:00",
   "results": [
     {
       "url": "https://www.adajenkins.org/",
@@ -125,24 +125,6 @@
       "finalUrl": "https://careringnc.org/nurse-family-partnership/",
       "finalHost": "careringnc.org",
       "title": "403 - Forbidden",
-      "error": ""
-    },
-    {
-      "url": "https://www.carolinayouth.org/programs",
-      "labels": [
-        "Carolina Youth Coalition"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "manual-review",
-      "flags": [
-        "host-not-clearly-matched"
-      ],
-      "status": 200,
-      "finalUrl": "https://carolinayouth.org/the-cyc-experience/programs-pathways/",
-      "finalHost": "carolinayouth.org",
-      "title": "Programs &#038; Pathways &#8211; Carolina Youth Coalition",
       "error": ""
     },
     {
@@ -435,7 +417,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f24cdd5fe00>, 'Connection to www.safealliance.org timed out. "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f7bb1b711c0>, 'Connection to www.safealliance.org timed out. "
     },
     {
       "url": "https://latinamericancoalition.org/",
@@ -690,7 +672,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f24cc4e4fb0>, 'Connection to www.safealliance.org timed out. (c"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f7bb2cf1e80>, 'Connection to www.safealliance.org timed out. (c"
     },
     {
       "url": "https://www.safealliance.org/",
@@ -709,7 +691,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f24cc4e5f10>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f7bb1be9310>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://www.score.org/nc/charlotte/",
@@ -745,7 +727,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7f24cc53e900>, 'Connection to www.smartstartofmeck.org timed out. (conn"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7f7bb1bcbfb0>, 'Connection to www.smartstartofmeck.org timed out. (conn"
     },
     {
       "url": "https://www.ssa.gov/benefits/disability/",
@@ -934,6 +916,22 @@
       "finalUrl": "https://wearecakeable.org/employment/",
       "finalHost": "wearecakeable.org",
       "title": "Inclusive Employment Opportunities | Cakeable Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://carolinayouth.org/the-cyc-experience/programs-pathways/",
+      "labels": [
+        "Carolina Youth Coalition"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://carolinayouth.org/the-cyc-experience/programs-pathways/",
+      "finalHost": "carolinayouth.org",
+      "title": "Programs &#038; Pathways &#8211; Carolina Youth Coalition",
       "error": ""
     },
     {
@@ -2246,7 +2244,7 @@
       "status": 200,
       "finalUrl": "https://ywcacentralcarolinas.org/programs/housing/women-in-transition/",
       "finalHost": "ywcacentralcarolinas.org",
-      "title": "Women in Transition",
+      "title": "",
       "error": ""
     },
     {
