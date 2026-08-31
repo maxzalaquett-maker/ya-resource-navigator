@@ -1,0 +1,82 @@
+/* Filter rows inspired by a compact marketplace-style checklist. */
+
+/* The clarified design uses the detailed service list, not a second shortcut grid. */
+.filter-shortcuts {
+  display: none !important;
+}
+
+#view-directory .filter-check-option,
+#view-directory .check-field.filter-check-option {
+  align-items: flex-start;
+  gap: .72rem;
+  font-size: 1rem;
+  line-height: 1.32;
+}
+
+#view-directory .filter-check-option > input[type="checkbox"],
+#view-directory .check-field.filter-check-option > input[type="checkbox"] {
+  margin-top: .02rem;
+}
+
+#view-directory .filter-check-option > span.filter-option-with-icon,
+#view-directory .check-field > span.filter-option-with-icon {
+  min-width: 0;
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  align-items: start;
+  column-gap: .58rem;
+}
+
+#view-directory .filter-option-icon {
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: .02rem;
+  padding: 2px;
+  border-radius: .3rem;
+  background: #eef3f8;
+  color: #526782;
+  align-self: start;
+}
+
+#view-directory .filter-option-copy {
+  min-width: 0;
+  display: inline;
+  line-height: inherit;
+}
+
+#view-directory .filter-option-copy .filter-result-count {
+  display: inline;
+  margin-left: .28em;
+  padding-left: 0;
+  color: #767676;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .84em;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.015em;
+  line-height: inherit;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+#view-directory .filter-check-option:hover .filter-option-icon,
+#view-directory .check-field:hover .filter-option-icon {
+  background: #e5edf6;
+  color: #31547d;
+}
+
+#view-directory .filter-check-option input:checked + .filter-option-with-icon .filter-option-icon,
+#view-directory .check-field input:checked + .filter-option-with-icon .filter-option-icon {
+  background: #dbeafe;
+  color: #1d4ed8;
+  transform: none;
+}
+
+@media (max-width: 760px) {
+  #view-directory .filter-check-option,
+  #view-directory .check-field.filter-check-option {
+    gap: .68rem;
+  }
+}
