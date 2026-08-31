@@ -109,9 +109,9 @@ select,
 
 .resource-card {
   min-width: 0;
-  min-height: 235px;
+  min-height: 0;
   padding: 1.15rem;
-  gap: .6rem;
+  gap: .65rem;
   border: 0;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -127,30 +127,21 @@ select,
 }
 
 .resource-card .card-topline {
-  min-height: 38px;
+  min-height: 36px;
+  align-items: flex-start;
 }
 
 .resource-card .category-label {
-  max-width: calc(100% - 48px);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  flex: 1 1 auto;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  line-height: 1.35;
 }
 
-.resource-card .tag-row {
-  min-height: 24px;
-  margin: 0;
-}
-
-.resource-card .tag-row > * {
-  display: none;
-}
-
-.resource-card .tag-row > .tag:first-child,
-.resource-card .tag-row > .tag-foster {
-  display: inline-flex;
-}
-
+/* Keep status and specialty tags in the detail view, not the scan view. */
+.resource-card .tag-row,
 .resource-card .focus-tag-row,
 .resource-card .meta-list,
 .resource-card .caveat,
@@ -161,21 +152,21 @@ select,
 .resource-card h2 {
   margin: .05rem 0 0;
   font-size: 1.28rem;
-  line-height: 1.15;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  line-height: 1.18;
+  display: block;
+  overflow: visible;
+  -webkit-box-orient: initial;
+  -webkit-line-clamp: initial;
 }
 
 .resource-card .trigger {
   color: #514a44;
   font-size: .92rem;
   line-height: 1.48;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  display: block;
+  overflow: visible;
+  -webkit-box-orient: initial;
+  -webkit-line-clamp: initial;
 }
 
 .resource-card .card-actions {
@@ -195,6 +186,7 @@ select,
 .icon-button {
   width: 36px;
   height: 36px;
+  flex: 0 0 36px;
   background: transparent;
 }
 
@@ -440,10 +432,6 @@ select,
     font-size: 1.22rem;
   }
 
-  .resource-card .trigger {
-    -webkit-line-clamp: 2;
-  }
-
   .resource-dialog {
     width: 100%;
     max-width: none;
@@ -485,10 +473,6 @@ select,
 @media (max-width: 470px) {
   .brand strong {
     max-width: 7.6rem;
-  }
-
-  .resource-card .tag-row > .tag-foster {
-    display: none;
   }
 
   .dialog-title .tag-row,
