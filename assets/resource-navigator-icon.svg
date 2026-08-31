@@ -1,14 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-  <title id="title">Resource Navigator</title>
-  <defs>
-    <linearGradient id="brand-gradient" x1="70" y1="60" x2="450" y2="450" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#4f46e5"/>
-      <stop offset="0.55" stop-color="#2563eb"/>
-      <stop offset="1" stop-color="#0891b2"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="128" fill="url(#brand-gradient)"/>
-  <circle cx="256" cy="218" r="126" fill="none" stroke="#ffffff" stroke-width="26"/>
-  <path d="M256 116l42 94-42 112-42-112 42-94z" fill="#dbeafe" stroke="#ffffff" stroke-width="11" stroke-linejoin="round"/>
-  <path d="M158 372h196" fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+  <title id="title">Resource Navigator compass</title>
+  <g fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="256" cy="256" r="190" stroke-width="20"/>
+    <path d="M151 361 219 219 361 151 293 293 151 361Z" stroke-width="22"/>
+  </g>
+  <circle cx="256" cy="256" r="15" fill="#4f46e5"/>
 </svg>
