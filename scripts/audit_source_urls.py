@@ -61,8 +61,7 @@ REVIEW_HOSTS = {
 
 
 def clean_host(value: str) -> str:
-    host = (urlparse(value).hostname or "").lower().removeprefix("www.")
-    return host
+    return (urlparse(value).hostname or "").lower().removeprefix("www.")
 
 
 def root_host(host: str) -> str:
@@ -94,8 +93,17 @@ def official_classification(labels: list[str], url: str) -> tuple[str, list[str]
         return "manual-review", flags
 
     label_tokens = set().union(*(words(label) for label in labels))
+    host_compact = re.sub(r"[^a-z0-9]", "", root.lower())
     host_tokens = words(root.replace(".", " "))
-    if label_tokens & host_tokens:
+
+    exact_token_match = bool(label_tokens & host_tokens)
+    embedded_token_match = any(
+        token in host_compact
+        for token in label_tokens
+        if len(token) >= 4
+    )
+
+    if exact_token_match or embedded_token_match:
         return "likely-first-party", flags
 
     flags.append("host-not-clearly-matched")
@@ -162,10 +170,7 @@ def collect_entries(data: dict) -> list[dict]:
     def add(url: str, label: str, source_type: str) -> None:
         if not str(url).startswith(("http://", "https://")):
             return
-        item = grouped.setdefault(
-            url,
-            {"url": url, "labels": [], "sourceTypes": []},
-        )
+        item = grouped.setdefault(url, {"url": url, "labels": [], "sourceTypes": []})
         if label not in item["labels"]:
             item["labels"].append(label)
         if source_type not in item["sourceTypes"]:
