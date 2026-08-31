@@ -1,5 +1,13 @@
 /* Simplified directory filters and balanced result toolbar. */
 
+/* The filter panel is intentionally part of the normal page flow. The checklist can
+   be taller than the viewport, so sticky positioning would make its lower options
+   unreachable until the listings column ended. */
+#view-directory .filter-panel {
+  position: static;
+  top: auto;
+}
+
 #view-directory .results-toolbar {
   min-height: 8rem;
   align-items: center;
