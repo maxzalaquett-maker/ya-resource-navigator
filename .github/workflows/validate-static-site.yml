@@ -21,7 +21,9 @@ jobs:
           fetch-depth: 0
 
       - name: Rebuild static resource data
-        run: python scripts/build_data.py
+        run: |
+          python scripts/build_data.py
+          python scripts/normalize_app_data.py
 
       - name: Commit rebuilt data on main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
