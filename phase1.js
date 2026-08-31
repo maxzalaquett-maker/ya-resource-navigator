@@ -11,6 +11,13 @@
   structureStyles.href = '/site-structure.css';
   document.head.appendChild(structureStyles);
 
+  // Load the design-system layer last so branding stays consistent across
+  // the core directory, Phase 1 components and responsive enhancements.
+  const brandStyles = document.createElement('link');
+  brandStyles.rel = 'stylesheet';
+  brandStyles.href = '/compass-brand.css';
+  document.head.appendChild(brandStyles);
+
   const loadYoungAdultLanguage = () => {
     if (document.querySelector('script[data-young-adult-language]')) return;
     const languageScript = document.createElement('script');
