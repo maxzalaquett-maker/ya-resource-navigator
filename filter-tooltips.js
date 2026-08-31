@@ -1,4 +1,34 @@
 (() => {
+  'use strict';
+
+  // The advanced checklist rewrites labels after the core app renders filter chips.
+  // Avoid creating a new mutation when a label already has the requested text;
+  // otherwise the observer can trigger itself indefinitely.
+  function makeActiveFilterTextUpdatesIdempotent() {
+    if (window.__RN_ACTIVE_FILTER_TEXT_PATCH__) return;
+
+    const descriptor = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent');
+    if (!descriptor?.get || !descriptor?.set || descriptor.configurable === false) return;
+
+    window.__RN_ACTIVE_FILTER_TEXT_PATCH__ = true;
+    Object.defineProperty(Node.prototype, 'textContent', {
+      configurable: descriptor.configurable,
+      enumerable: descriptor.enumerable,
+      get: descriptor.get,
+      set(value) {
+        const nextValue = value == null ? '' : String(value);
+        const insideActiveFilters = this.nodeType === Node.ELEMENT_NODE
+          && typeof this.closest === 'function'
+          && Boolean(this.closest('#active-filters'));
+
+        if (insideActiveFilters && descriptor.get.call(this) === nextValue) return;
+        descriptor.set.call(this, value);
+      }
+    });
+  }
+
+  makeActiveFilterTextUpdatesIdempotent();
+
   const items = [
     ['sort-select', 'Sort by', '“Where to start” puts likely first options at the top. “Recently checked” sorts by the date the program information was last reviewed.']
   ];
