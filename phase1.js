@@ -23,6 +23,12 @@
   responsiveStyles.href = '/responsive.css';
   document.head.appendChild(responsiveStyles);
 
+  // Load small alignment fixes last so they are not undone by earlier layers.
+  const polishStyles = document.createElement('link');
+  polishStyles.rel = 'stylesheet';
+  polishStyles.href = '/interface-polish.css';
+  document.head.appendChild(polishStyles);
+
   const loadPhase1 = () => {
     const parts = [1, 2, 3, 4, 5, 6, 7].map((number) => `/phase1/part-${String(number).padStart(2, '0')}.txt`);
     Promise.all(parts.map(async (url) => {
