@@ -49,9 +49,11 @@ PLAIN_LANGUAGE_REPLACEMENTS = (
     (r"\bcase navigation\b", "help applying for services"),
     (r"\bhousing navigation\b", "help finding housing"),
     (r"\bcare coordination\b", "help organizing care"),
+    (r"\bcommunity entry process\b", "a starting point"),
     (r"\bbehavioral-health\b", "mental health"),
     (r"\bbehavioral health\b", "mental health"),
-    (r"\bsubstance-use\b", "drug or alcohol recovery"),
+    (r"\bmental-health\b", "mental health"),
+    (r"\bsubstance-use\b", "substance use"),
     (r"\bpostsecondary\b", "college or career training"),
     (r"\bindependent-living\b", "living-on-your-own"),
     (r"\bindependent living\b", "living on their own"),
@@ -65,6 +67,9 @@ PLAIN_LANGUAGE_REPLACEMENTS = (
     (r"\boccupational training\b", "job training"),
     (r"\bscattered-site housing\b", "housing in apartments throughout the community"),
     (r"\blast-dollar scholarship\b", "scholarship that helps cover remaining approved school costs"),
+    (r"\bcurrent/former\b", "current or former"),
+    (r"\bage/status\b", "age and status"),
+    (r"\bpayer\b", "insurance or payment"),
 )
 
 
@@ -104,7 +109,8 @@ def lowercase_lead(value: str) -> str:
 
 def audience_case(value: str) -> str:
     first_word = value.split(maxsplit=1)[0].strip("\"'()[]{}.,:;") if value else ""
-    if first_word in PROPER_AUDIENCE_LEADS or (first_word.isupper() and len(first_word) > 1):
+    proper_root = first_word.split("-", 1)[0]
+    if proper_root in PROPER_AUDIENCE_LEADS or (first_word.isupper() and len(first_word) > 1):
         return value
     return lowercase_lead(value)
 
@@ -158,11 +164,11 @@ def service_phrase(value: str) -> str:
     # Add an article where the source field begins with a singular countable service.
     article_patterns = (
         r"^[\w-]+ directory\b",
-        r"^community entry process\b",
         r"^[\w-]+ health plan\b",
         r"^[\w-]+ scholarship\b",
         r"^[\w-]+ support pathway\b",
         r"^county list\b",
+        r"^starting point\b",
     )
     if not re.match(r"^(a|an|the)\b", service, flags=re.IGNORECASE) and any(
         re.match(pattern, service, flags=re.IGNORECASE) for pattern in article_patterns
