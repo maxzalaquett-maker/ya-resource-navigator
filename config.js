@@ -26,6 +26,7 @@ function loadScript(src) {
 // Keep enhancements modular so the core static directory remains maintainable.
 loadStyle('/mobile.css');
 loadScript('/mobile.js');
+loadScript('/filter-accordions.js');
 loadStyle('/filter-tooltips.css');
 loadScript('/filter-tooltips.js');
 loadStyle('/phase1.css');
