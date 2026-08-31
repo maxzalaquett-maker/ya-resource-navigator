@@ -23,15 +23,6 @@
   responsiveStyles.href = '/responsive.css';
   document.head.appendChild(responsiveStyles);
 
-  const loadYoungAdultLanguage = () => {
-    if (document.querySelector('script[data-young-adult-language]')) return;
-    const languageScript = document.createElement('script');
-    languageScript.src = '/young-adult-language-v2.js';
-    languageScript.async = false;
-    languageScript.dataset.youngAdultLanguage = 'true';
-    document.head.appendChild(languageScript);
-  };
-
   const loadPhase1 = () => {
     const parts = [1, 2, 3, 4, 5, 6, 7].map((number) => `/phase1/part-${String(number).padStart(2, '0')}.txt`);
     Promise.all(parts.map(async (url) => {
@@ -42,15 +33,11 @@
       .then((sourceParts) => {
         const script = document.createElement('script');
         script.src = URL.createObjectURL(new Blob([sourceParts.join('')], { type: 'text/javascript' }));
-        script.onload = () => {
-          URL.revokeObjectURL(script.src);
-          loadYoungAdultLanguage();
-        };
+        script.onload = () => URL.revokeObjectURL(script.src);
         document.head.appendChild(script);
       })
       .catch((error) => {
         console.error('Phase 1 loader failed:', error);
-        loadYoungAdultLanguage();
       });
   };
 
