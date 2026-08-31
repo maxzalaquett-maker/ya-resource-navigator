@@ -11,17 +11,17 @@
   structureStyles.href = '/site-structure.css';
   document.head.appendChild(structureStyles);
 
-  // Load the design-system layer last so branding stays consistent across
-  // the core directory, Phase 1 components and responsive enhancements.
+  // Load the design-system layer after the component styles.
   const brandStyles = document.createElement('link');
   brandStyles.rel = 'stylesheet';
   brandStyles.href = '/compass-brand.css';
   document.head.appendChild(brandStyles);
 
-  const dropdownStyles = document.createElement('link');
-  dropdownStyles.rel = 'stylesheet';
-  dropdownStyles.href = '/dropdown-spacing.css';
-  document.head.appendChild(dropdownStyles);
+  // Keep all final breakpoint, dropdown and mobile presentation rules together.
+  const responsiveStyles = document.createElement('link');
+  responsiveStyles.rel = 'stylesheet';
+  responsiveStyles.href = '/responsive.css';
+  document.head.appendChild(responsiveStyles);
 
   const loadYoungAdultLanguage = () => {
     if (document.querySelector('script[data-young-adult-language]')) return;
