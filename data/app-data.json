@@ -77,7 +77,13 @@
       "eligibilityTrigger": "Young people who are or were in foster care in Mecklenburg County; county rules apply.",
       "primaryValue": "Help planning for housing, school, work and living on their own, plus some financial assistance.",
       "recommendedAction": "Contact LINKS as early as possible and document the young adult's foster-care history.",
-      "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS"
+      "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS",
+      "categories": [
+        "housing",
+        "transition",
+        "education",
+        "career"
+      ]
     },
     {
       "program": "Phoenix Project",
@@ -85,7 +91,10 @@
       "eligibilityTrigger": "Former Mecklenburg County foster youth who are no longer in county care; individual eligibility must be confirmed.",
       "primaryValue": "Transition support after foster care, including access to eligible financial assistance.",
       "recommendedAction": "Call 704-336-3290 before the young adult's 21st birthday.",
-      "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS"
+      "sourceUrl": "https://cfas.mecknc.gov/services/adoption-and-foster-care/LINKS",
+      "categories": [
+        "transition"
+      ]
     },
     {
       "program": "Foster Care 18 to 21 / VPA",
@@ -93,7 +102,11 @@
       "eligibilityTrigger": "Young adults who meet North Carolina requirements and sign a voluntary placement agreement.",
       "primaryValue": "Continued placement, planning support and financial assistance through age 21.",
       "recommendedAction": "Contact LINKS before discharge from foster care and complete the agreement before leaving care.",
-      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
+      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth",
+      "categories": [
+        "housing",
+        "transition"
+      ]
     },
     {
       "program": "Medicaid for Former Foster Care Youth",
@@ -101,7 +114,10 @@
       "eligibilityTrigger": "Certain young adults who were in foster care and had Medicaid when they aged out; state rules apply.",
       "primaryValue": "Health coverage for medical care, prescriptions and mental health care.",
       "recommendedAction": "State former foster-care status clearly on the application.",
-      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
+      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth",
+      "categories": [
+        "healthcare"
+      ]
     },
     {
       "program": "Children and Families Specialty Plan",
@@ -109,7 +125,10 @@
       "eligibilityTrigger": "Medicaid members who meet the plan's child-welfare or former-foster-care requirements.",
       "primaryValue": "A Medicaid plan designed for people with foster-care experience, including help coordinating health care.",
       "recommendedAction": "Confirm plan enrollment and keep contact information current.",
-      "sourceUrl": "https://medicaid.ncdhhs.gov/beneficiaries/children-and-families-specialty-plan"
+      "sourceUrl": "https://medicaid.ncdhhs.gov/beneficiaries/children-and-families-specialty-plan",
+      "categories": [
+        "healthcare"
+      ]
     },
     {
       "program": "NC Reach",
@@ -117,7 +136,10 @@
       "eligibilityTrigger": "Eligible North Carolina residents who aged out at 18 or were adopted after age 12 and attend an eligible public school at least half time.",
       "primaryValue": "Scholarship support for approved school costs remaining after other financial aid.",
       "recommendedAction": "Complete the FAFSA and NC Reach application before classes begin.",
-      "sourceUrl": "https://www.cfnc.org/pay-for-college/scholarship-search/nc-reach/"
+      "sourceUrl": "https://www.cfnc.org/pay-for-college/scholarship-search/nc-reach/",
+      "categories": [
+        "education"
+      ]
     },
     {
       "program": "Education and Training Voucher",
@@ -125,7 +147,10 @@
       "eligibilityTrigger": "Eligible current or former foster youth and some young people who left care through adoption or guardianship.",
       "primaryValue": "Funding for approved college, career-school and training costs, up to the program limit.",
       "recommendedAction": "Coordinate ETV with LINKS and the school's financial-aid office.",
-      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
+      "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth",
+      "categories": [
+        "education"
+      ]
     },
     {
       "program": "Youth Villages LifeSet",
@@ -133,7 +158,13 @@
       "eligibilityTrigger": "Young adults preparing to leave or recently leaving foster care who meet local referral criteria.",
       "primaryValue": "One-on-one support with housing, employment, education, money and daily life.",
       "recommendedAction": "Contact the Charlotte-area program and confirm the referral pathway and current openings.",
-      "sourceUrl": "https://youthvillages.org/services/lifeset/"
+      "sourceUrl": "https://youthvillages.org/services/lifeset/",
+      "categories": [
+        "housing",
+        "transition",
+        "education",
+        "career"
+      ]
     },
     {
       "program": "The Relatives On Ramp",
@@ -141,7 +172,13 @@
       "eligibilityTrigger": "Mecklenburg County young people ages 16–24; foster-care history is not required.",
       "primaryValue": "One place for planning and connections to housing, work, school and basic-needs support.",
       "recommendedAction": "Use On Ramp when a young adult has several needs or needs help deciding where to start.",
-      "sourceUrl": "https://therelatives.org/our-programs/on-ramp-resource-center/"
+      "sourceUrl": "https://therelatives.org/our-programs/on-ramp-resource-center/",
+      "categories": [
+        "housing",
+        "transition",
+        "education",
+        "career"
+      ]
     },
     {
       "program": "The Relatives Housing",
@@ -149,7 +186,11 @@
       "eligibilityTrigger": "Young adults ages 18–24 who are homeless, at risk of losing housing or fleeing violence; screening applies.",
       "primaryValue": "Housing in community apartments plus support with goals and everyday needs.",
       "recommendedAction": "Request screening early; placement depends on available openings.",
-      "sourceUrl": "https://therelatives.org/our-programs/housing/"
+      "sourceUrl": "https://therelatives.org/our-programs/housing/",
+      "categories": [
+        "housing",
+        "transition"
+      ]
     },
     {
       "program": "Charlotte Angels Dare to Dream",
@@ -157,7 +198,10 @@
       "eligibilityTrigger": "Young people in foster care who meet the program's matching criteria.",
       "primaryValue": "Long-term volunteer mentoring and consistent relational support.",
       "recommendedAction": "Coordinate with existing mentors to avoid overlapping or conflicting roles.",
-      "sourceUrl": "https://www.charlotteangels.org/mentor"
+      "sourceUrl": "https://www.charlotteangels.org/mentor",
+      "categories": [
+        "mentorship"
+      ]
     },
     {
       "program": "SaySo",
@@ -165,7 +209,11 @@
       "eligibilityTrigger": "Young people with foster care, kinship care, group-home or other out-of-home-care experience.",
       "primaryValue": "Peer community, leadership opportunities, advocacy and transition information.",
       "recommendedAction": "Confirm eligibility for the activity and invite young adults who want peer connection and leadership opportunities.",
-      "sourceUrl": "https://chsnc.org/programs-services/sayso/"
+      "sourceUrl": "https://chsnc.org/programs-services/sayso/",
+      "categories": [
+        "transition",
+        "mentorship"
+      ]
     },
     {
       "program": "I Am Here legal hotline",
@@ -173,7 +221,10 @@
       "eligibilityTrigger": "Young people experiencing homelessness who need help getting an ID, birth certificate or another important document.",
       "primaryValue": "Free legal help obtaining IDs and important documents.",
       "recommendedAction": "Call or text 1-888-870-DOCS and confirm the current hours.",
-      "sourceUrl": "https://neglected-delinquent.ed.gov/node/1003"
+      "sourceUrl": "https://neglected-delinquent.ed.gov/node/1003",
+      "categories": [
+        "legal"
+      ]
     },
     {
       "program": "Home4Me — LEG Up on LIFE",
@@ -181,7 +232,12 @@
       "eligibilityTrigger": "Young people transitioning from foster care or adolescence; current enrollment and age-track rules apply.",
       "primaryValue": "Mentoring, coaching, money skills, leadership and practical living skills.",
       "recommendedAction": "Ask about the current virtual group and the track that fits the young adult's age.",
-      "sourceUrl": "https://home4me.org/leg-up-on-life-2-2/"
+      "sourceUrl": "https://home4me.org/leg-up-on-life-2-2/",
+      "categories": [
+        "transition",
+        "career",
+        "mentorship"
+      ]
     },
     {
       "program": "Machiah's House",
@@ -189,7 +245,13 @@
       "eligibilityTrigger": "Young women aging out of foster care who meet the program's current criteria.",
       "primaryValue": "Workshops, supportive relationships and connections to education, employment and stability resources.",
       "recommendedAction": "Confirm current programming and do not describe housing as available unless staff confirms it.",
-      "sourceUrl": "https://machiahshouse.org/programs/"
+      "sourceUrl": "https://machiahshouse.org/programs/",
+      "categories": [
+        "transition",
+        "education",
+        "career",
+        "mentorship"
+      ]
     },
     {
       "program": "Congregations for Kids — Mentor Match",
@@ -197,7 +259,10 @@
       "eligibilityTrigger": "Young people under 18 currently in foster care through Mecklenburg or Union County.",
       "primaryValue": "A committed adult mentor before the transition out of foster care.",
       "recommendedAction": "Use for planning before age 18 and coordinate clearly with any other mentor.",
-      "sourceUrl": "https://www.cfknc.org/mentor"
+      "sourceUrl": "https://www.cfknc.org/mentor",
+      "categories": [
+        "mentorship"
+      ]
     },
     {
       "program": "Livingstone College H.O.P.E. Emancipation Project",
@@ -205,7 +270,12 @@
       "eligibilityTrigger": "Students with foster-care or emancipation experience who are interested in Livingstone College.",
       "primaryValue": "A foster-specific college recruitment and support pathway developed with Home4Me.",
       "recommendedAction": "Contact the project before applying and confirm current financial, housing and student-retention support.",
-      "sourceUrl": "https://livingstone.edu/h-o-p-e/"
+      "sourceUrl": "https://livingstone.edu/h-o-p-e/",
+      "categories": [
+        "housing",
+        "transition",
+        "education"
+      ]
     }
   ],
   "needsMap": [
