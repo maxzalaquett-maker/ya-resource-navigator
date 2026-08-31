@@ -44,8 +44,13 @@
   margin: 0;
   padding: 1.15rem 0;
   border: 0;
-  border-top: 1px solid var(--line);
+  border-block: 1px solid var(--line);
   min-width: 0;
+}
+
+/* Adjacent sections share one divider instead of creating a doubled line. */
+.filter-checklist + .filter-toggle-group {
+  margin-top: -1px;
 }
 
 .filter-checklist legend,
