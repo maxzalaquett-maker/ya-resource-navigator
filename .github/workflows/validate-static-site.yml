@@ -50,6 +50,7 @@ jobs:
           node --check config.js
           node --check filter-accordions.js
           node --check filter-tooltips.js
+          node --check foster-categories.js
           node --check mobile.js
           node --check phase1.js
           node --check site-structure.js
