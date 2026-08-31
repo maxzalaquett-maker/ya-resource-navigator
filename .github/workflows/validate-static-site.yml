@@ -1,0 +1,36 @@
+name: Validate static site
+
+on:
+  push:
+    branches:
+      - main
+      - young-adult-first-language
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Assemble Phase 1 script
+        run: cat phase1/part-*.txt > /tmp/phase1-runtime.js
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check config.js
+          node --check filter-tooltips.js
+          node --check mobile.js
+          node --check phase1.js
+          node --check site-structure.js
+          node --check young-adult-language-v2.js
+          node --check /tmp/phase1-runtime.js
+
+      - name: Check JSON syntax
+        run: |
+          python -m json.tool data/app-data.json > /dev/null
+          python -m json.tool data/pathways.json > /dev/null

@@ -1,32 +1,32 @@
         <fieldset>
-          <legend>1. What best describes the situation?</legend>
+          <legend>1. What do you need help with?</legend>
           <div class="phase1-option-grid">
-            ${radioCard('need', 'unsafe', 'A safe place is needed tonight', 'Housing is unavailable or the current place is not safe.')}
-            ${radioCard('need', 'housing-risk', 'Housing may end soon', 'A move-out, eviction, discharge or other housing deadline is approaching.')}
-            ${radioCard('need', 'multiple', 'Several or another kind of need', 'It is hard to know which program or practical need to address first.')}
+            ${radioCard('need', 'unsafe', 'I need a safe place tonight', 'I do not have a safe place to sleep tonight.')}
+            ${radioCard('need', 'housing-risk', 'I may lose my housing soon', 'I may have to leave where I am staying soon.')}
+            ${radioCard('need', 'multiple', 'I need help with more than one thing', 'I am not sure what to handle first.')}
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>2. How quickly is action needed?</legend>
+          <legend>2. How soon do you need help?</legend>
           <div class="phase1-option-grid">
-            ${radioCard('urgency', 'immediate', 'Immediate danger or crisis', 'Use emergency or crisis support now.')}
-            ${radioCard('urgency', 'days', 'Within a few days', 'A deadline or loss of stability is approaching.')}
-            ${radioCard('urgency', 'planning', 'Planning ahead', 'The need is important but not immediate.')}
+            ${radioCard('urgency', 'immediate', 'I need help right now', 'Waiting may not be safe.')}
+            ${radioCard('urgency', 'days', 'Within a few days', 'Something important may change very soon.')}
+            ${radioCard('urgency', 'planning', 'I am planning ahead', 'I have some time to figure out my next step.')}
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>3. A few eligibility clues</legend>
+          <legend>3. A little more about you</legend>
           <div class="phase1-field-grid">
-            <label class="field"><span>County or service area</span>
+            <label class="field"><span>Where do you live?</span>
               <select name="county">
                 <option value="Mecklenburg">Mecklenburg County</option>
-                <option value="Nearby">Nearby Charlotte-area county</option>
-                <option value="OtherNC">Elsewhere in North Carolina</option>
+                <option value="Nearby">A county near Charlotte</option>
+                <option value="OtherNC">Another part of North Carolina</option>
               </select>
             </label>
-            <label class="field"><span>Foster-care history</span>
+            <label class="field"><span>Have you ever been in foster care?</span>
               <select name="fosterHistory">
                 <option value="prefer-not">Prefer not to answer</option>
                 <option value="yes">Yes</option>
@@ -37,7 +37,7 @@
         </fieldset>
 
         <div class="phase1-form-actions">
-          <button class="button button-primary" type="submit">Show likely next steps</button>
+          <button class="button button-primary" type="submit">Show my next steps</button>
           <button class="button button-quiet" type="reset">Start over</button>
         </div>
         <p class="phase1-form-error" id="phase1-form-error" role="alert" hidden></p>
@@ -77,7 +77,7 @@
 
     const error = document.getElementById('phase1-form-error');
     if (!state.selectedNeed || !state.selectedUrgency) {
-      error.textContent = 'Choose the main situation and how quickly action is needed.';
+      error.textContent = 'Choose what you need help with and how soon you need it.';
       error.hidden = false;
       return;
     }
@@ -100,13 +100,13 @@
     const container = document.getElementById('phase1-results');
     container.innerHTML = `
       <section class="phase1-result-card phase1-result-urgent">
-        <p class="eyebrow">Immediate safety</p>
-        <h3>Use emergency or crisis support now</h3>
-        <p>Call 911 for immediate danger, overdose, serious injury or a medical emergency. For a mental-health or suicide crisis, call or text 988.</p>
+        <p class="eyebrow">Help right now</p>
+        <h3>Get help right now</h3>
+        <p>Call 911 if you are in immediate danger, badly hurt or dealing with an overdose. If you may hurt yourself or need someone to talk to right now, call or text 988.</p>
         <div class="card-actions">
           <a class="button button-danger" href="tel:911">Call 911</a>
           <a class="button button-primary" href="tel:988">Call or text 988</a>
-          <button class="button button-secondary" type="button" data-scroll-urgent>See other urgent resources</button>
+          <button class="button button-secondary" type="button" data-scroll-urgent>See more urgent help</button>
         </div>
       </section>`;
     container.querySelector('[data-scroll-urgent]')?.addEventListener('click', () => document.getElementById('urgent-support')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
@@ -117,7 +117,7 @@
     const pathway = state.pathways.find((item) => item.id === pathwayId);
     const container = document.getElementById('phase1-results');
     if (!pathway) {
-      container.innerHTML = '<p class="phase1-empty">The guided pathway is unavailable. Browse the full directory instead.</p>';
+      container.innerHTML = '<p class="phase1-empty">These questions are not available right now. Browse all programs instead.</p>';
       return;
     }
 
@@ -125,15 +125,15 @@
     const backups = resourceList(pathway.backupResourceIds);
     const outsideMecklenburg = state.county !== 'Mecklenburg';
     const fosterNote = state.fosterHistory === 'yes'
-      ? '<div class="phase1-context-note"><strong>Foster-care history may open additional options.</strong> Review the Foster care page for age- and custody-specific benefits before using charitable funds.</div>'
+      ? '<div class="phase1-context-note"><strong>You may qualify for extra help because you were in foster care.</strong> Check the Help after foster care page for programs with age deadlines.</div>'
       : '';
     const locationNote = outsideMecklenburg
-      ? '<div class="phase1-context-note"><strong>Confirm the service area first.</strong> Several primary listings are Mecklenburg-specific. NC 211 can identify the equivalent entry point in another county.</div>'
+      ? '<div class="phase1-context-note"><strong>Check where the program is available.</strong> Some programs below only serve Mecklenburg County. NC 211 can help you find a similar program in another county.</div>'
       : '';
 
     container.innerHTML = `
       <section class="phase1-result-card">
-        <p class="eyebrow">Suggested pathway</p>
+        <p class="eyebrow">A good place to start</p>
         <h3>${escapeHtml(pathway.title)}</h3>
         <p>${escapeHtml(pathway.summary)}</p>
         ${locationNote}${fosterNote}

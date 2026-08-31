@@ -1,70 +1,70 @@
 {
   "meta": {
     "version": 1,
-    "description": "Structured Phase 1 pathways that connect common young-adult situations to a small set of resource records."
+    "description": "Simple starting points for common needs young adults may have."
   },
   "pathways": [
     {
       "id": "unsafe-tonight",
-      "title": "A safe place is needed tonight",
-      "summary": "Start with the community entry point that assesses homelessness and immediate housing instability, then use a statewide navigator if the local pathway cannot be reached or does not fit.",
+      "title": "I need a safe place tonight",
+      "summary": "Start with the local program that helps people who do not have a safe place to stay. If you cannot reach it or it does not fit, try the statewide help line next.",
       "primaryResourceIds": [4],
       "backupResourceIds": [1],
       "documents": [
-        "Photo identification, if available",
-        "Current location and a safe callback number",
-        "Any eviction, discharge or termination notice",
-        "Names and ages of anyone who must stay together"
+        "Photo ID, if you have one",
+        "Where you are now and a safe phone number",
+        "Any eviction, move-out or program-exit notice",
+        "Names and ages of anyone who needs to stay with you"
       ],
       "successCriteria": [
-        "A screening or assessment is completed",
-        "The next contact, location or deadline is clear",
-        "The referral outcome is known rather than left open-ended",
-        "A backup is identified when no immediate placement is available"
+        "You talk with someone about what is happening",
+        "You know who to contact, where to go or when to follow up",
+        "You know whether the program can help",
+        "You have another option when no bed or housing is open"
       ],
-      "limit": "Emergency and shelter capacity is limited. A completed assessment does not guarantee a bed or housing placement. Call 911 when there is immediate danger."
+      "limit": "Shelter beds and emergency housing may not be open. Talking with a program does not promise a place to stay. Call 911 if you are in immediate danger."
     },
     {
       "id": "housing-risk",
-      "title": "Housing may end within days or weeks",
-      "summary": "Confirm the correct prevention or coordinated-entry pathway before the deadline, prepare the documents that establish the housing risk and follow up until eligibility or availability is known.",
+      "title": "I may lose my housing soon",
+      "summary": "Contact a housing-help program before your deadline. Gather any papers that show when you have to leave, and keep following up until you know whether the program can help.",
       "primaryResourceIds": [4],
       "backupResourceIds": [2, 1],
       "documents": [
-        "Lease, occupancy agreement or written housing arrangement",
-        "Eviction, termination, discharge or move-out notice",
-        "Photo identification, if available",
-        "Income, benefit and household information",
-        "A short timeline of the housing deadline"
+        "Your lease or written housing agreement",
+        "Any eviction, move-out or program-exit notice",
+        "Photo ID, if you have one",
+        "Information about your income, benefits and household",
+        "The date you may have to leave"
       ],
       "successCriteria": [
-        "Eligibility is confirmed or ruled out",
-        "Required documents and the application method are known",
-        "A follow-up date is scheduled",
-        "An alternative is identified if funding or capacity is unavailable"
+        "You know whether you qualify",
+        "You know what papers are needed and how to apply",
+        "You have a date to follow up",
+        "You have another option if money or openings are unavailable"
       ],
-      "limit": "Many housing programs cannot respond immediately and may require a formal notice, county residency or a specific homelessness definition. Confirm the actual deadline and do not rely on a submitted referral alone."
+      "limit": "Many housing programs cannot help right away. They may require a written notice, proof that you live in the county or other specific information. Do not assume an application is approved until the program tells you."
     },
     {
       "id": "multiple-needs",
-      "title": "Several needs are competing at the same time",
-      "summary": "Use a navigation or benefits-access entry point to prioritize the most urgent threat, identify which programs are responsible and avoid sending the young adult through a long undifferentiated list.",
+      "title": "I need help with more than one thing",
+      "summary": "Start with a program that can help you sort out what is most urgent, find the right programs and make a simple plan instead of calling a long list on your own.",
       "primaryResourceIds": [2],
       "backupResourceIds": [1],
       "documents": [
-        "A short list of the two or three most urgent needs",
-        "Photo identification and proof of address, if available",
-        "Income and benefit information",
-        "Existing applications, denial notices or caseworker contacts",
-        "The deadline connected to each urgent need"
+        "A short list of your two or three most urgent needs",
+        "Photo ID and proof of address, if you have them",
+        "Information about your income and benefits",
+        "Any applications or letters you have already received",
+        "The deadline for each urgent need"
       ],
       "successCriteria": [
-        "The most urgent need is identified first",
-        "One responsible program or next action is assigned to each need",
-        "Application barriers and required documents are identified",
-        "A follow-up date is set for unresolved referrals"
+        "You choose the most urgent need first",
+        "You know which program or action goes with each need",
+        "You know what could slow down an application and what papers you need",
+        "You set a date to follow up on anything still unresolved"
       ],
-      "limit": "Navigation can reduce confusion and administrative burden, but it cannot create service capacity. Document when the correct resource exists but is unavailable so the gap is not mistaken for a search failure."
+      "limit": "A program can help you make a plan, but it cannot create openings that do not exist. When a program is full, ask when to check again and what else you can try."
     }
   ]
 }

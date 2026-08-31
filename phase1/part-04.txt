@@ -1,5 +1,5 @@
 ${cssEscape(key)}"]`).forEach((button) => {
-      setText(button, state.planIds.has(key) ? 'Remove from my plan' : 'Add to my plan');
+      setText(button, state.planIds.has(key) ? 'Remove from my plan' : 'Save to my plan');
     });
   }
 
@@ -13,16 +13,16 @@ ${cssEscape(key)}"]`).forEach((button) => {
   function copyPlan() {
     const resources = [...state.planIds].map(findResource).filter(Boolean);
     if (!resources.length) return;
-    const text = ['My support plan', ''].concat(resources.flatMap((resource, index) => {
+    const text = ['My plan', ''].concat(resources.flatMap((resource, index) => {
       const meta = state.planMeta[String(resource.id)] || {};
       return [
         `${index + 1}. ${resource.name}`,
         `Status: ${meta.status || STATUS_OPTIONS[0]}`,
-        meta.followUp ? `Follow up: ${meta.followUp}` : '',
-        `Next action: ${actionInstruction(resource)}`,
+        meta.followUp ? `Check back on: ${meta.followUp}` : '',
+        `What to do next: ${actionInstruction(resource)}`,
         resource.phone ? `Phone: ${resource.phone}` : '',
-        resource.sourceUrl ? `Official page: ${resource.sourceUrl}` : '',
-        `Confirm current eligibility and availability before relying on this resource.`,
+        resource.sourceUrl ? `Program website: ${resource.sourceUrl}` : '',
+        'Call or visit the program website to check current rules and openings.',
         ''
       ].filter(Boolean);
     })).join('\n');
@@ -139,27 +139,27 @@ ${cssEscape(key)}"]`).forEach((button) => {
         card.querySelector('.tag-row')?.insertAdjacentHTML('beforeend', `<span class="phase1-verification ${verification.cssClass}">${escapeHtml(verification.label)}</span>`);
       }
 
-      const verifiedLine = [...card.querySelectorAll('.meta-line')].find((line) => /Verified/i.test(line.textContent));
+      const verifiedLine = [...card.querySelectorAll('.meta-line')].find((line) => /Verified|Checked/i.test(line.textContent));
       if (verifiedLine) setText(verifiedLine.querySelector('span:last-child'), verificationFor(resource).detail);
 
       const details = card.querySelector('[data-action="details"]');
-      if (details) setText(details, 'See next steps');
+      if (details) setText(details, 'See how to apply');
 
       const save = card.querySelector('[data-action="save"]');
       if (save) {
         const inPlan = state.planIds.has(String(resource.id));
         setText(save, inPlan ? '★' : '☆');
         save.classList.toggle('is-saved', inPlan);
-        save.setAttribute('aria-label', inPlan ? 'Remove from my support plan' : 'Add to my support plan');
-        save.title = inPlan ? 'Remove from my plan' : 'Add to my plan';
+        save.setAttribute('aria-label', inPlan ? 'Remove from my plan' : 'Save to my plan');
+        save.title = inPlan ? 'Remove from my plan' : 'Save to my plan';
       }
 
       const source = card.querySelector('a.button-quiet[href]');
-      if (source) setText(source, 'Check current details');
+      if (source) setText(source, 'Visit program website');
 
       const actions = card.querySelector('.card-actions');
       if (actions && !actions.querySelector('[data-phase1-report]')) {
-        actions.insertAdjacentHTML('beforeend', `<button class="button button-quiet button-small" type="button" data-phase1-report="${escapeAttribute(resource.id)}">Report outdated info</button>`);
+        actions.insertAdjacentHTML('beforeend', `<button class="button button-quiet button-small" type="button" data-phase1-report="${escapeAttribute(resource.id)}">Report a change</button>`);
       }
     });
   }
@@ -176,11 +176,11 @@ ${cssEscape(key)}"]`).forEach((button) => {
     if (priorityTag) setText(priorityTag, resource.pathwayRole);
 
     const save = content.querySelector('[data-dialog-action="save"]');
-    if (save) setText(save, state.planIds.has(String(resource.id)) ? 'Remove from my plan' : 'Add to my plan');
+    if (save) setText(save, state.planIds.has(String(resource.id)) ? 'Remove from my plan' : 'Save to my plan');
     const copy = content.querySelector('[data-dialog-action="copy"]');
-    if (copy) setText(copy, 'Copy referral steps');
+    if (copy) setText(copy, 'Copy program details');
     const official = content.querySelector('a.button-secondary');
-    if (official) setText(official, 'Check current details');
+    if (official) setText(official, 'Visit program website');
     const call = content.querySelector('a.button-primary[href^="tel:"]');
     if (call) setText(call, actionLabel(resource));
 

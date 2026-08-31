@@ -1,19 +1,19 @@
      <div class="phase1-pathway-steps">
           <section>
             <h4>Start here</h4>
-            ${primary.map((resource) => pathwayResourceHtml(resource, 'primary')).join('') || '<p>No primary resource is configured.</p>'}
+            ${primary.map((resource) => pathwayResourceHtml(resource, 'primary')).join('') || '<p>No starting program is available right now.</p>'}
           </section>
           <section>
-            <h4>Try this next if the first option cannot help</h4>
-            ${backups.map((resource) => pathwayResourceHtml(resource, 'backup')).join('') || '<p>No backup resource is configured.</p>'}
+            <h4>Try this next if the first program cannot help</h4>
+            ${backups.map((resource) => pathwayResourceHtml(resource, 'backup')).join('') || '<p>No other program is listed right now.</p>'}
           </section>
         </div>
 
         <div class="phase1-prep-grid">
-          <section><h4>Prepare before contacting</h4><ul>${pathway.documents.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
-          <section><h4>What a useful result looks like</h4><ul>${pathway.successCriteria.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
+          <section><h4>Have these ready</h4><ul>${pathway.documents.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
+          <section><h4>What to ask for</h4><ul>${pathway.successCriteria.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
         </div>
-        <p class="phase1-limit"><strong>Important:</strong> ${escapeHtml(pathway.limit)}</p>
+        <p class="phase1-limit"><strong>What to know:</strong> ${escapeHtml(pathway.limit)}</p>
       </section>`;
 
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -32,13 +32,13 @@
         </div>
         <p>${escapeHtml(resource.referralTrigger)}</p>
         <dl>
-          <div><dt>How to start</dt><dd>${escapeHtml(resource.access)}</dd></div>
-          <div><dt>Before relying on it</dt><dd>${escapeHtml(resource.caveat || 'Confirm current eligibility and availability.')}</dd></div>
+          <div><dt>How to get started</dt><dd>${escapeHtml(resource.access)}</dd></div>
+          <div><dt>Before you go</dt><dd>${escapeHtml(resource.caveat || 'Call or check the website for current rules and openings.')}</dd></div>
         </dl>
         <div class="card-actions">
           ${phone ? `<a class="button button-primary button-small" href="tel:${phone}">${actionLabel(resource)}</a>` : ''}
-          ${source ? `<a class="button button-secondary button-small" href="${escapeAttribute(source)}" target="_blank" rel="noopener noreferrer">Check current details</a>` : ''}
-          <button class="button button-quiet button-small" type="button" data-phase1-plan-toggle="${escapeAttribute(resource.id)}">${inPlan ? 'Remove from my plan' : 'Add to my plan'}</button>
+          ${source ? `<a class="button button-secondary button-small" href="${escapeAttribute(source)}" target="_blank" rel="noopener noreferrer">Visit program website</a>` : ''}
+          <button class="button button-quiet button-small" type="button" data-phase1-plan-toggle="${escapeAttribute(resource.id)}">${inPlan ? 'Remove from my plan' : 'Save to my plan'}</button>
           <button class="button button-quiet button-small" type="button" data-phase1-find-resource="${escapeAttribute(resource.id)}">See full details</button>
         </div>
       </article>`;
@@ -52,8 +52,8 @@
     panel.className = 'phase1-plan';
     panel.innerHTML = `
       <div class="phase1-plan-heading">
-        <div><p class="eyebrow">Follow-through workspace</p><h2>Saved programs and next actions</h2><p>Track a status and follow-up date without entering names or private case notes.</p></div>
-        <div class="card-actions"><button class="button button-secondary" type="button" data-copy-plan>Copy plan</button><button class="button button-quiet" type="button" data-print-plan>Print</button></div>
+        <div><p class="eyebrow">My saved programs</p><h2>Programs I want to try</h2><p>Keep track of what you want to do next. This stays in this browser, so do not add private information.</p></div>
+        <div class="card-actions"><button class="button button-secondary" type="button" data-copy-plan>Copy my plan</button><button class="button button-quiet" type="button" data-print-plan>Print</button></div>
       </div>
       <div id="phase1-plan-list"></div>`;
     mount.appendChild(panel);
@@ -68,7 +68,7 @@
     updatePlanCounts(resources.length);
 
     if (!resources.length) {
-      container.innerHTML = '<div class="phase1-plan-empty"><h3>No programs added yet</h3><p>Add programs from Get help or Browse resources, then return here to track the next step.</p></div>';
+      container.innerHTML = '<div class="phase1-plan-empty"><h3>You have not saved any programs yet</h3><p>Save a program from Find help or Browse programs, then come back here.</p></div>';
       return;
     }
 
@@ -77,18 +77,18 @@
       return `
         <article class="phase1-plan-item" data-plan-item="${escapeAttribute(resource.id)}">
           <div class="phase1-plan-item-main">
-            <span class="phase1-role-badge">${escapeHtml(resource.pathwayRole || PATHWAY_ROLE_LABELS[resource.priority] || 'Resource')}</span>
+            <span class="phase1-role-badge">${escapeHtml(resource.pathwayRole || PATHWAY_ROLE_LABELS[resource.priority] || 'Program')}</span>
             <h3>${escapeHtml(resource.name)}</h3>
             <p>${escapeHtml(resource.referralTrigger)}</p>
-            <p class="phase1-plan-action"><strong>Next action:</strong> ${escapeHtml(actionInstruction(resource))}</p>
+            <p class="phase1-plan-action"><strong>What to do next:</strong> ${escapeHtml(actionInstruction(resource))}</p>
           </div>
           <div class="phase1-plan-fields">
             <label class="field"><span>Status</span><select data-plan-status="${escapeAttribute(resource.id)}">${STATUS_OPTIONS.map((status) => `<option ${status === (meta.status || STATUS_OPTIONS[0]) ? 'selected' : ''}>${escapeHtml(status)}</option>`).join('')}</select></label>
-            <label class="field"><span>Follow up on</span><input type="date" data-plan-date="${escapeAttribute(resource.id)}" value="${escapeAttribute(meta.followUp || '')}"></label>
+            <label class="field"><span>Check back on</span><input type="date" data-plan-date="${escapeAttribute(resource.id)}" value="${escapeAttribute(meta.followUp || '')}"></label>
           </div>
           <div class="card-actions">
             ${firstPhone(resource.phone) ? `<a class="button button-primary button-small" href="tel:${firstPhone(resource.phone)}">${actionLabel(resource)}</a>` : ''}
-            ${safeUrl(resource.sourceUrl) ? `<a class="button button-secondary button-small" href="${escapeAttribute(safeUrl(resource.sourceUrl))}" target="_blank" rel="noopener noreferrer">Check current details</a>` : ''}
+            ${safeUrl(resource.sourceUrl) ? `<a class="button button-secondary button-small" href="${escapeAttribute(safeUrl(resource.sourceUrl))}" target="_blank" rel="noopener noreferrer">Visit program website</a>` : ''}
             <button class="button button-quiet button-small" type="button" data-phase1-plan-toggle="${escapeAttribute(resource.id)}">Remove</button>
           </div>
         </article>`;

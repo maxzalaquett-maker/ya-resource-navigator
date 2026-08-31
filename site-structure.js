@@ -37,7 +37,7 @@
       plan.type = 'button';
       plan.className = 'button button-quiet header-utility';
       plan.dataset.planJump = 'true';
-      plan.innerHTML = 'My plan <span class="phase1-plan-count" aria-label="resources in plan">0</span>';
+      plan.innerHTML = 'My plan <span class="phase1-plan-count" aria-label="programs in plan">0</span>';
       plan.addEventListener('click', () => activateView('needs'));
       const urgent = actions.querySelector('[data-urgent-jump]');
       urgent?.insertAdjacentElement('afterend', plan);
@@ -45,9 +45,9 @@
   }
 
   function restructureNavigation() {
-    setText('.nav-tab[data-view="directory"]', 'Browse resources');
-    setText('.nav-tab[data-view="urgent"]', 'Get help');
-    setText('.nav-tab[data-view="foster"]', 'Foster care');
+    setText('.nav-tab[data-view="directory"]', 'Browse programs');
+    setText('.nav-tab[data-view="urgent"]', 'Find help');
+    setText('.nav-tab[data-view="foster"]', 'Help after foster care');
     setText('.nav-tab[data-view="about"]', 'About');
 
     const needs = document.querySelector('.nav-tab[data-view="needs"]');
@@ -58,13 +58,13 @@
   }
 
   function restructureDirectory() {
-    setText('#view-directory .hero .eyebrow', 'Charlotte-area resource directory');
-    setText('#view-directory .hero h1', 'Browse resources');
-    setText('#view-directory .hero-copy', 'Search and filter programs for housing, food, work, education, healthcare, transportation, legal help, mentoring and other practical needs.');
+    setText('#view-directory .hero .eyebrow', 'Help for young adults in the Charlotte area');
+    setText('#view-directory .hero h1', 'Find help with what you need');
+    setText('#view-directory .hero-copy', 'Search local programs for housing, food, jobs, school, healthcare, transportation, legal help, mentoring and other everyday needs.');
 
     const note = document.querySelector('#view-directory .hero-note');
     if (note) {
-      note.innerHTML = '<strong>Confirm before relying on a listing.</strong><p>Eligibility, capacity, funding and intake can change. Check the program details and contact the provider directly.</p>';
+      note.innerHTML = '<strong>Check before you go.</strong><p>Programs can change their rules, hours, costs and openings. Call or visit the program website to make sure it can help you now.</p>';
     }
 
     const stats = document.querySelector('#view-directory .stats-grid');
@@ -81,8 +81,8 @@
     if (!view) return;
 
     setText('#view-urgent .page-heading .eyebrow', 'Not sure where to start?');
-    setText('#view-urgent .page-heading h1', 'Get help finding a next step');
-    setText('#view-urgent .page-heading p:last-child', 'Answer a few non-identifying questions for a smaller set of likely starting points. Immediate and crisis resources are listed below.');
+    setText('#view-urgent .page-heading h1', 'Find a good next step');
+    setText('#view-urgent .page-heading p:last-child', 'Answer a few simple questions to see a smaller list of programs that may fit. You will not be asked for your name or private details.');
 
     const heading = view.querySelector('.page-heading');
     if (heading && !document.getElementById('guided-pathway-mount')) {
@@ -100,13 +100,13 @@
       if (!urgentContainer.querySelector('.help-section-heading')) {
         const sectionHeading = document.createElement('div');
         sectionHeading.className = 'help-section-heading';
-        sectionHeading.innerHTML = '<p class="eyebrow">Immediate and urgent support</p><h2>Start here when waiting could make the situation less safe</h2>';
+        sectionHeading.innerHTML = '<p class="eyebrow">Help right now</p><h2>Use these options when it may not be safe to wait</h2>';
         urgentContainer.prepend(sectionHeading);
       }
 
       const banner = urgentContainer.querySelector('.emergency-banner');
       if (banner) {
-        banner.innerHTML = '<div><strong>Immediate danger, overdose, violence or serious injury?</strong><p>Call 911. For a suicide or mental-health crisis, call or text 988.</p></div><div class="card-actions"><a class="button button-danger" href="tel:911">Call 911</a><a class="button button-primary" href="tel:988">Call or text 988</a></div>';
+        banner.innerHTML = '<div><strong>Are you in immediate danger, badly hurt or dealing with an overdose?</strong><p>Call 911. If you may hurt yourself or need someone to talk to right now, call or text 988.</p></div><div class="card-actions"><a class="button button-danger" href="tel:911">Call 911</a><a class="button button-primary" href="tel:988">Call or text 988</a></div>';
       }
     }
   }
@@ -115,9 +115,9 @@
     const view = document.getElementById('view-needs');
     if (!view) return;
 
-    setText('#view-needs .page-heading .eyebrow', 'Stored only on this device');
-    setText('#view-needs .page-heading h1', 'My support plan');
-    setText('#view-needs .page-heading p:last-child', 'Keep track of programs, next actions and follow-up dates without entering names or private case notes.');
+    setText('#view-needs .page-heading .eyebrow', 'Saved only in this browser');
+    setText('#view-needs .page-heading h1', 'My plan');
+    setText('#view-needs .page-heading p:last-child', 'Save programs you want to try and keep track of your next step. Do not enter names, health details or other private information here.');
 
     const heading = view.querySelector('.page-heading');
     if (heading && !document.getElementById('plan-mount')) {
@@ -135,42 +135,42 @@
   }
 
   function restructureFosterCare() {
-    setText('#view-foster .page-heading .eyebrow', 'Time-sensitive transition support');
-    setText('#view-foster .page-heading h1', 'Foster care benefits and deadlines');
-    setText('#view-foster .page-heading p:last-child', 'Review programs with age, custody-status or enrollment deadlines before benefits expire, then confirm the recommended next step with the responsible agency.');
+    setText('#view-foster .page-heading .eyebrow', 'Extra help you may qualify for');
+    setText('#view-foster .page-heading h1', 'Help after foster care');
+    setText('#view-foster .page-heading p:last-child', 'You may be able to get help with housing, school, healthcare and living on your own because you were in foster care. Some programs have age deadlines, so check them as soon as you can.');
   }
 
   function restructureAbout() {
     const grid = document.querySelector('#view-about .about-grid');
     if (!grid) return;
 
-    setText('#view-about .page-heading .eyebrow', 'How the navigator works');
-    setText('#view-about .page-heading h1', 'About this resource navigator');
-    setText('#view-about .page-heading p:last-child', 'Understand who the directory is for, how programs are selected, what verification means and how to report a correction.');
+    setText('#view-about .page-heading .eyebrow', 'About this website');
+    setText('#view-about .page-heading h1', 'How this directory works');
+    setText('#view-about .page-heading p:last-child', 'Learn what is included, how information is checked and how to tell us when something has changed.');
 
     grid.classList.add('about-sections');
     grid.innerHTML = `
       <section class="about-section">
-        <h2>How to use the directory</h2>
-        <p>Young adults can use the directory directly. It can also support social workers, case managers, mentors, foster families, churches and other community members helping someone find a practical next step.</p>
-        <p><strong>Browse resources</strong> when you know the type of help needed. Use <strong>Get help</strong> when the situation is urgent or the right starting point is unclear. Save useful programs to <strong>My plan</strong> for follow-through.</p>
+        <h2>How to use it</h2>
+        <p>This directory is made for young adults looking for help in Charlotte, Mecklenburg County and nearby communities.</p>
+        <p>Use <strong>Browse programs</strong> when you know what kind of help you need. Use <strong>Find help</strong> when the situation is urgent or you are not sure where to begin. Save useful programs to <strong>My plan</strong>.</p>
       </section>
       <section class="about-section">
-        <h2>How resources are selected</h2>
-        <p>The directory prioritizes government agencies, public institutions, established health systems and established nonprofit providers with a defined service or intake process. It excludes informal aid, crowd-sourced listings without a primary source and organizations without a clear way to request service.</p>
-        <p>“Local or nearby” generally means Charlotte, Mecklenburg County or a community within roughly 30 road miles of Uptown Charlotte. County, ZIP-code and residency rules still need direct confirmation.</p>
+        <h2>What is included</h2>
+        <p>We include government programs, schools, healthcare systems and established nonprofit organizations that explain what they offer and how to get started.</p>
+        <p>“Local or nearby” usually means Charlotte, Mecklenburg County or a community within about 30 miles of Uptown Charlotte. Always check whether a program serves your county or ZIP code.</p>
       </section>
       <section class="about-section">
-        <h2>Verification and limitations</h2>
-        <p>Inclusion is not an endorsement or a guarantee that a program will accept a referral, have openings, provide funding or determine someone eligible. Listings are checked periodically, but programs can change between reviews.</p>
+        <h2>What to check</h2>
+        <p>A listing does not promise that a program will have an opening or that you will qualify. Rules, hours, costs, funding and contact information can change.</p>
         <div id="verification-summary-mount"></div>
-        <p>Each program detail shows its own verification date and what should be confirmed directly before relying on the listing.</p>
+        <p>Each program shows when its information was last checked. Call or visit the program website before making plans.</p>
       </section>
       <section class="about-section">
-        <h2>Data and corrections</h2>
-        <p>Use <strong>Report outdated information</strong> from a program’s detail view to suggest a correction. Do not include names, health information or case details in a public correction report.</p>
-        <p>The researched workbook includes the source data and operating notes used to maintain the directory.</p>
-        <a class="button button-primary" href="/source/Charlotte_Young_Adult_Resource_Directory.xlsx" download>Download spreadsheet</a>
+        <h2>Tell us about a change</h2>
+        <p>Use <strong>Report outdated information</strong> on a program page when something looks wrong. Do not include your name, health information or other private details in the report.</p>
+        <p>The spreadsheet below contains the information used to maintain this directory.</p>
+        <a class="button button-primary" href="/source/Charlotte_Young_Adult_Resource_Directory.xlsx" download>Download the program list</a>
       </section>`;
   }
 
