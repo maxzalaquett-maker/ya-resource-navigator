@@ -48,6 +48,7 @@ jobs:
         run: |
           node --check app.js
           node --check config.js
+          node --check filter-accordions.js
           node --check filter-tooltips.js
           node --check mobile.js
           node --check phase1.js
