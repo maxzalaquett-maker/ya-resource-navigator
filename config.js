@@ -33,6 +33,8 @@ loadStyle('/foster-categories.css');
 loadScript('/foster-categories.js');
 loadStyle('/phase1.css');
 loadScript('/phase1.js');
+loadStyle('/filter-icons.css');
+loadScript('/filter-icons.js');
 loadStyle('/logos.css');
 loadScript('/logos.js');
 
