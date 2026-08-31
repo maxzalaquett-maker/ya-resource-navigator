@@ -16,8 +16,10 @@
   display: grid;
   place-items: center;
   flex: 0 0 auto;
+  box-sizing: border-box;
   width: 32px;
   height: 32px;
+  padding: 5px;
   overflow: hidden;
   border: 1px solid rgba(26, 38, 64, .12);
   border-radius: 7px;
@@ -28,10 +30,11 @@
 .resource-logo img {
   position: relative;
   z-index: 1;
+  display: block;
   width: auto;
   height: auto;
-  max-width: 32px;
-  max-height: 32px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
