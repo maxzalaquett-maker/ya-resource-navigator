@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T15:36:15.847433+00:00",
+  "generatedAt": "2026-08-31T20:12:30.978051+00:00",
   "results": [
     {
       "url": "https://www.adajenkins.org/",
@@ -101,13 +101,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked"
+        "automated-check-failed"
       ],
-      "status": 403,
-      "finalUrl": "https://careringnc.org/low-cost-clinic/",
-      "finalHost": "careringnc.org",
-      "title": "403 - Forbidden",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='careringnc.org', port=443): Max retries exceeded with url: /low-cost-clinic/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='careringnc.org', port=443) at 0x7fd0f190bce0>, 'Connection to careringnc.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://careringnc.org/nurse-family-partnership/",
@@ -119,13 +119,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked"
+        "automated-check-failed"
       ],
-      "status": 403,
-      "finalUrl": "https://careringnc.org/nurse-family-partnership/",
-      "finalHost": "careringnc.org",
-      "title": "403 - Forbidden",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='careringnc.org', port=443): Max retries exceeded with url: /nurse-family-partnership/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='careringnc.org', port=443) at 0x7fd0f190b830>, 'Connection to careringnc.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://centerforcommunitytransitions.org/",
@@ -299,14 +299,14 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked",
+        "automated-check-failed",
         "generic-homepage"
       ],
-      "status": 403,
-      "finalUrl": "https://disability-rights.org/",
-      "finalHost": "disability-rights.org",
-      "title": "403 - Forbidden",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='disability-rights.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='disability-rights.org', port=443) at 0x7fd0f1961f40>, 'Connection to disability-rights.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://dogreater.org/",
@@ -402,24 +402,6 @@
       "error": ""
     },
     {
-      "url": "https://www.safealliance.org/programs/greater-charlotte-hope-line/",
-      "labels": [
-        "Interface link"
-      ],
-      "sourceTypes": [
-        "interface"
-      ],
-      "classification": "interface-link",
-      "flags": [
-        "automated-check-failed"
-      ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f7bb1b711c0>, 'Connection to www.safealliance.org timed out. "
-    },
-    {
       "url": "https://latinamericancoalition.org/",
       "labels": [
         "Latin American Coalition"
@@ -450,13 +432,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked"
+        "automated-check-failed"
       ],
-      "status": 403,
-      "finalUrl": "https://livingstone.edu/h-o-p-e/",
-      "finalHost": "livingstone.edu",
-      "title": "403 - Forbidden",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='livingstone.edu', port=443): Max retries exceeded with url: /h-o-p-e/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='livingstone.edu', port=443) at 0x7fd0f1963c80>, 'Connection to livingstone.edu timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://www.mcleodcenters.org/",
@@ -612,13 +594,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked"
+        "automated-check-failed"
       ],
-      "status": 403,
-      "finalUrl": "https://www.roofabove.org/get-help/",
-      "finalHost": "roofabove.org",
-      "title": "403 - Forbidden",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.roofabove.org', port=443): Max retries exceeded with url: /get-help/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.roofabove.org', port=443) at 0x7fd0f1960b00>, 'Connection to www.roofabove.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://www.roofabove.org/emergency-shelter/",
@@ -630,13 +612,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked"
+        "automated-check-failed"
       ],
-      "status": 403,
-      "finalUrl": "https://www.roofabove.org/emergency-shelter/",
-      "finalHost": "roofabove.org",
-      "title": "403 - Forbidden",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.roofabove.org', port=443): Max retries exceeded with url: /emergency-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.roofabove.org', port=443) at 0x7fd0f19602f0>, 'Connection to www.roofabove.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://www.roofabove.org/short-term-and-transitional-housing/",
@@ -648,31 +630,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked"
-      ],
-      "status": 403,
-      "finalUrl": "https://www.roofabove.org/short-term-and-transitional-housing/",
-      "finalHost": "roofabove.org",
-      "title": "403 - Forbidden",
-      "error": ""
-    },
-    {
-      "url": "https://www.safealliance.org/programs/domestic-violence-shelter/",
-      "labels": [
-        "Safe Alliance — Domestic Violence Shelter"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "official-first-party",
-      "flags": [
         "automated-check-failed"
       ],
       "status": null,
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f7bb2cf1e80>, 'Connection to www.safealliance.org timed out. (c"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.roofabove.org', port=443): Max retries exceeded with url: /short-term-and-transitional-housing/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.roofabove.org', port=443) at 0x7fd0f1961640>, 'Connection to www.roofabove.org timed out. (connect t"
     },
     {
       "url": "https://www.safealliance.org/",
@@ -684,14 +648,33 @@
       ],
       "classification": "official-first-party",
       "flags": [
-        "automated-check-failed",
         "generic-homepage"
       ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7f7bb1be9310>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
+      "status": 200,
+      "finalUrl": "https://www.safealliance.org/",
+      "finalHost": "safealliance.org",
+      "title": "Safe Alliance",
+      "error": ""
+    },
+    {
+      "url": "https://chsnc.org/programs-services/sayso/",
+      "labels": [
+        "SaySo / Strong Able Youth Speaking Out",
+        "SaySo"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "official-first-party",
+      "flags": [
+        "automated-access-blocked"
+      ],
+      "status": 403,
+      "finalUrl": "https://chsnc.org/programs-services/sayso/",
+      "finalHost": "chsnc.org",
+      "title": "Just a moment...",
+      "error": ""
     },
     {
       "url": "https://www.score.org/nc/charlotte/",
@@ -710,24 +693,6 @@
       "finalHost": "score.org",
       "title": "Just a moment...",
       "error": ""
-    },
-    {
-      "url": "https://www.smartstartofmeck.org/families-caregivers/",
-      "labels": [
-        "Smart Start of Mecklenburg County"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "official-first-party",
-      "flags": [
-        "automated-check-failed"
-      ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7f7bb1bcbfb0>, 'Connection to www.smartstartofmeck.org timed out. (conn"
     },
     {
       "url": "https://www.ssa.gov/benefits/disability/",
@@ -794,13 +759,13 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "redirected-to-different-host"
+        "automated-check-failed"
       ],
-      "status": 200,
-      "finalUrl": "https://www.salvationarmyusa.org/usa-southern-territory/north-and-south-carolina/charlotte-area-command/",
-      "finalHost": "salvationarmyusa.org",
-      "title": "The Salvation Army of Greater Charlotte | Salvation Army Area Commands",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='www.salvationarmyusa.org', port=443): Read timed out. (read timeout=18)"
     },
     {
       "url": "https://ninerneeds.charlotte.edu/",
@@ -1484,6 +1449,22 @@
       "error": ""
     },
     {
+      "url": "https://www.safealliance.org/programs/greater-charlotte-hope-line/",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "interface-link",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.safealliance.org/programs/greater-charlotte-hope-line/",
+      "finalHost": "safealliance.org",
+      "title": "Greater Charlotte Hope Line | Safe Alliance",
+      "error": ""
+    },
+    {
       "url": "https://www.ihclt.org/adult-education",
       "labels": [
         "International House"
@@ -1999,21 +1980,19 @@
       "error": ""
     },
     {
-      "url": "https://chsnc.org/programs-services/sayso/",
+      "url": "https://www.safealliance.org/programs/domestic-violence-shelter/",
       "labels": [
-        "SaySo / Strong Able Youth Speaking Out",
-        "SaySo"
+        "Safe Alliance — Domestic Violence Shelter"
       ],
       "sourceTypes": [
-        "resource",
-        "foster-guide"
+        "resource"
       ],
       "classification": "official-first-party",
       "flags": [],
       "status": 200,
-      "finalUrl": "https://chsnc.org/programs-services/sayso/",
-      "finalHost": "chsnc.org",
-      "title": "SaySo &ndash; Children&#039;s Home Society of North Carolina",
+      "finalUrl": "https://www.safealliance.org/programs/domestic-violence-shelter/",
+      "finalHost": "safealliance.org",
+      "title": "Domestic Violence Shelter | Safe Alliance",
       "error": ""
     },
     {
@@ -2046,6 +2025,22 @@
       "finalUrl": "https://www.shebuiltthiscity.org/adult-workforce-development-1",
       "finalHost": "shebuiltthiscity.org",
       "title": "Adult Workforce Development | Empower Women Today! &mdash; She Built This City",
+      "error": ""
+    },
+    {
+      "url": "https://www.smartstartofmeck.org/families-caregivers/",
+      "labels": [
+        "Smart Start of Mecklenburg County"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.smartstartofmeck.org/families-caregivers/",
+      "finalHost": "smartstartofmeck.org",
+      "title": "Families & Caregivers | Smart Start of Mecklenburg County",
       "error": ""
     },
     {
