@@ -2,12 +2,32 @@
   "resources": {
     "Education and Training Voucher (ETV)": {
       "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth",
-      "access": "Use the NCDHHS ETV application and coordinate with LINKS and the school's financial-aid office."
+      "access": "Use the NCDHHS ETV application and coordinate with LINKS and the school's financial-aid office.",
+      "lastVerified": "2026-08-31"
+    },
+    "Community Link": {
+      "sourceUrl": "https://www.charlottenc.gov/City-News/Charlotte-is-home-an-affordable-housing-resource-guide",
+      "access": "Call Community Link at 800-977-1969 or 704-943-9490 for housing counseling and education.",
+      "notes": "The former Community Link webpage is unavailable. The City of Charlotte housing guide confirms the organization and current contact numbers.",
+      "lastVerified": "2026-08-31"
+    },
+    "Hope United Survivor Network": {
+      "sourceUrl": "https://hopeunitedgaston.com/about-us/",
+      "access": "Call the main line at 704-862-6783. Call the 24-hour crisis line at 704-852-6000 for urgent survivor support.",
+      "lastVerified": "2026-08-31"
+    },
+    "I Am Here Vital Document Legal Hotline": {
+      "sourceUrl": "https://neglected-delinquent.ed.gov/node/1003",
+      "access": "Call or text 1-888-870-DOCS on Wednesdays from noon to 8 p.m. Eastern.",
+      "lastVerified": "2026-08-31"
     }
   },
   "fosterPrograms": {
     "Education and Training Voucher": {
       "sourceUrl": "https://www.ncdhhs.gov/assistance/guardianship/independent-living-services-transitional-age-youth"
+    },
+    "I Am Here legal hotline": {
+      "sourceUrl": "https://neglected-delinquent.ed.gov/node/1003"
     }
   }
 }
