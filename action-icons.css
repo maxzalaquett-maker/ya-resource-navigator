@@ -158,6 +158,60 @@ a.button[href^="tel:"] {
   text-align: center;
 }
 
+/* Give the report dialog clear, comfortable section spacing. */
+#phase1-report-dialog form {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+#phase1-report-dialog .dialog-title {
+  padding: 2rem 2rem 1.5rem;
+}
+
+#phase1-report-dialog .dialog-title h2 {
+  margin: .35rem 0 .65rem;
+}
+
+#phase1-report-dialog .dialog-title p:last-child {
+  margin: 0;
+}
+
+#phase1-report-dialog fieldset {
+  margin: 0;
+  padding: 1.5rem 2rem 1rem;
+  border-top: 1px solid var(--line);
+}
+
+#phase1-report-dialog fieldset legend {
+  margin-bottom: .75rem;
+}
+
+#phase1-report-dialog .phase1-inline-choice {
+  padding: .5rem 0;
+}
+
+#phase1-report-dialog .field {
+  margin: 0;
+  padding: .75rem 2rem 1.5rem;
+}
+
+#phase1-report-dialog textarea {
+  min-height: 150px;
+  padding: 1rem;
+}
+
+#phase1-report-dialog .phase1-privacy-note {
+  margin: 0;
+  padding: 1rem 2rem;
+  border-left-width: 4px;
+}
+
+#phase1-report-dialog .dialog-actions {
+  margin: 0;
+  padding: 1.25rem 2rem 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
 @media (max-width: 640px) {
   .phase1-pathway-resource-heading {
     grid-template-columns: 1fr !important;
@@ -169,5 +223,25 @@ a.button[href^="tel:"] {
 
   #resource-dialog .dialog-actions {
     grid-template-columns: 1fr;
+  }
+
+  #phase1-report-dialog .dialog-title {
+    padding: 1.5rem 1.25rem 1.15rem;
+  }
+
+  #phase1-report-dialog fieldset {
+    padding: 1.25rem 1.25rem .75rem;
+  }
+
+  #phase1-report-dialog .field {
+    padding: .65rem 1.25rem 1.25rem;
+  }
+
+  #phase1-report-dialog .phase1-privacy-note {
+    padding: .9rem 1.25rem;
+  }
+
+  #phase1-report-dialog .dialog-actions {
+    padding: 1rem 1.25rem 1.25rem;
   }
 }
