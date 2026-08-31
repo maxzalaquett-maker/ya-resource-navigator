@@ -47,6 +47,7 @@ KNOWN_GOVERNMENT_HOSTS = {
 }
 
 KNOWN_FIRST_PARTY_HOSTS = {
+    "carolinayouth.org",
     "cfnc.org",
     "cfknc.org",
     "charlotte.edu",
