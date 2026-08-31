@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Check every external source URL used by the static Resource Navigator.
+"""Check every external URL used by the static Resource Navigator.
 
-The audit follows redirects, records response status and page title, and flags links that
-are broken, generic home pages or not clearly tied to an official provider/government host.
+The audit follows redirects, records response status and page title, and distinguishes
+missing pages from official sites that block automated requests. Service sources are also
+classified as government, first-party provider, or needing manual ownership review.
 """
 
 from __future__ import annotations
@@ -29,23 +30,41 @@ STOP_WORDS = {
     "nc", "inc", "org", "foundation", "association", "department", "division",
 }
 
-KNOWN_OFFICIAL_HOSTS = {
+KNOWN_GOVERNMENT_HOSTS = {
     "988lifeline.org",
     "benefits.gov",
-    "cfnc.org",
     "charlottenc.gov",
     "healthcare.gov",
     "hud.gov",
     "mecknc.gov",
     "medicaid.ncdhhs.gov",
     "nc.gov",
-    "nc211.org",
     "ncdhhs.gov",
+    "neglected-delinquent.ed.gov",
+    "ssa.gov",
     "studentaid.gov",
     "usa.gov",
 }
 
-REVIEW_HOSTS = {
+KNOWN_FIRST_PARTY_HOSTS = {
+    "cfnc.org",
+    "cfknc.org",
+    "charlotte.edu",
+    "chsnc.org",
+    "cpcc.edu",
+    "ihclt.org",
+    "mhaofcc.org",
+    "nc211.org",
+    "nourishup.org",
+    "project658.com",
+    "raoassist.org",
+    "safealliance.org",
+    "score.org",
+    "smartstartofmeck.org",
+    "sutlnc.org",
+}
+
+THIRD_PARTY_PLATFORM_HOSTS = {
     "bit.ly",
     "docs.google.com",
     "drive.google.com",
@@ -59,6 +78,9 @@ REVIEW_HOSTS = {
     "youtube.com",
 }
 
+BLOCKED_STATUSES = {401, 403, 429}
+MISSING_STATUSES = {404, 410}
+
 
 def clean_host(value: str) -> str:
     return (urlparse(value).hostname or "").lower().removeprefix("www.")
@@ -69,6 +91,10 @@ def root_host(host: str) -> str:
     return ".".join(parts[-2:]) if len(parts) >= 2 else host
 
 
+def host_matches(host: str, candidates: set[str]) -> bool:
+    return any(host == candidate or host.endswith(f".{candidate}") for candidate in candidates)
+
+
 def words(value: str) -> set[str]:
     return {
         token
@@ -77,31 +103,37 @@ def words(value: str) -> set[str]:
     }
 
 
-def official_classification(labels: list[str], url: str) -> tuple[str, list[str]]:
+def source_classification(entry: dict) -> tuple[str, list[str]]:
+    url = entry["url"]
     host = clean_host(url)
     root = root_host(host)
+    source_types = set(entry.get("sourceTypes", []))
     flags: list[str] = []
 
     if urlparse(url).scheme != "https":
         flags.append("not-https")
 
-    if host.endswith(".gov") or ".gov." in host or root in KNOWN_OFFICIAL_HOSTS or host in KNOWN_OFFICIAL_HOSTS:
+    if source_types == {"interface"}:
+        return "interface-link", flags
+    if source_types == {"metadata"}:
+        return "internal-reference", flags
+
+    if host.endswith(".gov") or ".gov." in host or host_matches(host, KNOWN_GOVERNMENT_HOSTS):
         return "official-government", flags
 
-    if root in REVIEW_HOSTS or host in REVIEW_HOSTS:
+    if host_matches(host, KNOWN_FIRST_PARTY_HOSTS):
+        return "official-first-party", flags
+
+    if root in THIRD_PARTY_PLATFORM_HOSTS or host in THIRD_PARTY_PLATFORM_HOSTS:
         flags.append("third-party-platform")
         return "manual-review", flags
 
-    label_tokens = set().union(*(words(label) for label in labels))
+    label_tokens = set().union(*(words(label) for label in entry["labels"]))
     host_compact = re.sub(r"[^a-z0-9]", "", root.lower())
     host_tokens = words(root.replace(".", " "))
 
     exact_token_match = bool(label_tokens & host_tokens)
-    embedded_token_match = any(
-        token in host_compact
-        for token in label_tokens
-        if len(token) >= 4
-    )
+    embedded_token_match = any(token in host_compact for token in label_tokens if len(token) >= 4)
 
     if exact_token_match or embedded_token_match:
         return "likely-first-party", flags
@@ -120,7 +152,7 @@ def extract_title(html: str) -> str:
 def inspect_url(entry: dict) -> dict:
     url = entry["url"]
     result = dict(entry)
-    classification, flags = official_classification(entry["labels"], url)
+    classification, flags = source_classification(entry)
     result.update(
         {
             "classification": classification,
@@ -134,7 +166,7 @@ def inspect_url(entry: dict) -> dict:
     )
 
     path = urlparse(url).path or "/"
-    if path in {"", "/"}:
+    if path in {"", "/"} and classification not in {"interface-link", "internal-reference"}:
         result["flags"].append("generic-homepage")
 
     try:
@@ -152,13 +184,20 @@ def inspect_url(entry: dict) -> dict:
         if "text/html" in response.headers.get("content-type", ""):
             result["title"] = extract_title(response.text[:250000])
 
-        if response.status_code >= 400:
+        if response.status_code in MISSING_STATUSES:
+            result["flags"].append("missing-page")
+        elif response.status_code in BLOCKED_STATUSES:
+            result["flags"].append("automated-access-blocked")
+        elif response.status_code >= 500:
+            result["flags"].append("server-error")
+        elif response.status_code >= 400:
             result["flags"].append("http-error")
+
         if root_host(clean_host(url)) != root_host(clean_host(response.url)):
             result["flags"].append("redirected-to-different-host")
     except requests.RequestException as exc:
         result["error"] = f"{type(exc).__name__}: {exc}"[:300]
-        result["flags"].append("request-failed")
+        result["flags"].append("automated-check-failed")
 
     result["flags"] = sorted(set(result["flags"]))
     return result
@@ -196,7 +235,13 @@ def markdown_report(report: dict) -> str:
     rows = report["results"]
     flagged = [row for row in rows if row["flags"]]
     manual = [row for row in rows if row["classification"] == "manual-review"]
-    broken = [row for row in rows if "http-error" in row["flags"] or "request-failed" in row["flags"]]
+    missing = [row for row in rows if "missing-page" in row["flags"]]
+    blocked = [
+        row
+        for row in rows
+        if "automated-access-blocked" in row["flags"] or "automated-check-failed" in row["flags"]
+    ]
+    server_errors = [row for row in rows if "server-error" in row["flags"]]
 
     lines = [
         "# Source URL Audit",
@@ -204,11 +249,13 @@ def markdown_report(report: dict) -> str:
         f"Generated: {report['generatedAt']}",
         "",
         f"- Unique URLs checked: **{len(rows)}**",
-        f"- Broken or unreachable: **{len(broken)}**",
+        f"- Missing pages (404/410): **{len(missing)}**",
+        f"- Automated access blocked or inconclusive: **{len(blocked)}**",
+        f"- Server errors: **{len(server_errors)}**",
         f"- Manual official-source review: **{len(manual)}**",
         f"- URLs with any flag: **{len(flagged)}**",
         "",
-        "Automated checks cannot prove organizational ownership in every case. `manual-review` means the host should be confirmed against the provider or administering agency.",
+        "A blocked or inconclusive automated request does not mean a public page is broken. Those links require a browser or manual search check. `manual-review` means the host ownership is not evident from the organization name alone.",
         "",
         "## Flagged links",
         "",
@@ -264,13 +311,17 @@ def main() -> None:
     AUDIT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     AUDIT_MD.write_text(markdown_report(report), encoding="utf-8")
 
-    broken = sum(
+    missing = sum(1 for row in results if "missing-page" in row["flags"])
+    blocked = sum(
         1
         for row in results
-        if "http-error" in row["flags"] or "request-failed" in row["flags"]
+        if "automated-access-blocked" in row["flags"] or "automated-check-failed" in row["flags"]
     )
     manual = sum(1 for row in results if row["classification"] == "manual-review")
-    print(f"Checked {len(results)} unique URLs; {broken} broken/unreachable; {manual} need manual source review")
+    print(
+        f"Checked {len(results)} unique URLs; {missing} missing pages; "
+        f"{blocked} blocked/inconclusive; {manual} need manual source review"
+    )
 
 
 if __name__ == "__main__":
