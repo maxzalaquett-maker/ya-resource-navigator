@@ -15,13 +15,10 @@ Response.prototype.json = async function (...args) {
   const data = await originalResponseJson.apply(this, args);
 
   if (Array.isArray(data?.resources)) {
-    data.resources = data.resources.filter((resource) => !String(resource.name || '').includes('Time Out Youth'));
-
-    const myFarmCamps = data.resources.find((resource) => resource.name === 'My Farm Camps Experience');
-    if (myFarmCamps) {
-      myFarmCamps.referralTrigger = 'A young adult wants to explore a farm-based experiential opportunity involving animals, riding, gardening or animal-assisted activities.';
-      myFarmCamps.notes = 'Potential experiential or partnership resource; not a guaranteed clinical referral.';
-    }
+    data.resources = data.resources.filter((resource) =>
+      resource.priority !== 'Verify' &&
+      !String(resource.name || '').includes('Time Out Youth')
+    );
 
     const womenInTransition = data.resources.find((resource) =>
       resource.name === 'YWCA Central Carolinas — Transitional Housing' ||
@@ -143,6 +140,8 @@ const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#priority-filter option[value="Verify"]')?.remove();
+
   const needsTab = document.querySelector('.nav-tab[data-view="needs"]');
   if (needsTab) needsTab.textContent = 'Support by need';
 
