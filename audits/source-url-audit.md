@@ -1,13 +1,13 @@
 # Source URL Audit
 
-Generated: 2026-08-31T20:12:30.978051+00:00
+Generated: 2026-08-31T22:07:49.866032+00:00
 
 - Unique URLs checked: **133**
 - Missing pages (404/410): **0**
-- Automated access blocked or inconclusive: **16**
+- Automated access blocked or inconclusive: **19**
 - Server errors: **0**
 - Manual official-source review: **0**
-- URLs with any flag: **44**
+- URLs with any flag: **47**
 
 A blocked or inconclusive automated request does not mean a public page is broken. Those links require a browser or manual search check. `manual-review` means the host ownership is not evident from the organization name alone.
 
@@ -20,8 +20,8 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | BraveWorks | 200 | likely-first-party | generic-homepage | https://www.braveworks.org/ | https://www.braveworks.org/ |
 | C.W. Williams Community Health Center | 403 | likely-first-party | automated-access-blocked | https://cwwilliams.org/services/ | https://cwwilliams.org/services/ |
 | Camino Health Center | 200 | likely-first-party | generic-homepage | https://camino.org/ | https://camino.org/ |
-| Care Ring Low-Cost Clinic | — | likely-first-party | automated-check-failed | https://careringnc.org/low-cost-clinic/ |  |
-| Care Ring Nurse-Family Partnership | — | likely-first-party | automated-check-failed | https://careringnc.org/nurse-family-partnership/ |  |
+| Care Ring Low-Cost Clinic | 403 | likely-first-party | automated-access-blocked | https://careringnc.org/low-cost-clinic/ | https://careringnc.org/low-cost-clinic/ |
+| Care Ring Nurse-Family Partnership | 403 | likely-first-party | automated-access-blocked | https://careringnc.org/nurse-family-partnership/ | https://careringnc.org/nurse-family-partnership/ |
 | Center for Community Transitions | 200 | likely-first-party | generic-homepage | https://centerforcommunitytransitions.org/ | https://centerforcommunitytransitions.org/ |
 | Changed Choices | 200 | likely-first-party | generic-homepage | https://changedchoices.org/ | https://www.changedchoices.org/ |
 | Charlotte Area Fund — Workforce Development | 200 | likely-first-party | generic-homepage | https://www.charlotteareafund.org/ | https://www.charlotteareafund.org/ |
@@ -31,14 +31,15 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Community Culinary School of Charlotte | 200 | likely-first-party | generic-homepage | https://communityculinary.org/ | https://communityculinary.org/ |
 | Crittenton of North Carolina | 200 | likely-first-party | generic-homepage | https://www.crittentonofnc.org/ | https://www.crittentonofnc.org/ |
 | CVAN — Cabarrus Victims Assistance Network | 200 | likely-first-party | generic-homepage | https://cvan.org/ | https://cvan.org/Default.aspx?AspxAutoDetectCookieSupport=1 |
-| Disability Rights & Resources | — | likely-first-party | automated-check-failed, generic-homepage | https://disability-rights.org/ |  |
+| Disability Rights & Resources | 403 | likely-first-party | automated-access-blocked, generic-homepage | https://disability-rights.org/ | https://disability-rights.org/ |
 | Do Greater Charlotte — Sparkhouse | 200 | likely-first-party | generic-homepage | https://dogreater.org/ | https://dogreater.org/ |
 | Gracious Hands Transitional Housing | 200 | likely-first-party | generic-homepage | https://www.gracioushandshousing.org/ | https://www.gracioushandshousing.org/ |
 | Hope Haven | 403 | likely-first-party | automated-access-blocked, generic-homepage | https://hopehaveninc.org/ | https://hopehaveninc.org/ |
 | Hope House Foundation | 200 | likely-first-party | generic-homepage | https://hopehousefoundation.org/ | https://hopehousefoundation.org/ |
 | I Am Here Vital Document Legal Hotline; I Am Here legal hotline | 403 | official-government | automated-access-blocked | https://neglected-delinquent.ed.gov/node/1003 | https://neglected-delinquent.ed.gov/node/1003 |
+| Interface link | — | interface-link | automated-check-failed | https://www.safealliance.org/programs/greater-charlotte-hope-line/ |  |
 | Latin American Coalition | 200 | likely-first-party | generic-homepage, redirected-to-different-host | https://latinamericancoalition.org/ | https://mylac.org/ |
-| Livingstone College — H.O.P.E. Emancipation Project; Livingstone College H.O.P.E. Emancipation Project | — | likely-first-party | automated-check-failed | https://livingstone.edu/h-o-p-e/ |  |
+| Livingstone College — H.O.P.E. Emancipation Project; Livingstone College H.O.P.E. Emancipation Project | 403 | likely-first-party | automated-access-blocked | https://livingstone.edu/h-o-p-e/ | https://livingstone.edu/h-o-p-e/ |
 | McLeod Centers for Wellbeing | 200 | likely-first-party | generic-homepage | https://www.mcleodcenters.org/ | https://www.mcleodcenters.org/ |
 | Mecklenburg WIC | 200 | official-government | generic-homepage | https://health.mecknc.gov/ | https://health.mecknc.gov/ |
 | MiraVia College Residence | 200 | likely-first-party | generic-homepage | https://miravia.org/ | https://miravia.org/ |
@@ -47,16 +48,18 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | OMITT Trade School | 200 | likely-first-party | generic-homepage | https://www.omitttradeschool.com/ | https://www.omitttradeschool.com/ |
 | Project 658 | 200 | official-first-party | generic-homepage | https://project658.com/ | https://project658.com/ |
 | Right Moves for Youth | 200 | likely-first-party | generic-homepage | https://rightmovesforyouth.org/ | https://www.rightmovesforyouth.org/ |
-| Roof Above — Day Services Center | — | likely-first-party | automated-check-failed | https://www.roofabove.org/get-help/ |  |
-| Roof Above — Men's Emergency Shelter | — | likely-first-party | automated-check-failed | https://www.roofabove.org/emergency-shelter/ |  |
-| Roof Above — Rapid Rehousing & Permanent Supportive Housing | — | likely-first-party | automated-check-failed | https://www.roofabove.org/short-term-and-transitional-housing/ |  |
-| Safe Alliance — Victim Assistance and Sexual Assault Services | 200 | official-first-party | generic-homepage | https://www.safealliance.org/ | https://www.safealliance.org/ |
+| Roof Above — Day Services Center | 403 | likely-first-party | automated-access-blocked | https://www.roofabove.org/get-help/ | https://www.roofabove.org/get-help/ |
+| Roof Above — Men's Emergency Shelter | 403 | likely-first-party | automated-access-blocked | https://www.roofabove.org/emergency-shelter/ | https://www.roofabove.org/emergency-shelter/ |
+| Roof Above — Rapid Rehousing & Permanent Supportive Housing | 403 | likely-first-party | automated-access-blocked | https://www.roofabove.org/short-term-and-transitional-housing/ | https://www.roofabove.org/short-term-and-transitional-housing/ |
+| Safe Alliance — Domestic Violence Shelter | — | official-first-party | automated-check-failed | https://www.safealliance.org/programs/domestic-violence-shelter/ |  |
+| Safe Alliance — Victim Assistance and Sexual Assault Services | — | official-first-party | automated-check-failed, generic-homepage | https://www.safealliance.org/ |  |
 | SaySo / Strong Able Youth Speaking Out; SaySo | 403 | official-first-party | automated-access-blocked | https://chsnc.org/programs-services/sayso/ | https://chsnc.org/programs-services/sayso/ |
 | SCORE Charlotte | 403 | official-first-party | automated-access-blocked | https://www.score.org/nc/charlotte/ | https://www.score.org/nc/charlotte/ |
+| Smart Start of Mecklenburg County | — | official-first-party | automated-check-failed | https://www.smartstartofmeck.org/families-caregivers/ |  |
 | Social Security — SSI / SSDI | 403 | official-government | automated-access-blocked | https://www.ssa.gov/benefits/disability/ | https://www.ssa.gov/benefits/disability/ |
 | Teen Health Connection | 200 | likely-first-party | generic-homepage | https://teenhealthconnection.org/ | https://teenhealthconnection.org/ |
 | The Pilgrims' Inn | 403 | likely-first-party | automated-access-blocked, generic-homepage | https://www.pilgrimsinn.org/ | https://www.pilgrimsinn.org/ |
-| The Salvation Army Center of Hope | — | likely-first-party | automated-check-failed | https://salvationarmycharlotte.org/greater-charlotte/shelter-1/ |  |
+| The Salvation Army Center of Hope | 200 | likely-first-party | redirected-to-different-host | https://salvationarmycharlotte.org/greater-charlotte/shelter-1/ | https://www.salvationarmyusa.org/usa-southern-territory/north-and-south-carolina/charlotte-area-command/ |
 | UNC Charlotte Niner Needs | 200 | official-first-party | generic-homepage | https://ninerneeds.charlotte.edu/ | https://basicneeds.charlotte.edu |
 | Urban League of Central Carolinas | 200 | likely-first-party | generic-homepage | https://www.urbanleaguecc.org/ | https://www.urbanleaguecc.org/ |
 
@@ -69,8 +72,8 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | BraveWorks | 200 | likely-first-party | BraveWorks \| Transformative Programs for Women &amp; Shop \| Charlotte NC | https://www.braveworks.org/ |
 | C.W. Williams Community Health Center | 403 | likely-first-party | Just a moment... | https://cwwilliams.org/services/ |
 | Camino Health Center | 200 | likely-first-party | Home - Camino | https://camino.org/ |
-| Care Ring Low-Cost Clinic | — | likely-first-party |  | https://careringnc.org/low-cost-clinic/ |
-| Care Ring Nurse-Family Partnership | — | likely-first-party |  | https://careringnc.org/nurse-family-partnership/ |
+| Care Ring Low-Cost Clinic | 403 | likely-first-party | 403 - Forbidden | https://careringnc.org/low-cost-clinic/ |
+| Care Ring Nurse-Family Partnership | 403 | likely-first-party | 403 - Forbidden | https://careringnc.org/nurse-family-partnership/ |
 | Center for Community Transitions | 200 | likely-first-party | Center for Community Transitions - Reentry Support &amp; Family Support | https://centerforcommunitytransitions.org/ |
 | Changed Choices | 200 | likely-first-party |  | https://changedchoices.org/ |
 | Charlotte Area Fund — Workforce Development | 200 | likely-first-party | CAF | https://www.charlotteareafund.org/ |
@@ -80,14 +83,15 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Community Culinary School of Charlotte | 200 | likely-first-party | Home Page &#8226; Community Culinary School of Charlotte | https://communityculinary.org/ |
 | Crittenton of North Carolina | 200 | likely-first-party | Crittenton of NC \| Residential Programs &amp; Support for Women in North Carolina | https://www.crittentonofnc.org/ |
 | CVAN — Cabarrus Victims Assistance Network | 200 | likely-first-party | CVAN - Safety, Shelter &amp; Support for Battered Women &amp; Children of Cabarrus County NC | https://cvan.org/ |
-| Disability Rights & Resources | — | likely-first-party |  | https://disability-rights.org/ |
+| Disability Rights & Resources | 403 | likely-first-party | 403 - Forbidden | https://disability-rights.org/ |
 | Do Greater Charlotte — Sparkhouse | 200 | likely-first-party | Do Greater \| we power potential | https://dogreater.org/ |
 | Gracious Hands Transitional Housing | 200 | likely-first-party | Gracious Hands Housing | https://www.gracioushandshousing.org/ |
 | Hope Haven | 403 | likely-first-party | 403 - Forbidden | https://hopehaveninc.org/ |
 | Hope House Foundation | 200 | likely-first-party | Housing &amp; Support for Women in Need \| Hope House Foundation | https://hopehousefoundation.org/ |
 | I Am Here Vital Document Legal Hotline; I Am Here legal hotline | 403 | official-government | 403 Forbidden | https://neglected-delinquent.ed.gov/node/1003 |
+| Interface link | — | interface-link |  | https://www.safealliance.org/programs/greater-charlotte-hope-line/ |
 | Latin American Coalition | 200 | likely-first-party | Latin American Coalition &#8211; Latin American Coalition | https://latinamericancoalition.org/ |
-| Livingstone College — H.O.P.E. Emancipation Project; Livingstone College H.O.P.E. Emancipation Project | — | likely-first-party |  | https://livingstone.edu/h-o-p-e/ |
+| Livingstone College — H.O.P.E. Emancipation Project; Livingstone College H.O.P.E. Emancipation Project | 403 | likely-first-party | 403 - Forbidden | https://livingstone.edu/h-o-p-e/ |
 | McLeod Centers for Wellbeing | 200 | likely-first-party | McLeod Centers For Wellbeing - Addiction Treatment - North Carolina % | https://www.mcleodcenters.org/ |
 | Mecklenburg WIC | 200 | official-government | Public Health \| Public Health | https://health.mecknc.gov/ |
 | MiraVia College Residence | 200 | likely-first-party | Home - MiraVia | https://miravia.org/ |
@@ -96,16 +100,18 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | OMITT Trade School | 200 | likely-first-party | Omitt Trade School \| | https://www.omitttradeschool.com/ |
 | Project 658 | 200 | official-first-party | Main Home - Project 658 | https://project658.com/ |
 | Right Moves for Youth | 200 | likely-first-party | Transform Lives: Youth Mentoring in Charlotte Supporting Future Leaders | https://rightmovesforyouth.org/ |
-| Roof Above — Day Services Center | — | likely-first-party |  | https://www.roofabove.org/get-help/ |
-| Roof Above — Men's Emergency Shelter | — | likely-first-party |  | https://www.roofabove.org/emergency-shelter/ |
-| Roof Above — Rapid Rehousing & Permanent Supportive Housing | — | likely-first-party |  | https://www.roofabove.org/short-term-and-transitional-housing/ |
-| Safe Alliance — Victim Assistance and Sexual Assault Services | 200 | official-first-party | Safe Alliance | https://www.safealliance.org/ |
+| Roof Above — Day Services Center | 403 | likely-first-party | 403 - Forbidden | https://www.roofabove.org/get-help/ |
+| Roof Above — Men's Emergency Shelter | 403 | likely-first-party | 403 - Forbidden | https://www.roofabove.org/emergency-shelter/ |
+| Roof Above — Rapid Rehousing & Permanent Supportive Housing | 403 | likely-first-party | 403 - Forbidden | https://www.roofabove.org/short-term-and-transitional-housing/ |
+| Safe Alliance — Domestic Violence Shelter | — | official-first-party |  | https://www.safealliance.org/programs/domestic-violence-shelter/ |
+| Safe Alliance — Victim Assistance and Sexual Assault Services | — | official-first-party |  | https://www.safealliance.org/ |
 | SaySo / Strong Able Youth Speaking Out; SaySo | 403 | official-first-party | Just a moment... | https://chsnc.org/programs-services/sayso/ |
 | SCORE Charlotte | 403 | official-first-party | Just a moment... | https://www.score.org/nc/charlotte/ |
+| Smart Start of Mecklenburg County | — | official-first-party |  | https://www.smartstartofmeck.org/families-caregivers/ |
 | Social Security — SSI / SSDI | 403 | official-government | Access Denied | https://www.ssa.gov/benefits/disability/ |
 | Teen Health Connection | 200 | likely-first-party | Teen Health Connection | https://teenhealthconnection.org/ |
 | The Pilgrims' Inn | 403 | likely-first-party | 403 - Forbidden | https://www.pilgrimsinn.org/ |
-| The Salvation Army Center of Hope | — | likely-first-party |  | https://salvationarmycharlotte.org/greater-charlotte/shelter-1/ |
+| The Salvation Army Center of Hope | 200 | likely-first-party | The Salvation Army of Greater Charlotte \| Salvation Army Area Commands | https://salvationarmycharlotte.org/greater-charlotte/shelter-1/ |
 | UNC Charlotte Niner Needs | 200 | official-first-party | Basic Needs Services | https://ninerneeds.charlotte.edu/ |
 | Urban League of Central Carolinas | 200 | likely-first-party | Urban League of Central Carolinas | https://www.urbanleaguecc.org/ |
 | 911 Emergency Services | 200 | official-government | Hotlines \| Crisis Intervention Team | https://cit.mecknc.gov/emergency-contacts |
@@ -148,7 +154,6 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Interface link | 200 | interface-link | Coordinated Entry \| Charlotte-Mecklenburg Housing &amp; Homelessness | https://housingdata.mecknc.gov/coc/services/coordinated-entry |
 | Interface link | 200 | interface-link | Find Food - Nourish Up | https://nourishup.org/findfood/ |
 | Interface link | 200 | interface-link | Prepare - City of Charlotte | https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare |
-| Interface link | 200 | interface-link | Greater Charlotte Hope Line \| Safe Alliance | https://www.safealliance.org/programs/greater-charlotte-hope-line/ |
 | International House | 200 | official-first-party | Adult Education \| International House \| Charlotte | https://www.ihclt.org/adult-education |
 | Legal Aid of North Carolina | 200 | likely-first-party | Apply - Legal Aid of North Carolina | https://legalaidnc.org/apply/ |
 | Machiah's House | 200 | likely-first-party | PROGRAMS &#8211; Machiah&#039;s House, Inc. | https://machiahshouse.org/programs/ |
@@ -180,10 +185,8 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Planned Parenthood — Charlotte Health Center | 200 | likely-first-party | STD Testing in Charlotte, NC - Herpes, Chlamydia, Gonorrhea Tests | https://www.plannedparenthood.org/health-center/north-carolina/charlotte/28204/charlotte-health-center-2703-90860/std-testing-treatment |
 | RAO Community Health — HIV/STI Services | 200 | official-first-party | Clinical Services &#8211; RAO Community Health | https://raoassist.org/clinical-services/ |
 | Road to Hire | 200 | likely-first-party | Our Programs &mdash; Road to Hire | https://www.roadtohire.org/our-programs |
-| Safe Alliance — Domestic Violence Shelter | 200 | official-first-party | Domestic Violence Shelter \| Safe Alliance | https://www.safealliance.org/programs/domestic-violence-shelter/ |
 | Second Harvest Food Bank of Metrolina | 200 | likely-first-party | Welcome, We’re Here to Help \| Second Harvest Food Bank of Metrolina | https://www.secondharvestmetrolina.org/need-food |
 | She Built This City — Adult Workforce Development | 200 | likely-first-party | Adult Workforce Development \| Empower Women Today! &mdash; She Built This City | https://www.shebuiltthiscity.org/adult-workforce-development-1 |
-| Smart Start of Mecklenburg County | 200 | official-first-party | Families & Caregivers \| Smart Start of Mecklenburg County | https://www.smartstartofmeck.org/families-caregivers/ |
 | Step Up to Leadership | 200 | official-first-party | PROGRAMS \| Step UP TO LEADERSHIP | https://www.sutlnc.org/academics |
 | The Barnabas Center | 200 | likely-first-party | Counseling &#8211; The Barnabas Center | https://thebarnabascenter.org/what-we-do/counseling/ |
 | The Community Free Clinic — Cabarrus County | 200 | likely-first-party | Services \| The Community Free Clinic | https://www.communityfreeclinic.org/services |
@@ -195,5 +198,5 @@ A blocked or inconclusive automated request does not mean a public page is broke
 | Turning Point — Union County | 200 | likely-first-party | Our Services &#8211; Turning Point | https://turningpointnc.org/our-services/ |
 | Year Up United — Charlotte | 200 | likely-first-party | Job Training in Charlotte, NC \| Year Up United | https://www.yearup.org/locations/charlotte-nc |
 | Youth Villages LifeSet | 200 | likely-first-party | LifeSet: The Gift of a Good Start \| Youth Villages | https://youthvillages.org/services/lifeset/ |
-| YWCA Central Carolinas — Women in Transition | 200 | likely-first-party |  | https://ywcacentralcarolinas.org/programs/housing/women-in-transition/ |
+| YWCA Central Carolinas — Women in Transition | 200 | likely-first-party | Women in Transition | https://ywcacentralcarolinas.org/programs/housing/women-in-transition/ |
 | ZABS Place — Talent-in-Training | 200 | likely-first-party | Sam Ebersman Training Program - ZABS Place | https://zabsplace.org/training-application/ |
