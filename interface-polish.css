@@ -118,10 +118,18 @@
   display: none;
 }
 
+/* Only filter section headings use bold type. */
+.filter-panel .filter-check-option,
+.filter-panel .filter-check-option > span,
+.filter-panel .filter-saved-option,
+.filter-panel .filter-saved-option > span,
+.filter-panel .filter-result-count {
+  font-weight: 400 !important;
+}
+
 .filter-result-count {
   color: var(--gray);
   font-size: .8em;
-  font-weight: 650;
   white-space: nowrap;
 }
 
