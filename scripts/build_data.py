@@ -12,6 +12,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+URL_OVERRIDES_PATH = DATA / "source-url-overrides.json"
+URL_OVERRIDES = (
+    json.loads(URL_OVERRIDES_PATH.read_text(encoding="utf-8"))
+    if URL_OVERRIDES_PATH.exists()
+    else {"resources": {}, "fosterPrograms": {}}
+)
 
 EXCLUDED_ORGANIZATION_NAMES = (
     "mecklenburg gear up",
@@ -242,6 +248,7 @@ for resource in source_resources:
     if is_excluded_organization(resource.get("name", "")):
         continue
 
+    resource.update(URL_OVERRIDES.get("resources", {}).get(resource.get("name", ""), {}))
     resource["referralTrigger"] = service_description(resource)
     resources.append(resource)
 
@@ -265,6 +272,8 @@ support["fosterPrograms"] = [
     for item in support.get("fosterPrograms", [])
     if not is_excluded_organization(item.get("program", ""))
 ]
+for item in support["fosterPrograms"]:
+    item.update(URL_OVERRIDES.get("fosterPrograms", {}).get(item.get("program", ""), {}))
 
 for item in support.get("needsMap", []):
     item["primaryOptions"] = remove_excluded_options(item.get("primaryOptions", ""))
