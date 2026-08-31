@@ -1,5 +1,5 @@
 if (actions && !actions.querySelector('[data-phase1-report]')) {
-      actions.insertAdjacentHTML('beforeend', `<button class="button button-quiet" type="button" data-phase1-report="${escapeAttribute(resource.id)}">Report outdated information</button>`);
+      actions.insertAdjacentHTML('beforeend', `<button class="button button-quiet" type="button" data-phase1-report="${escapeAttribute(resource.id)}">Report a change</button>`);
     }
   }
 
@@ -9,14 +9,14 @@ if (actions && !actions.querySelector('[data-phase1-report]')) {
       <section class="phase1-readiness">
         <h3>Before you contact this program</h3>
         <div class="phase1-readiness-grid">
-          <div><strong>Pathway role</strong><span>${escapeHtml(resource.pathwayRole)}</span></div>
-          <div><strong>Information status</strong><span class="phase1-verification ${verification.cssClass}">${escapeHtml(verification.detail)}</span></div>
-          <div><strong>Current intake</strong><span>${escapeHtml(resource.intakeStatus)}</span></div>
-          <div><strong>Application method</strong><span>${escapeHtml(resource.applicationMethod)}</span></div>
-          <div><strong>Referral requirement</strong><span>${escapeHtml(resource.referralRequirement)}</span></div>
-          <div><strong>Expected response</strong><span>${escapeHtml(resource.expectedResponse)}</span></div>
-          <div class="full"><strong>Documents or information to prepare</strong><span>${escapeHtml(resource.requiredDocuments.join(' · '))}</span></div>
-          <div class="full"><strong>Likely next step</strong><span>${escapeHtml(actionInstruction(resource))}</span></div>
+          <div><strong>Where to start</strong><span>${escapeHtml(resource.pathwayRole)}</span></div>
+          <div><strong>When this was checked</strong><span class="phase1-verification ${verification.cssClass}">${escapeHtml(verification.detail)}</span></div>
+          <div><strong>Are they taking new people?</strong><span>${escapeHtml(resource.intakeStatus)}</span></div>
+          <div><strong>How to get started</strong><span>${escapeHtml(resource.applicationMethod)}</span></div>
+          <div><strong>Can I contact them myself?</strong><span>${escapeHtml(resource.referralRequirement)}</span></div>
+          <div><strong>When you may hear back</strong><span>${escapeHtml(resource.expectedResponse)}</span></div>
+          <div class="full"><strong>What to bring or have ready</strong><span>${escapeHtml(resource.requiredDocuments.join(' · '))}</span></div>
+          <div class="full"><strong>Your next step</strong><span>${escapeHtml(actionInstruction(resource))}</span></div>
         </div>
       </section>`;
   }
@@ -29,7 +29,7 @@ if (actions && !actions.querySelector('[data-phase1-report]')) {
       if (!supportArea) return;
       const actions = document.createElement('div');
       actions.className = 'card-actions phase1-needs-actions';
-      actions.innerHTML = `<button class="button button-primary button-small" type="button" data-phase1-support-area="${escapeAttribute(supportArea)}">View matching resources</button>`;
+      actions.innerHTML = `<button class="button button-primary button-small" type="button" data-phase1-support-area="${escapeAttribute(supportArea)}">See programs that may help</button>`;
       card.appendChild(actions);
     });
   }
@@ -37,7 +37,7 @@ if (actions && !actions.querySelector('[data-phase1-report]')) {
   function updateVerificationSummary() {
     if (!state.data) return;
     const footer = document.getElementById('verified-footer');
-    if (footer) setText(footer, 'Each listing has its own verification date. Confirm current eligibility, capacity and intake directly with the provider.');
+    if (footer) setText(footer, 'Each program shows when its information was last checked. Call or visit the program website to check current rules and openings.');
 
     const stats = document.querySelector('.stats-grid');
     if (!stats || document.querySelector('[data-verification-summary]')) return;
@@ -49,7 +49,7 @@ if (actions && !actions.querySelector('[data-phase1-report]')) {
     const summary = document.createElement('article');
     summary.className = 'phase1-verification-summary';
     summary.dataset.verificationSummary = 'true';
-    summary.innerHTML = `<strong>Information freshness</strong><span>${counts.recent || 0} checked within 30 days · ${counts.current || 0} checked within 31–90 days · ${(counts.aging || 0) + (counts.stale || 0) + (counts.unverified || 0)} need closer confirmation</span>`;
+    summary.innerHTML = `<strong>How recent is this information?</strong><span>${counts.recent || 0} checked within 30 days · ${counts.current || 0} checked within 31–90 days · ${(counts.aging || 0) + (counts.stale || 0) + (counts.unverified || 0)} should be checked again</span>`;
     stats.insertAdjacentElement('afterend', summary);
   }
 
@@ -60,17 +60,17 @@ if (actions && !actions.querySelector('[data-phase1-report]')) {
     dialog.className = 'resource-dialog phase1-report-dialog';
     dialog.innerHTML = `
       <form method="dialog" id="phase1-report-form">
-        <div class="dialog-title"><p class="eyebrow">Directory correction</p><h2>Report outdated information</h2><p id="phase1-report-resource"></p></div>
+        <div class="dialog-title"><p class="eyebrow">Fix a listing</p><h2>Report a change</h2><p id="phase1-report-resource"></p></div>
         <input type="hidden" name="resourceId">
-        <fieldset><legend>What appears to be wrong?</legend>
-          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Contact information" required> Contact information</label>
-          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Eligibility or service description"> Eligibility or service description</label>
-          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Program closed or unavailable"> Program closed or unavailable</label>
-          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Other correction"> Other correction</label>
+        <fieldset><legend>What looks wrong?</legend>
+          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Contact information" required> Phone, website or address</label>
+          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Eligibility or service description"> Who can use it or what it offers</label>
+          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Program closed or unavailable"> Program closed or has no openings</label>
+          <label class="phase1-inline-choice"><input type="radio" name="reason" value="Other correction"> Something else</label>
         </fieldset>
-        <label class="field"><span>Correction details</span><textarea name="details" rows="4" maxlength="800" placeholder="Describe the listing change. Do not include a young adult’s name, health information or case details."></textarea></label>
-        <p class="phase1-privacy-note">This opens a public GitHub issue for directory maintenance. Do not include personal or case information.</p>
-        <div class="dialog-actions"><button class="button button-primary" value="submit" type="submit">Open correction report</button><button class="button button-quiet" value="cancel" type="button" data-close-report>Cancel</button></div>
+        <label class="field"><span>What should be changed?</span><textarea name="details" rows="4" maxlength="800" placeholder="Tell us what changed. Do not include your name, health information or other private details."></textarea></label>
+        <p class="phase1-privacy-note">This opens a public report. Do not include your name, health information or other private details.</p>
+        <div class="dialog-actions"><button class="button button-primary" value="submit" type="submit">Send correction</button><button class="button button-quiet" value="cancel" type="button" data-close-report>Cancel</button></div>
       </form>`;
     document.body.appendChild(dialog);
 
@@ -101,7 +101,7 @@ if (actions && !actions.querySelector('[data-phase1-report]')) {
       '', `## Type of correction`, reason,
       '', `## Details`, details || 'No additional details provided.',
       '', `## Listing source`, resource.sourceUrl || 'No source URL recorded.',
-      '', `## Privacy reminder`, 'No personal or case information is included in this report.'
+      '', `## Privacy reminder`, 'No personal information is included in this report.'
     ].join('\n');
     const url = `${CONFIG.feedbackUrl}?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
