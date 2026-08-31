@@ -19,7 +19,6 @@
     pathways: [],
     planIds: new Set(),
     planMeta: {},
-    audience: 'self',
     selectedNeed: '',
     selectedUrgency: '',
     county: 'Mecklenburg',
@@ -133,27 +132,15 @@
 
     const savedLabel = document.querySelector('label.check-field span');
     if (savedLabel) savedLabel.textContent = 'Show resources in my plan';
-
-    const heroTitle = document.querySelector('#view-directory .hero h1');
-    const heroCopy = document.querySelector('#view-directory .hero-copy');
-    if (heroTitle) heroTitle.textContent = 'Find a clear next step';
-    if (heroCopy) {
-      heroCopy.textContent = 'Answer a few non-identifying questions to get a small set of likely starting points, or browse the full Charlotte-area directory. The navigator explains what to do next, what to prepare and what to try when a resource cannot help.';
-    }
-
-    const heroNote = document.querySelector('#view-directory .hero-note');
-    if (heroNote) {
-      heroNote.innerHTML = '<strong>A listing is not a guarantee.</strong><p>Programs can change eligibility, funding, waitlists and intake processes. Each listing shows when its information was checked and what still needs direct confirmation.</p>';
-    }
   }
 
   function injectGuidedExperience() {
-    const hero = document.querySelector('#view-directory .hero');
-    if (!hero || document.getElementById('phase1-guided')) return;
+    const mount = document.getElementById('guided-pathway-mount');
+    if (!mount || document.getElementById('phase1-guided')) return;
 
     const section = document.createElement('section');
     section.id = 'phase1-guided';
-    section.className = 'phase1-guided shell';
+    section.className = 'phase1-guided';
     section.innerHTML = `
       <div class="phase1-guided-heading">
         <div>
@@ -161,18 +148,7 @@
           <h2>Get a smaller, more useful set of options</h2>
           <p>No name, birth date, address or case history is requested or stored.</p>
         </div>
-        <a class="button button-quiet" href="#directory-browser" data-phase1-browse>Browse all resources</a>
-      </div>
-
-      <div class="phase1-audience" role="group" aria-label="Choose how you are using the navigator">
-        <button type="button" class="phase1-choice is-selected" data-audience="self">
-          <strong>I need help</strong><span>Use plain-language questions and next steps.</span>
-        </button>
-        <button type="button" class="phase1-choice" data-audience="helper">
-          <strong>I’m helping someone</strong><span>See warm-handoff and preparation guidance.</span>
-        </button>
+        <button class="button button-quiet" type="button" data-phase1-browse>Browse all resources</button>
       </div>
 
       <form id="phase1-pathway-form" class="phase1-form">
-        <fieldset>
-          <le

@@ -1,16 +1,16 @@
-gend>1. What is the main situation?</legend>
+        <fieldset>
+          <legend>1. What best describes the situation?</legend>
           <div class="phase1-option-grid">
-            ${radioCard('need', 'housing', 'Housing or a safe place', 'Housing is unsafe, ending soon or unavailable.')}
-            ${radioCard('need', 'multiple', 'Several needs at once', 'It is hard to know which program to contact first.')}
-            ${radioCard('need', 'other', 'Another practical need', 'Food, health, work, school, transportation, documents or support.')}
+            ${radioCard('need', 'unsafe', 'A safe place is needed tonight', 'Housing is unavailable or the current place is not safe.')}
+            ${radioCard('need', 'housing-risk', 'Housing may end soon', 'A move-out, eviction, discharge or other housing deadline is approaching.')}
+            ${radioCard('need', 'multiple', 'Several or another kind of need', 'It is hard to know which program or practical need to address first.')}
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>2. How quickly is help needed?</legend>
-          <div class="phase1-option-grid phase1-option-grid-compact">
-            ${radioCard('urgency', 'immediate', 'Immediate danger', 'Call 911 for immediate danger or a medical emergency.')}
-            ${radioCard('urgency', 'tonight', 'Tonight', 'A safe option is needed now.')}
+          <legend>2. How quickly is action needed?</legend>
+          <div class="phase1-option-grid">
+            ${radioCard('urgency', 'immediate', 'Immediate danger or crisis', 'Use emergency or crisis support now.')}
             ${radioCard('urgency', 'days', 'Within a few days', 'A deadline or loss of stability is approaching.')}
             ${radioCard('urgency', 'planning', 'Planning ahead', 'The need is important but not immediate.')}
           </div>
@@ -44,21 +44,11 @@ gend>1. What is the main situation?</legend>
       </form>
       <div id="phase1-results" class="phase1-results" aria-live="polite"></div>`;
 
-    hero.insertAdjacentElement('afterend', section);
+    mount.appendChild(section);
 
-    const directoryLayout = document.querySelector('#view-directory .directory-layout');
-    if (directoryLayout) directoryLayout.id = 'directory-browser';
-
-    section.querySelectorAll('[data-audience]').forEach((button) => {
-      button.addEventListener('click', () => {
-        state.audience = button.dataset.audience;
-        section.querySelectorAll('[data-audience]').forEach((item) => item.classList.toggle('is-selected', item === button));
-      });
-    });
-
-    section.querySelector('[data-phase1-browse]')?.addEventListener('click', (event) => {
-      event.preventDefault();
-      document.getElementById('directory-browser')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    section.querySelector('[data-phase1-browse]')?.addEventListener('click', () => {
+      document.querySelector('.nav-tab[data-view="directory"]')?.click();
+      window.setTimeout(() => document.getElementById('directory-browser')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
     });
 
     const form = document.getElementById('phase1-pathway-form');
@@ -87,7 +77,7 @@ gend>1. What is the main situation?</legend>
 
     const error = document.getElementById('phase1-form-error');
     if (!state.selectedNeed || !state.selectedUrgency) {
-      error.textContent = 'Choose the main situation and how quickly help is needed.';
+      error.textContent = 'Choose the main situation and how quickly action is needed.';
       error.hidden = false;
       return;
     }
@@ -98,9 +88,11 @@ gend>1. What is the main situation?</legend>
       return;
     }
 
-    const pathwayId = state.selectedNeed === 'housing'
-      ? (state.selectedUrgency === 'tonight' ? 'unsafe-tonight' : 'housing-risk')
-      : 'multiple-needs';
+    const pathwayId = state.selectedNeed === 'unsafe'
+      ? 'unsafe-tonight'
+      : state.selectedNeed === 'housing-risk'
+        ? 'housing-risk'
+        : 'multiple-needs';
     renderPathway(pathwayId);
   }
 
@@ -114,9 +106,10 @@ gend>1. What is the main situation?</legend>
         <div class="card-actions">
           <a class="button button-danger" href="tel:911">Call 911</a>
           <a class="button button-primary" href="tel:988">Call or text 988</a>
-          <button class="button button-secondary" type="button" data-open-view="urgent">See urgent-help guide</button>
+          <button class="button button-secondary" type="button" data-scroll-urgent>See other urgent resources</button>
         </div>
       </section>`;
+    container.querySelector('[data-scroll-urgent]')?.addEventListener('click', () => document.getElementById('urgent-support')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -124,7 +117,7 @@ gend>1. What is the main situation?</legend>
     const pathway = state.pathways.find((item) => item.id === pathwayId);
     const container = document.getElementById('phase1-results');
     if (!pathway) {
-      container.innerHTML = '<p class="phase1-empty">The guided pathway is unavailable. Browse the full directory below.</p>';
+      container.innerHTML = '<p class="phase1-empty">The guided pathway is unavailable. Browse the full directory instead.</p>';
       return;
     }
 
@@ -132,7 +125,7 @@ gend>1. What is the main situation?</legend>
     const backups = resourceList(pathway.backupResourceIds);
     const outsideMecklenburg = state.county !== 'Mecklenburg';
     const fosterNote = state.fosterHistory === 'yes'
-      ? '<div class="phase1-context-note"><strong>Foster-care history may open additional options.</strong> Review the Foster care guide for age- and custody-specific benefits before using charitable funds.</div>'
+      ? '<div class="phase1-context-note"><strong>Foster-care history may open additional options.</strong> Review the Foster care page for age- and custody-specific benefits before using charitable funds.</div>'
       : '';
     const locationNote = outsideMecklenburg
       ? '<div class="phase1-context-note"><strong>Confirm the service area first.</strong> Several primary listings are Mecklenburg-specific. NC 211 can identify the equivalent entry point in another county.</div>'
@@ -140,9 +133,8 @@ gend>1. What is the main situation?</legend>
 
     container.innerHTML = `
       <section class="phase1-result-card">
-        <p class="eyebrow">Recommended pathway</p>
+        <p class="eyebrow">Suggested pathway</p>
         <h3>${escapeHtml(pathway.title)}</h3>
         <p>${escapeHtml(pathway.summary)}</p>
         ${locationNote}${fosterNote}
 
-    

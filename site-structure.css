@@ -1,0 +1,205 @@
+/* Consolidated information architecture and page-level layout. */
+
+.header-utility {
+  white-space: nowrap;
+}
+
+.header-urgent {
+  border-color: #d8a6a6;
+  color: #8a2828;
+}
+
+#view-directory .stats-grid[hidden],
+#view-needs #needs-grid[hidden] {
+  display: none !important;
+}
+
+#view-directory .hero-grid {
+  grid-template-columns: minmax(0, 1.7fr) minmax(240px, .65fr);
+}
+
+#view-directory .hero-copy {
+  max-width: 680px;
+}
+
+#view-directory .directory-layout {
+  padding-top: 1.5rem;
+}
+
+.guided-pathway-mount,
+.plan-mount {
+  padding-bottom: 2.5rem;
+}
+
+.guided-pathway-mount .phase1-guided,
+.plan-mount .phase1-plan {
+  margin: 0;
+}
+
+#view-urgent .page-heading,
+#view-needs .page-heading,
+#view-about .page-heading,
+#view-foster .page-heading {
+  text-align: left;
+}
+
+#view-urgent .page-heading {
+  padding-bottom: 1.2rem;
+}
+
+#view-urgent .phase1-guided-heading {
+  padding-bottom: .75rem;
+}
+
+#view-urgent .phase1-form {
+  margin-top: .75rem;
+}
+
+.urgent-support-section {
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 6rem;
+}
+
+.help-section-heading {
+  max-width: 720px;
+  margin-bottom: 1.25rem;
+}
+
+.help-section-heading h2 {
+  margin: .25rem 0 0;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.emergency-banner p {
+  margin: .2rem 0 0;
+}
+
+.emergency-banner .card-actions {
+  flex: 0 0 auto;
+}
+
+#view-needs .page-heading {
+  padding-bottom: 1.25rem;
+}
+
+.plan-mount .phase1-plan {
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.plan-mount .phase1-plan-heading {
+  padding-top: 1.5rem;
+}
+
+.about-grid.about-sections {
+  display: block;
+  max-width: 860px;
+  padding-bottom: 4rem;
+}
+
+.about-section {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.about-section:first-child {
+  border-top: 0;
+  padding-top: .5rem;
+}
+
+.about-section h2 {
+  margin: 0 0 .75rem;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.about-section p {
+  max-width: 74ch;
+}
+
+#verification-summary-mount .phase1-verification-summary {
+  margin: 1.2rem 0;
+}
+
+#view-foster .wide-table-wrap {
+  padding-top: .5rem;
+}
+
+@media (max-width: 900px) {
+  .header-urgent {
+    display: none;
+  }
+
+  #view-directory .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .guided-pathway-mount,
+  .plan-mount {
+    width: min(calc(100% - 1.25rem), var(--shell));
+    padding-bottom: 2rem;
+  }
+
+  #view-urgent .page-heading,
+  #view-needs .page-heading,
+  #view-about .page-heading,
+  #view-foster .page-heading {
+    padding-top: 1.5rem;
+  }
+
+  .urgent-support-section {
+    padding-top: 2rem;
+  }
+
+  .emergency-banner .card-actions {
+    width: 100%;
+  }
+
+  .emergency-banner .button {
+    flex: 1 1 auto;
+  }
+
+  .phase1-guided-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .phase1-guided-heading .button {
+    justify-self: start;
+  }
+
+  .about-section {
+    padding: 1.35rem 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-actions {
+    margin-left: auto;
+  }
+
+  [data-plan-jump] {
+    font-size: 0;
+    width: 40px;
+    min-width: 40px;
+    padding: 0;
+  }
+
+  [data-plan-jump]::before {
+    content: 'Plan';
+    font-size: .72rem;
+  }
+
+  [data-plan-jump] .phase1-plan-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+}
