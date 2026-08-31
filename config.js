@@ -29,6 +29,8 @@ loadScript('/mobile.js');
 loadScript('/filter-accordions.js');
 loadStyle('/filter-tooltips.css');
 loadScript('/filter-tooltips.js');
+loadStyle('/foster-categories.css');
+loadScript('/foster-categories.js');
 loadStyle('/phase1.css');
 loadScript('/phase1.js');
 
