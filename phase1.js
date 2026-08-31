@@ -14,7 +14,7 @@
   const loadYoungAdultLanguage = () => {
     if (document.querySelector('script[data-young-adult-language]')) return;
     const languageScript = document.createElement('script');
-    languageScript.src = '/young-adult-language.js';
+    languageScript.src = '/young-adult-language-v2.js';
     languageScript.async = false;
     languageScript.dataset.youngAdultLanguage = 'true';
     document.head.appendChild(languageScript);
