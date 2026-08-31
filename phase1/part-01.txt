@@ -27,20 +27,20 @@
 
   const PATHWAY_ROLE_LABELS = {
     Core: 'Best place to start',
-    Specialized: 'For specific situations',
+    Specialized: 'For a specific need',
     Backup: 'Try this next',
     Verify: 'Try this next'
   };
 
   const STATUS_OPTIONS = [
-    'Planning to contact',
-    'Contacted',
-    'Application started',
-    'Waiting for response',
-    'Connected to service',
-    'Not eligible',
-    'No availability',
-    'Need another option'
+    'Want to contact',
+    'Called or messaged',
+    'Started the application',
+    'Waiting to hear back',
+    'Got help',
+    'Did not qualify',
+    'No openings',
+    'Try another option'
   ];
 
   const NEED_SUPPORT_MAP = [
@@ -100,7 +100,7 @@
   function decorateResourceData() {
     if (!Array.isArray(state.data?.resources)) return;
     state.data.resources.forEach((resource) => {
-      resource.pathwayRole = PATHWAY_ROLE_LABELS[resource.priority] || 'Additional option';
+      resource.pathwayRole = PATHWAY_ROLE_LABELS[resource.priority] || 'Another option';
       resource.verification = verificationFor(resource);
       resource.intakeStatus = inferIntakeStatus(resource);
       resource.applicationMethod = inferApplicationMethod(resource);
@@ -112,18 +112,18 @@
 
   function enhanceLabels() {
     const sortOption = document.querySelector('#sort-select option[value="recommended"]');
-    if (sortOption) sortOption.textContent = 'Directory priority';
+    if (sortOption) sortOption.textContent = 'Where to start';
 
     const prioritySelect = document.getElementById('priority-filter');
     if (prioritySelect) {
       const label = prioritySelect.closest('label')?.querySelector('span');
-      if (label) label.textContent = 'Pathway role';
+      if (label) label.textContent = 'Where to start';
       const labels = {
-        all: 'All pathway roles',
+        all: 'All starting points',
         Core: 'Best place to start',
-        Specialized: 'For specific situations',
+        Specialized: 'For a specific need',
         Backup: 'Try this next',
-        Verify: 'Needs review'
+        Verify: 'Check before you go'
       };
       [...prioritySelect.options].forEach((option) => {
         if (labels[option.value]) option.textContent = labels[option.value];
@@ -131,7 +131,7 @@
     }
 
     const savedLabel = document.querySelector('label.check-field span');
-    if (savedLabel) savedLabel.textContent = 'Show resources in my plan';
+    if (savedLabel) savedLabel.textContent = 'Show only programs in my plan';
   }
 
   function injectGuidedExperience() {
@@ -144,11 +144,11 @@
     section.innerHTML = `
       <div class="phase1-guided-heading">
         <div>
-          <p class="eyebrow">Guided resource pathway</p>
-          <h2>Get a smaller, more useful set of options</h2>
-          <p>No name, birth date, address or case history is requested or stored.</p>
+          <p class="eyebrow">Answer a few questions</p>
+          <h2>Find a good place to start</h2>
+          <p>You will not be asked for your name, birth date, address or private history.</p>
         </div>
-        <button class="button button-quiet" type="button" data-phase1-browse>Browse all resources</button>
+        <button class="button button-quiet" type="button" data-phase1-browse>Browse all programs</button>
       </div>
 
       <form id="phase1-pathway-form" class="phase1-form">
