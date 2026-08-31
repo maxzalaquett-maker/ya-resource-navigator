@@ -1,5 +1,11 @@
 (() => {
   'use strict';
+
+  const cleanupStyles = document.createElement('link');
+  cleanupStyles.rel = 'stylesheet';
+  cleanupStyles.href = '/style-cleanup.css';
+  document.head.appendChild(cleanupStyles);
+
   const parts = [1, 2, 3, 4, 5, 6, 7].map((number) => `/phase1/part-${String(number).padStart(2, '0')}.txt`);
   Promise.all(parts.map(async (url) => {
     const response = await fetch(url, { cache: 'no-cache' });
