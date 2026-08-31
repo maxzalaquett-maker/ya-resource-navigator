@@ -98,32 +98,41 @@
   color: #1d4ed8;
 }
 
-.filter-label-with-icon,
-.filter-accordion-toggle > span.filter-label-with-icon,
-.filter-checklist > legend > span.filter-label-with-icon,
-.filter-toggle-group > legend > span.filter-label-with-icon {
-  display: inline-flex;
+.filter-check-option > span.filter-option-with-icon,
+.check-field > span.filter-option-with-icon {
+  min-width: 0;
+  display: flex;
   align-items: center;
-  gap: .38rem;
+  gap: .55rem;
 }
 
-.filter-label-icon {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 auto;
+.filter-option-icon {
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  padding: 4px;
+  border-radius: 7px;
+  background: #eef4ff;
   color: #526782;
+  transition: background .15s ease, color .15s ease, transform .15s ease;
 }
 
-.filter-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: .32rem;
+.filter-check-option:hover .filter-option-icon,
+.check-field:hover .filter-option-icon {
+  background: #e2ecfb;
+  color: #31547d;
 }
 
-.filter-chip-icon {
-  width: 13px;
-  height: 13px;
-  flex: 0 0 auto;
+.filter-check-option input:checked + .filter-option-with-icon .filter-option-icon,
+.check-field input:checked + .filter-option-with-icon .filter-option-icon {
+  background: #dbeafe;
+  color: #1d4ed8;
+  transform: scale(1.03);
+}
+
+.filter-option-with-icon .filter-result-count {
+  margin-left: auto;
+  padding-left: .35rem;
 }
 
 @media (max-width: 860px) {
