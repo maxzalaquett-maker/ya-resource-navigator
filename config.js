@@ -33,6 +33,8 @@ loadStyle('/foster-categories.css');
 loadScript('/foster-categories.js');
 loadStyle('/phase1.css');
 loadScript('/phase1.js');
+loadStyle('/logos.css');
+loadScript('/logos.js');
 
 const headingStyle = document.createElement('style');
 headingStyle.textContent = `

@@ -1,0 +1,95 @@
+.resource-card-heading {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: .7rem;
+  align-items: center;
+  margin: .15rem 0 .55rem;
+}
+
+.resource-card-heading h2 {
+  min-width: 0;
+  margin: 0;
+}
+
+.resource-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 38, 64, .12);
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .06);
+}
+
+.resource-logo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.resource-logo-initials {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  color: #31426a;
+  background: linear-gradient(145deg, #f4f7ff, #edf7fb);
+}
+
+.resource-logo:not(.uses-initials) .resource-logo-initials {
+  visibility: hidden;
+}
+
+.resource-logo.uses-initials .resource-logo-initials {
+  visibility: visible;
+}
+
+.dialog-brand-row {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .9rem;
+}
+
+.dialog-brand-copy {
+  min-width: 0;
+}
+
+.dialog-brand-copy .eyebrow {
+  margin-bottom: .3rem;
+}
+
+.dialog-brand-copy h2 {
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .resource-card-heading {
+    gap: .6rem;
+  }
+
+  .dialog-brand-row {
+    align-items: flex-start;
+    gap: .7rem;
+  }
+}
+
+@media print {
+  .resource-logo {
+    box-shadow: none;
+  }
+}
