@@ -18,6 +18,11 @@
   brandStyles.href = '/compass-brand.css';
   document.head.appendChild(brandStyles);
 
+  const dropdownStyles = document.createElement('link');
+  dropdownStyles.rel = 'stylesheet';
+  dropdownStyles.href = '/dropdown-spacing.css';
+  document.head.appendChild(dropdownStyles);
+
   const loadYoungAdultLanguage = () => {
     if (document.querySelector('script[data-young-adult-language]')) return;
     const languageScript = document.createElement('script');
