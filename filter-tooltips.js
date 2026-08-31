@@ -1,10 +1,10 @@
 (() => {
   const items = [
-    ['support-filter', 'Support area', 'Based on the types of help an organization says it provides. A resource may appear in more than one support area.'],
-    ['area-filter', 'Local area', 'Charlotte / Mecklenburg means located in or clearly serving Mecklenburg County. Surrounding communities are generally within about 30 road miles of Uptown Charlotte. Statewide / national options serve a broader area.'],
-    ['foster-filter', 'Foster-care relevance', 'Foster-care specific programs explicitly serve current or former foster youth. Partially specific programs serve young people and may include foster youth but are not exclusive to them. General resources have no foster-care-specific focus.'],
-    ['priority-filter', 'Referral priority', 'Core is a strong first place to look. Specialized is useful for a narrower situation. Backup is a secondary option. Needs verification may be useful, but important details should be confirmed before referral.'],
-    ['sort-select', 'Sort', 'Recommended orders Core, Specialized, Backup and Needs verification, then foster-care relevance, then name. Recently verified uses the date the program last reviewed the listing.']
+    ['support-filter', 'What do you need help with?', 'Choose the type of help you are looking for. Some programs appear under more than one type.'],
+    ['area-filter', 'Where can you get help?', 'Charlotte / Mecklenburg programs serve Mecklenburg County. Nearby programs are usually within about 30 miles of Uptown Charlotte. Statewide / national programs cover a larger area.'],
+    ['foster-filter', 'Foster care experience', 'Choose “Made for people with foster care experience” to see programs created for current or former foster youth. Choose “May help after foster care” for broader youth programs that may also fit.'],
+    ['priority-filter', 'Where to start', '“Best place to start” means the program may be a strong first option. “For specific situations” fits a narrower need. “Try this next” is another option when the first one cannot help.'],
+    ['sort-select', 'Sort by', '“Where to start” puts likely first options at the top. “Recently checked” sorts by the date the program information was last reviewed.']
   ];
 
   function init() {
@@ -30,7 +30,7 @@
       button.type = 'button';
       button.className = 'info-tooltip-button';
       button.textContent = 'i';
-      button.setAttribute('aria-label', `How ${labelText.toLowerCase()} is classified`);
+      button.setAttribute('aria-label', `More about ${labelText.toLowerCase()}`);
       button.setAttribute('aria-expanded', 'false');
 
       const content = document.createElement('span');
