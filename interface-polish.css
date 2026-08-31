@@ -138,6 +138,80 @@
 }
 
 @media (max-width: 760px) {
+  /* Keep the mobile header actions compact, evenly sized and optically centered. */
+  .header-actions {
+    display: grid;
+    grid-template-columns: minmax(0, auto) 40px 40px;
+    align-items: center;
+    justify-content: end;
+    gap: .35rem;
+    min-width: 0;
+  }
+
+  .header-actions .button {
+    height: 40px;
+    min-height: 40px;
+    margin: 0;
+    border-radius: 10px;
+  }
+
+  [data-plan-jump] {
+    min-width: 0;
+    max-width: 104px;
+    padding: 0 .65rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    font-size: .76rem;
+    line-height: 1;
+  }
+
+  [data-plan-jump] .phase1-plan-count {
+    width: 1.4rem;
+    min-width: 1.4rem;
+    height: 1.4rem;
+    min-height: 1.4rem;
+    flex: 0 0 1.4rem;
+    padding: 0;
+    line-height: 1.4rem;
+  }
+
+  #share-button,
+  #print-button {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    font-size: 0;
+  }
+
+  #share-button > span,
+  #print-button > span {
+    display: none !important;
+  }
+
+  #share-button::before,
+  #print-button::before {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: 0 0 1.15rem;
+    margin: 0;
+  }
+
+  #share-button::before {
+    content: '';
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
   /* Match the filter button to the dropdown, not the full label-and-field stack. */
   .mobile-filter-toggle {
     align-self: end;
@@ -185,5 +259,20 @@
   .resource-dialog .dialog-actions,
   .phase1-report-dialog .dialog-actions {
     padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 420px) {
+  .header-inner {
+    gap: .4rem;
+  }
+
+  .header-actions {
+    gap: .25rem;
+  }
+
+  [data-plan-jump] {
+    max-width: 96px;
+    padding-inline: .5rem;
   }
 }
