@@ -31,6 +31,84 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+/* Collapsible filter groups */
+.filter-checklist.filter-accordion,
+.filter-toggle-group.filter-accordion {
+  padding: 0;
+}
+
+.filter-checklist.filter-accordion > legend,
+.filter-toggle-group.filter-accordion > legend {
+  float: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-accordion-toggle {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .9rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--charcoal);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -.01em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.filter-accordion-toggle:hover {
+  color: var(--brand-strong, #4338ca);
+}
+
+.filter-accordion-toggle:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, .28);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.filter-accordion-chevron {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .18s ease;
+}
+
+.filter-accordion-toggle[aria-expanded="true"] .filter-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.filter-accordion-content {
+  padding: 0 0 1rem;
+}
+
+.filter-accordion-content[hidden] {
+  display: none;
+}
+
+.filter-result-count {
+  color: var(--gray);
+  font-size: .8em;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.filter-check-option.has-no-results:not(:has(input:checked)) {
+  color: #64748b;
+}
+
 @media (max-width: 760px) {
   /* Match the filter button to the dropdown, not the full label-and-field stack. */
   .mobile-filter-toggle {
@@ -51,6 +129,16 @@
     max-height: 1.25rem;
     flex: 0 0 1.25rem;
     align-self: flex-start;
+  }
+
+  .filter-accordion-toggle {
+    min-height: 52px;
+    padding-block: .85rem;
+    font-size: 1.05rem;
+  }
+
+  .filter-accordion-content {
+    padding-bottom: 1rem;
   }
 
   /* Keep sticky dialog actions clear of the sheet edge and mobile safe area. */
