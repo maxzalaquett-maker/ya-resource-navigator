@@ -23,6 +23,25 @@ function loadScript(src) {
   document.head.appendChild(script);
 }
 
+function applyDirectoryFilterLabels() {
+  const supportGroup = document.querySelector('#view-directory .filter-checklist');
+  if (!supportGroup) return false;
+
+  const accordionLabel = supportGroup.querySelector('.filter-accordion-toggle > span');
+  if (accordionLabel) {
+    accordionLabel.textContent = 'Find help with';
+    return true;
+  }
+
+  const legend = supportGroup.querySelector(':scope > legend');
+  if (legend) {
+    legend.textContent = 'Find help with';
+    return true;
+  }
+
+  return false;
+}
+
 // Keep enhancements modular so the core static directory remains maintainable.
 loadStyle('/mobile.css');
 loadScript('/mobile.js');
@@ -77,6 +96,14 @@ const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#priority-filter option[value="Verify"]')?.remove();
+
+  const filterPanel = document.querySelector('#view-directory .filter-panel');
+  if (!applyDirectoryFilterLabels() && filterPanel) {
+    const labelObserver = new MutationObserver(() => {
+      if (applyDirectoryFilterLabels()) labelObserver.disconnect();
+    });
+    labelObserver.observe(filterPanel, { childList: true, subtree: true });
+  }
 
   // app.js keeps the element reference after this removal, preventing the legacy toast from displaying.
   setTimeout(() => document.getElementById('toast')?.remove(), 0);
