@@ -1,35 +1,3 @@
-(() => {
-  const route = window.__RN_HOME_ROUTE__ = {
-    active: !window.location.hash || window.location.hash === '#home',
-    nativeReplaceState: window.history.replaceState.bind(window.history)
-  };
-
-  if (!window.location.hash) {
-    route.nativeReplaceState(window.history.state, '', `${window.location.pathname}#home`);
-  }
-
-  window.history.replaceState = function replaceState(state, title, url) {
-    let nextUrl = url;
-    if (route.active && typeof nextUrl === 'string') {
-      const parsed = new URL(nextUrl, window.location.href);
-      parsed.hash = 'home';
-      nextUrl = `${parsed.pathname}${parsed.search}${parsed.hash}`;
-    }
-    return route.nativeReplaceState(state, title, nextUrl);
-  };
-
-  document.addEventListener('click', (event) => {
-    if (event.target.closest('.home-nav-tab, .brand[href="#home"]')) route.active = true;
-    if (event.target.closest('.nav-tab[data-view], [data-plan-jump], [data-urgent-jump], [data-home-destination], .home-need-link')) {
-      route.active = false;
-    }
-  }, true);
-
-  const syncHomeRoute = () => { route.active = window.location.hash === '#home' || !window.location.hash; };
-  window.addEventListener('hashchange', syncHomeRoute);
-  window.addEventListener('popstate', syncHomeRoute);
-})();
-
 window.RESOURCE_NAVIGATOR_CONFIG = {
   // Set this to true only for a private/internal deployment.
   showPartnershipPlanner: false,

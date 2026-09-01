@@ -16,20 +16,26 @@ function capturePageErrors(page) {
   return errors;
 }
 
-test('keeps native collection matchers intact', async ({ page }) => {
+test('keeps native platform methods intact', async ({ page }) => {
   await page.goto('/#directory');
   await waitForApplication(page);
 
   const matcherState = await page.evaluate(() => ({
     filterLoaded: Boolean(window.ResourceFilter),
+    routeLoaded: Boolean(window.ResourceRoute),
     arrayIncludesIsNative: /\[native code\]/.test(Array.prototype.includes.toString()),
-    stringIncludesIsNative: /\[native code\]/.test(String.prototype.includes.toString())
+    stringIncludesIsNative: /\[native code\]/.test(String.prototype.includes.toString()),
+    pushStateIsNative: /\[native code\]/.test(history.pushState.toString()),
+    replaceStateIsNative: /\[native code\]/.test(history.replaceState.toString())
   }));
 
   expect(matcherState).toEqual({
     filterLoaded: true,
+    routeLoaded: true,
     arrayIncludesIsNative: true,
-    stringIncludesIsNative: true
+    stringIncludesIsNative: true,
+    pushStateIsNative: true,
+    replaceStateIsNative: true
   });
 });
 
@@ -61,6 +67,40 @@ test('loads the home page and supports the primary directory journey', async ({ 
   await cards.first().locator('[data-action="details"]').click();
   await expect(page.locator('#resource-dialog')).toBeVisible();
   await expect(page.locator('#dialog-content h2')).toHaveText(firstProgramName);
+
+  expect(pageErrors).toEqual([]);
+});
+
+
+test('uses browser history for view navigation while replacing filter state', async ({ page }) => {
+  const pageErrors = capturePageErrors(page);
+  await page.goto('/#home');
+  await waitForApplication(page);
+  await expect(page.locator('#view-home')).toBeVisible();
+
+  await page.locator('.nav-tab[data-view="directory"]').click();
+  await expect(page.locator('#view-directory')).toBeVisible();
+  await expect(page).toHaveURL(/#directory$/);
+
+  const search = page.locator('#search-input-visible');
+  await search.fill('housing');
+  await expect.poll(() => new URL(page.url()).searchParams.has('q')).toBe(true);
+
+  await page.locator('.nav-tab[data-view="about"]').click();
+  await expect(page.locator('#view-about')).toBeVisible();
+  await expect(page).toHaveURL(/#about$/);
+
+  await page.goBack();
+  await expect(page.locator('#view-directory')).toBeVisible();
+  await expect(search).toHaveValue('housing');
+
+  await page.goBack();
+  await expect(page.locator('#view-home')).toBeVisible();
+  await expect(page).toHaveURL(/#home$/);
+
+  await page.goForward();
+  await expect(page.locator('#view-directory')).toBeVisible();
+  await expect(page.locator('#search-input-visible')).toHaveValue('housing');
 
   expect(pageErrors).toEqual([]);
 });
