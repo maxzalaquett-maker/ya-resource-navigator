@@ -16,6 +16,23 @@ function capturePageErrors(page) {
   return errors;
 }
 
+test('keeps native collection matchers intact', async ({ page }) => {
+  await page.goto('/#directory');
+  await waitForApplication(page);
+
+  const matcherState = await page.evaluate(() => ({
+    filterLoaded: Boolean(window.ResourceFilter),
+    arrayIncludesIsNative: /\[native code\]/.test(Array.prototype.includes.toString()),
+    stringIncludesIsNative: /\[native code\]/.test(String.prototype.includes.toString())
+  }));
+
+  expect(matcherState).toEqual({
+    filterLoaded: true,
+    arrayIncludesIsNative: true,
+    stringIncludesIsNative: true
+  });
+});
+
 test('loads the home page and supports the primary directory journey', async ({ page }) => {
   const pageErrors = capturePageErrors(page);
   await resetBrowserStorage(page);

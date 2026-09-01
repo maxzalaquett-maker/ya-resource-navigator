@@ -2,6 +2,8 @@
   'use strict';
 
   const config = Object.assign({ showPartnershipPlanner: false, pageSize: 18 }, window.RESOURCE_NAVIGATOR_CONFIG || {});
+  const resourceFilter = window.ResourceFilter;
+  if (!resourceFilter) throw new Error('ResourceFilter must load before app.js');
 
   const state = {
     data: null,
@@ -256,33 +258,16 @@
   }
 
   function getFilteredResources() {
-    const query = normalize(state.query);
     const priorityRank = { Core: 1, Specialized: 2, Backup: 3, Verify: 4 };
 
-    const filtered = state.data.resources.filter((resource) => {
-      if (state.support !== 'all' && !tagList(resource.supportAreas).includes(state.support)) return false;
-      if (state.area !== 'all' && resource.areaGroup !== state.area) return false;
-      if (state.priority !== 'all' && resource.priority !== state.priority) return false;
-      if (state.savedOnly && !state.saved.has(String(resource.id))) return false;
-
-      if (state.foster !== 'all') {
-        const foster = normalize(resource.fosterSpecific);
-        if (state.foster === 'yes' && foster !== 'yes') return false;
-        if (state.foster === 'partial' && foster !== 'partial') return false;
-        if (state.foster === 'no' && foster !== 'no') return false;
-      }
-
-      if (query) {
-        const haystack = normalize([
-          resource.name, resource.supportAreas, resource.referralTrigger, resource.eligibility,
-          resource.provides, resource.access, resource.location, resource.phone,
-          resource.caveat, resource.fosterSpecific, resource.priority, resource.area,
-          resource.areaGroup, resource.radiusNote
-        ].join(' '));
-        if (!haystack.includes(query)) return false;
-      }
-
-      return true;
+    const filtered = resourceFilter.filterResources(state.data.resources, {
+      query: state.query,
+      support: state.support,
+      area: state.area,
+      foster: state.foster,
+      priority: state.priority,
+      savedOnly: state.savedOnly,
+      savedIds: state.saved
     });
 
     return filtered.sort((a, b) => {

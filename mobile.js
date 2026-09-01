@@ -2,13 +2,20 @@
   'use strict';
 
   const MOBILE_BREAKPOINT = 760;
-  const SUPPORT_PREFIX = '__rn_support__:';
-  const QUERY_PREFIX = '__rn_query__:';
-  const originalArrayIncludes = Array.prototype.includes;
-  const originalStringIncludes = String.prototype.includes;
+  const resourceFilter = window.ResourceFilter;
+  if (!resourceFilter) {
+    console.error('ResourceFilter must load before mobile.js');
+    return;
+  }
+  const {
+    SUPPORT_PREFIX,
+    encodeSupportValue,
+    decodeSupportValue,
+    encodeQueryValue,
+    decodeQueryValue
+  } = resourceFilter;
 
   loadFilterStyles();
-  installFilterMatchers();
 
   function loadFilterStyles() {
     if (document.querySelector('link[href="/directory-filters.css"]')) return;
@@ -16,72 +23,6 @@
     link.rel = 'stylesheet';
     link.href = '/directory-filters.css';
     document.head.appendChild(link);
-  }
-
-  function installFilterMatchers() {
-    if (window.__RN_FILTER_MATCHERS__) return;
-    window.__RN_FILTER_MATCHERS__ = true;
-
-    Array.prototype.includes = function (searchElement, fromIndex) {
-      if (typeof searchElement === 'string' && searchElement.startsWith(SUPPORT_PREFIX)) {
-        const selected = decodeSupportValue(searchElement);
-        return selected.some((value) => originalArrayIncludes.call(this, value));
-      }
-      return originalArrayIncludes.call(this, searchElement, fromIndex);
-    };
-
-    String.prototype.includes = function (searchString, position) {
-      if (typeof searchString === 'string' && searchString.startsWith(QUERY_PREFIX)) {
-        const parsed = decodeQueryValue(searchString);
-        const haystack = String(this);
-        const textMatches = !parsed.text || originalStringIncludes.call(haystack, parsed.text);
-        const urgentMatches = !parsed.urgent || matchesUrgentNeed(haystack);
-        const charlotteMatches = !parsed.charlotte || !originalStringIncludes.call(haystack, 'surrounding communities');
-        return textMatches && urgentMatches && charlotteMatches;
-      }
-      return originalStringIncludes.call(this, searchString, position);
-    };
-  }
-
-  function matchesUrgentNeed(haystack) {
-    const strongSignals = [
-      'call 911',
-      'call or text 988',
-      '988',
-      '24/7',
-      '24 hours',
-      'crisis line',
-      'crisis hotline',
-      'emergency shelter',
-      'emergency food',
-      'same day',
-      'same-day',
-      'tonight',
-      'immediate danger',
-      'overdose',
-      'domestic violence',
-      'sexual assault',
-      'human trafficking',
-      'coordinated entry',
-      'shelter bed',
-      'walk-in crisis',
-      'urgent care'
-    ];
-
-    if (strongSignals.some((signal) => originalStringIncludes.call(haystack, signal))) return true;
-
-    const urgentAreas = [
-      'housing / homelessness',
-      'food and basic needs',
-      'mental health',
-      'safety / domestic violence / trafficking',
-      'substance-use recovery'
-    ];
-    const accessSignals = ['emergency', 'crisis', 'hotline', 'immediate', 'walk-in', 'shelter', 'same day'];
-
-    return urgentAreas.some((area) => originalStringIncludes.call(haystack, area))
-      && accessSignals.some((signal) => originalStringIncludes.call(haystack, signal))
-      && !originalStringIncludes.call(haystack, 'not an emergency service');
   }
 
   function onReady(callback) {
@@ -541,38 +482,6 @@
     if (coverage) {
       coverage.textContent = 'The directory focuses on programs based in Charlotte or Mecklenburg County, plus statewide programs that people in Charlotte can use. Programs based only in nearby communities are not shown for now.';
     }
-  }
-
-  function encodeSupportValue(values) {
-    return `${SUPPORT_PREFIX}${values.map((value) => encodeURIComponent(value)).join('~')}`;
-  }
-
-  function decodeSupportValue(value) {
-    const input = String(value || '');
-    if (!input || input === 'all') return [];
-    if (!input.startsWith(SUPPORT_PREFIX)) return [input];
-    return input.slice(SUPPORT_PREFIX.length).split('~').map((item) => {
-      try { return decodeURIComponent(item); } catch { return item; }
-    }).filter(Boolean);
-  }
-
-  function encodeQueryValue(text, urgent) {
-    const params = new URLSearchParams();
-    params.set('scope', 'charlotte');
-    params.set('urgent', urgent ? '1' : '0');
-    if (text) params.set('text', text.toLowerCase());
-    return `${QUERY_PREFIX}${params.toString()}`;
-  }
-
-  function decodeQueryValue(value) {
-    const input = String(value || '');
-    if (!input.startsWith(QUERY_PREFIX)) return { text: input, urgent: false, charlotte: false };
-    const params = new URLSearchParams(input.slice(QUERY_PREFIX.length));
-    return {
-      text: params.get('text') || '',
-      urgent: params.get('urgent') === '1',
-      charlotte: params.get('scope') === 'charlotte'
-    };
   }
 
   function supportLabel(value) {

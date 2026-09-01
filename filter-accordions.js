@@ -1,8 +1,12 @@
 (() => {
   'use strict';
 
-  const SUPPORT_PREFIX = '__rn_support__:';
-  const QUERY_PREFIX = '__rn_query__:';
+  const resourceFilter = window.ResourceFilter;
+  if (!resourceFilter) {
+    console.error('ResourceFilter must load before filter-accordions.js');
+    return;
+  }
+  const { decodeSupportValue, decodeQueryValue, matchesResource } = resourceFilter;
   const SAVED_STORAGE_KEY = 'farm127-saved-resources';
   let resources = [];
   let updateQueued = false;
@@ -160,66 +164,7 @@
   }
 
   function matchesFilters(resource, filters) {
-    const areas = tagList(resource.supportAreas);
-    if (filters.supportValues.length && !filters.supportValues.some((value) => areas.includes(value))) return false;
-
-    if (filters.area !== 'all' && resource.areaGroup !== filters.area) return false;
-    if (filters.priority !== 'all' && resource.priority !== filters.priority) return false;
-    if (filters.charlotteOnly && resource.areaGroup === 'Surrounding communities') return false;
-
-    if (filters.foster !== 'all') {
-      const foster = normalize(resource.fosterSpecific);
-      if (filters.foster === 'yes' && foster !== 'yes') return false;
-      if (filters.foster === 'partial' && foster !== 'partial') return false;
-      if (filters.foster === 'no' && foster !== 'no') return false;
-    }
-
-    if (filters.savedOnly && !filters.savedIds.has(String(resource.id))) return false;
-
-    const haystack = normalize([
-      resource.name,
-      resource.supportAreas,
-      resource.referralTrigger,
-      resource.eligibility,
-      resource.provides,
-      resource.access,
-      resource.location,
-      resource.phone,
-      resource.caveat,
-      resource.fosterSpecific,
-      resource.priority,
-      resource.area,
-      resource.areaGroup,
-      resource.radiusNote
-    ].join(' '));
-
-    if (filters.text && !haystack.includes(normalize(filters.text))) return false;
-    if (filters.urgent && !matchesUrgentNeed(haystack)) return false;
-    return true;
-  }
-
-  function matchesUrgentNeed(haystack) {
-    const strongSignals = [
-      'call 911', 'call or text 988', '988', '24/7', '24 hours', 'crisis line',
-      'crisis hotline', 'emergency shelter', 'emergency food', 'same day', 'same-day',
-      'tonight', 'immediate danger', 'overdose', 'domestic violence', 'sexual assault',
-      'human trafficking', 'coordinated entry', 'shelter bed', 'walk-in crisis', 'urgent care'
-    ];
-
-    if (strongSignals.some((signal) => haystack.includes(signal))) return true;
-
-    const urgentAreas = [
-      'housing / homelessness',
-      'food and basic needs',
-      'mental health',
-      'safety / domestic violence / trafficking',
-      'substance-use recovery'
-    ];
-    const accessSignals = ['emergency', 'crisis', 'hotline', 'immediate', 'walk-in', 'shelter', 'same day'];
-
-    return urgentAreas.some((area) => haystack.includes(area))
-      && accessSignals.some((signal) => haystack.includes(signal))
-      && !haystack.includes('not an emergency service');
+    return matchesResource(resource, filters);
   }
 
   function setOptionCount(input, count) {
@@ -246,33 +191,6 @@
     } catch {
       return new Set();
     }
-  }
-
-  function decodeSupportValue(value) {
-    const input = String(value || '');
-    if (!input || input === 'all') return [];
-    if (!input.startsWith(SUPPORT_PREFIX)) return [input];
-    return input.slice(SUPPORT_PREFIX.length).split('~').map((item) => {
-      try {
-        return decodeURIComponent(item);
-      } catch {
-        return item;
-      }
-    }).filter(Boolean);
-  }
-
-  function decodeQueryValue(value) {
-    const input = String(value || '');
-    if (!input.startsWith(QUERY_PREFIX)) {
-      return { text: input, urgent: false, charlotte: false };
-    }
-
-    const params = new URLSearchParams(input.slice(QUERY_PREFIX.length));
-    return {
-      text: params.get('text') || '',
-      urgent: params.get('urgent') === '1',
-      charlotte: params.get('scope') === 'charlotte'
-    };
   }
 
   function tagList(value) {

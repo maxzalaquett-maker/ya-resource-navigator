@@ -1,7 +1,12 @@
 (() => {
   'use strict';
 
-  const SUPPORT_PREFIX = '__rn_support__:';
+  const resourceFilter = window.ResourceFilter;
+  if (!resourceFilter) {
+    console.error('ResourceFilter must load before filter-icons.js');
+    return;
+  }
+  const { SUPPORT_PREFIX, decodeSupportValue } = resourceFilter;
   const SHORTCUTS = [
     { value: 'Housing / homelessness', label: 'Housing', icon: 'house' },
     { value: 'Food / essentials', label: 'Food', icon: 'utensils' },
@@ -258,19 +263,6 @@
     if (/faith|spiritual/.test(text)) return 'sun';
     if (/entrepreneur/.test(text)) return 'lightbulb';
     return 'grid';
-  }
-
-  function decodeSupportValue(value) {
-    const input = String(value || '');
-    if (!input || input === 'all') return [];
-    if (!input.startsWith(SUPPORT_PREFIX)) return [input];
-    return input.slice(SUPPORT_PREFIX.length).split('~').map((item) => {
-      try {
-        return decodeURIComponent(item);
-      } catch {
-        return item;
-      }
-    }).filter(Boolean);
   }
 
   function tagList(value) {
