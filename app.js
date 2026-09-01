@@ -79,8 +79,16 @@
   function bindEvents() {
     document.querySelectorAll('[data-view]').forEach((button) => {
       button.addEventListener('click', () => {
+        const currentRoute = routeState.current();
+        if (currentRoute.view === 'home') {
+          routeState.navigate(button.dataset.view, new URLSearchParams());
+          return;
+        }
+
         syncStateFromControls();
-        routeState.navigate(button.dataset.view, buildUrlParams());
+        const params = buildUrlParams();
+        routeState.replace(currentRoute.view, params, { notify: false });
+        routeState.navigate(button.dataset.view, params);
       });
     });
 
