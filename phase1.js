@@ -29,6 +29,12 @@
   polishStyles.href = '/interface-polish.css';
   document.head.appendChild(polishStyles);
 
+  // The homepage layer comes last because it introduces a new routing surface.
+  const homepageStyles = document.createElement('link');
+  homepageStyles.rel = 'stylesheet';
+  homepageStyles.href = '/homepage.css';
+  document.head.appendChild(homepageStyles);
+
   const loadPhase1 = () => {
     const parts = [1, 2, 3, 4, 5, 6, 7].map((number) => `/phase1/part-${String(number).padStart(2, '0')}.txt`);
     Promise.all(parts.map(async (url) => {
@@ -47,10 +53,19 @@
       });
   };
 
+  const loadHomepage = () => {
+    const homepageScript = document.createElement('script');
+    homepageScript.src = '/homepage-routing.js';
+    homepageScript.async = false;
+    homepageScript.onload = loadPhase1;
+    homepageScript.onerror = loadPhase1;
+    document.head.appendChild(homepageScript);
+  };
+
   const structureScript = document.createElement('script');
   structureScript.src = '/site-structure.js';
   structureScript.async = false;
-  structureScript.onload = loadPhase1;
-  structureScript.onerror = loadPhase1;
+  structureScript.onload = loadHomepage;
+  structureScript.onerror = loadHomepage;
   document.head.appendChild(structureScript);
 })();
