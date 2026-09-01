@@ -1,0 +1,40 @@
+name: Apply support checkbox identifiers
+
+on:
+  push:
+    branches:
+      - fix/form-image-warnings
+    paths:
+      - .github/workflows/apply-support-checkbox-identifiers.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: fix/form-image-warnings
+          fetch-depth: 0
+
+      - name: Apply checkbox identifiers
+        run: python scripts/apply-support-checkbox-identifiers.py
+
+      - name: Validate JavaScript
+        run: node --check mobile.js
+
+      - name: Confirm identifiers
+        run: |
+          grep -q 'id="support-area-option-' mobile.js
+          grep -q 'name="support-area"' mobile.js
+
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mobile.js
+          git commit -m "Add identifiers to support filter checkboxes"
+          git push origin HEAD:fix/form-image-warnings
