@@ -25,15 +25,11 @@
 }
 
 .page-banner-inner {
-  width: min(calc(100% - 3rem), var(--shell));
-  max-width: var(--shell);
   min-height: 0;
-  margin-inline: auto;
-  padding-block: clamp(3.5rem, 7vw, 4.75rem);
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(260px, .65fr);
   align-items: center;
-  gap: clamp(2.25rem, 6vw, 4.75rem);
+  gap: clamp(2rem, 5vw, 4rem);
   text-align: left;
 }
 
@@ -95,11 +91,6 @@
 }
 
 @media (max-width: 760px) {
-  .page-banner-inner {
-    width: min(calc(100% - 2rem), var(--shell));
-    padding-block: 2.6rem 3rem;
-  }
-
   .page-banner-copy h1 {
     font-size: clamp(2.3rem, 11vw, 3.4rem);
   }
