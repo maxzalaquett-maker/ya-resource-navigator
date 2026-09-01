@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T01:05:47.991235+00:00",
+  "generatedAt": "2026-09-01T12:37:26.301661+00:00",
   "results": [
     {
       "url": "https://www.adajenkins.org/",
@@ -402,24 +402,6 @@
       "error": ""
     },
     {
-      "url": "https://www.safealliance.org/programs/greater-charlotte-hope-line/",
-      "labels": [
-        "Interface link"
-      ],
-      "sourceTypes": [
-        "interface"
-      ],
-      "classification": "interface-link",
-      "flags": [
-        "automated-check-failed"
-      ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fcc246ed460>, 'Connection to www.safealliance.org timed out. "
-    },
-    {
       "url": "https://latinamericancoalition.org/",
       "labels": [
         "Latin American Coalition"
@@ -657,24 +639,6 @@
       "error": ""
     },
     {
-      "url": "https://www.safealliance.org/programs/domestic-violence-shelter/",
-      "labels": [
-        "Safe Alliance — Domestic Violence Shelter"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "official-first-party",
-      "flags": [
-        "automated-check-failed"
-      ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fcc24769df0>, 'Connection to www.safealliance.org timed out. (c"
-    },
-    {
       "url": "https://www.safealliance.org/",
       "labels": [
         "Safe Alliance — Victim Assistance and Sexual Assault Services"
@@ -684,14 +648,13 @@
       ],
       "classification": "official-first-party",
       "flags": [
-        "automated-check-failed",
         "generic-homepage"
       ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fcc24749130>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
+      "status": 200,
+      "finalUrl": "https://www.safealliance.org/",
+      "finalHost": "safealliance.org",
+      "title": "Safe Alliance",
+      "error": ""
     },
     {
       "url": "https://chsnc.org/programs-services/sayso/",
@@ -730,24 +693,6 @@
       "finalHost": "score.org",
       "title": "Just a moment...",
       "error": ""
-    },
-    {
-      "url": "https://www.smartstartofmeck.org/families-caregivers/",
-      "labels": [
-        "Smart Start of Mecklenburg County"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "official-first-party",
-      "flags": [
-        "automated-check-failed"
-      ],
-      "status": null,
-      "finalUrl": "",
-      "finalHost": "",
-      "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7fcc246ee900>, 'Connection to www.smartstartofmeck.org timed out. (conn"
     },
     {
       "url": "https://www.ssa.gov/benefits/disability/",
@@ -1504,6 +1449,22 @@
       "error": ""
     },
     {
+      "url": "https://www.safealliance.org/programs/greater-charlotte-hope-line/",
+      "labels": [
+        "Interface link"
+      ],
+      "sourceTypes": [
+        "interface"
+      ],
+      "classification": "interface-link",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.safealliance.org/programs/greater-charlotte-hope-line/",
+      "finalHost": "safealliance.org",
+      "title": "Greater Charlotte Hope Line | Safe Alliance",
+      "error": ""
+    },
+    {
       "url": "https://www.ihclt.org/adult-education",
       "labels": [
         "International House"
@@ -2019,6 +1980,22 @@
       "error": ""
     },
     {
+      "url": "https://www.safealliance.org/programs/domestic-violence-shelter/",
+      "labels": [
+        "Safe Alliance — Domestic Violence Shelter"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.safealliance.org/programs/domestic-violence-shelter/",
+      "finalHost": "safealliance.org",
+      "title": "Domestic Violence Shelter | Safe Alliance",
+      "error": ""
+    },
+    {
       "url": "https://www.secondharvestmetrolina.org/need-food",
       "labels": [
         "Second Harvest Food Bank of Metrolina"
@@ -2048,6 +2025,22 @@
       "finalUrl": "https://www.shebuiltthiscity.org/adult-workforce-development-1",
       "finalHost": "shebuiltthiscity.org",
       "title": "Adult Workforce Development | Empower Women Today! &mdash; She Built This City",
+      "error": ""
+    },
+    {
+      "url": "https://www.smartstartofmeck.org/families-caregivers/",
+      "labels": [
+        "Smart Start of Mecklenburg County"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "official-first-party",
+      "flags": [],
+      "status": 200,
+      "finalUrl": "https://www.smartstartofmeck.org/families-caregivers/",
+      "finalHost": "smartstartofmeck.org",
+      "title": "Families & Caregivers | Smart Start of Mecklenburg County",
       "error": ""
     },
     {
