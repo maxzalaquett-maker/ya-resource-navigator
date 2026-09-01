@@ -44,8 +44,27 @@
   margin: 0;
   padding: 1.15rem 0;
   border: 0;
-  border-top: 1px solid var(--line);
   min-width: 0;
+}
+
+/* A full-width legend masks a fieldset's native top border. Draw the top divider on
+   the accordion toggle instead, and keep the bottom divider on the fieldset. */
+.filter-checklist.filter-accordion,
+.filter-toggle-group.filter-accordion {
+  border: 0 !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.filter-checklist.filter-accordion > legend .filter-accordion-toggle,
+.filter-toggle-group.filter-accordion > legend .filter-accordion-toggle {
+  border-top: 1px solid var(--line) !important;
+}
+
+/* Consecutive sections overlap by one pixel so the previous bottom divider and the
+   next top divider occupy the same line instead of rendering as a double rule. */
+:is(.filter-checklist, .filter-toggle-group) +
+:is(.filter-checklist, .filter-toggle-group) {
+  margin-top: -1px;
 }
 
 .filter-checklist legend,
