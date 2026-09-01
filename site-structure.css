@@ -15,14 +15,6 @@
   display: none !important;
 }
 
-#view-directory .hero-grid {
-  grid-template-columns: minmax(0, 1.7fr) minmax(240px, .65fr);
-}
-
-#view-directory .hero-copy {
-  max-width: 680px;
-}
-
 #view-directory .directory-layout {
   padding-top: 1.5rem;
 }
@@ -35,17 +27,6 @@
 .guided-pathway-mount .phase1-guided,
 .plan-mount .phase1-plan {
   margin: 0;
-}
-
-#view-urgent .page-heading,
-#view-needs .page-heading,
-#view-about .page-heading,
-#view-foster .page-heading {
-  text-align: left;
-}
-
-#view-urgent .page-heading {
-  padding-bottom: 1.2rem;
 }
 
 #view-urgent .phase1-guided-heading {
@@ -65,12 +46,18 @@
 
 .help-section-heading {
   max-width: 720px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .help-section-heading h2 {
-  margin: .25rem 0 0;
+  margin: 0 0 .55rem;
   font-size: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.help-section-heading > p:last-child {
+  margin: 0;
+  color: var(--gray);
+  font-size: 1.04rem;
 }
 
 .emergency-banner p {
@@ -79,10 +66,6 @@
 
 .emergency-banner .card-actions {
   flex: 0 0 auto;
-}
-
-#view-needs .page-heading {
-  padding-bottom: 1.25rem;
 }
 
 .plan-mount .phase1-plan {
@@ -110,8 +93,8 @@
 }
 
 .about-section:first-child {
-  border-top: 0;
   padding-top: .5rem;
+  border-top: 0;
 }
 
 .about-section h2 {
@@ -135,10 +118,6 @@
   .header-urgent {
     display: none;
   }
-
-  #view-directory .hero-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 760px) {
@@ -146,13 +125,6 @@
   .plan-mount {
     width: min(calc(100% - 1.25rem), var(--shell));
     padding-bottom: 2rem;
-  }
-
-  #view-urgent .page-heading,
-  #view-needs .page-heading,
-  #view-about .page-heading,
-  #view-foster .page-heading {
-    padding-top: 1.5rem;
   }
 
   .urgent-support-section {
