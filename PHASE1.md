@@ -33,6 +33,10 @@ Structured pathway definitions live in `data/pathways.json` and reference existi
 - The correction form opens a public GitHub issue. It explicitly instructs users not to include personal or case information.
 - Intake status, required documents and response times are inferred conservatively from current listing text when a structured value is unavailable. The interface labels unknown information as something to confirm directly.
 
+## Delivery and security
+
+Phase 1 is delivered as the checked-in `phase1.js` file. The browser no longer fetches source fragments or executes a generated Blob URL, so the production Content Security Policy does not allow `blob:` scripts. CI syntax-checks the same file that runs in production.
+
 ## Configuration
 
 Phase 1 settings are in `config.js`:
