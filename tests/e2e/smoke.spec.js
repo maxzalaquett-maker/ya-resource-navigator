@@ -71,7 +71,11 @@ test('persists a saved program after reload', async ({ page }) => {
   const resourceId = await firstCard.getAttribute('data-resource-id');
   expect(resourceId).toBeTruthy();
 
-  await firstCard.locator('[data-action="save"]').click();
+  await firstCard.locator('[data-action="details"]').click();
+  const dialog = page.locator('#resource-dialog');
+  await expect(dialog).toBeVisible();
+  await dialog.locator('[data-dialog-action="save"]').click();
+
   await expect.poll(async () => page.evaluate(() => {
     try {
       return JSON.parse(localStorage.getItem('farm127-saved-resources') || '[]').map(String);
@@ -83,8 +87,8 @@ test('persists a saved program after reload', async ({ page }) => {
   await page.reload();
   await waitForApplication(page);
 
-  const savedButton = page.locator(`[data-resource-id="${resourceId}"] [data-action="save"]`);
-  await expect(savedButton).toHaveAttribute('aria-label', 'Remove from my plan');
+  await page.locator(`[data-resource-id="${resourceId}"] [data-action="details"]`).click();
+  await expect(page.locator('#resource-dialog [data-dialog-action="save"]')).toHaveText('Remove from my plan');
 
   expect(pageErrors).toEqual([]);
 });
