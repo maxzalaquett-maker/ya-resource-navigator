@@ -1,0 +1,51 @@
+name: Apply filter refactor
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.head_ref == 'refactor/filter-engine'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the refactor branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Apply deterministic transformation
+        run: python scripts/apply_filter_refactor.py
+
+      - name: Remove one-time transformation files
+        run: |
+          rm scripts/apply_filter_refactor.py
+          rm .github/workflows/apply-filter-refactor.yml
+
+      - name: Verify changed JavaScript
+        run: |
+          node --check resource-filter.js
+          node --check app.js
+          node --check mobile.js
+          node --check filter-accordions.js
+          node --check filter-icons.js
+          node --check tests/unit/resource-filter.test.js
+          node --check tests/e2e/smoke.spec.js
+          npm run test:unit
+
+      - name: Commit refactor to the branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Replace prototype filter patches with explicit matcher"
+          git push origin HEAD:${{ github.head_ref }}
