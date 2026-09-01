@@ -1,0 +1,92 @@
+/* Shared gutters, content widths and vertical rhythm for every primary page. */
+
+:root {
+  --layout-gutter: clamp(1rem, 2.5vw, 2rem);
+  --layout-reading-width: 860px;
+  --space-banner-block: clamp(3rem, 5vw, 4rem);
+  --space-section-block: clamp(2.5rem, 4vw, 3.5rem);
+  --space-section-compact: clamp(1.75rem, 3vw, 2.25rem);
+  --space-page-end: clamp(3rem, 5vw, 4rem);
+  --space-content-stack: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+/* One shared horizontal page edge. */
+.shell,
+.page-banner-inner {
+  width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), var(--shell));
+  max-width: var(--shell);
+  margin-inline: auto;
+}
+
+/* One shared vertical rhythm. */
+.page-banner-inner {
+  padding-block: var(--space-banner-block);
+}
+
+.home-section,
+.home-needs-section {
+  padding-block: var(--space-section-block);
+}
+
+.home-section-heading,
+.help-section-heading {
+  margin-bottom: var(--space-content-stack);
+}
+
+#view-directory .directory-layout,
+#view-foster .wide-table-wrap {
+  padding-block: var(--space-section-compact) var(--space-page-end);
+}
+
+/* Narrow reading areas stay readable but begin on the same page edge. */
+.shell.narrow.guided-pathway-mount,
+.shell.narrow.plan-mount,
+.shell.narrow.urgent-support-section,
+.shell.narrow.about-grid.about-sections {
+  width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), var(--shell));
+  max-width: var(--shell);
+  margin-inline: auto;
+}
+
+.guided-pathway-mount {
+  padding-block: var(--space-section-compact);
+}
+
+.plan-mount,
+.urgent-support-section,
+.about-grid.about-sections {
+  padding-block: var(--space-section-compact) var(--space-page-end);
+}
+
+.guided-pathway-mount > .phase1-guided,
+.plan-mount > .phase1-plan,
+.urgent-support-section > .help-section-heading,
+.urgent-support-section > .emergency-banner,
+.urgent-support-section > .triage-grid,
+.about-grid.about-sections > .about-section {
+  width: min(100%, var(--layout-reading-width));
+  margin-inline: 0 auto;
+}
+
+.about-section {
+  padding-block: var(--space-section-compact);
+}
+
+.about-section:first-child {
+  padding-top: 0;
+}
+
+#view-foster .foster-category-filter {
+  margin-bottom: var(--space-content-stack);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --layout-gutter: 1rem;
+    --space-banner-block: 2.5rem;
+    --space-section-block: 2.25rem;
+    --space-section-compact: 1.5rem;
+    --space-page-end: 3rem;
+    --space-content-stack: 1.25rem;
+  }
+}

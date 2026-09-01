@@ -1,4 +1,4 @@
-/* Homepage-specific layout. Shared banners and section headings live in their reusable component layers. */
+/* Homepage-specific components. Page gutters and section spacing come from layout-system.css. */
 
 #view-home[hidden] {
   display: none !important;
@@ -8,12 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: .7rem;
-  margin-top: 1.65rem;
-}
-
-.home-section,
-.home-needs-section {
-  padding-block: clamp(3rem, 7vw, 5rem);
+  margin-top: var(--space-content-stack);
 }
 
 .home-path-grid {
@@ -172,11 +167,6 @@
 
   .home-actions .button {
     width: 100%;
-  }
-
-  .home-section,
-  .home-needs-section {
-    padding-block: 2.7rem;
   }
 
   .home-path-card {
