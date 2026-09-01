@@ -1,35 +1,7 @@
-/* Homepage routing experience. Loaded after the existing component and responsive layers. */
+/* Homepage-specific layout. Shared banners and section headings live in their reusable component layers. */
 
 #view-home[hidden] {
   display: none !important;
-}
-
-.home-hero {
-  background:
-    radial-gradient(circle at 88% 18%, rgba(37, 99, 235, .22), transparent 27%),
-    linear-gradient(135deg, #f8fafc 0%, #ffffff 58%, #eef6ff 100%);
-  border-bottom: 1px solid var(--line);
-}
-
-.home-hero-grid {
-  min-height: 390px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(280px, .7fr);
-  align-items: center;
-  gap: clamp(2rem, 6vw, 5rem);
-  padding-block: clamp(3.4rem, 8vw, 6rem);
-}
-
-.home-hero h1 {
-  max-width: 760px;
-  margin-bottom: 1rem;
-}
-
-.home-hero-copy {
-  max-width: 710px;
-  margin: 0;
-  color: #475569;
-  font-size: clamp(1.08rem, 2vw, 1.24rem);
 }
 
 .home-actions {
@@ -39,45 +11,9 @@
   margin-top: 1.65rem;
 }
 
-.home-audience-card {
-  padding: 1.6rem;
-  border: 1px solid rgba(148, 163, 184, .55);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, .88);
-  box-shadow: var(--shadow);
-}
-
-.home-audience-card strong {
-  display: block;
-  color: var(--brown);
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.2rem;
-  line-height: 1.25;
-}
-
-.home-audience-card p {
-  margin: .65rem 0 0;
-  color: #526070;
-}
-
-.home-section {
+.home-section,
+.home-needs-section {
   padding-block: clamp(3rem, 7vw, 5rem);
-}
-
-.home-section-heading {
-  max-width: 720px;
-  margin-bottom: 1.5rem;
-}
-
-.home-section-heading h2 {
-  margin: 0 0 .55rem;
-  font-size: clamp(1.75rem, 3.5vw, 2.65rem);
-}
-
-.home-section-heading > p:last-child {
-  margin: 0;
-  color: var(--gray);
-  font-size: 1.04rem;
 }
 
 .home-path-grid {
@@ -96,25 +32,25 @@
   gap: 1rem;
   padding: 1.4rem;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--white);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
   color: var(--charcoal);
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, .06);
+  box-shadow: var(--shadow-soft);
   transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
 }
 
 .home-path-card:hover {
   transform: translateY(-3px);
-  border-color: #94a3b8;
-  box-shadow: 0 16px 34px rgba(15, 23, 42, .1);
+  border-color: #c7d2fe;
+  box-shadow: var(--shadow);
 }
 
 .home-path-card:focus-visible,
 .home-need-link:focus-visible,
 .home-nav-tab:focus-visible {
-  outline: 3px solid rgba(37, 99, 235, .4);
+  outline: 3px solid rgba(79, 70, 229, .22);
   outline-offset: 3px;
 }
 
@@ -123,14 +59,14 @@
   height: 52px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
-  background: var(--gold-soft);
-  color: #1d4ed8;
+  border-radius: var(--radius-md);
+  background: var(--brand-soft);
+  color: var(--brand-strong);
 }
 
 .home-path-urgent .home-path-icon {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--danger-soft);
+  color: var(--danger);
 }
 
 .home-path-icon svg,
@@ -145,16 +81,14 @@
   height: 25px;
 }
 
-.home-path-card > span:nth-child(2) {
+.home-path-copy {
   display: grid;
   gap: .65rem;
 }
 
-.home-path-card strong {
-  color: var(--brown);
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.35rem;
-  line-height: 1.15;
+.home-path-title {
+  margin: 0;
+  font-size: 1.2rem;
 }
 
 .home-path-card small {
@@ -177,9 +111,8 @@
 }
 
 .home-needs-section {
-  padding-block: clamp(3rem, 7vw, 5rem);
   border-block: 1px solid var(--line);
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .home-need-grid {
@@ -195,8 +128,8 @@
   gap: .8rem;
   padding: .9rem 1rem;
   border: 1px solid var(--line);
-  border-radius: 13px;
-  background: #f8fafc;
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
   color: var(--charcoal);
   text-decoration: none;
   font-weight: 700;
@@ -206,8 +139,8 @@
 
 .home-need-link:hover {
   transform: translateY(-1px);
-  border-color: #94a3b8;
-  background: #eff6ff;
+  border-color: #c7d2fe;
+  background: var(--brand-soft);
 }
 
 .home-need-link svg {
@@ -232,17 +165,6 @@
 }
 
 @media (max-width: 760px) {
-  .home-hero-grid {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-    padding-block: 2.6rem 3rem;
-  }
-
-  .home-hero h1 {
-    font-size: clamp(2.3rem, 11vw, 3.4rem);
-  }
-
   .home-actions {
     display: grid;
     grid-template-columns: 1fr;
@@ -265,10 +187,6 @@
   .home-path-icon {
     width: 46px;
     height: 46px;
-  }
-
-  .home-path-card strong {
-    font-size: 1.2rem;
   }
 }
 
