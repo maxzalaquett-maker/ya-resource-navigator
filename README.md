@@ -54,6 +54,32 @@ python3 -m http.server 8080
 
 Then open `http://localhost:8080`.
 
+## Validate changes
+
+Install the browser-test dependency and Chromium once:
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+Run the critical user-journey tests:
+
+```bash
+npm run test:e2e
+```
+
+Before opening a pull request, also rebuild the generated resource data and confirm that any resulting change is committed intentionally:
+
+```bash
+python3 scripts/build_data.py
+python3 scripts/apply_static_copy.py
+python3 scripts/normalize_app_data.py
+git diff -- data/app-data.json
+```
+
+GitHub Actions performs these checks with read-only repository permissions. It reports stale generated files as a failure instead of committing changes automatically.
+
 ## Update the directory from Excel
 
 1. Replace `source/Charlotte_Young_Adult_Resource_Directory.xlsx` with the updated workbook.
@@ -109,11 +135,9 @@ The planner uses `localStorage`; its edits are not shared between users or devic
 
 This app is a referral directory, not a real-time availability system. Shelter beds, funding, waitlists, eligibility and intake processes must be confirmed directly with each provider.
 
-
 ## About the 30-mile expansion
 
 “Local / nearby” is a practical service-area classification. It includes Charlotte/Mecklenburg and organizations in nearby communities such as Matthews, Indian Trail, Monroe, Concord, Huntersville, Davidson, Gastonia, Belmont and Rock Hill when they are plausibly within roughly 30 road miles of Uptown Charlotte. County, ZIP-code and residency restrictions still control eligibility.
-
 
 ## Charlotte Young Adult Resource Database review
 
