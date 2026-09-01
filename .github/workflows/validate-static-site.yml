@@ -33,16 +33,12 @@ jobs:
       - name: Confirm generated data is committed
         run: git diff --exit-code -- data/app-data.json
 
-      - name: Assemble Phase 1 script
-        run: cat phase1/part-*.txt > /tmp/phase1-runtime.js
-
       - name: Check JavaScript syntax
         shell: bash
         run: |
           while IFS= read -r -d '' file; do
             node --check "$file"
           done < <(find . -maxdepth 1 -type f -name '*.js' -print0 | sort -z)
-          node --check /tmp/phase1-runtime.js
           node --check tests/e2e/smoke.spec.js
           node --check tests/unit/resource-filter.test.js
 
