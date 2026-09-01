@@ -29,7 +29,7 @@
   polishStyles.href = '/interface-polish.css';
   document.head.appendChild(polishStyles);
 
-  // The homepage layer comes last because it introduces a new routing surface.
+  // The homepage layer introduces a new routing surface.
   const homepageStyles = document.createElement('link');
   homepageStyles.rel = 'stylesheet';
   homepageStyles.href = '/homepage.css';
@@ -40,6 +40,12 @@
   bannerStyles.rel = 'stylesheet';
   bannerStyles.href = '/page-banner.css';
   document.head.appendChild(bannerStyles);
+
+  // Keep gutters, widths and vertical rhythm in one final source of truth.
+  const layoutStyles = document.createElement('link');
+  layoutStyles.rel = 'stylesheet';
+  layoutStyles.href = '/layout-system.css';
+  document.head.appendChild(layoutStyles);
 
   const loadPhase1 = () => {
     const parts = [1, 2, 3, 4, 5, 6, 7].map((number) => `/phase1/part-${String(number).padStart(2, '0')}.txt`);
