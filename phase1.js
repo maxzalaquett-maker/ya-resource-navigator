@@ -35,6 +35,12 @@
   homepageStyles.href = '/homepage.css';
   document.head.appendChild(homepageStyles);
 
+  // Use one banner component across every primary page.
+  const bannerStyles = document.createElement('link');
+  bannerStyles.rel = 'stylesheet';
+  bannerStyles.href = '/page-banner.css';
+  document.head.appendChild(bannerStyles);
+
   const loadPhase1 = () => {
     const parts = [1, 2, 3, 4, 5, 6, 7].map((number) => `/phase1/part-${String(number).padStart(2, '0')}.txt`);
     Promise.all(parts.map(async (url) => {
@@ -53,12 +59,21 @@
       });
   };
 
+  const loadPageBanners = () => {
+    const bannerScript = document.createElement('script');
+    bannerScript.src = '/page-banner.js';
+    bannerScript.async = false;
+    bannerScript.onload = loadPhase1;
+    bannerScript.onerror = loadPhase1;
+    document.head.appendChild(bannerScript);
+  };
+
   const loadHomepage = () => {
     const homepageScript = document.createElement('script');
     homepageScript.src = '/homepage-routing.js';
     homepageScript.async = false;
-    homepageScript.onload = loadPhase1;
-    homepageScript.onerror = loadPhase1;
+    homepageScript.onload = loadPageBanners;
+    homepageScript.onerror = loadPageBanners;
     document.head.appendChild(homepageScript);
   };
 
