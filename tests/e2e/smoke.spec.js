@@ -39,6 +39,37 @@ test('keeps native platform methods intact', async ({ page }) => {
   });
 });
 
+test('loads Phase 1 without runtime source assembly', async ({ page }) => {
+  const pageErrors = capturePageErrors(page);
+  const requestedPaths = [];
+  page.on('request', (request) => {
+    try {
+      requestedPaths.push(new URL(request.url()).pathname);
+    } catch {
+      // Ignore non-standard request URLs from the browser runtime.
+    }
+  });
+
+  await page.goto('/#home');
+  await waitForApplication(page);
+  await expect(page.locator('#phase1-guided')).toBeVisible();
+
+  const deliveryState = await page.evaluate(() => ({
+    blobScriptCount: [...document.scripts].filter((script) => script.src.startsWith('blob:')).length,
+    phase1ScriptCount: [...document.scripts].filter((script) => {
+      try {
+        return new URL(script.src, window.location.href).pathname === '/phase1.js';
+      } catch {
+        return false;
+      }
+    }).length
+  }));
+
+  expect(deliveryState).toEqual({ blobScriptCount: 0, phase1ScriptCount: 1 });
+  expect(requestedPaths.some((path) => path.startsWith('/phase1/part-'))).toBe(false);
+  expect(pageErrors).toEqual([]);
+});
+
 test('loads the home page and supports the primary directory journey', async ({ page }) => {
   const pageErrors = capturePageErrors(page);
   await resetBrowserStorage(page);
