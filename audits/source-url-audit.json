@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T22:07:49.866032+00:00",
+  "generatedAt": "2026-09-01T01:05:47.991235+00:00",
   "results": [
     {
       "url": "https://www.adajenkins.org/",
@@ -417,7 +417,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fe677307260>, 'Connection to www.safealliance.org timed out. "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/greater-charlotte-hope-line/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fcc246ed460>, 'Connection to www.safealliance.org timed out. "
     },
     {
       "url": "https://latinamericancoalition.org/",
@@ -672,7 +672,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fe6772dc980>, 'Connection to www.safealliance.org timed out. (c"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: /programs/domestic-violence-shelter/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fcc24769df0>, 'Connection to www.safealliance.org timed out. (c"
     },
     {
       "url": "https://www.safealliance.org/",
@@ -691,7 +691,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fe6772df4d0>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.safealliance.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.safealliance.org', port=443) at 0x7fcc24749130>, 'Connection to www.safealliance.org timed out. (connect timeout=18)'))"
     },
     {
       "url": "https://chsnc.org/programs-services/sayso/",
@@ -747,7 +747,7 @@
       "finalUrl": "",
       "finalHost": "",
       "title": "",
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7fe6772dce90>, 'Connection to www.smartstartofmeck.org timed out. (conn"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.smartstartofmeck.org', port=443): Max retries exceeded with url: /families-caregivers/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smartstartofmeck.org', port=443) at 0x7fcc246ee900>, 'Connection to www.smartstartofmeck.org timed out. (conn"
     },
     {
       "url": "https://www.ssa.gov/benefits/disability/",
