@@ -91,30 +91,6 @@ loadScript('/filter-option-layout.js');
 loadStyle('/logos.css');
 loadScript('/logos.js');
 
-const headingStyle = document.createElement('style');
-headingStyle.textContent = `
-  h1, h2, h3 { line-height: 1.05; }
-
-  .triage-action > div:first-child:not(.card-actions) {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: .18rem;
-  }
-  .triage-action .eyebrow {
-    display: block !important;
-    margin: 0 !important;
-  }
-  .triage-action strong { display: block !important; }
-
-  #toast,
-  .toast,
-  .toast.is-visible {
-    display: none !important;
-  }
-`;
-document.head.appendChild(headingStyle);
-
 const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
   'Immediate danger, overdose, violence or serious injury': 'https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare',
   'Suicidal thoughts or acute mental-health crisis': 'https://988lifeline.org/get-help/',
@@ -147,16 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
     triageGrid.querySelectorAll('.triage-card').forEach((card) => {
       const heading = card.querySelector('h2');
       const action = card.querySelector('.triage-action');
-      if (!heading || !action) return;
+      if (!heading || !action || card.querySelector('[data-triage-learn-more]')) return;
 
-      const textBlock = action.querySelector(':scope > div:first-child:not(.card-actions)');
-      if (textBlock) {
-        textBlock.style.display = 'flex';
-        textBlock.style.flexDirection = 'column';
-        textBlock.style.alignItems = 'flex-start';
-      }
-
-      if (card.querySelector('[data-triage-learn-more]')) return;
       const url = RESOURCE_NAVIGATOR_TRIAGE_LINKS[heading.textContent.trim()];
       if (!url) return;
 
