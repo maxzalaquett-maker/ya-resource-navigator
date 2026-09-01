@@ -63,11 +63,17 @@ test('restores a directory filter from a shared URL', async ({ page }) => {
 
 test('persists a saved program after reload', async ({ page }) => {
   const pageErrors = capturePageErrors(page);
-  await resetBrowserStorage(page);
   await page.goto('/#directory');
   await waitForApplication(page);
+  await expect(page.locator('#view-directory')).toBeVisible();
+
+  await page.evaluate(() => localStorage.clear());
+  await page.reload();
+  await waitForApplication(page);
+  await expect(page.locator('#view-directory')).toBeVisible();
 
   const firstCard = page.locator('#resource-grid .resource-card').first();
+  await expect(firstCard).toBeVisible();
   const resourceId = await firstCard.getAttribute('data-resource-id');
   expect(resourceId).toBeTruthy();
 
@@ -86,6 +92,7 @@ test('persists a saved program after reload', async ({ page }) => {
 
   await page.reload();
   await waitForApplication(page);
+  await expect(page.locator('#view-directory')).toBeVisible();
 
   await page.locator(`[data-resource-id="${resourceId}"] [data-action="details"]`).click();
   await expect(page.locator('#resource-dialog [data-dialog-action="save"]')).toHaveText('Remove from my plan');
