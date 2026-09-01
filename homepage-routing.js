@@ -1,23 +1,14 @@
 (() => {
   'use strict';
 
-  const nativeReplaceState = window.history.replaceState.bind(window.history);
-  let homeMode = !window.location.hash || window.location.hash === '#home';
-  let syncing = false;
-
-  if (!window.location.hash) {
-    nativeReplaceState(window.history.state, '', `${window.location.pathname}#home`);
+  const routeState = window.ResourceRoute;
+  if (!routeState) {
+    console.error('ResourceRoute must load before homepage-routing.js');
+    return;
   }
 
-  window.history.replaceState = function replaceState(state, title, url) {
-    let nextUrl = url;
-    if (homeMode && typeof nextUrl === 'string') {
-      const parsed = new URL(nextUrl, window.location.href);
-      parsed.hash = 'home';
-      nextUrl = `${parsed.pathname}${parsed.search}${parsed.hash}`;
-    }
-    return nativeReplaceState(state, title, nextUrl);
-  };
+  let homeMode = routeState.current().view === 'home';
+  let syncing = false;
 
   const onReady = (callback) => {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', callback, { once: true });
@@ -135,12 +126,16 @@
     home.addEventListener('click', (event) => {
       const destination = event.target.closest('[data-home-destination]')?.dataset.homeDestination;
       if (!destination) return;
-      leaveHome();
-      document.querySelector(`.nav-tab[data-view="${destination}"]`)?.click();
+      event.preventDefault();
+      routeState.navigate(destination, new URLSearchParams());
     });
 
     home.querySelectorAll('.home-need-link').forEach((link) => {
-      link.addEventListener('click', () => { homeMode = false; });
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const destination = new URL(link.href, window.location.href);
+        routeState.navigate('directory', destination.searchParams);
+      });
     });
 
     const brand = document.querySelector('.brand');
@@ -152,10 +147,6 @@
         showHome();
       });
     }
-
-    document.addEventListener('click', (event) => {
-      if (event.target.closest('.nav-tab[data-view], [data-plan-jump], [data-urgent-jump]')) leaveHome();
-    }, true);
 
     updateLabels();
     installRouteListeners();
@@ -199,14 +190,11 @@
   }
 
   function showHome() {
-    homeMode = true;
-    nativeReplaceState(window.history.state, '', `${window.location.pathname}#home`);
-    enforceHome();
+    routeState.navigate('home', new URLSearchParams());
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function leaveHome() {
-    if (!homeMode) return;
     homeMode = false;
     const home = document.getElementById('view-home');
     const tab = document.querySelector('.home-nav-tab');
@@ -243,16 +231,14 @@
   }
 
   function installRouteListeners() {
-    const syncRoute = () => {
-      if (window.location.hash === '#home' || !window.location.hash) {
+    routeState.subscribe((nextRoute) => {
+      if (nextRoute.view === 'home') {
         homeMode = true;
         enforceHome();
       } else {
         leaveHome();
       }
-    };
-    window.addEventListener('hashchange', () => window.setTimeout(syncRoute, 0));
-    window.addEventListener('popstate', () => window.setTimeout(syncRoute, 0));
+    });
   }
 
   onReady(buildHome);

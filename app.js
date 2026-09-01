@@ -3,7 +3,9 @@
 
   const config = Object.assign({ showPartnershipPlanner: false, pageSize: 18 }, window.RESOURCE_NAVIGATOR_CONFIG || {});
   const resourceFilter = window.ResourceFilter;
+  const routeState = window.ResourceRoute;
   if (!resourceFilter) throw new Error('ResourceFilter must load before app.js');
+  if (!routeState) throw new Error('ResourceRoute must load before app.js');
 
   const state = {
     data: null,
@@ -76,7 +78,7 @@
 
   function bindEvents() {
     document.querySelectorAll('[data-view]').forEach((button) => {
-      button.addEventListener('click', () => setView(button.dataset.view));
+      button.addEventListener('click', () => routeState.navigate(button.dataset.view, buildUrlParams()));
     });
 
     els.search.addEventListener('input', debounce(() => {
@@ -106,25 +108,22 @@
     document.getElementById('print-button').addEventListener('click', () => window.print());
     document.getElementById('share-button').addEventListener('click', copyCurrentLink);
 
-    window.addEventListener('hashchange', () => {
-      const requestedView = window.location.hash.replace('#', '');
-      if (validViews().includes(requestedView) && requestedView !== state.view) setView(requestedView, false);
-    });
-
-    window.addEventListener('popstate', () => {
-      readUrlState();
-      if (state.data) {
-        syncControls();
-        setView(state.view, false);
-        renderDirectory();
-      }
-    });
+    routeState.subscribe(handleRouteChange);
   }
 
-  function readUrlState() {
-    const params = new URLSearchParams(window.location.search);
-    const requestedView = window.location.hash.replace('#', '');
-    state.view = validViews().includes(requestedView) ? requestedView : 'directory';
+  function handleRouteChange(nextRoute, meta = {}) {
+    if (nextRoute.view === 'home') return;
+    readUrlState(nextRoute);
+    if (!state.data) return;
+    syncControls();
+    setView(state.view, meta.source === 'navigate');
+    renderDirectory();
+  }
+
+  function readUrlState(nextRoute = routeState.current()) {
+    const params = nextRoute.params;
+    const requestedView = nextRoute.view;
+    if (validViews().includes(requestedView)) state.view = requestedView;
     state.query = params.get('q') || '';
     state.support = params.get('support') || params.get('focus') || params.get('category') || 'all';
     state.area = params.get('area') || 'all';
@@ -153,7 +152,7 @@
     return views;
   }
 
-  function setView(view, updateUrl = true) {
+  function setView(view, scroll = true) {
     if (!validViews().includes(view)) view = 'directory';
     state.view = view;
 
@@ -169,8 +168,7 @@
       button.setAttribute('aria-current', active ? 'page' : 'false');
     });
 
-    if (updateUrl) updateUrlState();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function updateFilter(key, value) {
@@ -610,7 +608,7 @@
     document.getElementById('verified-footer').textContent = `Directory last verified ${date}. Confirm current eligibility and capacity before referral.`;
   }
 
-  function updateUrlState() {
+  function buildUrlParams() {
     const params = new URLSearchParams();
     if (state.query) params.set('q', state.query);
     if (state.support !== 'all') params.set('support', state.support);
@@ -620,10 +618,13 @@
     if (state.savedOnly) params.set('saved', '1');
     if (state.sort !== 'recommended') params.set('sort', state.sort);
     if (state.page > 1) params.set('page', String(state.page));
-    const query = params.toString();
-    const url = `${window.location.pathname}${query ? `?${query}` : ''}#${state.view}`;
+    return params;
+  }
+
+  function updateUrlState() {
+    if (routeState.current().view === 'home') return;
     try {
-      history.replaceState(null, '', url);
+      routeState.replace(state.view, buildUrlParams(), { notify: false });
     } catch {
       // Some local preview environments use an opaque origin. The app remains usable without URL persistence.
     }
