@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T12:37:26.301661+00:00",
+  "generatedAt": "2026-09-01T13:21:04.830194+00:00",
   "results": [
     {
       "url": "https://www.adajenkins.org/",
@@ -92,42 +92,6 @@
       "error": ""
     },
     {
-      "url": "https://careringnc.org/low-cost-clinic/",
-      "labels": [
-        "Care Ring Low-Cost Clinic"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [
-        "automated-access-blocked"
-      ],
-      "status": 403,
-      "finalUrl": "https://careringnc.org/low-cost-clinic/",
-      "finalHost": "careringnc.org",
-      "title": "403 - Forbidden",
-      "error": ""
-    },
-    {
-      "url": "https://careringnc.org/nurse-family-partnership/",
-      "labels": [
-        "Care Ring Nurse-Family Partnership"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [
-        "automated-access-blocked"
-      ],
-      "status": 403,
-      "finalUrl": "https://careringnc.org/nurse-family-partnership/",
-      "finalHost": "careringnc.org",
-      "title": "403 - Forbidden",
-      "error": ""
-    },
-    {
       "url": "https://centerforcommunitytransitions.org/",
       "labels": [
         "Center for Community Transitions"
@@ -178,7 +142,7 @@
       "status": 200,
       "finalUrl": "https://www.charlotteareafund.org/",
       "finalHost": "charlotteareafund.org",
-      "title": "CAF",
+      "title": "One moment, please...",
       "error": ""
     },
     {
@@ -214,7 +178,7 @@
       "status": 200,
       "finalUrl": "https://commonheart.org/",
       "finalHost": "commonheart.org",
-      "title": "Home - Common Heart",
+      "title": "One moment, please...",
       "error": ""
     },
     {
@@ -250,7 +214,7 @@
       "status": 200,
       "finalUrl": "https://communityculinary.org/",
       "finalHost": "communityculinary.org",
-      "title": "Home Page &#8226; Community Culinary School of Charlotte",
+      "title": "One moment, please...",
       "error": ""
     },
     {
@@ -299,13 +263,12 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked",
         "generic-homepage"
       ],
-      "status": 403,
+      "status": 202,
       "finalUrl": "https://disability-rights.org/",
       "finalHost": "disability-rights.org",
-      "title": "403 - Forbidden",
+      "title": "",
       "error": ""
     },
     {
@@ -354,13 +317,12 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked",
         "generic-homepage"
       ],
-      "status": 403,
+      "status": 202,
       "finalUrl": "https://hopehaveninc.org/",
       "finalHost": "hopehaveninc.org",
-      "title": "403 - Forbidden",
+      "title": "",
       "error": ""
     },
     {
@@ -411,34 +373,14 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "generic-homepage",
-        "redirected-to-different-host"
+        "automated-check-failed",
+        "generic-homepage"
       ],
-      "status": 200,
-      "finalUrl": "https://mylac.org/",
-      "finalHost": "mylac.org",
-      "title": "Latin American Coalition &#8211; Latin American Coalition",
-      "error": ""
-    },
-    {
-      "url": "https://livingstone.edu/h-o-p-e/",
-      "labels": [
-        "Livingstone College — H.O.P.E. Emancipation Project",
-        "Livingstone College H.O.P.E. Emancipation Project"
-      ],
-      "sourceTypes": [
-        "resource",
-        "foster-guide"
-      ],
-      "classification": "likely-first-party",
-      "flags": [
-        "automated-access-blocked"
-      ],
-      "status": 403,
-      "finalUrl": "https://livingstone.edu/h-o-p-e/",
-      "finalHost": "livingstone.edu",
-      "title": "403 - Forbidden",
-      "error": ""
+      "status": null,
+      "finalUrl": "",
+      "finalHost": "",
+      "title": "",
+      "error": "SSLError: HTTPSConnectionPool(host='latinamericancoalition.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010)')))"
     },
     {
       "url": "https://www.mcleodcenters.org/",
@@ -545,7 +487,7 @@
       "status": 200,
       "finalUrl": "https://www.omitttradeschool.com/",
       "finalHost": "omitttradeschool.com",
-      "title": "Omitt Trade School |",
+      "title": "One moment, please...",
       "error": ""
     },
     {
@@ -582,60 +524,6 @@
       "finalUrl": "https://www.rightmovesforyouth.org/",
       "finalHost": "rightmovesforyouth.org",
       "title": "Transform Lives: Youth Mentoring in Charlotte Supporting Future Leaders",
-      "error": ""
-    },
-    {
-      "url": "https://www.roofabove.org/get-help/",
-      "labels": [
-        "Roof Above — Day Services Center"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [
-        "automated-access-blocked"
-      ],
-      "status": 403,
-      "finalUrl": "https://www.roofabove.org/get-help/",
-      "finalHost": "roofabove.org",
-      "title": "403 - Forbidden",
-      "error": ""
-    },
-    {
-      "url": "https://www.roofabove.org/emergency-shelter/",
-      "labels": [
-        "Roof Above — Men's Emergency Shelter"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [
-        "automated-access-blocked"
-      ],
-      "status": 403,
-      "finalUrl": "https://www.roofabove.org/emergency-shelter/",
-      "finalHost": "roofabove.org",
-      "title": "403 - Forbidden",
-      "error": ""
-    },
-    {
-      "url": "https://www.roofabove.org/short-term-and-transitional-housing/",
-      "labels": [
-        "Roof Above — Rapid Rehousing & Permanent Supportive Housing"
-      ],
-      "sourceTypes": [
-        "resource"
-      ],
-      "classification": "likely-first-party",
-      "flags": [
-        "automated-access-blocked"
-      ],
-      "status": 403,
-      "finalUrl": "https://www.roofabove.org/short-term-and-transitional-housing/",
-      "finalHost": "roofabove.org",
-      "title": "403 - Forbidden",
       "error": ""
     },
     {
@@ -740,13 +628,12 @@
       ],
       "classification": "likely-first-party",
       "flags": [
-        "automated-access-blocked",
         "generic-homepage"
       ],
-      "status": 403,
+      "status": 202,
       "finalUrl": "https://www.pilgrimsinn.org/",
       "finalHost": "pilgrimsinn.org",
-      "title": "403 - Forbidden",
+      "title": "",
       "error": ""
     },
     {
@@ -881,6 +768,38 @@
       "finalUrl": "https://wearecakeable.org/employment/",
       "finalHost": "wearecakeable.org",
       "title": "Inclusive Employment Opportunities | Cakeable Charlotte",
+      "error": ""
+    },
+    {
+      "url": "https://careringnc.org/low-cost-clinic/",
+      "labels": [
+        "Care Ring Low-Cost Clinic"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://careringnc.org/low-cost-clinic/",
+      "finalHost": "careringnc.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://careringnc.org/nurse-family-partnership/",
+      "labels": [
+        "Care Ring Nurse-Family Partnership"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://careringnc.org/nurse-family-partnership/",
+      "finalHost": "careringnc.org",
+      "title": "",
       "error": ""
     },
     {
@@ -1188,7 +1107,7 @@
       "status": 200,
       "finalUrl": "https://crisisassistance.org/programs/get-help/",
       "finalHost": "crisisassistance.org",
-      "title": "Get Help - Crisis Assistance Ministry",
+      "title": "One moment, please...",
       "error": ""
     },
     {
@@ -1497,6 +1416,24 @@
       "error": ""
     },
     {
+      "url": "https://livingstone.edu/h-o-p-e/",
+      "labels": [
+        "Livingstone College — H.O.P.E. Emancipation Project",
+        "Livingstone College H.O.P.E. Emancipation Project"
+      ],
+      "sourceTypes": [
+        "resource",
+        "foster-guide"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://livingstone.edu/h-o-p-e/",
+      "finalHost": "livingstone.edu",
+      "title": "",
+      "error": ""
+    },
+    {
       "url": "https://machiahshouse.org/programs/",
       "labels": [
         "Machiah's House"
@@ -1526,7 +1463,7 @@
       "status": 200,
       "finalUrl": "https://matthewshelpcenter.org/services/",
       "finalHost": "matthewshelpcenter.org",
-      "title": "Services - Matthews Help Center",
+      "title": "One moment, please...",
       "error": ""
     },
     {
@@ -1980,6 +1917,54 @@
       "error": ""
     },
     {
+      "url": "https://www.roofabove.org/get-help/",
+      "labels": [
+        "Roof Above — Day Services Center"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://www.roofabove.org/get-help/",
+      "finalHost": "roofabove.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://www.roofabove.org/emergency-shelter/",
+      "labels": [
+        "Roof Above — Men's Emergency Shelter"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://www.roofabove.org/emergency-shelter/",
+      "finalHost": "roofabove.org",
+      "title": "",
+      "error": ""
+    },
+    {
+      "url": "https://www.roofabove.org/short-term-and-transitional-housing/",
+      "labels": [
+        "Roof Above — Rapid Rehousing & Permanent Supportive Housing"
+      ],
+      "sourceTypes": [
+        "resource"
+      ],
+      "classification": "likely-first-party",
+      "flags": [],
+      "status": 202,
+      "finalUrl": "https://www.roofabove.org/short-term-and-transitional-housing/",
+      "finalHost": "roofabove.org",
+      "title": "",
+      "error": ""
+    },
+    {
       "url": "https://www.safealliance.org/programs/domestic-violence-shelter/",
       "labels": [
         "Safe Alliance — Domestic Violence Shelter"
@@ -2253,9 +2238,9 @@
       "classification": "likely-first-party",
       "flags": [],
       "status": 200,
-      "finalUrl": "https://zabsplace.org/sam-ebersman-training-program/",
+      "finalUrl": "https://zabsplace.org/training-application/",
       "finalHost": "zabsplace.org",
-      "title": "Sam Ebersman Training Program - ZABS Place",
+      "title": "One moment, please...",
       "error": ""
     }
   ]
