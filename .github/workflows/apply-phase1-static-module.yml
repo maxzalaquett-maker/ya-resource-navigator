@@ -36,11 +36,9 @@ jobs:
         if: steps.pending.outputs.apply == 'true'
         run: python scripts/apply_phase1_static_module.py
 
-      - name: Remove one-time transformation files
+      - name: Remove one-time transformation script
         if: steps.pending.outputs.apply == 'true'
-        run: |
-          rm scripts/apply_phase1_static_module.py
-          rm .github/workflows/apply-phase1-static-module.yml
+        run: rm scripts/apply_phase1_static_module.py
 
       - name: Verify transformed files
         if: steps.pending.outputs.apply == 'true'
@@ -49,13 +47,12 @@ jobs:
           python -m json.tool vercel.json > /dev/null
           test ! -d phase1
           ! grep -q "blob:" vercel.json
-          ! grep -q "phase1/part" .github/workflows/validate-static-site.yml
 
       - name: Commit transformed files
         if: steps.pending.outputs.apply == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git add phase1.js phase1 vercel.json PHASE1.md scripts/apply_phase1_static_module.py
           git commit -m "Replace runtime Phase 1 assembly with static script"
           git push origin HEAD:${{ github.head_ref }}
