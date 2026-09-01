@@ -1,0 +1,61 @@
+name: Apply Phase 1 static module refactor
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.head_ref == 'refactor/phase1-static-modules'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out refactor branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Detect pending transformation
+        id: pending
+        run: |
+          if [ -f scripts/apply_phase1_static_module.py ]; then
+            echo "apply=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "apply=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Apply static module transformation
+        if: steps.pending.outputs.apply == 'true'
+        run: python scripts/apply_phase1_static_module.py
+
+      - name: Remove one-time transformation files
+        if: steps.pending.outputs.apply == 'true'
+        run: |
+          rm scripts/apply_phase1_static_module.py
+          rm .github/workflows/apply-phase1-static-module.yml
+
+      - name: Verify transformed files
+        if: steps.pending.outputs.apply == 'true'
+        run: |
+          node --check phase1.js
+          python -m json.tool vercel.json > /dev/null
+          test ! -d phase1
+          ! grep -q "blob:" vercel.json
+          ! grep -q "phase1/part" .github/workflows/validate-static-site.yml
+
+      - name: Commit transformed files
+        if: steps.pending.outputs.apply == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Replace runtime Phase 1 assembly with static script"
+          git push origin HEAD:${{ github.head_ref }}
