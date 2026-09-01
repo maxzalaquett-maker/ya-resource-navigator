@@ -9,16 +9,20 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
+    name: Validate generated files and syntax
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          fetch-depth: 0
+          python-version: '3.12'
 
       - name: Rebuild static resource data
         run: |
@@ -26,37 +30,60 @@ jobs:
           python scripts/apply_static_copy.py
           python scripts/normalize_app_data.py
 
-      - name: Commit rebuilt data on main
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          if ! git diff --quiet -- data/app-data.json; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/app-data.json
-            git commit -m "Rebuild static resource descriptions"
-            git push
-          fi
-
-      - name: Confirm generated data is committed in pull requests
-        if: github.event_name == 'pull_request'
+      - name: Confirm generated data is committed
         run: git diff --exit-code -- data/app-data.json
 
       - name: Assemble Phase 1 script
         run: cat phase1/part-*.txt > /tmp/phase1-runtime.js
 
       - name: Check JavaScript syntax
+        shell: bash
         run: |
-          node --check app.js
-          node --check config.js
-          node --check filter-accordions.js
-          node --check filter-tooltips.js
-          node --check foster-categories.js
-          node --check mobile.js
-          node --check phase1.js
-          node --check site-structure.js
+          while IFS= read -r -d '' file; do
+            node --check "$file"
+          done < <(find . -maxdepth 1 -type f -name '*.js' -print0 | sort -z)
           node --check /tmp/phase1-runtime.js
+          node --check tests/e2e/smoke.spec.js
 
       - name: Check JSON syntax
+        shell: bash
         run: |
-          python -m json.tool data/app-data.json > /dev/null
-          python -m json.tool data/pathways.json > /dev/null
+          while IFS= read -r -d '' file; do
+            python -m json.tool "$file" > /dev/null
+          done < <(find data -type f -name '*.json' -print0 | sort -z)
+          python -m json.tool package.json > /dev/null
+          python -m json.tool manifest.webmanifest > /dev/null
+
+  browser-smoke-tests:
+    name: Browser smoke tests
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install test dependency
+        run: npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser smoke tests
+        run: npm run test:e2e
+
+      - name: Upload failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-failure-evidence
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7
