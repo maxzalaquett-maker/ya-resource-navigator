@@ -18,12 +18,33 @@
     else inner.classList.add('page-banner-single');
   }
 
+  function standardizeHomeTypography() {
+    document.querySelectorAll('#view-home .home-section-heading').forEach((heading) => {
+      heading.classList.add('help-section-heading');
+    });
+
+    document.querySelectorAll('#view-home .home-path-card').forEach((card) => {
+      const copy = card.querySelector(':scope > span:nth-child(2)');
+      if (!copy) return;
+      copy.classList.add('home-path-copy');
+
+      const legacyTitle = copy.querySelector(':scope > strong');
+      if (!legacyTitle) return;
+
+      const heading = document.createElement('h3');
+      heading.className = 'home-path-title';
+      heading.textContent = legacyTitle.textContent;
+      legacyTitle.replaceWith(heading);
+    });
+  }
+
   function standardizeHomeBanner() {
     const banner = document.querySelector('#view-home .home-hero');
     const inner = banner?.querySelector('.home-hero-grid');
     const copy = inner?.firstElementChild;
     const note = inner?.querySelector('.home-audience-card');
     addSharedClasses(banner, inner, copy, note);
+    standardizeHomeTypography();
   }
 
   function standardizeDirectoryBanner() {
@@ -71,7 +92,7 @@
     const main = document.getElementById('main-content');
     if (!main) return;
 
-    const observer = new MutationObserver(() => standardizePageBanners());
+    const observer = new MutationObserver(standardizePageBanners);
     observer.observe(main, { childList: true, subtree: true });
   });
 })();
