@@ -188,6 +188,49 @@ test('persists a saved program after reload', async ({ page }) => {
   expect(pageErrors).toEqual([]);
 });
 
+
+test('provides identifiers for form fields and dimensions for lazy images', async ({ page }) => {
+  const pageErrors = capturePageErrors(page);
+  await page.goto('/#directory');
+  await waitForApplication(page);
+  await expect(page.locator('#view-directory')).toBeVisible();
+
+  const cards = page.locator('#resource-grid .resource-card');
+  await expect(cards.first()).toBeVisible();
+  await expect.poll(async () => page.locator('img[loading="lazy"]').count()).toBeGreaterThan(0);
+
+  const imageAudit = await page.locator('img[loading="lazy"]').evaluateAll((images) => ({
+    count: images.length,
+    missingDimensions: images
+      .filter((image) => Number(image.getAttribute('width')) <= 0 || Number(image.getAttribute('height')) <= 0)
+      .map((image) => image.currentSrc || image.src || '(no source)')
+  }));
+  expect(imageAudit.count).toBeGreaterThan(0);
+  expect(imageAudit.missingDimensions).toEqual([]);
+
+  await cards.first().locator('[data-action="details"]').click();
+  const dialog = page.locator('#resource-dialog');
+  await expect(dialog).toBeVisible();
+  await dialog.locator('[data-dialog-action="save"]').click();
+  await page.locator('#dialog-close').click();
+
+  await page.locator('[data-plan-jump]').click();
+  await expect(page.locator('#view-needs')).toBeVisible();
+
+  const planFields = page.locator('#phase1-plan-list input, #phase1-plan-list select, #phase1-plan-list textarea');
+  await expect(planFields).toHaveCount(2);
+
+  const fieldAudit = await page.locator('input, select, textarea').evaluateAll((fields) => ({
+    unnamed: fields
+      .filter((field) => !field.id && !field.getAttribute('name'))
+      .map((field) => field.outerHTML),
+    ids: fields.map((field) => field.id).filter(Boolean)
+  }));
+  expect(fieldAudit.unnamed).toEqual([]);
+  expect(fieldAudit.ids.filter((id, index, ids) => ids.indexOf(id) !== index)).toEqual([]);
+  expect(pageErrors).toEqual([]);
+});
+
 test.describe('mobile interface', () => {
   test.use({ viewport: { width: 390, height: 844 } });
 

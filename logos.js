@@ -108,6 +108,8 @@
     fallback.setAttribute('aria-hidden', 'true');
 
     image.alt = '';
+    image.width = 32;
+    image.height = 32;
     image.loading = 'lazy';
     image.decoding = 'async';
     image.referrerPolicy = 'no-referrer';
