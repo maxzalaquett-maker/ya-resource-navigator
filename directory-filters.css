@@ -48,8 +48,10 @@
   min-width: 0;
 }
 
-/* Adjacent sections share one divider instead of creating a doubled line. */
-.filter-checklist + .filter-toggle-group {
+/* Every section keeps a top and bottom edge. Consecutive sections overlap by one
+   pixel so their touching bottom/top borders render as a single shared divider. */
+:is(.filter-checklist, .filter-toggle-group) +
+:is(.filter-checklist, .filter-toggle-group) {
   margin-top: -1px;
 }
 
