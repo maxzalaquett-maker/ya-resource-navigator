@@ -44,12 +44,19 @@
   margin: 0;
   padding: 1.15rem 0;
   border: 0;
-  border-block: 1px solid var(--line);
   min-width: 0;
 }
 
-/* Every section keeps a top and bottom edge. Consecutive sections overlap by one
-   pixel so their touching bottom/top borders render as a single shared divider. */
+/* Accordion groups are always visually sandwiched between dividers. These explicit
+   edges override fieldset resets from the base styles. */
+.filter-checklist.filter-accordion,
+.filter-toggle-group.filter-accordion {
+  border-top: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+/* Consecutive sections overlap by one pixel so their touching bottom/top borders
+   render as one shared divider instead of a doubled line. */
 :is(.filter-checklist, .filter-toggle-group) +
 :is(.filter-checklist, .filter-toggle-group) {
   margin-top: -1px;
