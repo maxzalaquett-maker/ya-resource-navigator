@@ -3,7 +3,6 @@
 :root {
   --layout-gutter: clamp(1rem, 2.5vw, 2rem);
   --layout-reading-width: 860px;
-  --layout-narrow-width: 920px;
   --space-banner-block: clamp(3rem, 5vw, 4rem);
   --space-section-block: clamp(2.5rem, 4vw, 3.5rem);
   --space-section-compact: clamp(1.75rem, 3vw, 2.25rem);
