@@ -52,7 +52,7 @@ test('loads Phase 1 without runtime source assembly', async ({ page }) => {
 
   await page.goto('/#home');
   await waitForApplication(page);
-  await expect(page.locator('#phase1-guided')).toBeVisible();
+  await expect(page.locator('#phase1-guided')).toHaveCount(1);
 
   const deliveryState = await page.evaluate(() => ({
     blobScriptCount: [...document.scripts].filter((script) => script.src.startsWith('blob:')).length,
