@@ -377,8 +377,8 @@
             <p class="phase1-plan-action"><strong>What to do next:</strong> ${escapeHtml(actionInstruction(resource))}</p>
           </div>
           <div class="phase1-plan-fields">
-            <label class="field"><span>Status</span><select data-plan-status="${escapeAttribute(resource.id)}">${STATUS_OPTIONS.map((status) => `<option ${status === (meta.status || STATUS_OPTIONS[0]) ? 'selected' : ''}>${escapeHtml(status)}</option>`).join('')}</select></label>
-            <label class="field"><span>Check back on</span><input type="date" data-plan-date="${escapeAttribute(resource.id)}" value="${escapeAttribute(meta.followUp || '')}"></label>
+            <label class="field" for="plan-status-${escapeAttribute(encodeURIComponent(String(resource.id)))}"><span>Status</span><select id="plan-status-${escapeAttribute(encodeURIComponent(String(resource.id)))}" name="plan-status-${escapeAttribute(encodeURIComponent(String(resource.id)))}" data-plan-status="${escapeAttribute(resource.id)}">${STATUS_OPTIONS.map((status) => `<option ${status === (meta.status || STATUS_OPTIONS[0]) ? 'selected' : ''}>${escapeHtml(status)}</option>`).join('')}</select></label>
+            <label class="field" for="plan-follow-up-${escapeAttribute(encodeURIComponent(String(resource.id)))}"><span>Check back on</span><input id="plan-follow-up-${escapeAttribute(encodeURIComponent(String(resource.id)))}" name="plan-follow-up-${escapeAttribute(encodeURIComponent(String(resource.id)))}" type="date" data-plan-date="${escapeAttribute(resource.id)}" value="${escapeAttribute(meta.followUp || '')}"></label>
           </div>
           <div class="card-actions">
             ${firstPhone(resource.phone) ? `<a class="button button-primary button-small" href="tel:${firstPhone(resource.phone)}">${actionLabel(resource)}</a>` : ''}

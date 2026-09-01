@@ -352,7 +352,7 @@
     options.forEach((option, index) => {
       const label = document.createElement('label');
       label.className = `filter-check-option${index >= 7 ? ' is-extra' : ''}`;
-      label.innerHTML = `<input class="support-area-checkbox" type="checkbox" value="${escapeAttribute(option.value)}"><span>${escapeHtml(supportLabel(option.textContent))}</span>`;
+      label.innerHTML = `<input id="support-area-option-${index + 1}" name="support-area" class="support-area-checkbox" type="checkbox" value="${escapeAttribute(option.value)}"><span>${escapeHtml(supportLabel(option.textContent))}</span>`;
       const input = label.querySelector('input');
       input.checked = selected.includes(option.value);
       input.addEventListener('change', () => syncSupportSelect(select));
