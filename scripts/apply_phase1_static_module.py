@@ -25,15 +25,6 @@ if old_csp not in vercel:
     raise SystemExit("Expected Blob CSP allowance was not found")
 vercel_path.write_text(vercel.replace(old_csp, new_csp), encoding="utf-8")
 
-workflow_path = ROOT / ".github/workflows/validate-static-site.yml"
-workflow = workflow_path.read_text(encoding="utf-8")
-assemble_step = "\n      - name: Assemble Phase 1 script\n        run: cat phase1/part-*.txt > /tmp/phase1-runtime.js\n"
-if assemble_step not in workflow:
-    raise SystemExit("Expected Phase 1 assembly validation step was not found")
-workflow = workflow.replace(assemble_step, "")
-workflow = workflow.replace("          node --check /tmp/phase1-runtime.js\n", "")
-workflow_path.write_text(workflow, encoding="utf-8")
-
 doc_path = ROOT / "PHASE1.md"
 doc = doc_path.read_text(encoding="utf-8")
 marker = "## Configuration\n\n"
