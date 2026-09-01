@@ -1,0 +1,60 @@
+name: Apply routing refactor
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.head_ref == 'refactor/routing-history'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out routing branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Detect pending transformation
+        id: pending
+        run: |
+          if [ -f scripts/apply_routing_refactor.py ]; then
+            echo "apply=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "apply=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Apply deterministic transformation
+        if: steps.pending.outputs.apply == 'true'
+        run: python scripts/apply_routing_refactor.py
+
+      - name: Remove one-time transformation script
+        if: steps.pending.outputs.apply == 'true'
+        run: rm scripts/apply_routing_refactor.py
+
+      - name: Verify routing changes
+        if: steps.pending.outputs.apply == 'true'
+        run: |
+          node --check route-state.js
+          node --check app.js
+          node --check homepage-routing.js
+          node --check tests/unit/route-state.test.js
+          node --check tests/e2e/smoke.spec.js
+          npm run test:unit
+
+      - name: Commit routing refactor
+        if: steps.pending.outputs.apply == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Centralize routing and browser history"
+          git push origin HEAD:${{ github.head_ref }}
