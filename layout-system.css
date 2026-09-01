@@ -1,5 +1,13 @@
 /* Shared gutters, content widths and vertical rhythm for every primary page. */
 
+html.rn-loading {
+  background: #f7f8fc;
+}
+
+html.rn-loading body {
+  visibility: hidden;
+}
+
 :root {
   --layout-gutter: clamp(1rem, 2.5vw, 2rem);
   --layout-reading-width: 860px;

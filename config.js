@@ -41,20 +41,6 @@ window.RESOURCE_NAVIGATOR_CONFIG = {
   verificationAgingDays: 180
 };
 
-function loadStyle(href) {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = href;
-  document.head.appendChild(link);
-}
-
-function loadScript(src) {
-  const script = document.createElement('script');
-  script.src = src;
-  script.async = false;
-  document.head.appendChild(script);
-}
-
 function applyDirectoryFilterLabels() {
   const supportGroup = document.querySelector('#view-directory .filter-checklist');
   if (!supportGroup) return false;
@@ -74,22 +60,45 @@ function applyDirectoryFilterLabels() {
   return false;
 }
 
-// Keep enhancements modular so the core static directory remains maintainable.
-loadStyle('/mobile.css');
-loadScript('/mobile.js');
-loadScript('/filter-accordions.js');
-loadStyle('/filter-tooltips.css');
-loadScript('/filter-tooltips.js');
-loadStyle('/foster-categories.css');
-loadScript('/foster-categories.js');
-loadStyle('/phase1.css');
-loadScript('/phase1.js');
-loadStyle('/filter-icons.css');
-loadScript('/filter-icons.js');
-loadStyle('/filter-option-layout.css');
-loadScript('/filter-option-layout.js');
-loadStyle('/logos.css');
-loadScript('/logos.js');
+function revealStableInterface() {
+  let revealed = false;
+  let observer;
+
+  const reveal = () => {
+    if (revealed) return;
+    revealed = true;
+    observer?.disconnect();
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        document.documentElement.classList.remove('rn-loading');
+        document.documentElement.classList.add('rn-ready');
+      });
+    });
+  };
+
+  const resultCount = document.getElementById('result-count');
+  const loadError = document.getElementById('load-error');
+  const isSettled = () => {
+    const resourcesRendered = resultCount && !resultCount.textContent.includes('Loading resources');
+    const loadFailed = loadError && !loadError.hidden;
+    return resourcesRendered || loadFailed;
+  };
+
+  if (isSettled()) {
+    reveal();
+    return;
+  }
+
+  observer = new MutationObserver(() => {
+    if (isSettled()) reveal();
+  });
+
+  if (resultCount) observer.observe(resultCount, { childList: true, characterData: true, subtree: true });
+  if (loadError) observer.observe(loadError, { attributes: true, attributeFilter: ['hidden'] });
+
+  // Fail open if an unexpected enhancement error prevents the normal ready signal.
+  window.setTimeout(reveal, 3000);
+}
 
 const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
   'Immediate danger, overdose, violence or serious injury': 'https://www.charlottenc.gov/Public-Safety/Emergency-Management/Prepare',
@@ -103,6 +112,7 @@ const RESOURCE_NAVIGATOR_TRIAGE_LINKS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  revealStableInterface();
   document.querySelector('#priority-filter option[value="Verify"]')?.remove();
 
   const filterPanel = document.querySelector('#view-directory .filter-panel');
