@@ -78,7 +78,10 @@
 
   function bindEvents() {
     document.querySelectorAll('[data-view]').forEach((button) => {
-      button.addEventListener('click', () => routeState.navigate(button.dataset.view, buildUrlParams()));
+      button.addEventListener('click', () => {
+        syncStateFromControls();
+        routeState.navigate(button.dataset.view, buildUrlParams());
+      });
     });
 
     els.search.addEventListener('input', debounce(() => {
@@ -606,6 +609,17 @@
   function updateVerifiedFooter() {
     const date = formatDate(state.data.meta.verifiedDate);
     document.getElementById('verified-footer').textContent = `Directory last verified ${date}. Confirm current eligibility and capacity before referral.`;
+  }
+
+  function syncStateFromControls() {
+    if (!els.search) return;
+    state.query = els.search.value.trim();
+    state.support = els.support.value;
+    state.area = els.area.value;
+    state.foster = els.foster.value;
+    state.priority = els.priority.value;
+    state.savedOnly = els.savedOnly.checked;
+    state.sort = els.sort.value;
   }
 
   function buildUrlParams() {
