@@ -3,6 +3,9 @@
 
   const DATA_URL = '/data/app-data.json';
   const FALLBACK_ICON_SERVICE = 'https://www.google.com/s2/favicons?sz=128&domain_url=';
+  const INITIALS_ONLY_DOMAINS = new Set([
+    'home4me.org'
+  ]);
   const resourcesById = new Map();
   const resourcesByName = new Map();
   let activeResourceId = '';
@@ -91,10 +94,11 @@
     const fallback = document.createElement('span');
     const sourceUrl = safeHttpUrl(resource.sourceUrl);
     const domain = sourceUrl ? new URL(sourceUrl).hostname.replace(/^www\./, '') : '';
+    const initialsOnly = INITIALS_ONLY_DOMAINS.has(domain);
     const overrides = window.RESOURCE_LOGO_OVERRIDES || {};
     const override = overrides[String(resource.id)] || overrides[resource.name] || overrides[domain] || '';
-    const primaryUrl = safeHttpUrl(override) || (sourceUrl ? `${new URL(sourceUrl).origin}/favicon.ico` : '');
-    const fallbackUrl = sourceUrl ? `${FALLBACK_ICON_SERVICE}${encodeURIComponent(sourceUrl)}` : '';
+    const primaryUrl = initialsOnly ? '' : safeHttpUrl(override) || (sourceUrl ? `${new URL(sourceUrl).origin}/favicon.ico` : '');
+    const fallbackUrl = initialsOnly || !sourceUrl ? '' : `${FALLBACK_ICON_SERVICE}${encodeURIComponent(sourceUrl)}`;
 
     logo.className = `resource-logo resource-logo-${context}`;
     logo.title = `${resource.name} logo`;
