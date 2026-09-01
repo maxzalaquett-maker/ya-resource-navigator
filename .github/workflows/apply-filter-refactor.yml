@@ -24,12 +24,13 @@ jobs:
           fetch-depth: 0
 
       - name: Apply deterministic transformation
-        run: python scripts/apply_filter_refactor.py
-
-      - name: Remove one-time transformation files
         run: |
-          rm scripts/apply_filter_refactor.py
-          rm .github/workflows/apply-filter-refactor.yml
+          cp .github/workflows/validate-static-site.yml /tmp/validate-static-site.yml
+          python scripts/apply_filter_refactor.py
+          cp /tmp/validate-static-site.yml .github/workflows/validate-static-site.yml
+
+      - name: Remove one-time transformation script
+        run: rm scripts/apply_filter_refactor.py
 
       - name: Verify changed JavaScript
         run: |
