@@ -14,7 +14,7 @@
 /* One shared horizontal page edge. */
 .shell,
 .page-banner-inner {
-  width: min(calc(100% - (var(--layout-gutter) * 2)), var(--shell));
+  width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), var(--shell));
   max-width: var(--shell);
   margin-inline: auto;
 }
@@ -44,7 +44,7 @@
 .shell.narrow.plan-mount,
 .shell.narrow.urgent-support-section,
 .shell.narrow.about-grid.about-sections {
-  width: min(calc(100% - (var(--layout-gutter) * 2)), var(--shell));
+  width: min(calc(100% - var(--layout-gutter) - var(--layout-gutter)), var(--shell));
   max-width: var(--shell);
   margin-inline: auto;
 }
