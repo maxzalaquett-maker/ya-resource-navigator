@@ -68,6 +68,28 @@
   flex: 0 0 auto;
 }
 
+.triage-action > div:first-child:not(.card-actions) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .18rem;
+}
+
+.triage-action .eyebrow {
+  display: block;
+  margin: 0;
+}
+
+.triage-action strong {
+  display: block;
+}
+
+#toast,
+.toast,
+.toast.is-visible {
+  display: none !important;
+}
+
 .plan-mount .phase1-plan {
   padding: 0;
   border: 0;
